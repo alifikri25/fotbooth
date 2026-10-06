@@ -8,6 +8,8 @@ Dekorasi SVG orisinal meliputi pita, floral, scrapbook, denim, film analog, kera
 
 Repository public: https://github.com/alifikri25/fotbooth, branch `main`. Publikasi Cloudflare diminta **nanti**. Konfigurasi Pages, script deploy, Node version dan CI sudah disiapkan; belum ada deployment atau domain produksi. Panduan: `docs/DEPLOY-CLOUDFLARE.md`.
 
+Source dan artwork telah dipush: initial commit `3c0e4f2` cocok dengan remote `main`. Halaman GitHub menampilkan repository public, source dan README 60 frame; screenshot bukti `docs/qa/github-repository.jpg`. Commit dokumentasi berikutnya menutup checklist ini.
+
 Pemeriksaan terbaru: **41 unit test dan build lulus; 58 browser test lulus, 2 skip kamera sintetis WebKit, 0 gagal, durasi 3,2 menit**. Runtime lokal Cloudflare memuat seluruh 60 thumbnail dan 180 URL aset; pencarian, upload, caption serta unduh PNG/JPEG ringan berhasil dan file hasil dibuka ulang pada 600×1800. Lihat `docs/qa/cloudflare-local-smoke.json` dan `docs/QA.md`.
 
 Uji paket produksi menemukan Ajv runtime melakukan code generation yang ditolak CSP. Validator sekarang dibuat saat build melalui `scripts/build-schema.mjs`; hasil standalone disertakan di source. Header keamanan tetap ketat. Regresi `production-csp.spec.ts` memuat paket `dist` memakai header sebenarnya dan lulus pada Chromium/WebKit.

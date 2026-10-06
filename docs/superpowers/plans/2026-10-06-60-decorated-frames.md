@@ -17,7 +17,7 @@
 - [x] Inspect all visual contact sheets, strengthen shading where needed and repair caption contrast.
 - [x] Run all unit/build checks and Chromium/WebKit browser checks, including all 60 export packages and clear photo interiors. 41 unit tests and build passed; 58 browser checks passed, two synthetic-camera cases skipped on WebKit. The built package also passed strict-CSP and local Cloudflare PNG/JPEG smoke checks.
 - [x] Prepare Cloudflare Pages configuration, build/deploy scripts and CI. Refresh repository docs with the current scope and verified results.
-- [ ] Commit reviewed source, artwork and selected QA evidence. Push to the user's public `alifikri25/fotbooth` repository. Verify the branch remotely.
+- [x] Commit reviewed source, artwork and selected QA evidence. Push to the user's public `alifikri25/fotbooth` repository. Verify the branch remotely. Initial source commit `3c0e4f2` matches remote `main`; the GitHub page visibly shows the public repository, source folders and 60-frame README.
 
 ## Acceptance checks
 
