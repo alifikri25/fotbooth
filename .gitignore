@@ -18,6 +18,8 @@ docs/qa/*
 !docs/qa/cloudflare-local-smoke.json
 !docs/qa/cloudflare-public-release.json
 !docs/qa/camera-paper-release-20261007.json
+!docs/qa/signature-design-board.png
+!docs/qa/signature-release-20261007.json
 *.log
 .DS_Store
 Thumbs.db

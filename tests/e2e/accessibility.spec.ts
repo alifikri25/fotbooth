@@ -117,7 +117,7 @@ for (const width of [360, 1440]) {
     await auditTargets();
     await page.getByRole('button', { name: 'Mulai bikin foto' }).click();
     await auditTargets();
-    await page.getByRole('button', { name: 'Pakai frame Concert Pass', exact: true }).click();
+    await page.getByRole('button', { name: 'Pakai frame After Hours Ticket', exact: true }).click();
     await auditTargets();
     await page.getByRole('button', { name: 'Buka kamera', exact: true }).click();
     await expect(page.getByRole('alert')).toContainText('izin');

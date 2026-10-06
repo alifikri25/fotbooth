@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-07",
+  "tool": "built-in image_gen",
+  "purpose": "Original fictional adult portraits for gallery thumbnails of eight signature frames; reference portraits were not used as generation inputs.",
+  "assets": [
+    {
+      "key": "portrait-a",
+      "prompt": "Use case: photorealistic-natural. Asset type: original fictional sample portrait for a photobooth website gallery. Portrait 4:5 composition. A friendly fictional adult woman, about 27, medium tan skin, dark shoulder-length gently wavy hair, wearing an elegant simple ivory blouse and small pearl stud earrings, smiling warmly with her head slightly tilted. Waist-up photobooth studio portrait, entire head with space above and shoulders visible, centered, eyes looking at lens. Pale warm beige seamless backdrop. Soft flattering studio flash, realistic skin texture, lovely candid editorial photography, natural graceful hands near shoulders. No typography, frame, borders, logos or watermark. This is an original fictional model, not a celebrity or any specific real person.",
+      "original": "artwork/originals/portrait-a.png",
+      "web": "artwork/materials/portrait-a.jpg",
+      "public": "public/samples/signature-portrait-a.jpg"
+    },
+    {
+      "key": "portrait-b",
+      "prompt": "Use case: photorealistic-natural. Asset type: original fictional sample portrait for a photobooth website gallery. Portrait 4:5 composition. A cheerful fictional adult man, about 28, Southeast Asian appearance, warm medium skin, neatly styled short dark hair, wearing a simple dark navy overshirt over an ivory tee. Waist-up photobooth studio portrait, entire head with breathing room and shoulders visible, centered, smiling naturally while holding a relaxed small peace sign near his shoulder. Pale cool lavender-gray seamless backdrop. Soft studio flash, realistic skin and fabric, polished candid editorial photography. No typography, no border, no photo frame, no logos or watermark. Original fictional model, not any specific existing person or celebrity.",
+      "original": "artwork/originals/portrait-b.png",
+      "web": "artwork/materials/portrait-b.jpg",
+      "public": "public/samples/signature-portrait-b.jpg"
+    },
+    {
+      "key": "portrait-c",
+      "prompt": "Use case: photorealistic-natural. Asset type: original fictional sample portrait for a photobooth website gallery. Portrait 4:5 composition. Two fictional adults in their late twenties, a woman with short dark wavy hair and an adult man with short dark hair, both with natural warm tan complexions, smiling cheek-to-cheek in a friendly playful photobooth pose, hands together making a small heart at chest height. Elegant simple everyday outfits in ivory and soft muted sage. Waist-up studio portrait, both faces fully visible and centered with room above their heads. Pale neutral sage-gray seamless background, soft studio flash, lifelike skin texture, joyful polished editorial photography. No typography, borders, frames, logos or watermark. Original fictional people, not specific existing people or celebrities.",
+      "original": "artwork/originals/portrait-c.png",
+      "web": "artwork/materials/portrait-c.jpg",
+      "public": "public/samples/signature-portrait-c.jpg"
+    }
+  ]
+}

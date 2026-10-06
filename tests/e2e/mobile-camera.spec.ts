@@ -56,7 +56,7 @@ test('mobile camera preview and reopen action fit together when permission is de
   });
   for (const viewport of viewports) {
     await page.setViewportSize(viewport);
-    for (const frame of ['Denim Daisy Polaroid', 'Concert Pass']) {
+    for (const frame of ['Denim Daisy Polaroid', 'After Hours Ticket']) {
       await enterCamera(page, frame);
       await expect(page.getByRole('alert')).toContainText('izin');
       await visibleTogether(page, 'Buka kamera', viewport.height);

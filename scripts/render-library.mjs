@@ -6,14 +6,16 @@ import { definitions } from '../src/frames/definitions.ts';
 const baseURL = process.env.FOTBOOTH_BASE_URL ?? 'http://127.0.0.1:5173';
 const browser = await chromium.launch();
 const thumbnails = [];
+const batchSize = 6;
 try {
   const page = await browser.newPage();
-  await page.goto(`${baseURL}/tests/harness.html`);
+  // Asset regeneration can queue a Vite reload; let it settle before evaluating the catalog.
+  await page.goto(`${baseURL}/tests/harness.html`, { waitUntil: 'networkidle' });
   const orderedIds = await page.evaluate(async () =>
     (await import('/src/frames/catalog.ts')).frames.map((f) => f.id),
   );
   await fs.mkdir('docs/qa', { recursive: true });
-  for (let start = 0; start < orderedIds.length; start += 12) {
+  for (let start = 0; start < orderedIds.length; start += batchSize) {
     const images = await page.evaluate(
       async (ids) => {
         const { definitions } = await import('/src/frames/definitions.ts');
@@ -22,6 +24,9 @@ try {
         await ensureFonts();
         const photos = await Promise.all(
           [1, 2, 3].map((n) => loadLayer(`/samples/friend-${n}.svg`)),
+        );
+        const signaturePhotos = await Promise.all(
+          ['a', 'b', 'c'].map((letter) => loadLayer(`/samples/signature-portrait-${letter}.jpg`)),
         );
         const canvas = document.createElement('canvas');
         const thumb = document.createElement('canvas');
@@ -36,13 +41,17 @@ try {
               photoId: String(i % 3),
               fitMode: 'cover',
               centerX: 0.5,
-              centerY: 0.5,
+              centerY: frame.version === 3 ? 0.3 : 0.5,
               zoom: 1,
               rotation: 0,
               mirror: false,
             })),
           };
-          const resolve = async (id) => ({ image: photos[Number(id)], width: 800, height: 1000 });
+          const selectedPhotos = frame.version === 3 ? signaturePhotos : photos;
+          const resolve = async (id) => {
+            const image = selectedPhotos[Number(id)];
+            return { image, width: image.naturalWidth, height: image.naturalHeight };
+          };
           await renderComposition(
             canvas,
             frame,
@@ -99,7 +108,7 @@ try {
         canvas.height = 1;
         return output;
       },
-      orderedIds.slice(start, start + 12),
+      orderedIds.slice(start, start + batchSize),
     );
     for (const item of images) {
       await fs.writeFile(
@@ -119,11 +128,12 @@ try {
         thumbnail: item.thumbnail,
       });
     }
-    console.log(`Rendered ${Math.min(start + 12, orderedIds.length)}/${orderedIds.length} frames.`);
+    console.log(`Rendered ${Math.min(start + batchSize, orderedIds.length)}/${orderedIds.length} frames.`);
   }
   for (const [name, items, columns] of [
     ['frame-contact-sheet', thumbnails, 6],
     ['decorated-design-board', thumbnails.slice(0, 12), 4],
+    ['signature-design-board', thumbnails.slice(0, 8), 4],
     ['cartoon-contact-sheet', thumbnails.filter((f) => f.categories.includes('cartoon')), 4],
     ...Array.from({ length: Math.ceil(thumbnails.length / 12) }, (_, i) => [
       `library-${String(i + 1).padStart(2, '0')}`,

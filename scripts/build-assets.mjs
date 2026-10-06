@@ -4,6 +4,7 @@ import { definitions } from '../src/frames/definitions.ts';
 import { cartoonArt } from './cartoon-art.mjs';
 import { collectionArt } from './collection-art.mjs';
 import { printPaper } from './print-paper.mjs';
+import { signatureArt } from './signature-art.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const svg = (w, h, body) =>
@@ -43,7 +44,11 @@ for (const f of definitions) {
   const { designWidth: w, designHeight: h, palette: p } = f;
   let bg = `<rect width="${w}" height="${h}" fill="${p.background}"/>`;
   let fg = f.slots.map((s) => outline(s, f)).join('');
-  if (f.artwork) {
+  const signature = signatureArt(f, outline);
+  if (signature) {
+    bg = signature.background;
+    fg = signature.foreground;
+  } else if (f.artwork) {
     const art = collectionArt(f);
     bg += art.background;
     if (f.artwork.edition === 10) {
@@ -136,7 +141,7 @@ for (const f of definitions) {
     const safe = `<defs><mask id="decor-safe" maskUnits="userSpaceOnUse" x="0" y="0" width="${w}" height="${h}"><rect width="${w}" height="${h}" fill="white"/>${f.slots.map((s) => outline(s, f, true)).join('')}</mask></defs>`;
     fg += safe + `<g mask="url(#decor-safe)">${art.foreground}</g>`;
   }
-  bg += printPaper(f);
+  if (!signature) bg += printPaper(f);
   const dir = path.join(root, `public/frames/${f.id}/v${f.version}`);
   await fs.mkdir(dir, { recursive: true });
   await fs.writeFile(path.join(dir, 'manifest.json'), JSON.stringify(f, null, 2) + '\n');
@@ -157,6 +162,11 @@ for (const [src, name] of [
 ])
   await fs.copyFile(path.join(root, 'node_modules', src), path.join(root, 'public/fonts', name));
 await fs.mkdir(path.join(root, 'public/samples'), { recursive: true });
+for (const letter of ['a', 'b', 'c'])
+  await fs.copyFile(
+    path.join(root, `artwork/materials/portrait-${letter}.jpg`),
+    path.join(root, `public/samples/signature-portrait-${letter}.jpg`),
+  );
 const portraits = [
   ['#eccda6', '#f1704c', '#27363d', '#543f30'],
   ['#b6d4ca', '#8475c7', '#dba07f', '#302925'],

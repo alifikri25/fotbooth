@@ -3,10 +3,10 @@ import { startEditor } from './helpers';
 test('the right arrow moves the visible photo right, in the same direction as a drag', async ({
   page,
 }) => {
-  await startEditor(page, 'Concert Pass', 2);
+  await startEditor(page, 'After Hours Ticket', 2);
   await page.getByLabel('Perbesar foto').fill('2');
   await expect(page.getByRole('button', { name: 'Lihat hasil' })).toBeEnabled();
-  const canvas = page.getByRole('img', { name: /^Preview Concert Pass/ });
+  const canvas = page.getByRole('img', { name: /^Preview After Hours Ticket/ });
   const pixel = () =>
     canvas.evaluate((c: HTMLCanvasElement) =>
       Array.from(
@@ -23,10 +23,10 @@ test('the right arrow moves the visible photo right, in the same direction as a 
 test('one drag preserves zoom and commits one undo step, while resize leaves the crop unchanged', async ({
   page,
 }) => {
-  await startEditor(page, 'Concert Pass', 2);
+  await startEditor(page, 'After Hours Ticket', 2);
   await page.getByLabel('Perbesar foto').fill('2');
   await expect(page.getByRole('button', { name: 'Lihat hasil' })).toBeEnabled();
-  const canvas = page.getByRole('img', { name: /^Preview Concert Pass/ });
+  const canvas = page.getByRole('img', { name: /^Preview After Hours Ticket/ });
   const before = await canvas.screenshot();
   const box = (await canvas.boundingBox())!;
   await page.mouse.move(box.x + box.width * 0.5, box.y + box.height * 0.32);
@@ -43,7 +43,7 @@ test('one drag preserves zoom and commits one undo step, while resize leaves the
   expect(undone.equals(before)).toBe(true);
 });
 test('caption is limited by grapheme and cannot send markup to the page', async ({ page }) => {
-  await startEditor(page, 'Concert Pass', 2);
+  await startEditor(page, 'After Hours Ticket', 2);
   await page.getByLabel('Caption').fill('A'.repeat(50));
   await expect(page.getByLabel('Caption')).toHaveValue('A'.repeat(40));
   await page.getByLabel('Caption').fill('<img src=x onerror=alert(1)>');

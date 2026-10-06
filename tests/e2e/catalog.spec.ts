@@ -113,7 +113,7 @@ test('new cartoon and dynamic collections filter and open usable frames', async 
   await page.getByRole('button', { name: 'Mulai bikin foto' }).click();
   await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(60);
   await expect(page.getByRole('button', { name: /^Pakai frame / }).first()).toHaveAccessibleName(
-    'Pakai frame Ribbon Diary Trio',
+    'Pakai frame Velvet Premiere',
   );
   await page.getByRole('button', { name: 'Cartoon', exact: true }).click();
   await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(13);

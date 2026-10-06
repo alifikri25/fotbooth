@@ -1,10 +1,12 @@
 import type { FrameDefinition } from '../core/types';
 import { validateFrame } from './validator';
+import { signatureIds } from './signature';
 const manifests = import.meta.glob<FrameDefinition>('./manifests/*.json', {
   eager: true,
   import: 'default',
 });
 const sequence = [
+  ...signatureIds,
   'ribbon-diary-trio',
   'petal-post-story',
   'cherry-kiss-film',

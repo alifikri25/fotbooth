@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-07",
+  "tool": "built-in image_gen",
+  "purpose": "Original photobooth materials; user references supplied for general art direction, no template assets or reference portraits copied.",
+  "assets": [
+    {
+      "key": "velvet",
+      "prompt": "Use case: stylized-concept. Asset type: original premium photobooth frame BACKGROUND MATERIAL, portrait 2:3, flat frontal view edge-to-edge. Create a luxurious crimson velvet miniature cinema stage: rich ruby and burgundy curtain fabric with realistic plush nap and theatrical folds, small antique-gold tassel cords near the outer edges, softly lit stage atmosphere. Sweeping gathered curtains occupy the upper 13% and outer 5% each side; the large central area from 15% to 87% should be quiet deep-red velvet with restrained vertically draped folds, so four photos will later cover it. A low velvet stage floor and warm narrow gold footlights occupy bottom 12%. No sign, no lettering, no marquee rectangles, no photo boxes, no photos, no people. Real dimensional material and deep shadows, confident cinematic richness, sophisticated illustrated-realistic craft, no generic clip art. The entire image is a usable flat graphic background, not a mockup on a desk and no outer white margin. Original design.",
+      "original": "artwork/originals/velvet.png",
+      "web": "artwork/materials/velvet.jpg"
+    },
+    {
+      "key": "sage",
+      "prompt": "Use case: photorealistic-natural. Asset type: original premium photobooth background MATERIAL, portrait 2:3, flat overhead composition edge-to-edge. A tactile fashion editorial collage of pistachio/sage green silk jacquard, fine diagonal ribbed silk, bias-cut satin patches and a sheer cream lace trim. Distinct diagonal overlapping textile panels with realistic tiny woven fibers, silk highlights, neatly frayed stitched seams. Quiet green central field occupying 80% width, where a photo strip will be layered later. Finely detailed ivory lace concentrated along left and right outer 6% and light lace bows and pale green orchid petals concentrated only in the upper 12% and bottom 10%. Rich realistic material depth, softly directional natural light, luxury invitation aesthetic, delicate spring couture. No text, letters, photos, photo holes, people, logos or watermarks. No tabletop or mockup. Entire flat image is the background and reaches every edge. Original artwork.",
+      "original": "artwork/originals/sage.png",
+      "web": "artwork/materials/sage.jpg"
+    },
+    {
+      "key": "holo",
+      "prompt": "Use case: stylized-concept. Asset type: original photobooth frame background MATERIAL, portrait 1:3, flat frontal art. A high-fashion lavender and ice-blue holographic foil print with iridescent chrome, dense micro-sparkles, subtle glossy crinkled metal texture, luminous purple-silver spectral reflection. Distinct sculptural molten-chrome heart and a beautiful fluid chrome ribbon cropped into the upper 12%; one chrome four-point star and a curling chrome ribbon at lower 10%, side accents kept in outer 6%. Large middle 76% calm pale lavender foil, photos will cover it later. Strong Y2K concert photocard mood, futuristic boutique print, actual shiny 3D metallic reflections, sophisticated lighting and translucent violet glow. No text, no lettering, no photo windows, no people, no photographs, no logos, no watermark, no device mockup, no desk, no margin. Original artwork, do not imitate any named artist.",
+      "original": "artwork/originals/holo.png",
+      "web": "artwork/materials/holo.jpg"
+    },
+    {
+      "key": "pearl",
+      "prompt": "Use case: photorealistic-natural. Asset type: original premium wedding photobooth background MATERIAL, portrait 2:3, flat overhead full bleed. Luxurious ivory silk with fine folds and a faint pressed floral damask weave. Pearl strands, delicately veined ivory garden rose petals, champagne silk ribbon and tiny antique gold leaves form an elegant asymmetric couture border only at top 12%, bottom 11%, and outer 5% of left/right. The central area between 15% and 88% stays quiet softly textured warm ivory silk so two portraits can be placed there later. Realistic layered material, refined shadows and silky highlights, rich crafted invitation aesthetic, tasteful and romantic. No letters or text, no photos, no empty photo-box outline, no people, no logos/watermarks, no desktop mockup or exterior white margin. Edge-to-edge original background artwork.",
+      "original": "artwork/originals/pearl.png",
+      "web": "artwork/materials/pearl.jpg"
+    }
+  ]
+}

@@ -41,7 +41,7 @@ test('upload → edit → switch 4→2→4 → undo → caption → real PNG/JPE
   await startEditor(page);
   await page.getByLabel('Perbesar foto').fill('2');
   await page.getByRole('button', { name: 'Ganti frame', exact: true }).click();
-  await page.getByRole('button', { name: 'Pakai frame Concert Pass', exact: true }).click();
+  await page.getByRole('button', { name: 'Pakai frame After Hours Ticket', exact: true }).click();
   await expect(page.getByTestId('photo-count')).toHaveText('4/8 foto');
   await page.getByRole('button', { name: 'Ganti frame', exact: true }).click();
   await page.getByRole('button', { name: 'Pakai frame Pocket Arcade', exact: true }).click();
@@ -80,7 +80,7 @@ test('upload → edit → switch 4→2→4 → undo → caption → real PNG/JPE
 test('a corrupt replacement keeps existing photos and clear-session really releases the working state', async ({
   page,
 }) => {
-  await startEditor(page, 'Concert Pass', 2);
+  await startEditor(page, 'After Hours Ticket', 2);
   await page
     .locator('input[type=file]')
     .setInputFiles({ name: 'broken.png', mimeType: 'image/png', buffer: Buffer.from('broken') });
@@ -110,7 +110,7 @@ for (const width of [360, 1440]) {
       await page.keyboard.press('Enter');
     };
     await activate('Mulai bikin foto');
-    await activate('Pakai frame Concert Pass');
+    await activate('Pakai frame After Hours Ticket');
     const chooser = page.waitForEvent('filechooser');
     await activate('Pilih foto');
     await (

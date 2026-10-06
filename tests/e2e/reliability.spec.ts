@@ -3,7 +3,7 @@ import { startEditor, photoBytes } from './helpers';
 test('encoding failure retains edits, offers an explicit light retry, and allows a successful retry', async ({
   page,
 }) => {
-  await startEditor(page, 'Concert Pass', 2);
+  await startEditor(page, 'After Hours Ticket', 2);
   await page.getByLabel('Caption').fill('simpan edit ini');
   await page.getByRole('button', { name: 'Lihat hasil' }).click();
   await page.evaluate(() => {
@@ -67,7 +67,7 @@ test('application sends no photo/caption request and clears every photo/result O
   page.on('request', (r) =>
     requests.push({ method: r.method(), url: r.url(), body: r.postData() }),
   );
-  await startEditor(page, 'Concert Pass', 2);
+  await startEditor(page, 'After Hours Ticket', 2);
   await page.getByLabel('Caption').fill('private-caption-123');
   await page.getByRole('button', { name: 'Lihat hasil' }).click();
   const download = page.waitForEvent('download');

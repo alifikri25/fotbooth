@@ -68,7 +68,7 @@ for (const [engine, browserType] of Object.entries({ chromium, webkit })) {
       await expect(page.getByTestId('photo-count')).toHaveText('4/8 foto');
       await page.getByLabel('Perbesar foto').fill('2');
       await page.getByRole('button', { name: 'Ganti frame', exact: true }).click();
-      await page.getByRole('button', { name: 'Pakai frame Concert Pass', exact: true }).click();
+      await page.getByRole('button', { name: 'Pakai frame After Hours Ticket', exact: true }).click();
       await page.getByRole('button', { name: 'Ganti frame', exact: true }).click();
       await page.getByRole('button', { name: 'Pakai frame Gallery Issue', exact: true }).click();
       await expect(page.getByLabel('Perbesar foto')).toHaveValue('2');

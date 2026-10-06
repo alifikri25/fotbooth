@@ -1,15 +1,15 @@
 # Registry 60 frame Fotbooth
 
-Katalog aktif: **60 frame** — 16 frame sebelumnya dan 44 edisi dekoratif dari 26 tema baru. Beberapa tema punya lebih dari satu komposisi; ini bukan klaim 60 tema independen. Batas katalog mengikuti permintaan terakhir pengguna. ID frame di luar katalog diarsipkan lokal dan tidak ikut build. Aset versi 1 untuk 60 ID aktif tetap dilayani agar sesi yang sudah terbuka dapat selesai; katalog baru hanya memilih versi 2.
+Katalog aktif: **60 frame** — 16 frame sebelumnya dan 44 edisi dekoratif dari 26 tema baru. Beberapa tema punya lebih dari satu komposisi; ini bukan klaim 60 tema independen. Batas katalog mengikuti permintaan terakhir pengguna. ID frame di luar katalog diarsipkan lokal dan tidak ikut build. Aset versi 1 dan 2 tetap dilayani agar sesi yang sudah terbuka dapat selesai. Katalog aktif memakai versi 3 pada delapan desain unggulan dan versi 2 pada 52 edisi lainnya.
 
-Setiap paket versi 2 berisi manifest, background SVG, foreground SVG dan thumbnail PNG hasil renderer aplikasi. Strip: 1200×3600; card: 1800×2700. Mask foto valid dan luas foto minimal 55%. Artwork baru memiliki mask tambahan agar dekorasi tidak menutupi interior foto atau area judul/caption/tanggal.
+Setiap paket versi 2, 3 berisi manifest, background SVG, foreground SVG dan thumbnail PNG hasil renderer aplikasi. Strip: 1200×3600; card: 1800×2700. Mask foto valid dan luas foto minimal 55%. Artwork baru memiliki mask tambahan agar dekorasi tidak menutupi interior foto atau area judul/caption/tanggal.
 
 | Frame | ID | Koleksi | Format | Foto |
 | --- | --- | --- | --- | --- |
 | Orbit Club | orbit-club | Original collection | strip | 3 |
 | Bubble Pop | bubble-pop | Original collection | strip | 3 |
 | Studio Notes | studio-notes | Original collection | card | 3 |
-| Concert Pass | concert-pass | Original collection | strip | 2 |
+| After Hours Ticket | concert-pass | Original collection | strip | 2 |
 | Pocket Arcade | pocket-arcade | Original collection | strip | 4 |
 | Sticker Rush | sticker-rush | Original collection | strip | 3 |
 | Cloud Windows | cloud-windows | Original collection | strip | 3 |
@@ -38,7 +38,7 @@ Setiap paket versi 2 berisi manifest, background SVG, foreground SVG dan thumbna
 | Denim Daisy Polaroid | denim-daisy-polaroid | Denim Daisy | card | 4 |
 | Star Studio Wander | star-studio-wander | Star Studio | strip | 3 |
 | Midnight Film Film | midnight-film-film | Midnight Film | strip | 3 |
-| Midnight Film Polaroid | midnight-film-polaroid | Midnight Film | card | 4 |
+| Velvet Premiere | midnight-film-polaroid | Midnight Film | card | 4 |
 | Citrus Club Mini | citrus-club-mini | Citrus Club | strip | 4 |
 | Ocean Postcard Trio | ocean-postcard-trio | Ocean Postcard | strip | 3 |
 | Ocean Postcard Story | ocean-postcard-story | Ocean Postcard | card | 3 |
@@ -48,20 +48,20 @@ Setiap paket versi 2 berisi manifest, background SVG, foreground SVG dan thumbna
 | Butterfly Notes Story | butterfly-notes-story | Butterfly Notes | card | 3 |
 | Retro Diner Offset | retro-diner-offset | Retro Diner | strip | 3 |
 | Pixel Play Mini | pixel-play-mini | Pixel Play | strip | 4 |
-| Cosmic Disco Mosaic | cosmic-disco-mosaic | Cosmic Disco | card | 4 |
+| Disco Royale | cosmic-disco-mosaic | Cosmic Disco | card | 4 |
 | Heart Mail Trio | heart-mail-trio | Heart Mail | strip | 3 |
 | Heart Mail Duo | heart-mail-duo | Heart Mail | strip | 2 |
-| Heart Mail Story | heart-mail-story | Heart Mail | card | 3 |
-| Lace Story Arch | lace-story-arch | Lace Story | strip | 3 |
+| Rouge Romance | heart-mail-story | Heart Mail | card | 3 |
+| Sage Atelier | lace-story-arch | Lace Story | strip | 3 |
 | Gingham Picnic Mini | gingham-picnic-mini | Gingham Picnic | strip | 4 |
 | Teddy Memory Trio | teddy-memory-trio | Teddy Memory | strip | 3 |
 | Teddy Memory Mosaic | teddy-memory-mosaic | Teddy Memory | card | 4 |
 | Coffee Date Polaroid | coffee-date-polaroid | Coffee Date | card | 4 |
-| Birthday Confetti Story | birthday-confetti-story | Birthday Confetti | card | 3 |
+| Popstar Birthday | birthday-confetti-story | Birthday Confetti | card | 3 |
 | Graduation Club Duo | graduation-club-duo | Graduation Club | strip | 2 |
 | Wedding Bloom Trio | wedding-bloom-trio | Wedding Bloom | strip | 3 |
-| Wedding Bloom Portrait | wedding-bloom-portrait | Wedding Bloom | card | 2 |
-| Kpop Starlight Wander | kpop-starlight-wander | Kpop Starlight | strip | 3 |
+| Pearl Vows | wedding-bloom-portrait | Wedding Bloom | card | 2 |
+| Holo Encore | kpop-starlight-wander | Kpop Starlight | strip | 3 |
 | Halloween Party Mosaic | halloween-party-mosaic | Halloween Party | card | 4 |
 | Festive Wishes Offset | festive-wishes-offset | Festive Wishes | strip | 3 |
 | Garden Paint Story | garden-paint-story | Garden Paint | card | 3 |
@@ -69,13 +69,13 @@ Setiap paket versi 2 berisi manifest, background SVG, foreground SVG dan thumbna
 
 ## Lisensi dan referensi
 
-Artwork SVG dan ilustrasi contoh dibuat orisinal untuk Fotbooth, dengan deklarasi CC0-1.0 pada manifest. Font DM Sans dan Fraunces memakai SIL Open Font License 1.1; salinan lisensi ada di public/fonts.
+Komposisi SVG dan ilustrasi contoh dibuat orisinal untuk Fotbooth. Empat bahan raster untuk edisi signature dihasilkan dengan tool imagegen bawaan: velvet, kain sage, foil holografis dan sutra ivory. Original, JPEG web dan prompt lengkap disimpan pada artwork/originals, artwork/materials dan artwork/provenance/signature-materials-20261007.json; tidak memakai foto referensi atau aset template Canva. Font DM Sans dan Fraunces memakai SIL Open Font License 1.1; salinan lisensi ada di public/fonts.
 
 Referensi gaya yang diperiksa: [Canva photo strip](https://www.canva.com/templates/s/photo-strip/?continuation=150) dan [photo booth](https://www.canva.com/templates/s/photo-booth/?continuation=150). Referensi mencakup pita, floral denim, collage scrapbook, checker, karakter ilustratif dan film analog. Tidak ada file template atau aset Canva yang disalin ke paket.
 
 ## Arah desain cetakan kertas
 
-Arah pengguna: kartu dan strip seperti cetakan photobooth di kertas, dengan hiasan tema yang diperdalam. Versi 2 memakai tepian putih hangat, serat matte halus, alas kertas pada edisi Polaroid, dan ilustrasi pendamping khusus tiap tema. Pixel Play mempunyai konsol/tombol arcade; Denim Daisy memakai patch dan jahitan; tema surat, botani, pantai dan kopi memakai perangko, label spesimen, bintang laut dan struk. Slot foto dan dimensi ekspor tetap. Frame berikutnya mengikuti arah ini tanpa melewati batas 60 frame aktif.
+Arah pengguna: kartu dan strip seperti cetakan photobooth di kertas, dengan hiasan tema yang diperdalam. Versi 2 memakai tepian putih hangat, serat matte halus, alas kertas pada edisi Polaroid, dan ilustrasi pendamping khusus tiap tema. Pixel Play mempunyai konsol/tombol arcade; Denim Daisy memakai patch dan jahitan; tema surat, botani, pantai dan kopi memakai perangko, label spesimen, bintang laut dan struk. Delapan desain signature terbaru memperkuat arah ini: Velvet Premiere, Popstar Birthday, After Hours Ticket, Sage Atelier, Pearl Vows, Holo Encore, Rouge Romance dan Disco Royale. Setiap tema mempunyai komposisi khusus, tipografi kuat dan detail bahan yang nyata, bukan mengganti warna atau mengulang stiker kecil. Slot foto dan dimensi ekspor tetap. Frame berikutnya mengikuti standar visual ini tanpa melewati batas 60 frame aktif.
 
 ## Bukti visual
 
