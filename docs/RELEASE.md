@@ -2,9 +2,13 @@
 
 Status terbaru, **7 Oktober 2026**: katalog aktif 60 frame; source public di https://github.com/alifikri25/fotbooth. Situs sudah dipublikasikan di **https://fotbooth.pages.dev** atas permintaan pengguna. Cloudflare Pages memakai Direct Upload; custom domain belum dipasang. Baca [panduan Cloudflare](DEPLOY-CLOUDFLARE.md) untuk revisi berikutnya.
 
-Revisi kamera HP dan frame cetakan kertas sudah publik. Source f2e270eddb1ddbcaabee8619a80830f070f4988f, deployment 31ec02dd-54c3-4f4d-838f-8525e7c3a41d. 43 unit/build dan 61 browser lulus, 3 skip WebKit. Preview/produksi lulus kamera enam ukuran dan smoke unggah/unduh Chromium desktop/WebKit 360 px. [Bukti revisi](qa/camera-paper-release-20261007.json).
+Revisi terbaru: **delapan frame unggulan** versi 3 dengan tema lengkap, bersama 52 edisi versi 2. Source 683637242d14684af8bbed325cdb9eb242db5ad8, preview 27d48ca2-c1fd-4787-ae44-70f47a0904e2, produksi 1bd7ac36-6d11-470b-ab05-29f5364bc42e. 44 unit/build, 61 browser lulus/3 skip; pemeriksaan terarah sesudah perbaikan typography 4/4 lulus. Final preview/produksi lulus 16 unduhan signature per engine, 60 thumbnail/180 URL dan kamera enam ukuran. [Bukti revisi](qa/signature-release-20261007.json).
 
-Arsip lokal docs/qa/fotbooth-camera-paper-candidate-20261007.zip berisi **492 file**, SHA-256 **8a39363fca01eda3a0285df85b6509224ca7bf69f1777b7f691b4ef9c322c564**; semua entri cocok build. Artwork aktif v2, v1 dipertahankan untuk sesi lama. Rilis pertama dan arsip berikut tetap tersedia untuk rollback; latihan rollback belum dilakukan.
+Kandidat lokal docs/qa/fotbooth-signature-candidate-20261007.zip berisi **527 file**, SHA-256 **c21671390c32dd8791ce9a1501d46f20b002881e4f9c94c3381e703365850800**. Setiap entri cocok final dist sebelum deploy. Preview dan produksi memakai build identik; HTML/bundel, semua paket v3, sample dan delapan background v2 (46 file) cocok SHA-256 pada produksi. Seluruh aset v1/v2 dipertahankan. Deployment sebelumnya **31ec02dd-54c3-4f4d-838f-8525e7c3a41d** tetap menjadi pilihan pemulihan; latihan rollback belum dilakukan.
+
+Revisi sebelumnya, kamera HP dan frame cetakan kertas, sudah publik. Source f2e270eddb1ddbcaabee8619a80830f070f4988f, deployment 31ec02dd-54c3-4f4d-838f-8525e7c3a41d. 43 unit/build dan 61 browser lulus, 3 skip WebKit. Preview/produksi lulus kamera enam ukuran dan smoke unggah/unduh Chromium desktop/WebKit 360 px. [Bukti revisi](qa/camera-paper-release-20261007.json).
+
+Arsip lokal docs/qa/fotbooth-camera-paper-candidate-20261007.zip berisi **492 file**, SHA-256 **8a39363fca01eda3a0285df85b6509224ca7bf69f1777b7f691b4ef9c322c564**; semua entri cocok build. Pada rilis tersebut artwork aktif v2; aset v1 dipertahankan untuk sesi lama. Rilis pertama dan arsip berikut tetap tersedia untuk rollback; latihan rollback belum dilakukan.
 
 Rilis pertama memakai build source `b17c302d0f6627e5d8b6c34e703a3e3077aee85b`, deployment produksi `ef45b121-2b33-4102-8773-4d274875b49b`. 41 unit test/build dan 58 browser test lulus, 2 skip WebKit. Preview HTTPS serta smoke produksi Chromium 1440 px dan WebKit 360 px lulus. [Bukti rilis](qa/cloudflare-public-release.json).
 

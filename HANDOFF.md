@@ -1,6 +1,20 @@
 # Handoff Web Photobooth — 7 Oktober 2026
 
-## Status terbaru: kamera HP dan frame cetakan kertas sudah publik
+## Status terbaru: delapan frame unggulan sudah publik
+
+Pengguna meminta tema yang lebih mewah/utuh dengan referensi theatre, ulang tahun pop, tiket cetak dan tekstil/renda. Delapan desain versi 3 sudah terbit di **https://fotbooth.pages.dev** dan tampil paling depan: Velvet Premiere, Popstar Birthday, After Hours Ticket, Sage Atelier, Pearl Vows, Holo Encore, Rouge Romance, Disco Royale. Katalog tetap 60 ID (8 v3, 52 v2).
+
+Komposisi SVG orisinal menggunakan empat bahan raster dan tiga foto contoh model dewasa fiktif yang dibuat dengan tool imagegen bawaan. Gambar asli, JPEG produksi dan seluruh prompt disimpan di [artwork](artwork/README.md). Foto pengguna/reference dan file Canva tidak disalin. Arah desain berikutnya tercatat di registry: satu tema utuh melalui material, tipografi, ilustrasi dan cetakan berlapis.
+
+**44 unit + build lulus; suite penuh 61 lulus, 3 skip, 0 gagal/flaky (232,2 detik).** Sesudah perbaikan jarak tulisan, katalog/render ulang kedua engine 4/4 lulus. Sesudah contoh foto ditambahkan, check dan delapan ekspor lokal lulus; framing thumbnail terakhir dibuat ulang sebelum build kandidat. Preview/final produksi lulus delapan desain × PNG/JPEG pada Chromium 1440/WebKit 360 px (16 file per engine), galeri 60 thumbnail/180 URL, upload/caption dan keamanan. Kamera enam ukuran: 3 lulus, 1 skip pada masing-masing origin. Slot kamera/editor/ekspor tidak diubah; seluruh v1/v2 tersedia. SHA-256 46 file produksi cocok kandidat: semua 32 file v3, delapan background v2, tiga sample dan HTML/bundel.
+
+Source: 683637242d14684af8bbed325cdb9eb242db5ad8; preview: 27d48ca2-c1fd-4787-ae44-70f47a0904e2; produksi: 1bd7ac36-6d11-470b-ab05-29f5364bc42e. [Bukti revisi](docs/qa/signature-release-20261007.json), [board delapan desain](docs/qa/signature-design-board.png). Kandidat lokal **527 file**, SHA-256 **c21671390c32dd8791ce9a1501d46f20b002881e4f9c94c3381e703365850800**. Produksi sebelumnya 31ec02dd-54c3-4f4d-838f-8525e7c3a41d dan arsip lama tetap tersedia untuk pemulihan. GitHub push masih CI saja; deployment memakai Direct Upload.
+
+GitHub Actions source final juga selesai sukses: check/build dan suite Chromium/WebKit (run 37544431341).
+
+Permintaan revisi ini selesai dan sudah dipublikasikan; tidak ada automation atau subagent. Dev server localhost:5173 tetap tersedia. HP/kamera fisik serta batas QA PRD lainnya belum diverifikasi. Foto/caption hanya di memori tab; simpan hasil sebelum memuat ulang.
+
+## Catatan historis: kamera HP dan frame cetakan kertas
 
 Pengguna meminta agar wajah dan tombol kamera terlihat bersamaan di HP, serta frame kartu/strip seperti cetakan kertas dengan dekorasi tema lebih dalam. Kedua revisi sudah terbit di **https://fotbooth.pages.dev**.
 

@@ -1,0 +1,1437 @@
+{
+  "date": "2026-10-07",
+  "timezone": "Asia/Bangkok",
+  "sourceCommit": "683637242d14684af8bbed325cdb9eb242db5ad8",
+  "publicURL": "https://fotbooth.pages.dev",
+  "preview": {
+    "id": "27d48ca2-c1fd-4787-ae44-70f47a0904e2",
+    "url": "https://27d48ca2.fotbooth.pages.dev"
+  },
+  "production": {
+    "id": "1bd7ac36-6d11-470b-ab05-29f5364bc42e",
+    "url": "https://1bd7ac36.fotbooth.pages.dev"
+  },
+  "previousProduction": "31ec02dd-54c3-4f4d-838f-8525e7c3a41d",
+  "catalog": {
+    "count": 60,
+    "featuredVersion3": [
+      "Velvet Premiere",
+      "Popstar Birthday",
+      "After Hours Ticket",
+      "Sage Atelier",
+      "Pearl Vows",
+      "Holo Encore",
+      "Rouge Romance",
+      "Disco Royale"
+    ],
+    "remainingVersion2": 52,
+    "originalCategoriesAndCollectionsRetained": true
+  },
+  "changes": {
+    "artDirection": "Eight complete signature scenes/material compositions replace eight editions within the 60-ID limit. Signature designs lead the gallery.",
+    "materials": "Four original generated velvet, sage textile/lace, ivory silk/pearls and holographic foil backgrounds embedded in native SVG compositions.",
+    "samples": "Three original generated fictional adult portraits used for signature gallery examples; no user/reference portraits copied.",
+    "compatibility": "All previous version-1/version-2 assets remain available; photo slot geometry and canonical export dimensions unchanged.",
+    "futureDirection": "Full themed print compositions with deliberate materials, typography and ornament layering, recorded in FRAME-REGISTRY.md."
+  },
+  "provenance": [
+    "artwork/provenance/signature-materials-20261007.json",
+    "artwork/provenance/signature-portraits-20261007.json"
+  ],
+  "local": {
+    "unitTests": 44,
+    "build": "passed",
+    "browserStats": {
+      "startTime": "2026-10-06T22:47:26.094Z",
+      "duration": 232158.666,
+      "expected": 61,
+      "skipped": 3,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "browserReport": "docs/qa/signature-browser-results-20261007.json",
+    "finalTypographyCatalogStats": {
+      "startTime": "2026-10-06T22:53:06.332Z",
+      "duration": 71498.36200000001,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "finalArtworkReport": "docs/qa/signature-final-artwork-results-20261007.json",
+    "finalPortraitPackaging": "After the full suite and typography checks, fictional samples were added and npm run check (44 unit/build) and local signature exports passed. Gallery-only sample crop was then refined and thumbnails/build regenerated. HTTPS checks below cover the final candidate.",
+    "signatureSmoke": {
+      "date": "2026-10-07",
+      "baseURL": "http://127.0.0.1:5173",
+      "browser": "chromium",
+      "evidence": [
+        {
+          "id": "midnight-film-polaroid",
+          "name": "Velvet Premiere",
+          "version": 3,
+          "outputs": [
+            {
+              "format": "png",
+              "dimensions": [
+                900,
+                1350
+              ],
+              "bytes": 893718
+            },
+            {
+              "format": "jpg",
+              "dimensions": [
+                900,
+                1350
+              ],
+              "bytes": 195010
+            }
+          ]
+        },
+        {
+          "id": "birthday-confetti-story",
+          "name": "Popstar Birthday",
+          "version": 3,
+          "outputs": [
+            {
+              "format": "png",
+              "dimensions": [
+                900,
+                1350
+              ],
+              "bytes": 140096
+            },
+            {
+              "format": "jpg",
+              "dimensions": [
+                900,
+                1350
+              ],
+              "bytes": 118587
+            }
+          ]
+        },
+        {
+          "id": "concert-pass",
+          "name": "After Hours Ticket",
+          "version": 3,
+          "outputs": [
+            {
+              "format": "png",
+              "dimensions": [
+                600,
+                1800
+              ],
+              "bytes": 105341
+            },
+            {
+              "format": "jpg",
+              "dimensions": [
+                600,
+                1800
+              ],
+              "bytes": 99859
+            }
+          ]
+        },
+        {
+          "id": "lace-story-arch",
+          "name": "Sage Atelier",
+          "version": 3,
+          "outputs": [
+            {
+              "format": "png",
+              "dimensions": [
+                600,
+                1800
+              ],
+              "bytes": 907176
+            },
+            {
+              "format": "jpg",
+              "dimensions": [
+                600,
+                1800
+              ],
+              "bytes": 203650
+            }
+          ]
+        },
+        {
+          "id": "wedding-bloom-portrait",
+          "name": "Pearl Vows",
+          "version": 3,
+          "outputs": [
+            {
+              "format": "png",
+              "dimensions": [
+                900,
+                1350
+              ],
+              "bytes": 956785
+            },
+            {
+              "format": "jpg",
+              "dimensions": [
+                900,
+                1350
+              ],
+              "bytes": 175961
+            }
+          ]
+        },
+        {
+          "id": "kpop-starlight-wander",
+          "name": "Holo Encore",
+          "version": 3,
+          "outputs": [
+            {
+              "format": "png",
+              "dimensions": [
+                600,
+                1800
+              ],
+              "bytes": 1170914
+            },
+            {
+              "format": "jpg",
+              "dimensions": [
+                600,
+                1800
+              ],
+              "bytes": 206288
+            }
+          ]
+        },
+        {
+          "id": "heart-mail-story",
+          "name": "Rouge Romance",
+          "version": 3,
+          "outputs": [
+            {
+              "format": "png",
+              "dimensions": [
+                900,
+                1350
+              ],
+              "bytes": 109824
+            },
+            {
+              "format": "jpg",
+              "dimensions": [
+                900,
+                1350
+              ],
+              "bytes": 107718
+            }
+          ]
+        },
+        {
+          "id": "cosmic-disco-mosaic",
+          "name": "Disco Royale",
+          "version": 3,
+          "outputs": [
+            {
+              "format": "png",
+              "dimensions": [
+                900,
+                1350
+              ],
+              "bytes": 410196
+            },
+            {
+              "format": "jpg",
+              "dimensions": [
+                900,
+                1350
+              ],
+              "bytes": 110569
+            }
+          ]
+        }
+      ],
+      "errors": []
+    },
+    "visualReview": "All eight enlarged standard/detail exports reviewed; final signature board checked after sample framing refinement. All 60 thumbnails and standard/light/detail evidence regenerated. Public gallery screenshots at 1440 and 360 pixels inspected after deployment.",
+    "board": "docs/qa/signature-design-board.png",
+    "publicGalleryScreenshots": [
+      "docs/qa/gallery-desktop.png",
+      "docs/qa/library-mobile.png"
+    ],
+    "finalSourceCI": "GitHub Actions completed successfully on the final source candidate, including npm run check and the full Chromium/WebKit suite."
+  },
+  "https": {
+    "previewCatalog": {
+      "baseURL": "https://27d48ca2.fotbooth.pages.dev",
+      "browser": "chromium",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "frames": 60,
+      "thumbnailCount": 60,
+      "frameAssetURLs": 180,
+      "exports": [
+        {
+          "format": "png",
+          "dimensions": [
+            600,
+            1800
+          ],
+          "bytes": 524670
+        },
+        {
+          "format": "jpg",
+          "dimensions": [
+            600,
+            1800
+          ],
+          "bytes": 137716
+        }
+      ],
+      "errors": []
+    },
+    "previewSignatures": [
+      {
+        "date": "2026-10-07",
+        "baseURL": "https://27d48ca2.fotbooth.pages.dev",
+        "browser": "chromium",
+        "evidence": [
+          {
+            "id": "midnight-film-polaroid",
+            "name": "Velvet Premiere",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 893718
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 195010
+              }
+            ]
+          },
+          {
+            "id": "birthday-confetti-story",
+            "name": "Popstar Birthday",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 140096
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 118587
+              }
+            ]
+          },
+          {
+            "id": "concert-pass",
+            "name": "After Hours Ticket",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 105341
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 99859
+              }
+            ]
+          },
+          {
+            "id": "lace-story-arch",
+            "name": "Sage Atelier",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 907176
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 203650
+              }
+            ]
+          },
+          {
+            "id": "wedding-bloom-portrait",
+            "name": "Pearl Vows",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 956785
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 175961
+              }
+            ]
+          },
+          {
+            "id": "kpop-starlight-wander",
+            "name": "Holo Encore",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 1170914
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 206288
+              }
+            ]
+          },
+          {
+            "id": "heart-mail-story",
+            "name": "Rouge Romance",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 109824
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 107718
+              }
+            ]
+          },
+          {
+            "id": "cosmic-disco-mosaic",
+            "name": "Disco Royale",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 410196
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 110569
+              }
+            ]
+          }
+        ],
+        "errors": []
+      },
+      {
+        "date": "2026-10-07",
+        "baseURL": "https://27d48ca2.fotbooth.pages.dev",
+        "browser": "webkit",
+        "evidence": [
+          {
+            "id": "midnight-film-polaroid",
+            "name": "Velvet Premiere",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 638582
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 195986
+              }
+            ]
+          },
+          {
+            "id": "birthday-confetti-story",
+            "name": "Popstar Birthday",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 83378
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 118273
+              }
+            ]
+          },
+          {
+            "id": "concert-pass",
+            "name": "After Hours Ticket",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 54181
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 99516
+              }
+            ]
+          },
+          {
+            "id": "lace-story-arch",
+            "name": "Sage Atelier",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 725157
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 203059
+              }
+            ]
+          },
+          {
+            "id": "wedding-bloom-portrait",
+            "name": "Pearl Vows",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 758443
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 175841
+              }
+            ]
+          },
+          {
+            "id": "kpop-starlight-wander",
+            "name": "Holo Encore",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 910760
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 206337
+              }
+            ]
+          },
+          {
+            "id": "heart-mail-story",
+            "name": "Rouge Romance",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 53429
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 107145
+              }
+            ]
+          },
+          {
+            "id": "cosmic-disco-mosaic",
+            "name": "Disco Royale",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 137228
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 112471
+              }
+            ]
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "productionCatalog": [
+      {
+        "baseURL": "https://fotbooth.pages.dev",
+        "browser": "chromium",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "frames": 60,
+        "thumbnailCount": 60,
+        "frameAssetURLs": 180,
+        "exports": [
+          {
+            "format": "png",
+            "dimensions": [
+              600,
+              1800
+            ],
+            "bytes": 524670
+          },
+          {
+            "format": "jpg",
+            "dimensions": [
+              600,
+              1800
+            ],
+            "bytes": 137716
+          }
+        ],
+        "errors": []
+      },
+      {
+        "baseURL": "https://fotbooth.pages.dev",
+        "browser": "webkit",
+        "viewport": {
+          "width": 360,
+          "height": 900
+        },
+        "frames": 60,
+        "thumbnailCount": 60,
+        "frameAssetURLs": 180,
+        "exports": [
+          {
+            "format": "png",
+            "dimensions": [
+              600,
+              1800
+            ],
+            "bytes": 241088
+          },
+          {
+            "format": "jpg",
+            "dimensions": [
+              600,
+              1800
+            ],
+            "bytes": 140699
+          }
+        ],
+        "errors": []
+      }
+    ],
+    "productionSignatures": [
+      {
+        "date": "2026-10-07",
+        "baseURL": "https://fotbooth.pages.dev",
+        "browser": "chromium",
+        "evidence": [
+          {
+            "id": "midnight-film-polaroid",
+            "name": "Velvet Premiere",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 893718
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 195010
+              }
+            ]
+          },
+          {
+            "id": "birthday-confetti-story",
+            "name": "Popstar Birthday",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 140096
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 118587
+              }
+            ]
+          },
+          {
+            "id": "concert-pass",
+            "name": "After Hours Ticket",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 105341
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 99859
+              }
+            ]
+          },
+          {
+            "id": "lace-story-arch",
+            "name": "Sage Atelier",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 907176
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 203650
+              }
+            ]
+          },
+          {
+            "id": "wedding-bloom-portrait",
+            "name": "Pearl Vows",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 956785
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 175961
+              }
+            ]
+          },
+          {
+            "id": "kpop-starlight-wander",
+            "name": "Holo Encore",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 1170914
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 206288
+              }
+            ]
+          },
+          {
+            "id": "heart-mail-story",
+            "name": "Rouge Romance",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 109824
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 107718
+              }
+            ]
+          },
+          {
+            "id": "cosmic-disco-mosaic",
+            "name": "Disco Royale",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 410196
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 110569
+              }
+            ]
+          }
+        ],
+        "errors": []
+      },
+      {
+        "date": "2026-10-07",
+        "baseURL": "https://fotbooth.pages.dev",
+        "browser": "webkit",
+        "evidence": [
+          {
+            "id": "midnight-film-polaroid",
+            "name": "Velvet Premiere",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 638582
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 195986
+              }
+            ]
+          },
+          {
+            "id": "birthday-confetti-story",
+            "name": "Popstar Birthday",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 83378
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 118273
+              }
+            ]
+          },
+          {
+            "id": "concert-pass",
+            "name": "After Hours Ticket",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 54181
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 99516
+              }
+            ]
+          },
+          {
+            "id": "lace-story-arch",
+            "name": "Sage Atelier",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 725157
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 203059
+              }
+            ]
+          },
+          {
+            "id": "wedding-bloom-portrait",
+            "name": "Pearl Vows",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 758443
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 175841
+              }
+            ]
+          },
+          {
+            "id": "kpop-starlight-wander",
+            "name": "Holo Encore",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 910760
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  600,
+                  1800
+                ],
+                "bytes": 206337
+              }
+            ]
+          },
+          {
+            "id": "heart-mail-story",
+            "name": "Rouge Romance",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 53429
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 107145
+              }
+            ]
+          },
+          {
+            "id": "cosmic-disco-mosaic",
+            "name": "Disco Royale",
+            "version": 3,
+            "outputs": [
+              {
+                "format": "png",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 137228
+              },
+              {
+                "format": "jpg",
+                "dimensions": [
+                  900,
+                  1350
+                ],
+                "bytes": 112471
+              }
+            ]
+          }
+        ],
+        "errors": []
+      }
+    ]
+  },
+  "camera": {
+    "viewports": [
+      {
+        "width": 390,
+        "height": 700
+      },
+      {
+        "width": 360,
+        "height": 560
+      },
+      {
+        "width": 740,
+        "height": 360
+      },
+      {
+        "width": 844,
+        "height": 390
+      },
+      {
+        "width": 1440,
+        "height": 900
+      },
+      {
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "scope": "Complete preview/action visible together, target >=44 px, no horizontal overflow; denial/reopen Chromium and WebKit; synthetic live timer/cancel/capture via coordinate clicks without scrolling Chromium.",
+    "previewStats": {
+      "startTime": "2026-10-06T23:04:49.660Z",
+      "duration": 42563.089,
+      "expected": 3,
+      "skipped": 1,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "productionStats": {
+      "startTime": "2026-10-06T23:06:31.564Z",
+      "duration": 19105.862,
+      "expected": 3,
+      "skipped": 1,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "productionIntegrity": {
+    "date": "2026-10-07",
+    "baseURL": "https://fotbooth.pages.dev",
+    "sourceCommit": "683637242d14684af8bbed325cdb9eb242db5ad8",
+    "fileCount": 46,
+    "headers": {
+      "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self'; media-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+      "permissions-policy": "camera=(self), microphone=()",
+      "x-content-type-options": "nosniff",
+      "cache-control": "no-cache",
+      "x-robots-tag": null
+    },
+    "files": [
+      {
+        "path": "assets/index-TSZhBKRH.css",
+        "bytes": 29729,
+        "sha256": "464f1239677ce29f4f5314045fd083ea2706ff6d4da1f89fa02928fa673b607b"
+      },
+      {
+        "path": "assets/index-YhquHlEw.js",
+        "bytes": 405332,
+        "sha256": "4db59734ac84645c93522b9eddd39419ccb990f9b83cd4fe0160bb546aff0bbb"
+      },
+      {
+        "path": "frames/birthday-confetti-story/v2/background.svg",
+        "bytes": 4069,
+        "sha256": "3ed460c9ce6e33278f7a1228f3a23ea3d0f29587a5955979097e1c95f16db202"
+      },
+      {
+        "path": "frames/birthday-confetti-story/v3/background.svg",
+        "bytes": 3648,
+        "sha256": "5dd6ca627bf391e9a9b3824cf13984eb2e60ecaf6cf22520ab354491adf4fd6a"
+      },
+      {
+        "path": "frames/birthday-confetti-story/v3/foreground.svg",
+        "bytes": 6906,
+        "sha256": "205136f156baa396de0a064dace8597f1f15c993f4032bf537e062ed1045482c"
+      },
+      {
+        "path": "frames/birthday-confetti-story/v3/manifest.json",
+        "bytes": 2441,
+        "sha256": "ba1d1c168e696860c0fbccdb6e66e2d5a571f2bafe8c3136f50f96f253b1ec54"
+      },
+      {
+        "path": "frames/birthday-confetti-story/v3/thumbnail.png",
+        "bytes": 317376,
+        "sha256": "a4335eaf913a904abe6d688248d4d8a15240fdb3b45a6e41131ae7ded0fb51b3"
+      },
+      {
+        "path": "frames/concert-pass/v2/background.svg",
+        "bytes": 1221,
+        "sha256": "a8485141a2c8e27a82afe2da55c941a3351ac71518033b088a6f396e9e7aa72a"
+      },
+      {
+        "path": "frames/concert-pass/v3/background.svg",
+        "bytes": 3038,
+        "sha256": "b8804552bff70ec56cb75c6e4da7b1f50c9ff1ddd67c63be5b041adfd49081b8"
+      },
+      {
+        "path": "frames/concert-pass/v3/foreground.svg",
+        "bytes": 22491,
+        "sha256": "9457b5b74e896cb2849e0dbb86f672b41a363c26a9856b5903b661def586c80d"
+      },
+      {
+        "path": "frames/concert-pass/v3/manifest.json",
+        "bytes": 2035,
+        "sha256": "fbc7610bc4b7ddac2f016cba33107ac4240c0d0292b0e0587d60e5725487835c"
+      },
+      {
+        "path": "frames/concert-pass/v3/thumbnail.png",
+        "bytes": 177077,
+        "sha256": "5ed3be6394d7b2c414af3b20cec78889078bf08e59deb8c7f7ea0be2eb18c352"
+      },
+      {
+        "path": "frames/cosmic-disco-mosaic/v2/background.svg",
+        "bytes": 4946,
+        "sha256": "c8333e3d0fe671d4a2da0f88b8f5bf0d984de03c85225bccbbe9ebcd01b6243c"
+      },
+      {
+        "path": "frames/cosmic-disco-mosaic/v3/background.svg",
+        "bytes": 5132,
+        "sha256": "5840ca8fdb44aa7cc5b411d09cddcea776b6ff1fb7e64e3ffaba1af6b06f0e8f"
+      },
+      {
+        "path": "frames/cosmic-disco-mosaic/v3/foreground.svg",
+        "bytes": 52007,
+        "sha256": "8c0c9ff4b0cc43bbc06c28c43c3aa64a5be66d5e2ce703dca1d22a21489ad1be"
+      },
+      {
+        "path": "frames/cosmic-disco-mosaic/v3/manifest.json",
+        "bytes": 2635,
+        "sha256": "3065c061395fa30d98774a5e97e636cbbf96edc00893cf28b33f457345bc7a22"
+      },
+      {
+        "path": "frames/cosmic-disco-mosaic/v3/thumbnail.png",
+        "bytes": 354518,
+        "sha256": "d1d038903d016f9d00b9c563b8edb6c148296ee9864b3cc34ee593602b90113e"
+      },
+      {
+        "path": "frames/heart-mail-story/v2/background.svg",
+        "bytes": 7948,
+        "sha256": "7170270f3afadf19cf422c745a6954fdebdaf5c25282146dd970ddf9eb6511dd"
+      },
+      {
+        "path": "frames/heart-mail-story/v3/background.svg",
+        "bytes": 4260,
+        "sha256": "0b6ec16eb06785bb30a151fc1bb80f55c156297bc60fc07b192be18291c4abb5"
+      },
+      {
+        "path": "frames/heart-mail-story/v3/foreground.svg",
+        "bytes": 4882,
+        "sha256": "461171d82fae64355c08ac3634c3a6a84942257356c2cb96bfb301f232bcf046"
+      },
+      {
+        "path": "frames/heart-mail-story/v3/manifest.json",
+        "bytes": 2407,
+        "sha256": "5054edb4dfdf1028d911b92a4098e900ca0db5bd61fc91ef250d1e92c3299c8b"
+      },
+      {
+        "path": "frames/heart-mail-story/v3/thumbnail.png",
+        "bytes": 301279,
+        "sha256": "643b200115d397f8a3a7e131ffd2948f9c12e9414d14e28dfb536f0b91d09e9a"
+      },
+      {
+        "path": "frames/kpop-starlight-wander/v2/background.svg",
+        "bytes": 9165,
+        "sha256": "f2d48716ec829453ea68b7170aa6d003f5c4047de1fe27fe4b370afe93ccdffd"
+      },
+      {
+        "path": "frames/kpop-starlight-wander/v3/background.svg",
+        "bytes": 530888,
+        "sha256": "458c90e16879bfc2ffaf82ed2eb7e5ba2e65f93ca7d29b2260550b31489e85dc"
+      },
+      {
+        "path": "frames/kpop-starlight-wander/v3/foreground.svg",
+        "bytes": 3873,
+        "sha256": "361c06b72c36094254a9777427b71d524eb9b44ad5814f1307b3ec2f40dbccba"
+      },
+      {
+        "path": "frames/kpop-starlight-wander/v3/manifest.json",
+        "bytes": 2424,
+        "sha256": "c91401bf0a3499bb1d4476ca7a3bb5eb3cafe79452a2a615b5d1084a8fbb6c6e"
+      },
+      {
+        "path": "frames/kpop-starlight-wander/v3/thumbnail.png",
+        "bytes": 284132,
+        "sha256": "b36344ca305a8128d8daec8d11a22f92ea1a6e5490bcd909c921ae1c7b66f8d4"
+      },
+      {
+        "path": "frames/lace-story-arch/v2/background.svg",
+        "bytes": 4338,
+        "sha256": "8ce0e565c5a5dd68d2270d94de6defc4d1f2d587f65d12d899819311b9ffba9a"
+      },
+      {
+        "path": "frames/lace-story-arch/v3/background.svg",
+        "bytes": 761120,
+        "sha256": "c7fdb0e886fc29b4357ba37ab7b7bc391cec79a026341536bc7b1ac9f5d5b6f9"
+      },
+      {
+        "path": "frames/lace-story-arch/v3/foreground.svg",
+        "bytes": 28335,
+        "sha256": "af66a9af1fd816d155b83df13a8f2edaf759e1d8153846fe509dcb9271b8f091"
+      },
+      {
+        "path": "frames/lace-story-arch/v3/manifest.json",
+        "bytes": 2379,
+        "sha256": "7a567724257ba29ce6d8fbffac3e68ecd2fbed6a239791ef437eb7d90e792f35"
+      },
+      {
+        "path": "frames/lace-story-arch/v3/thumbnail.png",
+        "bytes": 262182,
+        "sha256": "ffddfc061d108c48b218bae4613f0e0af5bc05c95a71c44c51f720ddf634005a"
+      },
+      {
+        "path": "frames/midnight-film-polaroid/v2/background.svg",
+        "bytes": 8517,
+        "sha256": "9b1e42dbd63690da8cfa9f1c60783637733c26e346753223047d265ad4981cc5"
+      },
+      {
+        "path": "frames/midnight-film-polaroid/v3/background.svg",
+        "bytes": 370751,
+        "sha256": "f5bebaf3219d07605cd8ba9c9e6d5845bee0436445b9bf3718c9a739089f1cd4"
+      },
+      {
+        "path": "frames/midnight-film-polaroid/v3/foreground.svg",
+        "bytes": 21221,
+        "sha256": "837c9ddcf18ca53b6dd311710b5be914cfdd468218e2458849f1f79f322c1b5b"
+      },
+      {
+        "path": "frames/midnight-film-polaroid/v3/manifest.json",
+        "bytes": 2625,
+        "sha256": "6a403d52a0eb7f910dfc4f728071d49a1501d83e66fdebe55ebe88ebd9dd3e2e"
+      },
+      {
+        "path": "frames/midnight-film-polaroid/v3/thumbnail.png",
+        "bytes": 482408,
+        "sha256": "a7f796bcf37cac9731d37c4a9601c5691b58ef5f913180d44d9c50b864f22483"
+      },
+      {
+        "path": "frames/wedding-bloom-portrait/v2/background.svg",
+        "bytes": 4112,
+        "sha256": "d41fe8e1bb75ec4ce6fc18ff269c51cc53774b03c97bdc6a04ba44086c016888"
+      },
+      {
+        "path": "frames/wedding-bloom-portrait/v3/background.svg",
+        "bytes": 449216,
+        "sha256": "df5be72a9d7c46a695be49dca0f0466ab8dd2f87ee74eb0907a1cd0e25874db5"
+      },
+      {
+        "path": "frames/wedding-bloom-portrait/v3/foreground.svg",
+        "bytes": 9960,
+        "sha256": "62560f5f1f994b6b44bbadf43a7819b38155044d17e286ae20b234effcd4516e"
+      },
+      {
+        "path": "frames/wedding-bloom-portrait/v3/manifest.json",
+        "bytes": 2175,
+        "sha256": "d38bec3188630a4606d9ac0679392458fa683c388cc6ff52cf1f299a8ee51d4f"
+      },
+      {
+        "path": "frames/wedding-bloom-portrait/v3/thumbnail.png",
+        "bytes": 499087,
+        "sha256": "78ec3f2703ebd6dfb084795daf5bedf57b5ebdf9952576acf9e77c3efa8c491f"
+      },
+      {
+        "path": "index.html",
+        "bytes": 698,
+        "sha256": "db3e83c9e61bbf5c154a0156de34d87878d8811e51e134220d1d8442d7f6f659"
+      },
+      {
+        "path": "samples/signature-portrait-a.jpg",
+        "bytes": 200078,
+        "sha256": "8bd259a2f15f041830ef3ebbdf729171933a6d57fed732d5dad3a539da7a5478"
+      },
+      {
+        "path": "samples/signature-portrait-b.jpg",
+        "bytes": 182081,
+        "sha256": "79ed1ceadb34dca84927a3718a48dee35c53b21f968ce826682dac8463144b11"
+      },
+      {
+        "path": "samples/signature-portrait-c.jpg",
+        "bytes": 249771,
+        "sha256": "23f24a083e1d7c516c7482b357b14664a33fa12bb20bdf51dfc92ee7f4c54b5a"
+      }
+    ]
+  },
+  "candidate": {
+    "archive": "docs/qa/fotbooth-signature-candidate-20261007.zip",
+    "archiveSha256": "c21671390c32dd8791ce9a1501d46f20b002881e4f9c94c3381e703365850800",
+    "fileCount": 527,
+    "manifest": "docs/qa/signature-candidate-20261007.json",
+    "verified": "Every archive entry SHA-256 compared with the corresponding final dist file before preview and production; no rebuild between deployments."
+  },
+  "githubActions": {
+    "id": 37544431341,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/alifikri25/fotbooth/actions/runs/37544431341"
+  },
+  "limitations": [
+    "Physical phones/cameras, screen readers, reference-device performance, user study and rollback rehearsal not verified.",
+    "WebKit automation on Windows is not physical iPhone Safari. Three full-suite skips and one camera smoke skip are Chromium synthetic capture scenarios.",
+    "The user-provided Canva search URL was inaccessible to the web tool; supplied screenshots informed art direction. No Canva files/assets imported."
+  ]
+}

@@ -1,6 +1,21 @@
 # QA Web Photobooth — 7 Oktober 2026
 
-## Revisi aktif: kamera HP dan frame cetakan kertas
+## Revisi aktif: delapan frame unggulan
+
+Delapan desain dengan tema utuh sudah publik di **https://fotbooth.pages.dev**. Katalog tetap 60 ID, delapan versi 3 dan 52 versi 2. [Bukti lengkap](qa/signature-release-20261007.json), [board final](qa/signature-design-board.png), [gambar dan prompt](../artwork/README.md).
+
+- 44 unit test, TypeScript dan build lulus. Suite Chromium/WebKit: 64 dijadwalkan, 61 lulus, 3 skip capture sintetis WebKit, 0 gagal/flaky, 232,2 detik.
+- Semua 60 paket diperiksa untuk thumbnail/layer, interior foto dan PNG/JPEG standar/ringan pada kedua engine. Setelah perbaikan tulisan, katalog/render ulang 4/4 lulus. Penambahan contoh foto diikuti check serta ekspor signature lokal; perbaikan framing khusus thumbnail terakhir diikuti regenerasi dan build.
+- Seluruh delapan desain diperiksa visual pada ekspor besar/detail dan board final. Foto contoh adalah tiga model dewasa fiktif hasil imagegen, bahan raster adalah empat artwork orisinal; foto pengguna/reference tidak diterbitkan.
+- Final preview dan produksi HTTPS: delapan signature × PNG/JPEG ringan dibuka kembali, 16 file per engine pada Chromium 1440 px dan WebKit 360 px; seluruhnya berdimensi tepat tanpa HTTP/page error. Smoke galeri 60 thumbnail/180 URL, search/upload/caption dan header keamanan lulus; produksi diuji kedua engine.
+- Regresi kamera HTTPS pada enam ukuran layar tetap lulus (3 lulus, 1 skip per origin). Denial/reopen kedua engine dan capture/cancel/timer sintetis Chromium memakai klik koordinat tanpa scroll.
+- Semua v1/v2 tetap tersedia; regresi geometri lama/saat ini lulus. Arsip 527 entri diverifikasi SHA-256 terhadap final dist; preview dan produksi memakai build yang sama. SHA-256 produksi cocok 46 file termasuk seluruh v3, delapan contoh background v2, sample dan HTML/bundel.
+
+GitHub Actions pada source kandidat final selesai sukses setelah publikasi: check/build dan suite penuh Chromium/WebKit, [run 37544431341](https://github.com/alifikri25/fotbooth/actions/runs/37544431341). Ini memverifikasi source final beserta artwork dan thumbnail terakhir.
+
+Kamera/HP fisik, pembaca layar, performa perangkat referensi, uji manusia dan latihan rollback belum diverifikasi. Suite penuh mendahului penyempurnaan typography/contoh foto; pemeriksaan terarah dan HTTPS di atas memverifikasi kandidat terakhir.
+
+## Bukti historis: kamera HP dan frame cetakan kertas
 
 Kedua perubahan terbit di **https://fotbooth.pages.dev**. [Bukti revisi](qa/camera-paper-release-20261007.json).
 

@@ -4,9 +4,9 @@ Photobooth web berbahasa Indonesia dengan **60 frame**, kamera, unggah foto, edi
 
 **Situs publik:** [fotbooth.pages.dev](https://fotbooth.pages.dev), diterbitkan 7 Oktober 2026.
 
-Katalog berisi **16 frame sebelumnya + 44 edisi dekoratif dari 26 tema baru**, kini dengan artwork versi 2 bergaya cetakan kertas: tepian putih hangat, tekstur matte, alas Polaroid dan ornamen pendamping sesuai tema. Koleksi mencakup pita, floral, denim, scrapbook, film analog, kerang, botanical, beruang, disko, piknik dan tema acara. Edisi mengubah susunan, jumlah foto dan treatment kertas. Ada pencarian nama/deskripsi serta filter kategori, koleksi, format dan jumlah foto.
+Katalog tetap **60 frame**: delapan desain unggulan versi 3 tampil pertama, sementara 52 edisi lainnya memakai versi 2 bergaya cetakan kertas. Desain unggulan: Velvet Premiere, Popstar Birthday, After Hours Ticket, Sage Atelier, Pearl Vows, Holo Encore, Rouge Romance dan Disco Royale. Tirai velvet, lampu marquee, tekstil/renda, sutra/mutiara dan foil holografis membangun tema yang lebih utuh. Ada pencarian nama/deskripsi serta filter kategori, koleksi, format dan jumlah foto.
 
-![Pilihan frame dekoratif](docs/qa/decorated-design-board.png)
+![Delapan frame unggulan](docs/qa/signature-design-board.png)
 
 ## Jalankan
 
@@ -29,7 +29,7 @@ npm run test:e2e
 
 Unit tests memeriksa katalog, geometri, file foto, sesi, crop, teks dan ekspor. Suite browser memuat semua 60 thumbnail/layer, memeriksa interior foto, membuka kembali PNG/JPEG standar/ringan, menguji pencarian, kamera sintetis, editor, keyboard, viewport dan privasi jaringan. Chromium/WebKit otomatis di komputer belum menggantikan pengujian HP/kamera nyata.
 
-Revisi 7 Oktober 2026 sudah publik: kamera dan tombol ambil/hentikan terlihat bersamaan pada layar portrait maupun landscape. **43 unit test dan build lulus; 61 browser test lulus, 3 skip kamera sintetis WebKit.** Pratinjau dan produksi HTTPS lulus pada enam ukuran kamera, Chromium desktop dan WebKit 360 px: 60 thumbnail, 180 URL aset, unggah, caption, header keamanan dan PNG/JPEG yang dibuka kembali. Kamera fisik dan HP nyata belum diuji. [Bukti revisi](docs/qa/camera-paper-release-20261007.json).
+Revisi unggulan 7 Oktober 2026 sudah publik. **44 unit test dan build lulus; 61 browser test lulus, 3 skip kamera sintetis WebKit.** Setelah penyempurnaan artwork, empat pemeriksaan katalog/render ulang lulus. Pratinjau dan produksi HTTPS lulus pada Chromium desktop/WebKit 360 px: 60 thumbnail, 180 URL aset, unggah, caption, header keamanan serta 16 unduhan PNG/JPEG untuk kedelapan desain pada setiap engine. Kamera dan tombol tetap terlihat bersamaan pada enam ukuran layar. Kamera fisik dan HP nyata belum diuji. [Bukti revisi](docs/qa/signature-release-20261007.json).
 
 ## Cloudflare Pages
 
@@ -49,9 +49,10 @@ GitHub Actions menjalankan pemeriksaan pada push/PR; push GitHub belum otomatis 
 
 ## Artwork dan dokumentasi
 
-Semua dekorasi dibuat sebagai artwork SVG orisinal, berdasarkan arah gaya yang diperiksa di galeri Canva. Tidak ada aset template Canva yang diimpor. Font DM Sans dan Fraunces dilayani secara lokal, dengan lisensi SIL OFL disertakan.
+Komposisi dekorasi dibuat sebagai artwork SVG orisinal. Empat bahan raster dan tiga foto contoh model dewasa fiktif dibuat dengan tool imagegen bawaan; [gambar asli, jalur aset dan prompt](artwork/README.md) disimpan dalam repo. Screenshot Canva dari pengguna menjadi referensi arah gaya. Tidak ada file template atau foto referensi yang diimpor. Font DM Sans dan Fraunces dilayani secara lokal, dengan lisensi SIL OFL disertakan.
 
 - [Registry 60 frame](docs/FRAME-REGISTRY.md)
+- [Delapan desain unggulan](docs/qa/signature-design-board.png)
 - [Contact sheet lengkap](docs/qa/frame-contact-sheet.png)
 - [Laporan QA](docs/QA.md)
 - [Rencana 60 frame](docs/superpowers/plans/2026-10-06-60-decorated-frames.md)
@@ -65,7 +66,7 @@ npm run qa:ui
 node scripts/write-registry.mjs
 ```
 
-Generator thumbnail memakai renderer aplikasi dan batch terbatas. `public/frames/{id}/v2` menyimpan background, foreground, manifest dan thumbnail aktif; aset `v1` tetap tersedia untuk sesi yang sudah terbuka; source manifest berada di `src/frames/manifests`. Board pilihan dan contact sheet disertakan dalam repository; ekspor QA penuh dan arsip lokal tidak ikut Git.
+Generator thumbnail memakai renderer aplikasi dan batch terbatas. `public/frames/{id}/v3` menyimpan delapan paket unggulan; 52 lainnya tetap aktif pada `v2`. Semua aset `v1` dan `v2` sebelumnya tetap tersedia untuk sesi yang sudah terbuka; source manifest berada di `src/frames/manifests`. Board pilihan dan contact sheet disertakan dalam repository; ekspor QA penuh dan arsip lokal tidak ikut Git.
 
 ## Batas dukungan
 

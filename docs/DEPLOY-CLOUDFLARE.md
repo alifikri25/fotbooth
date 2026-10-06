@@ -4,7 +4,7 @@ Source public: https://github.com/alifikri25/fotbooth. Situs publik sejak **7 Ok
 
 Project aktif menggunakan **Direct Upload**, production branch `main`. Pratinjau: https://preview.fotbooth.pages.dev. Deployment produksi pertama: `ef45b121-2b33-4102-8773-4d274875b49b`; preview pertama: `360f9f7b-8b6a-4003-8b75-91f9127976b6`. Custom domain belum dipasang.
 
-Untuk revisi, jalankan pemeriksaan lokal, `npm run deploy:preview`, periksa preview HTTPS, lalu `npm run deploy:cloudflare`. Push GitHub hanya menjalankan CI; belum ada automatic deploy. Bukti rilis: [cloudflare-public-release.json](qa/cloudflare-public-release.json).
+Untuk revisi, jalankan pemeriksaan lokal, `npm run deploy:preview`, periksa preview HTTPS, lalu `npm run deploy:cloudflare`. Push GitHub hanya menjalankan CI; belum ada automatic deploy. Bukti terbaru: [signature-release-20261007.json](qa/signature-release-20261007.json); bukti rilis pertama tetap disimpan.
 
 ## Alternatif project baru dengan Git integration
 
@@ -63,7 +63,17 @@ $env:FOTBOOTH_CAMERA_TEST_URL = 'https://fotbooth.pages.dev'
 npx playwright test mobile-camera --project=chromium --project=webkit --reporter=list
 ```
 
-Katalog aktif memakai artwork versi 2 dengan arah cetakan kertas. Pertahankan aset versi 1 dari 60 ID aktif agar sesi pengguna yang sudah terbuka masih dapat menyelesaikan ekspor; versi lama tidak menambah pilihan frame dalam katalog.
+Delapan frame unggulan diperiksa satu per satu untuk PNG dan JPEG melalui origin HTTPS yang sama:
+
+```powershell
+$env:FOTBOOTH_SMOKE_URL = 'https://fotbooth.pages.dev'
+$env:FOTBOOTH_SMOKE_BROWSER = 'webkit' # chromium atau webkit
+$env:FOTBOOTH_SMOKE_WIDTH = '360'
+$env:FOTBOOTH_SIGNATURE_REPORT = 'docs/qa/signature-production-smoke.json'
+node scripts/smoke-signature.mjs
+```
+
+Katalog aktif memakai artwork versi 3 pada delapan desain unggulan dan versi 2 pada 52 lainnya. Pertahankan semua aset versi 1 dan 2 dari 60 ID aktif agar sesi yang sudah terbuka masih dapat menyelesaikan ekspor; versi lama tidak menambah pilihan dalam katalog. Bahan raster signature tertanam di SVG; tiga JPEG model fiktif hanya menjadi contoh galeri. Gambar asli dan prompt berada di artwork/, tidak membutuhkan panggilan imagegen saat runtime.
 
 ## Pemeriksaan di URL HTTPS
 
