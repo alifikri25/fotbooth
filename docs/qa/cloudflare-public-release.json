@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-07",
+  "timeZone": "Asia/Bangkok",
+  "publicURL": "https://fotbooth.pages.dev",
+  "provider": "Cloudflare Pages",
+  "mode": "Direct Upload",
+  "project": "fotbooth",
+  "productionBranch": "main",
+  "sourceCommit": "b17c302d0f6627e5d8b6c34e703a3e3077aee85b",
+  "productionDeployment": "ef45b121-2b33-4102-8773-4d274875b49b",
+  "previewDeployment": "360f9f7b-8b6a-4003-8b75-91f9127976b6",
+  "unitTestsPassed": 41,
+  "buildPassed": true,
+  "browserTests": {
+    "failed": 0,
+    "passed": 58,
+    "skipped": 2,
+    "flaky": 0,
+    "durationMs": 189735.813
+  },
+  "preview": {
+    "url": "https://360f9f7b.fotbooth.pages.dev",
+    "exports": [
+      {
+        "format": "png",
+        "dimensions": [600, 1800],
+        "bytes": 360356
+      },
+      {
+        "format": "jpg",
+        "dimensions": [600, 1800],
+        "bytes": 130564
+      }
+    ],
+    "thumbnailCount": 60,
+    "errors": [],
+    "assetURLsChecked": 180
+  },
+  "production": [
+    {
+      "frames": 60,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "assetURLsChecked": 180,
+      "exports": [
+        {
+          "format": "png",
+          "dimensions": [600, 1800],
+          "bytes": 360356
+        },
+        {
+          "format": "jpg",
+          "dimensions": [600, 1800],
+          "bytes": 130564
+        }
+      ],
+      "thumbnailCount": 60,
+      "errors": [],
+      "browser": "chromium",
+      "url": "https://fotbooth.pages.dev"
+    },
+    {
+      "frames": 60,
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "assetURLsChecked": 180,
+      "exports": [
+        {
+          "format": "png",
+          "dimensions": [600, 1800],
+          "bytes": 214555
+        },
+        {
+          "format": "jpg",
+          "dimensions": [600, 1800],
+          "bytes": 132440
+        }
+      ],
+      "thumbnailCount": 60,
+      "errors": [],
+      "browser": "webkit",
+      "url": "https://fotbooth.pages.dev"
+    }
+  ],
+  "securityHeaders": {
+    "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self'; media-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+    "permissions-policy": "camera=(self), microphone=()",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "cache-control": "no-cache"
+  },
+  "candidateArchive": {
+    "verifiedFileCount": 252,
+    "sha256": "fd33ae4fe3797341ca3507b869992070a5a9013cf74935639d02e4824e38985d",
+    "localPath": "docs/qa/fotbooth-public-candidate-20261007.zip"
+  },
+  "pending": [
+    "Physical cameras and real Android/iOS devices",
+    "Reference-device performance and memory profiling",
+    "Screen readers and human usability study",
+    "Rollback exercise; this is the first production deployment"
+  ],
+  "automaticDeployFromGitHub": false
+}

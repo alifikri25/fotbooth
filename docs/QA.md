@@ -1,4 +1,16 @@
-# QA Web Photobooth — 6 Oktober 2026
+# QA Web Photobooth — 7 Oktober 2026
+
+## Publikasi dan verifikasi HTTPS
+
+Atas permintaan pengguna pada 7 Oktober 2026, situs sudah dipublikasikan di **https://fotbooth.pages.dev** melalui Cloudflare Pages Direct Upload. [Bukti rilis](qa/cloudflare-public-release.json).
+
+- Pemeriksaan ulang: 41 unit test dan build produksi lulus; browser 58 lulus, 2 skip kamera sintetis WebKit, 0 gagal/flaky, durasi 189,7 detik.
+- Preview `360f9f7b.fotbooth.pages.dev` lulus: 60 thumbnail, 180 URL layer/thumbnail, header keamanan, search, unggah 3 foto, caption, result dan unduhan PNG/JPEG ringan yang dibuka kembali pada 600×1800.
+- Produksi `fotbooth.pages.dev` lulus dengan cakupan sama pada Chromium 1440 px dan WebKit 360 px; galeri/editor tidak melebar di luar viewport. HTTPS merespons 200, CSP/Permissions-Policy/nosniff dan cache HTML aktif; origin produksi tidak memiliki header noindex preview.
+- Deployment produksi `ef45b121-2b33-4102-8773-4d274875b49b` memakai build yang sama dengan preview dan arsip kandidat 252 file; SHA-256 arsip/per-file diverifikasi lokal.
+- SSL preview sempat belum siap segera setelah deployment pertama; pemeriksaan TLS kemudian merespons 200 dan smoke lengkap lulus tanpa mengabaikan validasi sertifikat.
+
+Kamera fisik, HP nyata, pembaca layar, performa perangkat referensi, uji manusia dan latihan rollback tetap belum diuji. WebKit 360 px adalah browser otomatis pada Windows, bukan Safari iPhone nyata. Bagian di bawah menyimpan hasil historis sebelum publikasi.
 
 ## Verifikasi aktif: katalog 60 frame
 

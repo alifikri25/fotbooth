@@ -16,6 +16,7 @@ docs/qa/*
 !docs/qa/library-mobile.png
 !docs/qa/github-repository.jpg
 !docs/qa/cloudflare-local-smoke.json
+!docs/qa/cloudflare-public-release.json
 *.log
 .DS_Store
 Thumbs.db

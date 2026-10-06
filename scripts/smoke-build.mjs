@@ -1,11 +1,17 @@
 import fs from 'node:fs/promises';
-import { chromium, expect } from '@playwright/test';
+import { chromium, webkit, expect } from '@playwright/test';
 import { definitions } from '../src/frames/definitions.ts';
 
 const baseURL = process.env.FOTBOOTH_SMOKE_URL ?? 'http://127.0.0.1:8788';
-const browser = await chromium.launch();
+const reportPath = process.env.FOTBOOTH_SMOKE_REPORT ?? 'docs/qa/cloudflare-local-smoke.json';
+const isRemote = new URL(baseURL).protocol === 'https:';
+const browserName = process.env.FOTBOOTH_SMOKE_BROWSER ?? 'chromium';
+const browserType = { chromium, webkit }[browserName];
+if (!browserType) throw new Error(`Unsupported smoke browser: ${browserName}`);
+const viewport = { width: Number(process.env.FOTBOOTH_SMOKE_WIDTH ?? 1440), height: 900 };
+const browser = await browserType.launch();
 try {
-  const page = await browser.newPage();
+  const page = await browser.newPage({ viewport });
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
   page.on('response', (response) => {
@@ -15,9 +21,13 @@ try {
   const headers = response.headers();
   expect(headers['content-security-policy']).toContain("default-src 'self'");
   expect(headers['permissions-policy']).toBe('camera=(self), microphone=()');
+  expect(headers['x-content-type-options']).toBe('nosniff');
   await expect(page.getByText('60 frame orisinal', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Mulai bikin foto' }).click();
   await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(60);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(
+    viewport.width,
+  );
   const thumbs = await page.locator('.frame-art img').evaluateAll(async (images) => {
     await Promise.all(
       images.map(async (image) => {
@@ -49,16 +59,17 @@ try {
     g.fillRect(100, 150, 600, 700);
     return c.toDataURL('image/png').split(',')[1];
   });
-  await page
-    .locator('input[type=file]')
-    .setInputFiles(
-      [1, 2, 3].map((i) => ({
-        name: `smoke-${i}.png`,
-        mimeType: 'image/png',
-        buffer: Buffer.from(fixture, 'base64'),
-      })),
-    );
+  await page.locator('input[type=file]').setInputFiles(
+    [1, 2, 3].map((i) => ({
+      name: `smoke-${i}.png`,
+      mimeType: 'image/png',
+      buffer: Buffer.from(fixture, 'base64'),
+    })),
+  );
   await expect(page.getByTestId('photo-count')).toHaveText('3/8 foto');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(
+    viewport.width,
+  );
   await page.getByLabel('Caption').fill('frame baru, cerita baru');
   await page.getByRole('button', { name: 'Lihat hasil' }).click();
   const exports = [];
@@ -86,25 +97,26 @@ try {
   }
   expect(errors).toEqual([]);
   await fs.writeFile(
-    'docs/qa/cloudflare-local-smoke.json',
+    reportPath,
     JSON.stringify(
       {
-        date: '2026-10-06',
+        date: new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Bangkok' }).format(new Date()),
         baseURL,
+        browser: browserName,
+        viewport,
         frames: 60,
         thumbnailCount: thumbs.length,
         headers,
         exports,
         errors,
-        scope:
-          'Cloudflare Pages local runtime: built app, all 180 layer/thumbnail URLs, search, upload, caption, result and decoded PNG/JPEG downloads. No remote deployment.',
+        scope: `${isRemote ? 'Cloudflare Pages HTTPS deployment' : 'Cloudflare Pages local runtime'}: built app, all 180 layer/thumbnail URLs, search, upload, caption, result and decoded PNG/JPEG downloads. Physical cameras and phones are not covered.`,
       },
       null,
       2,
     ) + '\n',
   );
   console.log(
-    'Cloudflare Pages local smoke passed: 60 thumbnails, 180 frame assets, security headers and upload/PNG/JPEG download flow.',
+    `Cloudflare Pages ${isRemote ? 'HTTPS' : 'local'} smoke passed: 60 thumbnails, 180 frame assets, security headers and upload/PNG/JPEG download flow.`,
   );
 } finally {
   await browser.close();

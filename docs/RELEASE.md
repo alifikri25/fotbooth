@@ -1,6 +1,10 @@
 # Prosedur staging, rilis dan rollback
 
-Status terbaru: katalog aktif 60 frame; source public di https://github.com/alifikri25/fotbooth. Cloudflare Pages disiapkan untuk publikasi berikutnya. Belum ada deployment Cloudflare atau domain yang dipilih. Baca [panduan Cloudflare](DEPLOY-CLOUDFLARE.md) untuk pengaturan build dan publikasi.
+Status terbaru, **7 Oktober 2026**: katalog aktif 60 frame; source public di https://github.com/alifikri25/fotbooth. Situs sudah dipublikasikan di **https://fotbooth.pages.dev** atas permintaan pengguna. Cloudflare Pages memakai Direct Upload; custom domain belum dipasang. Baca [panduan Cloudflare](DEPLOY-CLOUDFLARE.md) untuk revisi berikutnya.
+
+Rilis pertama memakai build source `b17c302d0f6627e5d8b6c34e703a3e3077aee85b`, deployment produksi `ef45b121-2b33-4102-8773-4d274875b49b`. 41 unit test/build dan 58 browser test lulus, 2 skip WebKit. Preview HTTPS serta smoke produksi Chromium 1440 px dan WebKit 360 px lulus. [Bukti rilis](qa/cloudflare-public-release.json).
+
+Arsip lokal `docs/qa/fotbooth-public-candidate-20261007.zip` berisi 252 file build yang diverifikasi per SHA-256, checksum arsip `fd33ae4fe3797341ca3507b869992070a5a9013cf74935639d02e4824e38985d`. Tidak ada produksi sebelumnya untuk rollback; arsip dan runbook tersedia, latihan rollback belum dilakukan. Pengujian HP/kamera fisik, performa perangkat referensi dan uji 10 peserta tetap belum selesai. Publikasi tidak menandai seluruh gate PRD berikut sebagai lulus.
 
 ## 1. Kandidat yang dapat direproduksi
 

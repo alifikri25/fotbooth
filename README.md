@@ -2,6 +2,8 @@
 
 Photobooth web berbahasa Indonesia dengan **60 frame**, kamera, unggah foto, editor crop dan unduhan PNG/JPEG. Foto dan caption diproses di browser serta hanya berada di memori tab.
 
+**Situs publik:** [fotbooth.pages.dev](https://fotbooth.pages.dev), diterbitkan 7 Oktober 2026.
+
 Katalog berisi **16 frame sebelumnya + 44 edisi dekoratif dari 26 tema baru**. Koleksi mencakup pita, floral, denim, scrapbook, film analog, kerang, botanical, beruang, disko, piknik dan tema acara. Edisi mengubah susunan, jumlah foto dan treatment kertas. Ada pencarian nama/deskripsi serta filter kategori, koleksi, format dan jumlah foto.
 
 ![Pilihan frame dekoratif](docs/qa/decorated-design-board.png)
@@ -27,23 +29,23 @@ npm run test:e2e
 
 Unit tests memeriksa katalog, geometri, file foto, sesi, crop, teks dan ekspor. Suite browser memuat semua 60 thumbnail/layer, memeriksa interior foto, membuka kembali PNG/JPEG standar/ringan, menguji pencarian, kamera sintetis, editor, keyboard, viewport dan privasi jaringan. Chromium/WebKit otomatis di komputer belum menggantikan pengujian HP/kamera nyata.
 
-Verifikasi 6 Oktober 2026: **41 unit test dan build lulus; 58 browser test lulus, 2 skip kamera sintetis WebKit.** Seluruh 60 thumbnail, ekspor standar/ringan/detail dan contact sheet sudah dihasilkan. Paket produksi juga lulus dengan header keamanan Cloudflare, termasuk unduh PNG/JPEG pada runtime Pages lokal.
+Verifikasi 7 Oktober 2026: **41 unit test dan build lulus; 58 browser test lulus, 2 skip kamera sintetis WebKit.** Pratinjau HTTPS dan situs produksi telah diperiksa. Produksi lulus pada Chromium 1440 px dan WebKit 360 px: 60 thumbnail, 180 URL aset, pencarian, unggah, caption, header keamanan, serta unduh dan buka kembali PNG/JPEG ringan. Kamera fisik dan HP nyata tetap belum diuji.
 
 ## Cloudflare Pages
 
 Repo public: [alifikri25/fotbooth](https://github.com/alifikri25/fotbooth).
 
-Konfigurasi untuk publikasi berikutnya: project `fotbooth`, branch `main`, framework Vite, build `npm run build`, output `dist`. `wrangler.jsonc`, script deploy dan header keamanan sudah tersedia. **Belum ada deployment Cloudflare atau domain produksi.**
+Project `fotbooth` sudah aktif dengan **Direct Upload**, production branch `main`, build `npm run build`, output `dist`. Alamat publik: https://fotbooth.pages.dev. Custom domain belum dipasang. `wrangler.jsonc`, script deploy dan header keamanan tersedia.
 
-Ikuti [panduan Cloudflare](docs/DEPLOY-CLOUDFLARE.md). Setelah project Pages dan login tersedia:
+Ikuti [panduan Cloudflare](docs/DEPLOY-CLOUDFLARE.md). Untuk revisi berikutnya, setelah pemeriksaan lokal lulus:
 
 ```powershell
-npx wrangler login
 npm run deploy:preview
+# Periksa URL preview HTTPS sebelum menerbitkan revisi:
 npm run deploy:cloudflare
 ```
 
-GitHub Actions menjalankan pemeriksaan pada push/PR; publikasi membutuhkan project/login Cloudflare. Jangan commit `.env`, API token atau konfigurasi login pengguna.
+GitHub Actions menjalankan pemeriksaan pada push/PR; push GitHub belum otomatis menerbitkan revisi. Publikasi memakai script di atas dengan login Cloudflare pengguna. Jangan commit `.env`, API token atau konfigurasi login pengguna.
 
 ## Artwork dan dokumentasi
 

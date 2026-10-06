@@ -1,6 +1,18 @@
-# Handoff Web Photobooth — 6 Oktober 2026
+# Handoff Web Photobooth — 7 Oktober 2026
 
-## Status aktif: 60 frame dan repository public
+## Status terbaru: situs sudah publik
+
+Pengguna meminta go public pada 7 Oktober 2026 dan akan mengabari revisi berikutnya. Situs aktif: **https://fotbooth.pages.dev**, Cloudflare Pages Direct Upload, production branch `main`, custom domain belum dipasang. Preview: https://preview.fotbooth.pages.dev. Publikasi diminta “nanti” di catatan sebelumnya sudah digantikan oleh permintaan ini.
+
+41 unit test/build dan suite browser 58 lulus, 2 skip WebKit, 0 gagal/flaky (189,7 detik). Preview HTTPS dan produksi Chromium 1440 px/WebKit 360 px lulus untuk semua 60 thumbnail/180 URL aset, search, upload, caption, keamanan dan unduh/buka kembali PNG/JPEG ringan. Kamera fisik/HP nyata dan gate PRD manusia/performa/rollback belum diverifikasi.
+
+Deployment produksi: `ef45b121-2b33-4102-8773-4d274875b49b`; preview: `360f9f7b-8b6a-4003-8b75-91f9127976b6`; build source `b17c302d0f6627e5d8b6c34e703a3e3077aee85b`. [Bukti rilis](docs/qa/cloudflare-public-release.json). Arsip lokal 252 file: `docs/qa/fotbooth-public-candidate-20261007.zip`, checksum `fd33ae4fe3797341ca3507b869992070a5a9013cf74935639d02e4824e38985d`.
+
+Revisi berikutnya: pemeriksaan lokal → `npm run deploy:preview` → smoke HTTPS → `npm run deploy:cloudflare` → smoke produksi. GitHub push belum auto-deploy. `scripts/smoke-build.mjs` menerima URL/report/browser/viewport melalui `FOTBOOTH_SMOKE_*`. Jangan meminta login ulang jika sesi Wrangler masih aktif. Saat pembuatan awal, Wrangler mengalihkan Pages ke Workers; `--force` digunakan sekali untuk membuat project Pages yang sesuai konfigurasi. Project yang sudah ada tidak membutuhkan flag itu.
+
+Tidak ada automation/subagent/monitor yang dibuat. Laporan lokal terperinci di `docs/qa/cloudflare-{preview-smoke,production-chromium,production-webkit}-20261007.json`; suite penuh di `test-results/public-release-20261007.json`.
+
+## Catatan historis: 60 frame dan repository public sebelum hosting
 
 Pengguna membatasi katalog menjadi **maksimal 60 frame total**, menggantikan permintaan 302. Hasilnya 16 frame sebelumnya ditambah 44 edisi dekoratif dari 26 tema baru. Semua 60 paket aktif ada di `public/frames` dan `src/frames/manifests`; 242 paket berlebih diarsipkan lokal ke `.frame-archive`, tidak ikut repository atau build.
 
