@@ -56,6 +56,15 @@ $env:FOTBOOTH_SMOKE_WIDTH = '360'
 node scripts/smoke-build.mjs
 ```
 
+Perubahan tata letak kamera diuji pada enam ukuran portrait, landscape dan desktop melalui URL yang sama:
+
+```powershell
+$env:FOTBOOTH_CAMERA_TEST_URL = 'https://fotbooth.pages.dev'
+npx playwright test mobile-camera --project=chromium --project=webkit --reporter=list
+```
+
+Katalog aktif memakai artwork versi 2 dengan arah cetakan kertas. Pertahankan aset versi 1 dari 60 ID aktif agar sesi pengguna yang sudah terbuka masih dapat menyelesaikan ekspor; versi lama tidak menambah pilihan frame dalam katalog.
+
 ## Pemeriksaan di URL HTTPS
 
 - Beranda dan galeri menampilkan 60 frame; seluruh thumbnail, font lokal dan layer frame berhasil dimuat.

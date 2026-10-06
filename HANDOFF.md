@@ -1,6 +1,20 @@
 # Handoff Web Photobooth — 7 Oktober 2026
 
-## Status terbaru: situs sudah publik
+## Status terbaru: kamera HP dan frame cetakan kertas sudah publik
+
+Pengguna meminta agar wajah dan tombol kamera terlihat bersamaan di HP, serta frame kartu/strip seperti cetakan kertas dengan dekorasi tema lebih dalam. Kedua revisi sudah terbit di **https://fotbooth.pages.dev**.
+
+Tombol capture/cancel/reopen dan timer berada di panel preview. Tinggi preview mengikuti viewport dan rasio slot; landscape pendek memakai tombol di samping. Regresi mereproduksi tombol lama di luar layar 700 px (bottom 1183 px), lalu memeriksa preview/tombol, target 44 px, timer/cancel/capture melalui klik koordinat tanpa scroll. Ukuran: 390×700, 360×560, 740×360, 844×390, 1440×900, 1280×720. Fallback izin memakai Denim Daisy Polaroid dan Concert Pass pada kedua engine.
+
+Katalog tetap 60 ID. Artwork versi 2 menambahkan tepian/serat kertas, alas Polaroid dan ilustrasi pendamping khusus 26 tema. Semua thumbnail serta ekspor standar/ringan/detail dibuat ulang; lima contact sheet dan enam contoh besar ditinjau. Pilihan bawaan: kertas putih/pastel/scrapbook sesuai tema. Arah frame berikutnya disimpan pada registry. Aset v1 tetap dilayani untuk sesi lama; regresi memastikan URL tersedia dan geometri sama.
+
+**43 unit + build lulus; 61 browser lulus, 3 skip WebKit, 0 gagal/flaky, 264,9 detik.** Preview/produksi HTTPS lulus regresi kamera (3 lulus, 1 skip masing-masing). Produksi Chromium 1440 px/WebKit 360 px lulus 60 thumbnail/180 aset, unggah/caption dan unduh/buka PNG/JPEG. HTML/bundel serta delapan file v1 cocok SHA-256 build. HP dan kamera fisik belum diuji.
+
+Source: f2e270eddb1ddbcaabee8619a80830f070f4988f; preview: 71ef9082-893a-4629-8a88-0657c633d778; produksi: 31ec02dd-54c3-4f4d-838f-8525e7c3a41d. [Bukti revisi](docs/qa/camera-paper-release-20261007.json). Arsip kandidat lokal **492 file**, SHA-256 **8a39363fca01eda3a0285df85b6509224ca7bf69f1777b7f691b4ef9c322c564**. Rilis pertama dan arsip 252 file tetap tersedia untuk rollback. GitHub push belum auto-deploy (Direct Upload).
+
+Kedua rencana selesai. Tidak ada automation atau subagent. Dev server lokal masih tersedia untuk review. Foto/caption tetap di memori tab; memuat ulang mengakhiri sesi.
+
+## Catatan historis: rilis publik pertama
 
 Pengguna meminta go public pada 7 Oktober 2026 dan akan mengabari revisi berikutnya. Situs aktif: **https://fotbooth.pages.dev**, Cloudflare Pages Direct Upload, production branch `main`, custom domain belum dipasang. Preview: https://preview.fotbooth.pages.dev. Publikasi diminta “nanti” di catatan sebelumnya sudah digantikan oleh permintaan ini.
 

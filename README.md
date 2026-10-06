@@ -4,7 +4,7 @@ Photobooth web berbahasa Indonesia dengan **60 frame**, kamera, unggah foto, edi
 
 **Situs publik:** [fotbooth.pages.dev](https://fotbooth.pages.dev), diterbitkan 7 Oktober 2026.
 
-Katalog berisi **16 frame sebelumnya + 44 edisi dekoratif dari 26 tema baru**. Koleksi mencakup pita, floral, denim, scrapbook, film analog, kerang, botanical, beruang, disko, piknik dan tema acara. Edisi mengubah susunan, jumlah foto dan treatment kertas. Ada pencarian nama/deskripsi serta filter kategori, koleksi, format dan jumlah foto.
+Katalog berisi **16 frame sebelumnya + 44 edisi dekoratif dari 26 tema baru**, kini dengan artwork versi 2 bergaya cetakan kertas: tepian putih hangat, tekstur matte, alas Polaroid dan ornamen pendamping sesuai tema. Koleksi mencakup pita, floral, denim, scrapbook, film analog, kerang, botanical, beruang, disko, piknik dan tema acara. Edisi mengubah susunan, jumlah foto dan treatment kertas. Ada pencarian nama/deskripsi serta filter kategori, koleksi, format dan jumlah foto.
 
 ![Pilihan frame dekoratif](docs/qa/decorated-design-board.png)
 
@@ -29,7 +29,7 @@ npm run test:e2e
 
 Unit tests memeriksa katalog, geometri, file foto, sesi, crop, teks dan ekspor. Suite browser memuat semua 60 thumbnail/layer, memeriksa interior foto, membuka kembali PNG/JPEG standar/ringan, menguji pencarian, kamera sintetis, editor, keyboard, viewport dan privasi jaringan. Chromium/WebKit otomatis di komputer belum menggantikan pengujian HP/kamera nyata.
 
-Verifikasi 7 Oktober 2026: **41 unit test dan build lulus; 58 browser test lulus, 2 skip kamera sintetis WebKit.** Pratinjau HTTPS dan situs produksi telah diperiksa. Produksi lulus pada Chromium 1440 px dan WebKit 360 px: 60 thumbnail, 180 URL aset, pencarian, unggah, caption, header keamanan, serta unduh dan buka kembali PNG/JPEG ringan. Kamera fisik dan HP nyata tetap belum diuji.
+Revisi 7 Oktober 2026 sudah publik: kamera dan tombol ambil/hentikan terlihat bersamaan pada layar portrait maupun landscape. **43 unit test dan build lulus; 61 browser test lulus, 3 skip kamera sintetis WebKit.** Pratinjau dan produksi HTTPS lulus pada enam ukuran kamera, Chromium desktop dan WebKit 360 px: 60 thumbnail, 180 URL aset, unggah, caption, header keamanan dan PNG/JPEG yang dibuka kembali. Kamera fisik dan HP nyata belum diuji. [Bukti revisi](docs/qa/camera-paper-release-20261007.json).
 
 ## Cloudflare Pages
 
@@ -65,7 +65,7 @@ npm run qa:ui
 node scripts/write-registry.mjs
 ```
 
-Generator thumbnail memakai renderer aplikasi dan batch terbatas. `public/frames/{id}/v1` menyimpan background, foreground, manifest dan thumbnail; source manifest berada di `src/frames/manifests`. Board pilihan dan contact sheet disertakan dalam repository; ekspor QA penuh dan arsip lokal tidak ikut Git.
+Generator thumbnail memakai renderer aplikasi dan batch terbatas. `public/frames/{id}/v2` menyimpan background, foreground, manifest dan thumbnail aktif; aset `v1` tetap tersedia untuk sesi yang sudah terbuka; source manifest berada di `src/frames/manifests`. Board pilihan dan contact sheet disertakan dalam repository; ekspor QA penuh dan arsip lokal tidak ikut Git.
 
 ## Batas dukungan
 

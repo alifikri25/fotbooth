@@ -17,6 +17,7 @@ docs/qa/*
 !docs/qa/github-repository.jpg
 !docs/qa/cloudflare-local-smoke.json
 !docs/qa/cloudflare-public-release.json
+!docs/qa/camera-paper-release-20261007.json
 *.log
 .DS_Store
 Thumbs.db

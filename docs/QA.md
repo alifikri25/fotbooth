@@ -1,5 +1,17 @@
 # QA Web Photobooth — 7 Oktober 2026
 
+## Revisi aktif: kamera HP dan frame cetakan kertas
+
+Kedua perubahan terbit di **https://fotbooth.pages.dev**. [Bukti revisi](qa/camera-paper-release-20261007.json).
+
+- 43 unit test, TypeScript dan build lulus. Suite penuh: 64 dijadwalkan, 61 lulus, 3 skip kamera sintetis WebKit, 0 gagal/flaky, 264,9 detik.
+- Preview lengkap dan tombol ambil/hentikan/buka kamera terlihat bersama di 390×700, 360×560, 740×360, 844×390, 1440×900, 1280×720. Klik koordinat untuk timer/cancel/capture tidak mengubah scroll; rasio slot tetap. Izin ditolak diuji Chromium/WebKit, capture sintetis Chromium.
+- 60 ID versi 2: tepian kertas matte, serat halus, alas Polaroid, ilustrasi pendamping sesuai tema. Semua thumbnail dan ekspor standar/ringan/detail dibuat ulang. Lima contact sheet serta Pixel Play, Denim Daisy, Ribbon Diary, Ocean Postcard, Botanical Journal, Coffee Date besar ditinjau. Seluruh paket lulus interior foto, geometri dan PNG/JPEG kedua engine.
+- Preview/produksi HTTPS lulus regresi kamera (3 lulus, 1 skip masing-masing). Produksi Chromium 1440 px/WebKit 360 px lulus 60 thumbnail, 180 aset, keamanan, search, unggah/caption dan unduh/buka PNG/JPEG ringan 600×1800 tanpa page error/overflow galeri/editor.
+- Seluruh aset v1 dipertahankan untuk sesi lama dan diuji unit bersama slot yang sama. HTML/bundel produksi serta delapan contoh file v1 cocok SHA-256 build. Arsip 492 file diverifikasi terhadap build sebelum preview/produksi.
+
+Browser otomatis pada Windows belum menggantikan kamera/HP fisik. Pembaca layar, performa perangkat referensi, uji manusia dan latihan rollback belum diverifikasi. Bagian berikut menyimpan bukti historis.
+
 ## Publikasi dan verifikasi HTTPS
 
 Atas permintaan pengguna pada 7 Oktober 2026, situs sudah dipublikasikan di **https://fotbooth.pages.dev** melalui Cloudflare Pages Direct Upload. [Bukti rilis](qa/cloudflare-public-release.json).
@@ -12,7 +24,7 @@ Atas permintaan pengguna pada 7 Oktober 2026, situs sudah dipublikasikan di **ht
 
 Kamera fisik, HP nyata, pembaca layar, performa perangkat referensi, uji manusia dan latihan rollback tetap belum diuji. WebKit 360 px adalah browser otomatis pada Windows, bukan Safari iPhone nyata. Bagian di bawah menyimpan hasil historis sebelum publikasi.
 
-## Verifikasi aktif: katalog 60 frame
+## Bukti historis: katalog 60 frame sebelum publikasi
 
 Scope terbaru: **60 frame total** (16 sebelumnya + 44 edisi dekoratif dari 26 tema), sesuai batas pengguna. Repository public `alifikri25/fotbooth`; konfigurasi Cloudflare Pages tersedia, belum ada deployment remote.
 

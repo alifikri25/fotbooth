@@ -1,0 +1,269 @@
+{
+  "date": "2026-10-07",
+  "timezone": "Asia/Bangkok",
+  "sourceCommit": "f2e270eddb1ddbcaabee8619a80830f070f4988f",
+  "publicURL": "https://fotbooth.pages.dev",
+  "preview": {
+    "id": "71ef9082-893a-4629-8a88-0657c633d778",
+    "url": "https://71ef9082.fotbooth.pages.dev"
+  },
+  "production": {
+    "id": "31ec02dd-54c3-4f4d-838f-8525e7c3a41d",
+    "url": "https://31ec02dd.fotbooth.pages.dev"
+  },
+  "previousProduction": "ef45b121-2b33-4102-8773-4d274875b49b",
+  "changes": {
+    "camera": "Live preview and capture/cancel/reopen with timer visible together at six portrait, landscape and desktop sizes; coordinate clicks preserve scroll position and slot aspect ratio.",
+    "frames": "Exactly 60 active frame IDs use version-2 themed paper artwork, deeper companion motifs and Polaroid paper mounts.",
+    "compatibility": "Version-1 artwork remains reachable for already open sessions with unchanged photo geometry."
+  },
+  "local": {
+    "unitTests": 43,
+    "build": "passed",
+    "browserStats": {
+      "startTime": "2026-10-06T22:16:26.731Z",
+      "duration": 264861.45,
+      "expected": 61,
+      "skipped": 3,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "browserReport": "docs/qa/camera-paper-browser-results-20261007.json",
+    "visualReview": "Five contact-sheet pages covering all 60 frames plus enlarged Pixel Play, Denim Daisy, Ribbon Diary, Ocean Postcard, Botanical Journal and Coffee Date."
+  },
+  "camera": {
+    "viewports": [
+      {
+        "width": 390,
+        "height": 700
+      },
+      {
+        "width": 360,
+        "height": 560
+      },
+      {
+        "width": 740,
+        "height": 360
+      },
+      {
+        "width": 844,
+        "height": 390
+      },
+      {
+        "width": 1440,
+        "height": 900
+      },
+      {
+        "width": 1280,
+        "height": 720
+      }
+    ],
+    "previewStats": {
+      "startTime": "2026-10-06T22:22:27.462Z",
+      "duration": 22019.766,
+      "expected": 3,
+      "skipped": 1,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "productionStats": {
+      "startTime": "2026-10-06T22:23:44.465Z",
+      "duration": 20224.489,
+      "expected": 3,
+      "skipped": 1,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "httpsSmoke": [
+    {
+      "file": "camera-paper-preview-smoke-20261007.json",
+      "baseURL": "https://71ef9082.fotbooth.pages.dev",
+      "browser": "chromium",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "frames": 60,
+      "thumbnailCount": 60,
+      "assetCount": 180,
+      "exports": [
+        {
+          "format": "png",
+          "dimensions": [
+            600,
+            1800
+          ],
+          "bytes": 524670
+        },
+        {
+          "format": "jpg",
+          "dimensions": [
+            600,
+            1800
+          ],
+          "bytes": 137716
+        }
+      ],
+      "errors": [],
+      "securityHeaders": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self'; media-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "permissions-policy": "camera=(self), microphone=()",
+        "x-content-type-options": "nosniff",
+        "cache-control": "no-cache"
+      }
+    },
+    {
+      "file": "camera-paper-production-chromium-20261007.json",
+      "baseURL": "https://fotbooth.pages.dev",
+      "browser": "chromium",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "frames": 60,
+      "thumbnailCount": 60,
+      "assetCount": 180,
+      "exports": [
+        {
+          "format": "png",
+          "dimensions": [
+            600,
+            1800
+          ],
+          "bytes": 524670
+        },
+        {
+          "format": "jpg",
+          "dimensions": [
+            600,
+            1800
+          ],
+          "bytes": 137716
+        }
+      ],
+      "errors": [],
+      "securityHeaders": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self'; media-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "permissions-policy": "camera=(self), microphone=()",
+        "x-content-type-options": "nosniff",
+        "cache-control": "no-cache"
+      }
+    },
+    {
+      "file": "camera-paper-production-webkit-20261007.json",
+      "baseURL": "https://fotbooth.pages.dev",
+      "browser": "webkit",
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "frames": 60,
+      "thumbnailCount": 60,
+      "assetCount": 180,
+      "exports": [
+        {
+          "format": "png",
+          "dimensions": [
+            600,
+            1800
+          ],
+          "bytes": 241088
+        },
+        {
+          "format": "jpg",
+          "dimensions": [
+            600,
+            1800
+          ],
+          "bytes": 140699
+        }
+      ],
+      "errors": [],
+      "securityHeaders": {
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self'; media-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+        "permissions-policy": "camera=(self), microphone=()",
+        "x-content-type-options": "nosniff",
+        "cache-control": "no-cache"
+      }
+    }
+  ],
+  "candidate": {
+    "archive": "docs/qa/fotbooth-camera-paper-candidate-20261007.zip",
+    "sha256": "8a39363fca01eda3a0285df85b6509224ca7bf69f1777b7f691b4ef9c322c564",
+    "fileCount": 492,
+    "allEntriesMatchBuild": true
+  },
+  "productionFileVerification": {
+    "baseURL": "https://fotbooth.pages.dev",
+    "checked": [
+      {
+        "path": "/index.html",
+        "sha256": "67e151c8bc5215f502857945a0746af0e4517b96aa4a85485e6831fddc6b89eb",
+        "status": 200
+      },
+      {
+        "path": "/assets/index-GQTm8u5j.js",
+        "sha256": "0e26c9a59b5a677ea4fe3d98924e55d69bd963cd10d955bb16f5fafc54a4a9a5",
+        "status": 200
+      },
+      {
+        "path": "/assets/index-TSZhBKRH.css",
+        "sha256": "464f1239677ce29f4f5314045fd083ea2706ff6d4da1f89fa02928fa673b607b",
+        "status": 200
+      },
+      {
+        "path": "/frames/pixel-play-mini/v1/background.svg",
+        "sha256": "f37d5873ae607f80753f90ed6fb869c33015f87d93cb25366dfeb5cbf31e38b7",
+        "status": 200
+      },
+      {
+        "path": "/frames/pixel-play-mini/v1/foreground.svg",
+        "sha256": "e177e0888e05443393796361308d9e389f0ab669bacc20801b4b19a7cf9b03ca",
+        "status": 200
+      },
+      {
+        "path": "/frames/pixel-play-mini/v1/thumbnail.png",
+        "sha256": "7c3e6c1e79d1ed4204160c0b79e74afa5d651405805c97812096f67e4439e3cb",
+        "status": 200
+      },
+      {
+        "path": "/frames/pixel-play-mini/v1/manifest.json",
+        "sha256": "9a51db79e77e4b23a0a80ec7b9f54b4b204ead80abaed4a64c26a3eb0f8da9d3",
+        "status": 200
+      },
+      {
+        "path": "/frames/denim-daisy-polaroid/v1/background.svg",
+        "sha256": "ae70925b640fece05942c96f2495361e4c2a8de8c52dd4746394fc1b92bf8ca7",
+        "status": 200
+      },
+      {
+        "path": "/frames/denim-daisy-polaroid/v1/foreground.svg",
+        "sha256": "4e820aec21484d3bef21316d7d1f788312408b68bc87f5d3793b837e6f7890e5",
+        "status": 200
+      },
+      {
+        "path": "/frames/denim-daisy-polaroid/v1/thumbnail.png",
+        "sha256": "3b622ed488578b2675e73d9de5e8bec18a6d87abbeb5f41e4dd769042dea1ceb",
+        "status": 200
+      },
+      {
+        "path": "/frames/denim-daisy-polaroid/v1/manifest.json",
+        "sha256": "1c05b4c99b57afd078669997af45c3a278a9bf01a3f042aad9020b6b806a2ac6",
+        "status": 200
+      }
+    ]
+  },
+  "limitations": [
+    "Physical phone cameras and real Android/iOS devices were not tested.",
+    "Three full-suite tests skip WebKit native synthetic capture; permission denial and layout are tested on both engines.",
+    "Reference-device performance, human usability and rollback rehearsal remain unverified."
+  ],
+  "sourceCI": {
+    "id": 37540069165,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/alifikri25/fotbooth/actions/runs/37540069165",
+    "sourceCommit": "f2e270eddb1ddbcaabee8619a80830f070f4988f"
+  }
+}

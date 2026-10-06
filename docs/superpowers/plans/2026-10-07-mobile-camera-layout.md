@@ -65,6 +65,6 @@ expect(preview.width / preview.height).toBeCloseTo(756 / 909.9, 2);
 
 - [x] Run the regression until it passes, including coordinate clicks for countdown, cancel and capture with no scroll displacement. Inspect synthetic-camera screenshots, not the user's personal photo as a fixture. Include 844×390 landscape and 1440×900/1280×720 desktop: the relocated action must remain visible beside a complete preview on desktop too. Bound the base preview height with `min(600px, max(160px, calc(100svh - 400px)))`, with the portrait/landscape overrides above.
 - [x] Run `npm run check`, then the full Chromium/WebKit browser suite. Review the changed diff and document actual results and real-device limits.
-- [ ] Commit/push the verified source, publish preview, verify the production build at HTTPS with the layout regression, then publish the same build to `main` and verify the stable public URL.
+- [x] Commit/push the verified source, publish preview, verify the production build at HTTPS with the layout regression, then publish the same build to `main` and verify the stable public URL.
 
 No new camera feature, account, saved photo, monitoring or external service is needed.

@@ -2,9 +2,13 @@
 
 Status terbaru, **7 Oktober 2026**: katalog aktif 60 frame; source public di https://github.com/alifikri25/fotbooth. Situs sudah dipublikasikan di **https://fotbooth.pages.dev** atas permintaan pengguna. Cloudflare Pages memakai Direct Upload; custom domain belum dipasang. Baca [panduan Cloudflare](DEPLOY-CLOUDFLARE.md) untuk revisi berikutnya.
 
+Revisi kamera HP dan frame cetakan kertas sudah publik. Source f2e270eddb1ddbcaabee8619a80830f070f4988f, deployment 31ec02dd-54c3-4f4d-838f-8525e7c3a41d. 43 unit/build dan 61 browser lulus, 3 skip WebKit. Preview/produksi lulus kamera enam ukuran dan smoke unggah/unduh Chromium desktop/WebKit 360 px. [Bukti revisi](qa/camera-paper-release-20261007.json).
+
+Arsip lokal docs/qa/fotbooth-camera-paper-candidate-20261007.zip berisi **492 file**, SHA-256 **8a39363fca01eda3a0285df85b6509224ca7bf69f1777b7f691b4ef9c322c564**; semua entri cocok build. Artwork aktif v2, v1 dipertahankan untuk sesi lama. Rilis pertama dan arsip berikut tetap tersedia untuk rollback; latihan rollback belum dilakukan.
+
 Rilis pertama memakai build source `b17c302d0f6627e5d8b6c34e703a3e3077aee85b`, deployment produksi `ef45b121-2b33-4102-8773-4d274875b49b`. 41 unit test/build dan 58 browser test lulus, 2 skip WebKit. Preview HTTPS serta smoke produksi Chromium 1440 px dan WebKit 360 px lulus. [Bukti rilis](qa/cloudflare-public-release.json).
 
-Arsip lokal `docs/qa/fotbooth-public-candidate-20261007.zip` berisi 252 file build yang diverifikasi per SHA-256, checksum arsip `fd33ae4fe3797341ca3507b869992070a5a9013cf74935639d02e4824e38985d`. Tidak ada produksi sebelumnya untuk rollback; arsip dan runbook tersedia, latihan rollback belum dilakukan. Pengujian HP/kamera fisik, performa perangkat referensi dan uji 10 peserta tetap belum selesai. Publikasi tidak menandai seluruh gate PRD berikut sebagai lulus.
+Arsip lokal `docs/qa/fotbooth-public-candidate-20261007.zip` berisi 252 file build yang diverifikasi per SHA-256, checksum arsip `fd33ae4fe3797341ca3507b869992070a5a9013cf74935639d02e4824e38985d`. Arsip rilis pertama tetap tersedia sebagai kandidat rollback; latihan rollback belum dilakukan. Pengujian HP/kamera fisik, performa perangkat referensi dan uji 10 peserta tetap belum selesai. Publikasi tidak menandai seluruh gate PRD berikut sebagai lulus.
 
 ## 1. Kandidat yang dapat direproduksi
 
@@ -19,7 +23,7 @@ Arsip lokal `docs/qa/fotbooth-public-candidate-20261007.zip` berisi 252 file bui
 1. Gunakan Cloudflare Pages dan origin preview HTTPS sesuai panduan Cloudflare. Upload isi `dist/` atau hubungkan repo GitHub.
 2. Pastikan seluruh aset tersedia dari origin yang sama; browser tidak meminta font/pustaka runtime pihak ketiga.
 3. Pasang header dari `public/_headers`. Host tanpa dukungan file ini memerlukan konfigurasi dashboard/server yang setara. Pastikan `Permissions-Policy` mengizinkan kamera hanya pada origin sendiri dan melarang mikrofon.
-4. HTML/manifest/frame/font memakai revalidasi (`no-cache`) pada awal rilis. Aset bundel dengan hash boleh immutable. Untuk perubahan frame, naikkan versi dan jalur `/frames/{id}/v{version}/`; regenerasi thumbnail, manifest sumber dan publik secara bersama.
+4. HTML/manifest/frame/font memakai revalidasi (`no-cache`) pada awal rilis. Aset bundel dengan hash boleh immutable. Untuk perubahan frame, naikkan versi dan jalur `/frames/{id}/v{version}/`; regenerasi thumbnail, manifest sumber dan publik secara bersama. Pertahankan versi aset sebelumnya selama masih dapat dipakai sesi pengguna yang terbuka.
 5. Semua tampilan aplikasi menggunakan state pada root `/`; tidak ada rute path yang perlu fallback router. Link web tidak membagikan foto/session.
 
 ## 3. Gate sebelum produksi
