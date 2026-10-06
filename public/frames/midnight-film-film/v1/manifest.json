@@ -1,0 +1,110 @@
+{
+  "id": "midnight-film-film",
+  "name": "Midnight Film Film",
+  "version": 1,
+  "format": "strip",
+  "categories": [
+    "retro",
+    "scrapbook"
+  ],
+  "designWidth": 1200,
+  "designHeight": 3600,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.11,
+      "y": 0.155,
+      "w": 0.78,
+      "h": 0.24,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.11,
+      "y": 0.405,
+      "w": 0.78,
+      "h": 0.24,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.11,
+      "y": 0.655,
+      "w": 0.78,
+      "h": 0.24,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Lubang film analog, nomor negatif, tape dan cahaya amber. Edisi Film, 3 foto.",
+  "palette": {
+    "background": "#29272c",
+    "ink": "#fff0d5",
+    "accent": "#dc925b",
+    "secondary": "#60595b"
+  },
+  "layers": {
+    "background": "/frames/midnight-film-film/v1/background.svg",
+    "foreground": "/frames/midnight-film-film/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/midnight-film-film/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Midnight Film",
+      "x": 0.06,
+      "y": 0.019,
+      "w": 0.88,
+      "h": 0.035,
+      "fontId": "serif",
+      "fontSize": 74,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#fff0d5"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "serif",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#483b45"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#fff0d5"
+    }
+  ],
+  "collection": "Midnight Film",
+  "artwork": {
+    "motif": "film",
+    "edition": 5
+  }
+}

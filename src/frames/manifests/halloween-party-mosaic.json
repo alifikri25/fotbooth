@@ -1,0 +1,123 @@
+{
+  "id": "halloween-party-mosaic",
+  "name": "Halloween Party Mosaic",
+  "version": 1,
+  "format": "card",
+  "categories": [
+    "seasonal",
+    "cartoon",
+    "party"
+  ],
+  "designWidth": 1800,
+  "designHeight": 2700,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.06,
+      "y": 0.145,
+      "w": 0.425,
+      "h": 0.34,
+      "shape": "roundedRect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.515,
+      "y": 0.145,
+      "w": 0.425,
+      "h": 0.34,
+      "shape": "roundedRect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.06,
+      "y": 0.535,
+      "w": 0.425,
+      "h": 0.34,
+      "shape": "roundedRect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p4",
+      "order": 4,
+      "x": 0.515,
+      "y": 0.535,
+      "w": 0.425,
+      "h": 0.34,
+      "shape": "roundedRect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Labu lucu, hantu mini, bulan dan bintang malam. Edisi Mosaic, 4 foto.",
+  "palette": {
+    "background": "#a894ba",
+    "ink": "#513d51",
+    "accent": "#d58a50",
+    "secondary": "#f6dfcd"
+  },
+  "layers": {
+    "background": "/frames/halloween-party-mosaic/v1/background.svg",
+    "foreground": "/frames/halloween-party-mosaic/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/halloween-party-mosaic/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Halloween Party",
+      "x": 0.06,
+      "y": 0.019,
+      "w": 0.88,
+      "h": 0.035,
+      "fontId": "sans",
+      "fontSize": 94,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#513d51"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "sans",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#513d51"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#513d51"
+    }
+  ],
+  "collection": "Halloween Party",
+  "artwork": {
+    "motif": "pumpkin",
+    "edition": 8
+  }
+}

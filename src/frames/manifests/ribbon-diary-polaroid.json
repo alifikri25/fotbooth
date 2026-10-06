@@ -1,0 +1,122 @@
+{
+  "id": "ribbon-diary-polaroid",
+  "name": "Ribbon Diary Polaroid",
+  "version": 1,
+  "format": "card",
+  "categories": [
+    "romantic",
+    "soft"
+  ],
+  "designWidth": 1800,
+  "designHeight": 2700,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.065,
+      "y": 0.15,
+      "w": 0.42,
+      "h": 0.337,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": -1.2,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.52,
+      "y": 0.15,
+      "w": 0.42,
+      "h": 0.337,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 1.2,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.065,
+      "y": 0.535,
+      "w": 0.42,
+      "h": 0.337,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 1.2,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p4",
+      "order": 4,
+      "x": 0.52,
+      "y": 0.535,
+      "w": 0.42,
+      "h": 0.337,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": -1.2,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Pita satin, renda scallop, mutiara dan label buku harian. Edisi Polaroid, 4 foto.",
+  "palette": {
+    "background": "#fff0f4",
+    "ink": "#743747",
+    "accent": "#d86787",
+    "secondary": "#c5b6df"
+  },
+  "layers": {
+    "background": "/frames/ribbon-diary-polaroid/v1/background.svg",
+    "foreground": "/frames/ribbon-diary-polaroid/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/ribbon-diary-polaroid/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Ribbon Diary",
+      "x": 0.06,
+      "y": 0.019,
+      "w": 0.88,
+      "h": 0.035,
+      "fontId": "serif",
+      "fontSize": 94,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#743747"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "serif",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#743747"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#743747"
+    }
+  ],
+  "collection": "Ribbon Diary",
+  "artwork": {
+    "motif": "bow",
+    "edition": 10
+  }
+}

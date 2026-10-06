@@ -1,0 +1,110 @@
+{
+  "id": "retro-diner-offset",
+  "name": "Retro Diner Offset",
+  "version": 1,
+  "format": "strip",
+  "categories": [
+    "retro",
+    "playful"
+  ],
+  "designWidth": 1200,
+  "designHeight": 3600,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.055,
+      "y": 0.155,
+      "w": 0.89,
+      "h": 0.225,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.11,
+      "y": 0.405,
+      "w": 0.835,
+      "h": 0.225,
+      "shape": "roundedRect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.055,
+      "y": 0.655,
+      "w": 0.89,
+      "h": 0.225,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Piringan hitam, checker diner, sinar matahari dan tiket musik. Edisi Offset, 3 foto.",
+  "palette": {
+    "background": "#fae6d6",
+    "ink": "#693c3a",
+    "accent": "#df7c65",
+    "secondary": "#90bab0"
+  },
+  "layers": {
+    "background": "/frames/retro-diner-offset/v1/background.svg",
+    "foreground": "/frames/retro-diner-offset/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/retro-diner-offset/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Retro Diner",
+      "x": 0.06,
+      "y": 0.019,
+      "w": 0.88,
+      "h": 0.035,
+      "fontId": "sans",
+      "fontSize": 74,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#693c3a"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "sans",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#693c3a"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#693c3a"
+    }
+  ],
+  "collection": "Retro Diner",
+  "artwork": {
+    "motif": "record",
+    "edition": 6
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "id": "butterfly-notes-story",
+  "name": "Butterfly Notes Story",
+  "version": 1,
+  "format": "card",
+  "categories": [
+    "soft",
+    "nature",
+    "scrapbook"
+  ],
+  "designWidth": 1800,
+  "designHeight": 2700,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.06,
+      "y": 0.145,
+      "w": 0.88,
+      "h": 0.365,
+      "shape": "roundedRect",
+      "radius": 40,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.06,
+      "y": 0.555,
+      "w": 0.425,
+      "h": 0.32,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.515,
+      "y": 0.555,
+      "w": 0.425,
+      "h": 0.32,
+      "shape": "path",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9",
+      "pathRef": "chamfer"
+    }
+  ],
+  "description": "Kupu-kupu bersayap dekoratif, jejak terbang dan kertas memo. Edisi Story, 3 foto.",
+  "palette": {
+    "background": "#f1eafa",
+    "ink": "#624b79",
+    "accent": "#b18acb",
+    "secondary": "#e5b3cc"
+  },
+  "layers": {
+    "background": "/frames/butterfly-notes-story/v1/background.svg",
+    "foreground": "/frames/butterfly-notes-story/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/butterfly-notes-story/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Butterfly Notes",
+      "x": 0.06,
+      "y": 0.019,
+      "w": 0.88,
+      "h": 0.035,
+      "fontId": "serif",
+      "fontSize": 94,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#624b79"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "serif",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#624b79"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#624b79"
+    }
+  ],
+  "collection": "Butterfly Notes",
+  "artwork": {
+    "motif": "butterfly",
+    "edition": 9
+  }
+}

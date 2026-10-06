@@ -1,0 +1,123 @@
+{
+  "id": "pixel-play-mini",
+  "name": "Pixel Play Mini",
+  "version": 1,
+  "format": "strip",
+  "categories": [
+    "futuristic",
+    "cartoon",
+    "dynamic"
+  ],
+  "designWidth": 1200,
+  "designHeight": 3600,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.08,
+      "y": 0.15,
+      "w": 0.84,
+      "h": 0.166,
+      "shape": "roundedRect",
+      "radius": 22,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.08,
+      "y": 0.337,
+      "w": 0.84,
+      "h": 0.166,
+      "shape": "roundedRect",
+      "radius": 22,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.08,
+      "y": 0.524,
+      "w": 0.84,
+      "h": 0.166,
+      "shape": "roundedRect",
+      "radius": 22,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p4",
+      "order": 4,
+      "x": 0.08,
+      "y": 0.711,
+      "w": 0.84,
+      "h": 0.166,
+      "shape": "roundedRect",
+      "radius": 22,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Hati piksel, konsol mini, tombol arcade dan tangga warna. Edisi Mini, 4 foto.",
+  "palette": {
+    "background": "#9acbad",
+    "ink": "#4c356b",
+    "accent": "#be8ae2",
+    "secondary": "#eee4ff"
+  },
+  "layers": {
+    "background": "/frames/pixel-play-mini/v1/background.svg",
+    "foreground": "/frames/pixel-play-mini/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/pixel-play-mini/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Pixel Play",
+      "x": 0.06,
+      "y": 0.019,
+      "w": 0.88,
+      "h": 0.035,
+      "fontId": "sans",
+      "fontSize": 74,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#4c356b"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "sans",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#4c356b"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#4c356b"
+    }
+  ],
+  "collection": "Pixel Play",
+  "artwork": {
+    "motif": "pixel",
+    "edition": 2
+  }
+}

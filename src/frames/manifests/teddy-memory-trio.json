@@ -1,0 +1,111 @@
+{
+  "id": "teddy-memory-trio",
+  "name": "Teddy Memory Trio",
+  "version": 1,
+  "format": "strip",
+  "categories": [
+    "cartoon",
+    "soft",
+    "playful"
+  ],
+  "designWidth": 1200,
+  "designHeight": 3600,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.075,
+      "y": 0.155,
+      "w": 0.85,
+      "h": 0.225,
+      "shape": "roundedRect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.075,
+      "y": 0.405,
+      "w": 0.85,
+      "h": 0.225,
+      "shape": "roundedRect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.075,
+      "y": 0.655,
+      "w": 0.85,
+      "h": 0.225,
+      "shape": "roundedRect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Boneka beruang, patch hati, jahitan dan bintang lembut. Edisi Trio, 3 foto.",
+  "palette": {
+    "background": "#f7e8d8",
+    "ink": "#644536",
+    "accent": "#c69972",
+    "secondary": "#b8c8bb"
+  },
+  "layers": {
+    "background": "/frames/teddy-memory-trio/v1/background.svg",
+    "foreground": "/frames/teddy-memory-trio/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/teddy-memory-trio/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Teddy Memory",
+      "x": 0.06,
+      "y": 0.019,
+      "w": 0.88,
+      "h": 0.035,
+      "fontId": "sans",
+      "fontSize": 74,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#644536"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "sans",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#644536"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#644536"
+    }
+  ],
+  "collection": "Teddy Memory",
+  "artwork": {
+    "motif": "bear",
+    "edition": 0
+  }
+}

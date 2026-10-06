@@ -1,0 +1,43 @@
+# Prosedur staging, rilis dan rollback
+
+Status terbaru: katalog aktif 60 frame; source public di https://github.com/alifikri25/fotbooth. Cloudflare Pages disiapkan untuk publikasi berikutnya. Belum ada deployment Cloudflare atau domain yang dipilih. Baca [panduan Cloudflare](DEPLOY-CLOUDFLARE.md) untuk pengaturan build dan publikasi.
+
+## 1. Kandidat yang dapat direproduksi
+
+1. Catat versi source dan tanggal; gunakan checkout/snapshot bersih beserta `package-lock.json`.
+2. Jalankan `npm ci`, `npm run check`, `npm run test:e2e`.
+3. Buka contact sheet dan periksa 60 frame, caption panjang, tanggal, cover/contain, portrait/landscape/grid.
+4. Simpan `dist/` ke arsip kandidat terpisah serta salinan kandidat sebelumnya. Catat checksum arsip.
+5. Jangan ikutkan `node_modules`, fixture QA, foto pribadi, `.env`, source maps pribadi atau log pengguna ke publik. Build statis hanya membutuhkan `dist/`.
+
+## 2. Staging HTTPS
+
+1. Gunakan Cloudflare Pages dan origin preview HTTPS sesuai panduan Cloudflare. Upload isi `dist/` atau hubungkan repo GitHub.
+2. Pastikan seluruh aset tersedia dari origin yang sama; browser tidak meminta font/pustaka runtime pihak ketiga.
+3. Pasang header dari `public/_headers`. Host tanpa dukungan file ini memerlukan konfigurasi dashboard/server yang setara. Pastikan `Permissions-Policy` mengizinkan kamera hanya pada origin sendiri dan melarang mikrofon.
+4. HTML/manifest/frame/font memakai revalidasi (`no-cache`) pada awal rilis. Aset bundel dengan hash boleh immutable. Untuk perubahan frame, naikkan versi dan jalur `/frames/{id}/v{version}/`; regenerasi thumbnail, manifest sumber dan publik secara bersama.
+5. Semua tampilan aplikasi menggunakan state pada root `/`; tidak ada rute path yang perlu fallback router. Link web tidak membagikan foto/session.
+
+## 3. Gate sebelum produksi
+
+- Matriks Chrome Android, Safari iOS, Chrome/Edge desktop stabil dan satu versi sebelumnya: isi model, RAM, OS, browser, tanggal.
+- Setiap kombinasi wajib: 20 ekspor standar PNG/JPEG dengan 4 foto, dibuka kembali; 60 frame valid; minimum viewport 360 px.
+- Kamera fisik: izin ditolak/diterima, depan/belakang atau beberapa perangkat, timer/rangkaian/retake, mirror, tab background, indikator kamera berhenti.
+- File HP EXIF 1–8, portrait/landscape/panorama/sangat panjang/persegi/kecil/transparan/WebP, file rusak dan batas file/piksel.
+- Target p95 ekspor ≤5 detik dan drag ≤33 ms pada perangkat referensi PRD; 10 siklus penggunaan untuk melihat resource/memori.
+- Uji 10 peserta: ≥8 selesai mandiri, median alur unggah ≤3 menit. Review pemilik produk atas koleksi aktif.
+- Audit request produksi: foto, caption, tanggal, filename dan thumbnail pengguna tidak menjadi payload aplikasi.
+- Blocker/mayor nol. Isu minor dan batas dukungan dicatat di laporan QA. Jangan mengganti bukti perangkat nyata dengan emulasi viewport.
+
+## 4. Latihan rollback di staging
+
+1. Deploy kandidat A yang lolos smoke test. Simpan arsip dan checksum A.
+2. Deploy kandidat B. Pastikan nomor versi dan manifest benar.
+3. Pulihkan A memakai arsip yang disimpan. Bersihkan/invalidate cache HTML dan manifest sesuai penyedia.
+4. Ulangi unggah→edit→PNG/JPEG, kamera fallback, delapan aset dan audit jaringan. Catat hasil latihan, jangan menandai rollback terbukti sebelum langkah ini dilakukan.
+
+## 5. Produksi
+
+Setelah gate QA lengkap dan domain/origin dipilih, deploy arsip kandidat yang sama, aktifkan HTTPS, lalu ulangi smoke PRD §20.2 pada laptop dan HP. Aplikasi hanya bisa memastikan Blob hasil siap; jangan menganggap event ekspor sebagai bukti file benar-benar disimpan pengguna.
+
+Pantau feedback dan error kode tanpa data foto/caption. Untuk regresi satu frame, nonaktifkan paket lewat katalog tervalidasi pada rilis berikut; untuk kerusakan engine yang luas, rollback arsip. Foto sesi yang sudah berada di tab tidak dikirim atau dipulihkan melalui server.

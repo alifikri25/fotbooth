@@ -1,0 +1,112 @@
+{
+  "id": "ocean-postcard-story",
+  "name": "Ocean Postcard Story",
+  "version": 1,
+  "format": "card",
+  "categories": [
+    "nature",
+    "scrapbook",
+    "soft"
+  ],
+  "designWidth": 1800,
+  "designHeight": 2700,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.06,
+      "y": 0.145,
+      "w": 0.88,
+      "h": 0.365,
+      "shape": "roundedRect",
+      "radius": 40,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.06,
+      "y": 0.555,
+      "w": 0.425,
+      "h": 0.32,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.515,
+      "y": 0.555,
+      "w": 0.425,
+      "h": 0.32,
+      "shape": "path",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9",
+      "pathRef": "chamfer"
+    }
+  ],
+  "description": "Kerang, ombak, perangko dan kartu pos pantai. Edisi Story, 3 foto.",
+  "palette": {
+    "background": "#e9f3f4",
+    "ink": "#345d72",
+    "accent": "#e6af92",
+    "secondary": "#98c7cd"
+  },
+  "layers": {
+    "background": "/frames/ocean-postcard-story/v1/background.svg",
+    "foreground": "/frames/ocean-postcard-story/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/ocean-postcard-story/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Ocean Postcard",
+      "x": 0.06,
+      "y": 0.019,
+      "w": 0.88,
+      "h": 0.035,
+      "fontId": "serif",
+      "fontSize": 94,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#345d72"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "serif",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#345d72"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#345d72"
+    }
+  ],
+  "collection": "Ocean Postcard",
+  "artwork": {
+    "motif": "shell",
+    "edition": 9
+  }
+}

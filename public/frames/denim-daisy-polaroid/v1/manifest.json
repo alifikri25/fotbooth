@@ -1,0 +1,122 @@
+{
+  "id": "denim-daisy-polaroid",
+  "name": "Denim Daisy Polaroid",
+  "version": 1,
+  "format": "card",
+  "categories": [
+    "floral",
+    "scrapbook"
+  ],
+  "designWidth": 1800,
+  "designHeight": 2700,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.065,
+      "y": 0.15,
+      "w": 0.42,
+      "h": 0.337,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": -1.2,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.52,
+      "y": 0.15,
+      "w": 0.42,
+      "h": 0.337,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 1.2,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.065,
+      "y": 0.535,
+      "w": 0.42,
+      "h": 0.337,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 1.2,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p4",
+      "order": 4,
+      "x": 0.52,
+      "y": 0.535,
+      "w": 0.42,
+      "h": 0.337,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": -1.2,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Denim dengan jahitan, bunga daisy putih dan patch kain. Edisi Polaroid, 4 foto.",
+  "palette": {
+    "background": "#d9e6f1",
+    "ink": "#314b68",
+    "accent": "#faf0c7",
+    "secondary": "#82a2c1"
+  },
+  "layers": {
+    "background": "/frames/denim-daisy-polaroid/v1/background.svg",
+    "foreground": "/frames/denim-daisy-polaroid/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/denim-daisy-polaroid/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Denim Daisy",
+      "x": 0.06,
+      "y": 0.019,
+      "w": 0.88,
+      "h": 0.035,
+      "fontId": "sans",
+      "fontSize": 94,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#314b68"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "sans",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#314b68"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#314b68"
+    }
+  ],
+  "collection": "Denim Daisy",
+  "artwork": {
+    "motif": "daisy",
+    "edition": 10
+  }
+}

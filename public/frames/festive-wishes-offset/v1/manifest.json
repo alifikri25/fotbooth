@@ -1,0 +1,110 @@
+{
+  "id": "festive-wishes-offset",
+  "name": "Festive Wishes Offset",
+  "version": 1,
+  "format": "strip",
+  "categories": [
+    "seasonal",
+    "party"
+  ],
+  "designWidth": 1200,
+  "designHeight": 3600,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.055,
+      "y": 0.155,
+      "w": 0.89,
+      "h": 0.225,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.11,
+      "y": 0.405,
+      "w": 0.835,
+      "h": 0.225,
+      "shape": "roundedRect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.055,
+      "y": 0.655,
+      "w": 0.89,
+      "h": 0.225,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Hadiah berpita, ranting evergreen, lonceng dan confetti. Edisi Offset, 3 foto.",
+  "palette": {
+    "background": "#eff2e5",
+    "ink": "#37594e",
+    "accent": "#bc665b",
+    "secondary": "#c6b47f"
+  },
+  "layers": {
+    "background": "/frames/festive-wishes-offset/v1/background.svg",
+    "foreground": "/frames/festive-wishes-offset/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/festive-wishes-offset/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Festive Wishes",
+      "x": 0.06,
+      "y": 0.019,
+      "w": 0.88,
+      "h": 0.035,
+      "fontId": "serif",
+      "fontSize": 74,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#37594e"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "serif",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#37594e"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#37594e"
+    }
+  ],
+  "collection": "Festive Wishes",
+  "artwork": {
+    "motif": "gift",
+    "edition": 6
+  }
+}

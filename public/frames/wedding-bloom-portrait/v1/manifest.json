@@ -1,0 +1,98 @@
+{
+  "id": "wedding-bloom-portrait",
+  "name": "Wedding Bloom Portrait",
+  "version": 1,
+  "format": "card",
+  "categories": [
+    "romantic",
+    "floral"
+  ],
+  "designWidth": 1800,
+  "designHeight": 2700,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.06,
+      "y": 0.145,
+      "w": 0.415,
+      "h": 0.73,
+      "shape": "roundedRect",
+      "radius": 95,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.525,
+      "y": 0.145,
+      "w": 0.415,
+      "h": 0.73,
+      "shape": "roundedRect",
+      "radius": 95,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Cincin emas, buket mawar, daun dan pita pengantin. Edisi Portrait, 2 foto.",
+  "palette": {
+    "background": "#faf3e9",
+    "ink": "#635341",
+    "accent": "#bf9b5c",
+    "secondary": "#a5b095"
+  },
+  "layers": {
+    "background": "/frames/wedding-bloom-portrait/v1/background.svg",
+    "foreground": "/frames/wedding-bloom-portrait/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/wedding-bloom-portrait/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Wedding Bloom",
+      "x": 0.06,
+      "y": 0.019,
+      "w": 0.88,
+      "h": 0.035,
+      "fontId": "serif",
+      "fontSize": 94,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#635341"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "serif",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#635341"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#635341"
+    }
+  ],
+  "collection": "Wedding Bloom",
+  "artwork": {
+    "motif": "rings",
+    "edition": 7
+  }
+}

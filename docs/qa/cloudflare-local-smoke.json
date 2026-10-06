@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-06",
+  "baseURL": "http://127.0.0.1:8788",
+  "frames": 60,
+  "thumbnailCount": 60,
+  "headers": {
+    "access-control-allow-origin": "*",
+    "cache-control": "no-cache",
+    "content-encoding": "gzip",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 06 Oct 2026 13:17:23 GMT",
+    "etag": "\"a329027db65ab477c2e6a8fc9df8e0e4\"",
+    "transfer-encoding": "chunked",
+    "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self'; media-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+    "permissions-policy": "camera=(self), microphone=()",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "x-content-type-options": "nosniff",
+    "x-server-env": "dev"
+  },
+  "exports": [
+    {
+      "format": "png",
+      "dimensions": [
+        600,
+        1800
+      ],
+      "bytes": 360356
+    },
+    {
+      "format": "jpg",
+      "dimensions": [
+        600,
+        1800
+      ],
+      "bytes": 130564
+    }
+  ],
+  "errors": [],
+  "scope": "Cloudflare Pages local runtime: built app, all 180 layer/thumbnail URLs, search, upload, caption, result and decoded PNG/JPEG downloads. No remote deployment."
+}

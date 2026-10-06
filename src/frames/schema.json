@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "version",
+    "format",
+    "categories",
+    "designWidth",
+    "designHeight",
+    "slots",
+    "textAreas",
+    "palette",
+    "layers",
+    "thumbnail",
+    "licenses",
+    "description"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "name": { "type": "string", "minLength": 1 },
+    "version": { "type": "integer", "minimum": 1 },
+    "format": { "enum": ["strip", "card"] },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "enum": ["playful", "clean", "futuristic", "soft", "cartoon", "dynamic", "floral", "romantic", "scrapbook", "retro", "party", "nature", "seasonal"] }
+    },
+    "description": { "type": "string" },
+    "collection": { "type": "string", "minLength": 1 },
+    "artwork": {
+      "type": "object",
+      "required": ["motif", "edition"],
+      "additionalProperties": false,
+      "properties": {
+        "motif": { "type": "string", "minLength": 1 },
+        "edition": { "type": "integer", "minimum": 0, "maximum": 10 }
+      }
+    },
+    "designWidth": { "type": "number", "exclusiveMinimum": 0 },
+    "designHeight": { "type": "number", "exclusiveMinimum": 0 },
+    "slots": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "order", "x", "y", "w", "h", "shape", "rotationDeg", "matteColor"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "order": { "type": "integer", "minimum": 1, "maximum": 4 },
+          "x": { "type": "number", "minimum": 0, "maximum": 1 },
+          "y": { "type": "number", "minimum": 0, "maximum": 1 },
+          "w": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+          "h": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+          "shape": { "enum": ["rect", "roundedRect", "circle", "path"] },
+          "radius": { "type": "number", "minimum": 0 },
+          "pathRef": { "enum": ["arch", "chamfer"] },
+          "rotationDeg": { "type": "number", "minimum": -3, "maximum": 3 },
+          "matteColor": { "$ref": "#/definitions/color" }
+        }
+      }
+    },
+    "textAreas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "x",
+          "y",
+          "w",
+          "h",
+          "fontId",
+          "fontSize",
+          "minFontSize",
+          "maxLines",
+          "color"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "text": { "type": "string" },
+          "x": { "type": "number", "minimum": 0 },
+          "y": { "type": "number", "minimum": 0 },
+          "w": { "type": "number", "exclusiveMinimum": 0 },
+          "h": { "type": "number", "exclusiveMinimum": 0 },
+          "fontId": { "enum": ["sans", "serif"] },
+          "fontSize": { "type": "number", "exclusiveMinimum": 0 },
+          "minFontSize": { "type": "number", "exclusiveMinimum": 0 },
+          "maxLines": { "type": "integer", "minimum": 1, "maximum": 2 },
+          "color": { "$ref": "#/definitions/color" }
+        }
+      }
+    },
+    "palette": {
+      "type": "object",
+      "required": ["background", "ink", "accent", "secondary"],
+      "additionalProperties": { "$ref": "#/definitions/color" }
+    },
+    "layers": {
+      "type": "object",
+      "required": ["background", "foreground"],
+      "properties": { "background": { "type": "string" }, "foreground": { "type": "string" } }
+    },
+    "thumbnail": { "type": "string" },
+    "licenses": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+  },
+  "definitions": { "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" } }
+}

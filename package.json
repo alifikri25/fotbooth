@@ -1,0 +1,47 @@
+{
+  "name": "fotbooth",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "schema:build": "node scripts/build-schema.mjs",
+    "pretest": "npm run schema:build",
+    "prebuild": "npm run schema:build",
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test --project=chromium --project=webkit",
+    "check": "npm run test && npm run build",
+    "test:e2e:all": "playwright test",
+    "test:e2e:firefox": "playwright test --project=firefox",
+    "assets:build": "node scripts/build-assets.mjs",
+    "qa:frames": "node scripts/render-catalog.mjs",
+    "qa:ui": "node scripts/capture-ui.mjs",
+    "deploy:cloudflare": "npm run build && wrangler pages deploy dist --project-name fotbooth --branch main",
+    "deploy:preview": "npm run build && wrangler pages deploy dist --project-name fotbooth --branch preview"
+  },
+  "engines": {
+    "node": "^22.12.0 || ^24.0.0 || >=26.0.0"
+  },
+  "dependencies": {
+    "@fontsource-variable/dm-sans": "5.3.0",
+    "@fontsource/fraunces": "5.3.0",
+    "lucide-react": "1.52.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/node": "26.6.4",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "ajv": "8.20.0",
+    "prettier": "3.9.9",
+    "typescript": "7.0.2",
+    "vite": "8.3.2",
+    "vitest": "5.0.3",
+    "wrangler": "4.147.0"
+  }
+}

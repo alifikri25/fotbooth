@@ -1,0 +1,122 @@
+{
+  "id": "citrus-club-mini",
+  "name": "Citrus Club Mini",
+  "version": 1,
+  "format": "strip",
+  "categories": [
+    "playful",
+    "nature"
+  ],
+  "designWidth": 1200,
+  "designHeight": 3600,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.08,
+      "y": 0.15,
+      "w": 0.84,
+      "h": 0.166,
+      "shape": "roundedRect",
+      "radius": 22,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.08,
+      "y": 0.337,
+      "w": 0.84,
+      "h": 0.166,
+      "shape": "roundedRect",
+      "radius": 22,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.08,
+      "y": 0.524,
+      "w": 0.84,
+      "h": 0.166,
+      "shape": "roundedRect",
+      "radius": 22,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p4",
+      "order": 4,
+      "x": 0.08,
+      "y": 0.711,
+      "w": 0.84,
+      "h": 0.166,
+      "shape": "roundedRect",
+      "radius": 22,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Irisan jeruk, daun dan label minuman musim panas. Edisi Mini, 4 foto.",
+  "palette": {
+    "background": "#b2c875",
+    "ink": "#496037",
+    "accent": "#eda547",
+    "secondary": "#fff3ce"
+  },
+  "layers": {
+    "background": "/frames/citrus-club-mini/v1/background.svg",
+    "foreground": "/frames/citrus-club-mini/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/citrus-club-mini/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Citrus Club",
+      "x": 0.06,
+      "y": 0.019,
+      "w": 0.88,
+      "h": 0.035,
+      "fontId": "sans",
+      "fontSize": 74,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#496037"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "sans",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#496037"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#496037"
+    }
+  ],
+  "collection": "Citrus Club",
+  "artwork": {
+    "motif": "orange",
+    "edition": 2
+  }
+}

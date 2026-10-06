@@ -1,0 +1,110 @@
+{
+  "id": "ribbon-diary-wander",
+  "name": "Ribbon Diary Wander",
+  "version": 1,
+  "format": "strip",
+  "categories": [
+    "romantic",
+    "soft"
+  ],
+  "designWidth": 1200,
+  "designHeight": 3600,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.07,
+      "y": 0.155,
+      "w": 0.86,
+      "h": 0.22,
+      "shape": "roundedRect",
+      "radius": 45,
+      "rotationDeg": -1.3,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.095,
+      "y": 0.405,
+      "w": 0.83,
+      "h": 0.22,
+      "shape": "roundedRect",
+      "radius": 70,
+      "rotationDeg": 1.2,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.06,
+      "y": 0.655,
+      "w": 0.88,
+      "h": 0.22,
+      "shape": "roundedRect",
+      "radius": 35,
+      "rotationDeg": -1,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Pita satin, renda scallop, mutiara dan label buku harian. Edisi Wander, 3 foto.",
+  "palette": {
+    "background": "#fff0f4",
+    "ink": "#743747",
+    "accent": "#d86787",
+    "secondary": "#c5b6df"
+  },
+  "layers": {
+    "background": "/frames/ribbon-diary-wander/v1/background.svg",
+    "foreground": "/frames/ribbon-diary-wander/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/ribbon-diary-wander/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Ribbon Diary",
+      "x": 0.06,
+      "y": 0.019,
+      "w": 0.88,
+      "h": 0.035,
+      "fontId": "serif",
+      "fontSize": 74,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#743747"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "serif",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#743747"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#743747"
+    }
+  ],
+  "collection": "Ribbon Diary",
+  "artwork": {
+    "motif": "bow",
+    "edition": 1
+  }
+}

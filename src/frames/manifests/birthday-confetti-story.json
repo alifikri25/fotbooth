@@ -1,0 +1,112 @@
+{
+  "id": "birthday-confetti-story",
+  "name": "Birthday Confetti Story",
+  "version": 1,
+  "format": "card",
+  "categories": [
+    "party",
+    "playful",
+    "dynamic"
+  ],
+  "designWidth": 1800,
+  "designHeight": 2700,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.06,
+      "y": 0.145,
+      "w": 0.88,
+      "h": 0.365,
+      "shape": "roundedRect",
+      "radius": 40,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.06,
+      "y": 0.555,
+      "w": 0.425,
+      "h": 0.32,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.515,
+      "y": 0.555,
+      "w": 0.425,
+      "h": 0.32,
+      "shape": "path",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9",
+      "pathRef": "chamfer"
+    }
+  ],
+  "description": "Kue ulang tahun, lilin, balon dan confetti warna-warni. Edisi Story, 3 foto.",
+  "palette": {
+    "background": "#fff1e2",
+    "ink": "#754a60",
+    "accent": "#e18ea1",
+    "secondary": "#a7cace"
+  },
+  "layers": {
+    "background": "/frames/birthday-confetti-story/v1/background.svg",
+    "foreground": "/frames/birthday-confetti-story/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/birthday-confetti-story/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Birthday Confetti",
+      "x": 0.06,
+      "y": 0.019,
+      "w": 0.88,
+      "h": 0.035,
+      "fontId": "sans",
+      "fontSize": 94,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#754a60"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "sans",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#754a60"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#754a60"
+    }
+  ],
+  "collection": "Birthday Confetti",
+  "artwork": {
+    "motif": "cake",
+    "edition": 9
+  }
+}

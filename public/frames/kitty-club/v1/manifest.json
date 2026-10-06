@@ -1,0 +1,106 @@
+{
+  "id": "kitty-club",
+  "name": "Kitty Club",
+  "version": 1,
+  "format": "strip",
+  "categories": [
+    "cartoon",
+    "playful",
+    "soft"
+  ],
+  "designWidth": 1200,
+  "designHeight": 3600,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.07,
+      "y": 0.115,
+      "w": 0.86,
+      "h": 0.235,
+      "shape": "roundedRect",
+      "radius": 150,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.05,
+      "y": 0.39,
+      "w": 0.9,
+      "h": 0.225,
+      "shape": "roundedRect",
+      "radius": 65,
+      "rotationDeg": 2,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.09,
+      "y": 0.65,
+      "w": 0.82,
+      "h": 0.225,
+      "shape": "roundedRect",
+      "radius": 110,
+      "rotationDeg": -2,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Kucing ginger, jejak kaki dan stiker ikan di jendela foto yang bergoyang.",
+  "palette": {
+    "background": "#fff2d7",
+    "ink": "#553a30",
+    "accent": "#f89a61",
+    "secondary": "#b7d5c9"
+  },
+  "layers": {
+    "background": "/frames/kitty-club/v1/background.svg",
+    "foreground": "/frames/kitty-club/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/kitty-club/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Kitty Club",
+      "x": 0.06,
+      "y": 0.012,
+      "w": 0.88,
+      "h": 0.036,
+      "fontId": "sans",
+      "fontSize": 100,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#553a30"
+    },
+    {
+      "id": "caption",
+      "x": 0.07,
+      "y": 0.906,
+      "w": 0.86,
+      "h": 0.055,
+      "fontId": "sans",
+      "fontSize": 60,
+      "minFontSize": 32,
+      "maxLines": 2,
+      "color": "#553a30"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#553a30"
+    }
+  ]
+}

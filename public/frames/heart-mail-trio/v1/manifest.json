@@ -1,0 +1,110 @@
+{
+  "id": "heart-mail-trio",
+  "name": "Heart Mail Trio",
+  "version": 1,
+  "format": "strip",
+  "categories": [
+    "romantic",
+    "scrapbook"
+  ],
+  "designWidth": 1200,
+  "designHeight": 3600,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.075,
+      "y": 0.155,
+      "w": 0.85,
+      "h": 0.225,
+      "shape": "roundedRect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.075,
+      "y": 0.405,
+      "w": 0.85,
+      "h": 0.225,
+      "shape": "roundedRect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.075,
+      "y": 0.655,
+      "w": 0.85,
+      "h": 0.225,
+      "shape": "roundedRect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Amplop cinta, segel hati, cap pos dan perangko. Edisi Trio, 3 foto.",
+  "palette": {
+    "background": "#f9eadf",
+    "ink": "#803e48",
+    "accent": "#cd6b7a",
+    "secondary": "#d9b1a0"
+  },
+  "layers": {
+    "background": "/frames/heart-mail-trio/v1/background.svg",
+    "foreground": "/frames/heart-mail-trio/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/heart-mail-trio/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Heart Mail",
+      "x": 0.06,
+      "y": 0.019,
+      "w": 0.88,
+      "h": 0.035,
+      "fontId": "serif",
+      "fontSize": 74,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#803e48"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "serif",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#803e48"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#803e48"
+    }
+  ],
+  "collection": "Heart Mail",
+  "artwork": {
+    "motif": "envelope",
+    "edition": 0
+  }
+}

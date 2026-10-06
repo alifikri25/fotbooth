@@ -1,0 +1,118 @@
+{
+  "id": "candy-bounce",
+  "name": "Candy Bounce",
+  "version": 1,
+  "format": "strip",
+  "categories": [
+    "cartoon",
+    "playful",
+    "dynamic"
+  ],
+  "designWidth": 1200,
+  "designHeight": 3600,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.055,
+      "y": 0.1,
+      "w": 0.89,
+      "h": 0.175,
+      "shape": "roundedRect",
+      "radius": 185,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.085,
+      "y": 0.3,
+      "w": 0.83,
+      "h": 0.175,
+      "shape": "roundedRect",
+      "radius": 80,
+      "rotationDeg": -2,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.045,
+      "y": 0.5,
+      "w": 0.91,
+      "h": 0.175,
+      "shape": "roundedRect",
+      "radius": 180,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p4",
+      "order": 4,
+      "x": 0.075,
+      "y": 0.7,
+      "w": 0.85,
+      "h": 0.175,
+      "shape": "roundedRect",
+      "radius": 65,
+      "rotationDeg": 2,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Empat jendela berirama, permen berwajah, zigzag dan lollipop besar.",
+  "palette": {
+    "background": "#f2ddff",
+    "ink": "#4b3268",
+    "accent": "#f68dba",
+    "secondary": "#bdf1ce"
+  },
+  "layers": {
+    "background": "/frames/candy-bounce/v1/background.svg",
+    "foreground": "/frames/candy-bounce/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/candy-bounce/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Candy Bounce",
+      "x": 0.06,
+      "y": 0.012,
+      "w": 0.88,
+      "h": 0.036,
+      "fontId": "sans",
+      "fontSize": 100,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#4b3268"
+    },
+    {
+      "id": "caption",
+      "x": 0.07,
+      "y": 0.906,
+      "w": 0.86,
+      "h": 0.055,
+      "fontId": "sans",
+      "fontSize": 60,
+      "minFontSize": 32,
+      "maxLines": 2,
+      "color": "#4b3268"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#4b3268"
+    }
+  ]
+}

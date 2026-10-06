@@ -1,0 +1,93 @@
+{
+  "id": "concert-pass",
+  "name": "Concert Pass",
+  "version": 1,
+  "format": "strip",
+  "categories": [
+    "clean",
+    "futuristic"
+  ],
+  "designWidth": 1200,
+  "designHeight": 3600,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.05,
+      "y": 0.07,
+      "w": 0.9,
+      "h": 0.52,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.05,
+      "y": 0.65,
+      "w": 0.9,
+      "h": 0.235,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Foto portrait dominan, potongan tiket dan nomor sesi dekoratif.",
+  "palette": {
+    "background": "#f4fd69",
+    "ink": "#20241f",
+    "accent": "#4d4fff",
+    "secondary": "#e3e85c"
+  },
+  "layers": {
+    "background": "/frames/concert-pass/v1/background.svg",
+    "foreground": "/frames/concert-pass/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/concert-pass/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Concert Pass",
+      "x": 0.06,
+      "y": 0.012,
+      "w": 0.88,
+      "h": 0.036,
+      "fontId": "sans",
+      "fontSize": 100,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#20241f"
+    },
+    {
+      "id": "caption",
+      "x": 0.07,
+      "y": 0.906,
+      "w": 0.86,
+      "h": 0.055,
+      "fontId": "sans",
+      "fontSize": 60,
+      "minFontSize": 32,
+      "maxLines": 2,
+      "color": "#20241f"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#20241f"
+    }
+  ]
+}

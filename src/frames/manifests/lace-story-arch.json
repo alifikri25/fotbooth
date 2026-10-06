@@ -1,0 +1,111 @@
+{
+  "id": "lace-story-arch",
+  "name": "Lace Story Arch",
+  "version": 1,
+  "format": "strip",
+  "categories": [
+    "romantic",
+    "soft"
+  ],
+  "designWidth": 1200,
+  "designHeight": 3600,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.05,
+      "y": 0.145,
+      "w": 0.9,
+      "h": 0.235,
+      "shape": "path",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9",
+      "pathRef": "arch"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.05,
+      "y": 0.395,
+      "w": 0.9,
+      "h": 0.235,
+      "shape": "roundedRect",
+      "radius": 95,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.05,
+      "y": 0.645,
+      "w": 0.9,
+      "h": 0.235,
+      "shape": "roundedRect",
+      "radius": 35,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Doily renda, mutiara, pita kecil dan emboss bunga. Edisi Arch, 3 foto.",
+  "palette": {
+    "background": "#fff7ec",
+    "ink": "#726354",
+    "accent": "#c5aa8b",
+    "secondary": "#d9cab7"
+  },
+  "layers": {
+    "background": "/frames/lace-story-arch/v1/background.svg",
+    "foreground": "/frames/lace-story-arch/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/lace-story-arch/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Lace Story",
+      "x": 0.06,
+      "y": 0.019,
+      "w": 0.88,
+      "h": 0.035,
+      "fontId": "serif",
+      "fontSize": 74,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#726354"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "serif",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#726354"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#726354"
+    }
+  ],
+  "collection": "Lace Story",
+  "artwork": {
+    "motif": "lace",
+    "edition": 4
+  }
+}

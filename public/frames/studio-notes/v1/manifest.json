@@ -1,0 +1,104 @@
+{
+  "id": "studio-notes",
+  "name": "Studio Notes",
+  "version": 1,
+  "format": "card",
+  "categories": [
+    "clean"
+  ],
+  "designWidth": 1800,
+  "designHeight": 2700,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.06,
+      "y": 0.07,
+      "w": 0.88,
+      "h": 0.42,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.065,
+      "y": 0.53,
+      "w": 0.48,
+      "h": 0.34,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": -2,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.59,
+      "y": 0.558,
+      "w": 0.35,
+      "h": 0.285,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 3,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Satu foto besar, dua catatan kecil yang asimetris dan garis notebook.",
+  "palette": {
+    "background": "#f5f1e9",
+    "ink": "#34362d",
+    "accent": "#b85031",
+    "secondary": "#ddd9cc"
+  },
+  "layers": {
+    "background": "/frames/studio-notes/v1/background.svg",
+    "foreground": "/frames/studio-notes/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/studio-notes/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Studio Notes",
+      "x": 0.06,
+      "y": 0.012,
+      "w": 0.88,
+      "h": 0.036,
+      "fontId": "serif",
+      "fontSize": 94,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#34362d"
+    },
+    {
+      "id": "caption",
+      "x": 0.07,
+      "y": 0.906,
+      "w": 0.86,
+      "h": 0.055,
+      "fontId": "serif",
+      "fontSize": 60,
+      "minFontSize": 32,
+      "maxLines": 2,
+      "color": "#34362d"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#34362d"
+    }
+  ]
+}

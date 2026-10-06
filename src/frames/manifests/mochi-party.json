@@ -1,0 +1,106 @@
+{
+  "id": "mochi-party",
+  "name": "Mochi Party",
+  "version": 1,
+  "format": "strip",
+  "categories": [
+    "cartoon",
+    "playful",
+    "soft"
+  ],
+  "designWidth": 1200,
+  "designHeight": 3600,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.06,
+      "y": 0.12,
+      "w": 0.88,
+      "h": 0.225,
+      "shape": "roundedRect",
+      "radius": 125,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.08,
+      "y": 0.38,
+      "w": 0.84,
+      "h": 0.225,
+      "shape": "roundedRect",
+      "radius": 180,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.05,
+      "y": 0.64,
+      "w": 0.9,
+      "h": 0.225,
+      "shape": "roundedRect",
+      "radius": 90,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Trio mochi pipi merah, kotak pastel, hati kecil dan pita pesta.",
+  "palette": {
+    "background": "#fff1f6",
+    "ink": "#51364f",
+    "accent": "#ff8eb8",
+    "secondary": "#b5b9ef"
+  },
+  "layers": {
+    "background": "/frames/mochi-party/v1/background.svg",
+    "foreground": "/frames/mochi-party/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/mochi-party/v1/thumbnail.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Mochi Party",
+      "x": 0.06,
+      "y": 0.012,
+      "w": 0.88,
+      "h": 0.036,
+      "fontId": "sans",
+      "fontSize": 100,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#51364f"
+    },
+    {
+      "id": "caption",
+      "x": 0.07,
+      "y": 0.906,
+      "w": 0.86,
+      "h": 0.055,
+      "fontId": "sans",
+      "fontSize": 60,
+      "minFontSize": 32,
+      "maxLines": 2,
+      "color": "#51364f"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#51364f"
+    }
+  ]
+}
