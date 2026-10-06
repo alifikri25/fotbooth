@@ -338,6 +338,305 @@ function motif(kind, p) {
   }
 }
 
+function companion(kind, p) {
+  const ink = p.ink,
+    a = p.accent,
+    s = p.secondary,
+    cream = '#fffaf1';
+  switch (kind) {
+    case 'pixel':
+      return (
+        rect(-103, -58, 206, 116, cream, 23, `stroke="${ink}" stroke-width="5"`) +
+        path('M-74 -17H-51V-40H-28V-17H-5V6H-28V29H-51V6H-74Z', s, ink, 3) +
+        circle(50, -15, 15, a, ink, 3) +
+        circle(77, 15, 15, s, ink, 3) +
+        rect(-9, 39, 22, 5, ink, 2) +
+        rect(21, 39, 22, 5, ink, 2) +
+        line('M-30 -80h14v-14h14M86 60h16v16h16', a, 7)
+      );
+    case 'bow':
+      return (
+        path('M-70 -68Q-8 -22 62 -59L38 92L-1 67L-38 94L-44 -20Z', s, ink, 3) +
+        line('M-37 -13Q-11 29 -20 73M15 -18Q4 20 14 62', cream, 5) +
+        place(bow(a, ink), -2, -34, 0.65) +
+        [-65, -42, -18, 6, 30, 54]
+          .map((x, i) => circle(x, 114 - Math.abs(i - 2.5) * 6, 6, cream, a, 2))
+          .join('')
+      );
+    case 'flower':
+      return (
+        line('M-73 85Q-22 21 62 -54M-15 42L-3 -55M23 8L87 7', '#7d946d', 6) +
+        place(rose(a, ink), 59, -54, 0.5) +
+        place(daisy(cream, a, ink), -4, -58, 0.45) +
+        place(leaf(s, ink), -43, 32, 0.48, -35) +
+        place(leaf(s, ink), 48, 19, 0.4, 75)
+      );
+    case 'cherry':
+      return (
+        rect(-75, -70, 150, 153, cream, 9, `stroke="${ink}" stroke-width="4"`) +
+        rect(-75, -70, 150, 27, s, 3) +
+        line('M-72 -44H72', ink, 3) +
+        place(motif('cherry', p), 0, 2, 0.56) +
+        `<text y="68" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="${ink}">SWEET PICK</text>`
+      );
+    case 'daisy':
+      return (
+        rect(-104, -66, 208, 132, s, 12, `stroke="${ink}" stroke-width="4"`) +
+        rect(
+          -93,
+          -55,
+          186,
+          110,
+          'none',
+          6,
+          `stroke="${cream}" stroke-width="3" stroke-dasharray="8 5"`,
+        ) +
+        [-40, -20, 0, 20, 40].map((y) => line(`M-85 ${y}H83`, ink, 1, 'opacity=".17"')).join('') +
+        place(daisy(cream, '#e3b85d', ink), -27, -5, 0.58) +
+        circle(56, 20, 24, cream, ink, 3) +
+        [-7, 7].flatMap((x) => [-7, 7].map((y) => circle(56 + x, 20 + y, 2.5, ink))).join('')
+      );
+    case 'sparkle':
+      return (
+        `<ellipse rx="93" ry="43" fill="none" stroke="${a}" stroke-width="5" transform="rotate(-25)"/>` +
+        circle(0, 0, 42, s, ink, 3) +
+        line('M-21 -10Q-6 -29 14 -26', cream, 5) +
+        place(sparkle(cream, ink), -89, 32, 0.36) +
+        place(sparkle(a, ink), 85, -30, 0.32)
+      );
+    case 'film':
+      return (
+        rect(-76, -71, 113, 141, s, 13, `stroke="${ink}" stroke-width="4"`) +
+        rect(-71, -81, 103, 28, a, 5) +
+        rect(-64, -40, 88, 73, cream, 2) +
+        `<text x="-20" y="-2" text-anchor="middle" font-family="Georgia,serif" font-size="23" fill="#45392d">35 mm</text>` +
+        path('M37 -51H103V77H41V56H81V-30H37Z', '#302a28', a, 3) +
+        [-18, 12, 42].map((y) => rect(86, y, 10, 15, cream, 1)).join('')
+      );
+    case 'orange':
+      return (
+        path('M-63 -66H63L47 82H-47Z', cream, ink, 4) +
+        path('M-50 -14H51L40 69H-40Z', a, ink, 2) +
+        line('M17 -88L4 54', s, 10) +
+        place(motif('orange', p), -58, -64, 0.45) +
+        circle(0, 27, 14, cream, a, 3)
+      );
+    case 'shell':
+      return (
+        path('M0 -87L26 -27L89 -25L39 17L59 81L0 47L-59 81L-39 17L-89 -25L-26 -27Z', s, ink, 4) +
+        [
+          [0, -44],
+          [41, -11],
+          [26, 39],
+          [-26, 39],
+          [-41, -11],
+        ]
+          .map(([x, y]) => circle(x, y, 5, cream))
+          .join('') +
+        circle(100, 64, 12, cream, a, 2) +
+        circle(-97, 51, 7, cream, a, 2)
+      );
+    case 'leaf':
+      return (
+        path('M-103 -51H74L105 -22V65H-103Z', cream, ink, 3) +
+        circle(76, -24, 5, a, ink, 2) +
+        line('M82 -27Q132 -92 109 -94', ink, 3) +
+        place(leaf(s, ink), -52, 0, 0.48, -25) +
+        `<text x="0" y="-6" font-family="Georgia,serif" font-size="17" fill="${ink}">BOT. 03</text>` +
+        line('M0 11H74M0 27H56M-78 48H71', a, 2)
+      );
+    case 'butterfly':
+      return (
+        line('M-104 60Q-84 -75 -9 1Q41 72 94 -56', a, 4, 'stroke-dasharray="6 8"') +
+        place(motif('butterfly', p), -47, -34, 0.43, -23) +
+        place(motif('butterfly', { ...p, accent: s }), 76, 43, 0.32, 18) +
+        path('M-26 64Q-56 104 -35 111Q-9 115 15 64Q39 13 13 8Q-8 6 -21 46', 'none', ink, 4)
+      );
+    case 'record':
+      return (
+        line('M-56 29V-58L52 -78V8M-56 -41L52 -61', ink, 10) +
+        `<ellipse cx="-77" cy="36" rx="28" ry="19" fill="${a}" transform="rotate(-22 -77 36)"/><ellipse cx="31" cy="16" rx="28" ry="19" fill="${s}" transform="rotate(-22 31 16)"/>` +
+        place(sparkle(cream, ink), 87, 77, 0.34)
+      );
+    case 'disco':
+      return (
+        `<ellipse rx="98" ry="31" fill="none" stroke="${a}" stroke-width="5" transform="rotate(-27)"/>` +
+        circle(0, 0, 57, s, cream, 4) +
+        line('M-33 -26Q-6 -52 28 -30', cream, 4) +
+        place(sparkle(cream), -84, 41, 0.38) +
+        place(sparkle(a), 84, -64, 0.3) +
+        circle(94, 38, 6, cream)
+      );
+    case 'envelope':
+      return (
+        rect(
+          -75,
+          -78,
+          150,
+          156,
+          cream,
+          3,
+          `stroke="${a}" stroke-width="9" stroke-dasharray="8 8"`,
+        ) +
+        rect(-58, -61, 116, 120, s, 3) +
+        place(heart(a, ink), 0, -4, 0.48) +
+        `<text y="49" text-anchor="middle" font-family="Georgia,serif" font-size="16" fill="${ink}">LOVE MAIL</text>` +
+        [0, 14, 28].map((y) => line(`M52 ${y}Q82 ${y - 13} 111 ${y}`, ink, 2)).join('')
+      );
+    case 'lace':
+      return (
+        Array.from({ length: 12 }, (_, i) =>
+          place(
+            `<ellipse cy="-55" rx="13" ry="26" fill="${cream}" stroke="${a}" stroke-width="2"/>`,
+            0,
+            0,
+            1,
+            i * 30,
+          ),
+        ).join('') +
+        circle(0, 0, 36, s, a, 3) +
+        place(rose(cream, ink), 0, 0, 0.34) +
+        path('M-17 63L-38 121L-2 107L21 126L31 62', cream, a, 2)
+      );
+    case 'basket':
+      return (
+        path('M-74 -25Q-62 -74 0 -66Q62 -74 74 -25Q60 67 0 90Q-60 67 -74 -25Z', a, ink, 4) +
+        path(
+          'M0 -67L-30 -97L-32 -62L-74 -69L-51 -33L-14 -43L0 -21L16 -43L52 -32L75 -69L33 -62L30 -97Z',
+          s,
+          ink,
+          3,
+        ) +
+        [
+          [-30, 0],
+          [29, 4],
+          [0, 31],
+          [-21, 48],
+          [21, 58],
+        ]
+          .map(([x, y]) => `<ellipse cx="${x}" cy="${y}" rx="3" ry="6" fill="${cream}"/>`)
+          .join('')
+      );
+    case 'bear':
+      return (
+        rect(-86, -66, 172, 132, cream, 18, `stroke="${ink}" stroke-width="4"`) +
+        rect(
+          -73,
+          -53,
+          146,
+          106,
+          'none',
+          10,
+          `stroke="${a}" stroke-width="3" stroke-dasharray="7 6"`,
+        ) +
+        place(heart(s, ink), 0, 4, 0.58) +
+        line('M-112 -54L-96 -38M97 50L113 66', a, 4)
+      );
+    case 'coffee':
+      return (
+        path(
+          'M-77 -91H77V78L61 69L45 84L29 72L13 86L-4 71L-22 84L-39 72L-58 84L-77 75Z',
+          cream,
+          ink,
+          3,
+        ) +
+        `<text y="-54" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="${ink}">COFFEE FOR TWO</text>` +
+        line('M-59 -34H59M-59 -5H21M-59 16H42M-59 37H-8', a, 3) +
+        `<ellipse cx="69" cy="60" rx="18" ry="27" fill="${a}" stroke="${ink}" stroke-width="3" transform="rotate(30 69 60)"/>` +
+        line('M61 43Q78 59 75 77', cream, 3)
+      );
+    case 'cake':
+      return (
+        `<ellipse cy="-27" rx="59" ry="71" fill="${s}" stroke="${ink}" stroke-width="4"/>` +
+        path('M0 44L-10 59H10Z', a, ink, 3) +
+        line('M0 59Q-30 82 0 99T0 131', ink, 3) +
+        line('M-35 -49Q-24 -74 -5 -77', cream, 5) +
+        place(heart(cream, a), 7, -22, 0.42)
+      );
+    case 'graduate':
+      return (
+        rect(-88, -47, 176, 94, cream, 8, `stroke="${ink}" stroke-width="4"`) +
+        `<ellipse cx="-82" rx="13" ry="47" fill="${s}" stroke="${ink}" stroke-width="3"/>` +
+        rect(-16, -49, 32, 98, a, 3) +
+        place(bow(a, ink), 1, 3, 0.43) +
+        line('M-61 -24H-30M35 21H68', ink, 2)
+      );
+    case 'rings':
+      return (
+        line('M-91 53Q0 -102 91 53', a, 4) +
+        [-65, -35, 0, 35, 65]
+          .map((x, i) => place(leaf(s, ink), x, Math.abs(x) * 0.7 - 40, 0.3, i * 24 - 50))
+          .join('') +
+        place(rose(cream, a), -54, 31, 0.36) +
+        place(rose(cream, a), 54, 31, 0.36) +
+        place(bow(a, ink), 0, 59, 0.45)
+      );
+    case 'headphones':
+      return (
+        path(
+          'M-111 -59H111V-23Q87 -23 87 0Q87 23 111 23V59H-111V23Q-87 23 -87 0Q-87 -23 -111 -23Z',
+          cream,
+          ink,
+          3,
+        ) +
+        line('M49 -47V47', a, 3, 'stroke-dasharray="5 5"') +
+        `<text x="-25" y="-8" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="${ink}">OUR ERA</text>` +
+        `<text x="-25" y="20" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="${ink}">ALL ACCESS</text>` +
+        place(sparkle(a, ink), 77, 0, 0.24)
+      );
+    case 'pumpkin':
+      return (
+        path('M15 -92Q-103 -75 -78 41Q-53 113 32 72Q-21 69 -36 10Q-52 -54 15 -92Z', s, ink, 4) +
+        path(
+          'M-13 19Q-50 -7 -77 27L-59 56L-23 48L0 71L23 48L59 56L77 27Q50 -7 13 19L9 -3L0 5L-9 -3Z',
+          a,
+          ink,
+          3,
+        ) +
+        circle(-5, 30, 3, cream) +
+        circle(5, 30, 3, cream)
+      );
+    case 'gift':
+      return (
+        line('M-91 76L76 -68', ink, 5) +
+        place(leaf(s, ink), -46, 27, 0.6, -21) +
+        place(leaf(s, ink), 44, -17, 0.5, 110) +
+        [0, 22, -12].map((x, i) => circle(x, 17 + i * 16, 18, a, ink, 3)).join('') +
+        place(sparkle(cream, a), 97, 45, 0.34)
+      );
+    case 'tulip':
+      return (
+        path('M-93 27Q-96 -78 -7 -75Q101 -69 98 32Q85 101 14 72Q-37 123 -93 27Z', cream, ink, 4) +
+        [
+          [-55, -20, a],
+          [-8, -43, s],
+          [44, -23, '#d7aa77'],
+          [51, 34, '#8eab80'],
+        ]
+          .map(([x, y, c]) => circle(x, y, 19, c))
+          .join('') +
+        circle(-31, 46, 16, p.background, ink, 3) +
+        line('M-15 98L76 -90', a, 12) +
+        path('M68 -80L95 -117L88 -70Z', s, ink, 2)
+      );
+    case 'smiley':
+      return (
+        place(
+          rect(-100, -59, 200, 118, cream, 16, `stroke="${ink}" stroke-width="4"`),
+          0,
+          0,
+          1,
+          -7,
+        ) +
+        circle(-48, 0, 34, a, ink, 3) +
+        place(face(ink), -48, 0, 0.48) +
+        `<text x="1" y="-5" font-family="Georgia,serif" font-size="19" fill="${ink}">GOOD</text><text x="1" y="21" font-family="Georgia,serif" font-size="19" fill="${ink}">DAYS</text>`
+      );
+    default:
+      throw new Error(`Unimplemented companion motif: ${kind}`);
+  }
+}
+
 function paper(f) {
   const { palette: p, designWidth: w, designHeight: h } = f;
   const { edition: e, motif: m } = f.artwork;
@@ -347,7 +646,7 @@ function paper(f) {
     for (let y = 70; y < h; y += 132)
       b += rect(16, y, 32, 67, p.ink, 6) + rect(w - 48, y, 32, 67, p.ink, 6);
   } else if (['cherry', 'basket', 'smiley'].includes(m) || e === 2) {
-    b += `<defs><pattern id="checks" width="${pitch * 2}" height="${pitch * 2}" patternUnits="userSpaceOnUse">${rect(0, 0, pitch, pitch, p.accent)}${rect(pitch, pitch, pitch, pitch, p.accent)}</pattern></defs>${rect(0, 0, w, h, 'url(#checks)', 0, 'opacity=".16"')}`;
+    b += `<defs><pattern id="checks" width="${pitch * 2}" height="${pitch * 2}" patternUnits="userSpaceOnUse">${rect(0, 0, pitch, pitch, p.accent)}${rect(pitch, pitch, pitch, pitch, p.accent)}</pattern></defs>${rect(0, 0, w, h, 'url(#checks)', 0, 'opacity=".11"')}`;
   } else if (['daisy', 'bear'].includes(m)) {
     for (let x = 0; x < w; x += pitch / 2)
       b += line(`M${x} 0V${h}`, p.accent, 1.5, 'opacity=".18"');
@@ -391,6 +690,7 @@ export function collectionArt(f) {
     artwork: { edition: e, motif: m },
   } = f;
   const main = motif(m, p),
+    secondary = companion(m, p),
     scale = w / 1200;
   let fg = '';
   // Elegant scallop borders and side pearls are individually drawn.
@@ -413,7 +713,7 @@ export function collectionArt(f) {
       ? heart(p.secondary, p.ink)
       : ['leaf', 'rings', 'flower', 'tulip'].includes(m)
         ? leaf(p.secondary, p.ink)
-        : sparkle(p.accent, p.ink),
+        : secondary,
     w * 0.19,
     headerY,
     0.51 * scale,
@@ -424,7 +724,7 @@ export function collectionArt(f) {
       ? heart(p.secondary, p.ink)
       : ['leaf', 'rings', 'flower', 'tulip'].includes(m)
         ? leaf(p.secondary, p.ink)
-        : sparkle(p.secondary, p.ink),
+        : secondary,
     w * 0.81,
     headerY,
     0.51 * scale,
@@ -449,7 +749,7 @@ export function collectionArt(f) {
         ? bow(p.secondary, p.ink)
         : ['flower', 'daisy', 'tulip', 'rings'].includes(m)
           ? daisy('#fff9ef', p.accent, p.ink)
-          : heart(p.secondary, p.ink),
+          : secondary,
       w * (i % 2 ? 0.25 : 0.74),
       mid * h,
       motifScale * 0.72,
@@ -487,13 +787,7 @@ export function collectionArt(f) {
         i % 2 ? 17 : -15,
       );
     } else fg += place(main, x, y, 0.5 * scale, i % 2 ? 18 : -17);
-    fg += place(
-      sparkle('#fff9ed', p.accent),
-      (i % 2 ? s.x : s.x + s.w) * w,
-      (s.y + s.h * 0.72) * h,
-      0.26 * scale,
-      6,
-    );
+    fg += place(secondary, (i % 2 ? s.x : s.x + s.w) * w, (s.y + s.h * 0.72) * h, 0.23 * scale, 6);
   }
   const words = {
     flower: 'pressed with love',
@@ -531,8 +825,14 @@ export function collectionArt(f) {
     e === 1 ? -2 : 0,
   );
   fg +=
-    place(main, w * 0.085, h * 0.945, 0.42 * scale, -12) +
-    place(m === 'bow' ? bow(p.secondary, p.ink) : main, w * 0.915, h * 0.945, 0.42 * scale, 12);
+    place(secondary, w * 0.085, h * 0.945, 0.42 * scale, -12) +
+    place(
+      m === 'bow' ? bow(p.secondary, p.ink) : secondary,
+      w * 0.915,
+      h * 0.945,
+      0.42 * scale,
+      12,
+    );
   const bg =
     paper(f) +
     rect(w * 0.15, h * 0.914, w * 0.7, h * 0.052, '#fff9ef', 14 * scale, 'opacity=".95"');

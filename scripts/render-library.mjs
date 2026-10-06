@@ -88,6 +88,7 @@ try {
             id,
             name: frame.name,
             categories: frame.categories,
+            thumbnailPath: frame.thumbnail,
             thumbnail,
             standard,
             light,
@@ -102,7 +103,7 @@ try {
     );
     for (const item of images) {
       await fs.writeFile(
-        `public/frames/${item.id}/v1/thumbnail.png`,
+        `public${item.thumbnailPath}`,
         Buffer.from(item.thumbnail, 'base64'),
       );
       for (const [kind, suffix] of [
@@ -165,7 +166,8 @@ try {
     'docs/qa/library-generation.json',
     JSON.stringify(
       {
-        date: '2026-10-06',
+        date: new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Bangkok' }).format(new Date()),
+        versions: [...new Set(definitions.map((f) => f.version))],
         count: definitions.length,
         decorated: definitions.filter((f) => f.artwork).length,
         frames: thumbnails.map(({ thumbnail, ...f }) => f),

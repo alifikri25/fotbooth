@@ -2,6 +2,8 @@ import { expect, it } from 'vitest';
 import { definitions } from '../../src/frames/definitions';
 import { frames } from '../../src/frames/catalog';
 import { validateFrame } from '../../src/frames/validator';
+import fs from 'node:fs';
+import path from 'node:path';
 const newIds = [
   'mochi-party',
   'kitty-club',
@@ -12,6 +14,33 @@ const newIds = [
   'monster-moods',
   'peach-picnic',
 ];
+it('serves the revised artwork under cache-safe URLs matching its selected manifests', () => {
+  for (const frame of definitions) {
+    expect(frame.version, frame.id).toBe(2);
+    for (const asset of [frame.layers.background, frame.layers.foreground, frame.thumbnail]) {
+      expect(asset, frame.id).toContain(`/frames/${frame.id}/v2/`);
+      expect(fs.statSync(path.join('public', asset)).size, asset).toBeGreaterThan(0);
+    }
+    const manifest = JSON.parse(fs.readFileSync(`src/frames/manifests/${frame.id}.json`, 'utf8'));
+    expect(manifest, frame.id).toEqual(frame);
+  }
+});
+it('keeps the previous public artwork reachable for already open photo sessions', () => {
+  for (const frame of definitions) {
+    const previous = JSON.parse(
+      fs.readFileSync(`public/frames/${frame.id}/v1/manifest.json`, 'utf8'),
+    );
+    expect(previous.version).toBe(1);
+    expect(previous.slots).toEqual(frame.slots);
+    for (const asset of [
+      previous.layers.background,
+      previous.layers.foreground,
+      previous.thumbnail,
+    ]) {
+      expect(fs.statSync(path.join('public', asset)).size, asset).toBeGreaterThan(0);
+    }
+  }
+});
 it('ships 60 independently usable frame packages with unique IDs and names', () => {
   expect(definitions).toHaveLength(60);
   expect(new Set(definitions.map((f) => f.id)).size).toBe(60);

@@ -52,7 +52,7 @@ test('caption is limited by grapheme and cannot send markup to the page', async 
 test('a delayed old frame render cannot overwrite the newer selection', async ({ page }) => {
   let release!: () => void;
   const delay = new Promise<void>((r) => (release = r));
-  await page.route('**/frames/orbit-club/v1/background.svg', async (route) => {
+  await page.route('**/frames/orbit-club/v*/background.svg', async (route) => {
     await delay;
     await route.continue();
   });
@@ -62,7 +62,7 @@ test('a delayed old frame render cannot overwrite the newer selection', async ({
   await expect(page.getByRole('button', { name: 'Lihat hasil' })).toBeEnabled();
   const canvas = page.getByRole('img', { name: /^Preview Bubble Pop/ }),
     before = await canvas.screenshot();
-  const response = page.waitForResponse('**/frames/orbit-club/v1/background.svg');
+  const response = page.waitForResponse('**/frames/orbit-club/v*/background.svg');
   release();
   await (await response).finished();
   await page.evaluate(

@@ -1,8 +1,8 @@
 # Registry 60 frame Fotbooth
 
-Katalog aktif: **60 frame** — 16 frame sebelumnya dan 44 edisi dekoratif dari 26 tema baru. Beberapa tema punya lebih dari satu komposisi; ini bukan klaim 60 tema independen. Batas katalog mengikuti permintaan terakhir pengguna. Paket yang tidak dipakai diarsipkan lokal dan tidak ikut source/public build.
+Katalog aktif: **60 frame** — 16 frame sebelumnya dan 44 edisi dekoratif dari 26 tema baru. Beberapa tema punya lebih dari satu komposisi; ini bukan klaim 60 tema independen. Batas katalog mengikuti permintaan terakhir pengguna. ID frame di luar katalog diarsipkan lokal dan tidak ikut build. Aset versi 1 untuk 60 ID aktif tetap dilayani agar sesi yang sudah terbuka dapat selesai; katalog baru hanya memilih versi 2.
 
-Setiap paket versi 1 berisi manifest, background SVG, foreground SVG dan thumbnail PNG hasil renderer aplikasi. Strip: 1200×3600; card: 1800×2700. Mask foto valid dan luas foto minimal 55%. Artwork baru memiliki mask tambahan agar dekorasi tidak menutupi interior foto atau area judul/caption/tanggal.
+Setiap paket versi 2 berisi manifest, background SVG, foreground SVG dan thumbnail PNG hasil renderer aplikasi. Strip: 1200×3600; card: 1800×2700. Mask foto valid dan luas foto minimal 55%. Artwork baru memiliki mask tambahan agar dekorasi tidak menutupi interior foto atau area judul/caption/tanggal.
 
 | Frame | ID | Koleksi | Format | Foto |
 | --- | --- | --- | --- | --- |
@@ -72,6 +72,10 @@ Setiap paket versi 1 berisi manifest, background SVG, foreground SVG dan thumbna
 Artwork SVG dan ilustrasi contoh dibuat orisinal untuk Fotbooth, dengan deklarasi CC0-1.0 pada manifest. Font DM Sans dan Fraunces memakai SIL Open Font License 1.1; salinan lisensi ada di public/fonts.
 
 Referensi gaya yang diperiksa: [Canva photo strip](https://www.canva.com/templates/s/photo-strip/?continuation=150) dan [photo booth](https://www.canva.com/templates/s/photo-booth/?continuation=150). Referensi mencakup pita, floral denim, collage scrapbook, checker, karakter ilustratif dan film analog. Tidak ada file template atau aset Canva yang disalin ke paket.
+
+## Arah desain cetakan kertas
+
+Arah pengguna: kartu dan strip seperti cetakan photobooth di kertas, dengan hiasan tema yang diperdalam. Versi 2 memakai tepian putih hangat, serat matte halus, alas kertas pada edisi Polaroid, dan ilustrasi pendamping khusus tiap tema. Pixel Play mempunyai konsol/tombol arcade; Denim Daisy memakai patch dan jahitan; tema surat, botani, pantai dan kopi memakai perangko, label spesimen, bintang laut dan struk. Slot foto dan dimensi ekspor tetap. Frame berikutnya mengikuti arah ini tanpa melewati batas 60 frame aktif.
 
 ## Bukti visual
 

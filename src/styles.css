@@ -1880,9 +1880,10 @@ dialog::backdrop {
   margin-bottom: 23px;
 }
 .camera-live {
+  --camera-preview-height: min(600px, max(160px, calc(100svh - 400px)));
   position: relative;
   background: #252a25;
-  width: 100%;
+  width: min(100%, calc(var(--camera-preview-height) * var(--camera-ratio)));
   max-width: 610px;
   overflow: hidden;
   line-height: 0;
@@ -1893,6 +1894,26 @@ dialog::backdrop {
   position: absolute;
   inset: 0;
   object-fit: cover;
+}
+.camera-clip-definitions {
+  position: absolute;
+}
+.camera-shot-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 120px;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+  max-width: 610px;
+  margin-top: 14px;
+}
+.camera-shot-controls .button {
+  min-height: 52px;
+}
+.camera-shot-controls select {
+  min-width: 0;
+  font-size: 0.85rem;
+  padding: 10px;
 }
 .camera-placeholder {
   position: absolute;
@@ -1955,13 +1976,15 @@ dialog::backdrop {
 }
 @media (max-width: 767px) {
   .camera-page {
-    padding: 25px 0;
+    padding: 16px 0;
   }
   .camera-heading {
     gap: 10px;
+    margin-bottom: 16px;
   }
   .camera-heading h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-top: 6px;
   }
   .camera-heading .eyebrow {
     font-size: 0.66rem;
@@ -1976,17 +1999,84 @@ dialog::backdrop {
     gap: 20px;
   }
   .camera-view-panel {
-    padding: 18px;
-    min-height: 250px;
+    padding: 14px;
+    min-height: 0;
+  }
+  .camera-live {
+    --camera-preview-height: min(440px, max(160px, calc(100svh - 310px)));
+    width: min(100%, calc(var(--camera-preview-height) * var(--camera-ratio)));
   }
   .camera-guide {
     font-size: 0.74rem;
+    margin-top: 12px;
   }
   .camera-meta {
     font-size: 0.74rem;
+    margin-bottom: 12px;
   }
   .camera-controls {
     padding: 20px;
+  }
+}
+@media (max-width: 1100px) and (max-height: 500px) and (orientation: landscape) {
+  .camera-page {
+    padding: 10px 0;
+  }
+  .camera-heading {
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .camera-heading h1 {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  .camera-heading .eyebrow {
+    display: none;
+  }
+  .camera-heading .button {
+    min-height: 44px;
+    padding: 10px 13px;
+    font-size: 0.75rem;
+  }
+  .camera-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .camera-view-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 180px;
+    gap: 8px 16px;
+    min-height: 0;
+    padding: 12px;
+  }
+  .camera-meta {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 0.74rem;
+  }
+  .camera-live {
+    --camera-preview-height: calc(100svh - 200px);
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
+    width: min(100%, calc(var(--camera-preview-height) * var(--camera-ratio)));
+  }
+  .camera-shot-controls {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 8px;
+    margin: 0;
+  }
+  .camera-shot-controls select {
+    min-height: 44px;
+  }
+  .camera-guide {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 0.74rem;
   }
 }
 @media (prefers-reduced-motion: reduce) {

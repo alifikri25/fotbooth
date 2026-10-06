@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import {
   ArrowLeft,
   Camera as CameraIcon,
@@ -179,7 +179,7 @@ export function Camera(p: CameraProps) {
               {p.session.placements.length}/{p.frame.slots.length} terisi
             </span>
           </div>
-          <svg width="0" height="0" aria-hidden="true">
+          <svg className="camera-clip-definitions" width="0" height="0" aria-hidden="true">
             <defs>
               <clipPath id="camera-arch" clipPathUnits="objectBoundingBox">
                 <path d={`M0 1V${r}C0 0 1 0 1 ${r}V1Z`} />
@@ -188,14 +188,17 @@ export function Camera(p: CameraProps) {
           </svg>
           <div
             className="camera-live"
-            style={{
-              aspectRatio: `${sw}/${sh}`,
-              clipPath: clip,
-              borderRadius:
-                slot.shape === 'roundedRect'
-                  ? `${((slot.radius ?? 0) / sw) * 100}% / ${((slot.radius ?? 0) / sh) * 100}%`
-                  : 0,
-            }}
+            style={
+              {
+                '--camera-ratio': sw / sh,
+                aspectRatio: `${sw}/${sh}`,
+                clipPath: clip,
+                borderRadius:
+                  slot.shape === 'roundedRect'
+                    ? `${((slot.radius ?? 0) / sw) * 100}% / ${((slot.radius ?? 0) / sh) * 100}%`
+                    : 0,
+              } as CSSProperties
+            }
           >
             <video
               ref={video}
@@ -215,6 +218,52 @@ export function Camera(p: CameraProps) {
                 {count}
               </div>
             )}
+          </div>
+          <div className="camera-shot-controls">
+            {taking ? (
+              <button className="button danger full" onClick={cancel}>
+                <Square size={17} />
+                Hentikan
+              </button>
+            ) : phase === 'stopped' || phase === 'error' || phase === 'idle' ? (
+              <button className="button primary full" onClick={() => void open()}>
+                <CameraIcon size={18} />
+                Buka kamera
+              </button>
+            ) : (
+              <button
+                className="button primary full"
+                aria-label="Ambil foto"
+                disabled={
+                  !ready ||
+                  p.remaining <= 0 ||
+                  (burst && p.session.placements.length === p.frame.slots.length)
+                }
+                onClick={() => void capture()}
+              >
+                <CameraIcon size={18} />
+                {p.session.placements.some((photo) => photo.slotId === p.activeSlot) && !burst
+                  ? 'Ambil ulang'
+                  : burst
+                    ? 'Ambil rangkaian'
+                    : 'Ambil foto'}
+              </button>
+            )}
+            <label className="sr-only" htmlFor="camera-timer">
+              Timer kamera
+            </label>
+            <select
+              id="camera-timer"
+              value={timer}
+              disabled={taking}
+              onChange={(e) => setTimer(Number(e.target.value))}
+            >
+              {[0, 3, 5, 10].map((n) => (
+                <option key={n} value={n}>
+                  {n === 0 ? 'Tanpa timer' : `${n} detik`}
+                </option>
+              ))}
+            </select>
           </div>
           <p className="camera-guide">
             Panduan mengikuti bentuk slot. Foto disimpan penuh agar tetap bisa diatur.
@@ -245,21 +294,6 @@ export function Camera(p: CameraProps) {
               {error}
             </p>
           )}
-          <label className="control-label" htmlFor="camera-timer">
-            Timer kamera
-          </label>
-          <select
-            id="camera-timer"
-            value={timer}
-            disabled={taking}
-            onChange={(e) => setTimer(Number(e.target.value))}
-          >
-            {[0, 3, 5, 10].map((n) => (
-              <option key={n} value={n}>
-                {n === 0 ? 'Tanpa timer' : `${n} detik`}
-              </option>
-            ))}
-          </select>
           <button
             className={`small-button mirror-button ${mirror ? 'active' : ''}`}
             disabled={taking}
@@ -319,35 +353,6 @@ export function Camera(p: CameraProps) {
             Rangkaian mengisi slot kosong dengan timer baru pada setiap foto. Ambil ulang memakai
             satu foto per klik.
           </p>
-          {taking ? (
-            <button className="button danger full" onClick={cancel}>
-              <Square size={17} />
-              Hentikan
-            </button>
-          ) : phase === 'stopped' || phase === 'error' || phase === 'idle' ? (
-            <button className="button primary full" onClick={() => void open()}>
-              <CameraIcon size={18} />
-              Buka kamera
-            </button>
-          ) : (
-            <button
-              className="button primary full"
-              aria-label="Ambil foto"
-              disabled={
-                !ready ||
-                p.remaining <= 0 ||
-                (burst && p.session.placements.length === p.frame.slots.length)
-              }
-              onClick={() => void capture()}
-            >
-              <CameraIcon size={18} />
-              {p.session.placements.some((photo) => photo.slotId === p.activeSlot) && !burst
-                ? 'Ambil ulang'
-                : burst
-                  ? 'Ambil rangkaian'
-                  : 'Ambil foto'}
-            </button>
-          )}
           {p.remaining <= 0 && (
             <p className="control-help">
               Sesi sudah berisi 8 foto. Lanjut edit atau hapus sesi untuk memulai lagi.

@@ -30,11 +30,12 @@ export function frame(
   description: string,
   serif = false,
 ): FrameDefinition {
-  const base = `/frames/${id}/v1`;
+  const version = 2;
+  const base = `/frames/${id}/v${version}`;
   return {
     id,
     name,
-    version: 1,
+    version,
     format,
     categories,
     designWidth: format === 'strip' ? 1200 : 1800,

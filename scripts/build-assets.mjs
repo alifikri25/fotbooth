@@ -3,6 +3,7 @@ import path from 'node:path';
 import { definitions } from '../src/frames/definitions.ts';
 import { cartoonArt } from './cartoon-art.mjs';
 import { collectionArt } from './collection-art.mjs';
+import { printPaper } from './print-paper.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const svg = (w, h, body) =>
@@ -45,6 +46,13 @@ for (const f of definitions) {
   if (f.artwork) {
     const art = collectionArt(f);
     bg += art.background;
+    if (f.artwork.edition === 10) {
+      for (const s of f.slots) {
+        const pw = s.w * w,
+          ph = s.h * h;
+        bg += `<g transform="translate(${(s.x + s.w / 2) * w} ${(s.y + s.h / 2) * h}) rotate(${s.rotationDeg})"><rect x="${-pw / 2 - 30}" y="${-ph / 2 - 30}" width="${pw + 60}" height="${ph + 100}" rx="5" fill="#fffcf7" stroke="${p.ink}" stroke-width="2" stroke-opacity=".18"/><path d="M${-pw / 2 + 12} ${ph / 2 + 47}h${pw * 0.25}" stroke="${p.ink}" stroke-width="2" opacity=".2"/></g>`;
+      }
+    }
     bg += `<g transform="translate(9 15)" opacity=".18">${f.slots.map((s) => outline(s, f, false, `fill="none" stroke="${p.ink}" stroke-width="80"`)).join('')}</g>`;
     bg += f.slots
       .map((s) => outline(s, f, false, `fill="none" stroke="${p.accent}" stroke-width="76"`))
@@ -128,7 +136,8 @@ for (const f of definitions) {
     const safe = `<defs><mask id="decor-safe" maskUnits="userSpaceOnUse" x="0" y="0" width="${w}" height="${h}"><rect width="${w}" height="${h}" fill="white"/>${f.slots.map((s) => outline(s, f, true)).join('')}</mask></defs>`;
     fg += safe + `<g mask="url(#decor-safe)">${art.foreground}</g>`;
   }
-  const dir = path.join(root, `public/frames/${f.id}/v1`);
+  bg += printPaper(f);
+  const dir = path.join(root, `public/frames/${f.id}/v${f.version}`);
   await fs.mkdir(dir, { recursive: true });
   await fs.writeFile(path.join(dir, 'manifest.json'), JSON.stringify(f, null, 2) + '\n');
   await fs.mkdir(path.join(root, 'src/frames/manifests'), { recursive: true });
