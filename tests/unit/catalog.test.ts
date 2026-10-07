@@ -24,6 +24,48 @@ const signatureIds = [
   'heart-mail-story',
   'cosmic-disco-mosaic',
 ];
+const encoreIds = [
+  'ribbon-diary-trio',
+  'ocean-postcard-story',
+  'denim-daisy-portrait',
+  'butterfly-notes-arch',
+  'cherry-kiss-story',
+  'citrus-club-mini',
+  'coffee-date-polaroid',
+  'botanical-journal-portrait',
+  'festive-wishes-offset',
+  'garden-paint-story',
+];
+it('ships ten more signature editions with the previous photo geometry and format', () => {
+  for (const id of encoreIds) {
+    const current = definitions.find((frame) => frame.id === id)!;
+    expect(current.version, id).toBe(3);
+    const previous = JSON.parse(fs.readFileSync(`public/frames/${id}/v2/manifest.json`, 'utf8'));
+    expect(current.slots, id).toEqual(previous.slots);
+    expect([current.format, current.designWidth, current.designHeight], id).toEqual([
+      previous.format,
+      previous.designWidth,
+      previous.designHeight,
+    ]);
+    for (const asset of [
+      previous.layers.background,
+      previous.layers.foreground,
+      previous.thumbnail,
+    ])
+      expect(fs.statSync(path.join('public', asset)).size, asset).toBeGreaterThan(0);
+  }
+});
+it('selects new neutral thumbnail URLs while keeping previously displayed examples reachable', () => {
+  for (const frame of definitions) {
+    expect(frame.thumbnail, frame.id).toBe(
+      `/frames/${frame.id}/v${frame.version}/thumbnail-neutral.png`,
+    );
+    const previousVersion = encoreIds.includes(frame.id) ? 2 : frame.version;
+    expect(
+      fs.statSync(`public/frames/${frame.id}/v${previousVersion}/thumbnail.png`).size,
+    ).toBeGreaterThan(0);
+  }
+});
 it('ships eight signature revisions while retaining the previous public artwork and photo geometry', () => {
   for (const id of signatureIds) {
     const current = definitions.find((frame) => frame.id === id)!;
@@ -43,7 +85,9 @@ it('ships eight signature revisions while retaining the previous public artwork 
 });
 it('serves the revised artwork under cache-safe URLs matching its selected manifests', () => {
   for (const frame of definitions) {
-    expect(frame.version, frame.id).toBe(signatureIds.includes(frame.id) ? 3 : 2);
+    expect(frame.version, frame.id).toBe(
+      [...signatureIds, ...encoreIds].includes(frame.id) ? 3 : 2,
+    );
     for (const asset of [frame.layers.background, frame.layers.foreground, frame.thumbnail]) {
       expect(asset, frame.id).toContain(`/frames/${frame.id}/v${frame.version}/`);
       expect(fs.statSync(path.join('public', asset)).size, asset).toBeGreaterThan(0);
@@ -76,7 +120,7 @@ it('ships 60 independently usable frame packages with unique IDs and names', () 
     expect(validateFrame(frame), frame.name).toEqual({ valid: true, errors: [] });
 });
 it('makes every package selectable and leads with decorated editorial picks', () => {
-  expect(frames.slice(0, 8).map((frame) => frame.id)).toEqual(signatureIds);
+  expect(frames.slice(0, 18).map((frame) => frame.id)).toEqual([...signatureIds, ...encoreIds]);
   expect(frames.map((f) => f.id).sort()).toEqual(definitions.map((f) => f.id).sort());
   for (const id of newIds) {
     const frame = frames.find((f) => f.id === id);

@@ -20,6 +20,8 @@ docs/qa/*
 !docs/qa/camera-paper-release-20261007.json
 !docs/qa/signature-design-board.png
 !docs/qa/signature-release-20261007.json
+!docs/qa/signature-encore-board.png
+!docs/qa/encore-release-20261007.json
 *.log
 .DS_Store
 Thumbs.db

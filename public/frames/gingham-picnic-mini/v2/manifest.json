@@ -70,7 +70,7 @@
     "background": "/frames/gingham-picnic-mini/v2/background.svg",
     "foreground": "/frames/gingham-picnic-mini/v2/foreground.svg"
   },
-  "thumbnail": "/frames/gingham-picnic-mini/v2/thumbnail.png",
+  "thumbnail": "/frames/gingham-picnic-mini/v2/thumbnail-neutral.png",
   "licenses": [
     "Original vector artwork © Fotbooth contributors. CC0-1.0.",
     "DM Sans and Fraunces: SIL Open Font License 1.1."

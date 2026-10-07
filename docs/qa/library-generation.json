@@ -4,6 +4,7 @@
     2,
     3
   ],
+  "gallery": "Neutral empty photo areas; no photographic or illustrated people",
   "count": 60,
   "decorated": 44,
   "frames": [
@@ -76,9 +77,86 @@
     },
     {
       "id": "ribbon-diary-trio",
-      "name": "Ribbon Diary Trio",
+      "name": "Rose Ribbon Salon",
       "categories": [
         "romantic",
+        "soft"
+      ]
+    },
+    {
+      "id": "ocean-postcard-story",
+      "name": "Azure Riviera",
+      "categories": [
+        "nature",
+        "scrapbook",
+        "soft"
+      ]
+    },
+    {
+      "id": "denim-daisy-portrait",
+      "name": "Denim Bloom Studio",
+      "categories": [
+        "floral",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "butterfly-notes-arch",
+      "name": "Lilac Conservatory",
+      "categories": [
+        "soft",
+        "nature",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "cherry-kiss-story",
+      "name": "Cherry Velvet Club",
+      "categories": [
+        "romantic",
+        "playful",
+        "retro"
+      ]
+    },
+    {
+      "id": "citrus-club-mini",
+      "name": "Citrus Sunset",
+      "categories": [
+        "playful",
+        "nature"
+      ]
+    },
+    {
+      "id": "coffee-date-polaroid",
+      "name": "Café Lumière",
+      "categories": [
+        "retro",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "botanical-journal-portrait",
+      "name": "Emerald Herbarium",
+      "categories": [
+        "nature",
+        "floral",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "festive-wishes-offset",
+      "name": "Champagne Countdown",
+      "categories": [
+        "seasonal",
+        "party"
+      ]
+    },
+    {
+      "id": "garden-paint-story",
+      "name": "Monet Garden Party",
+      "categories": [
+        "floral",
+        "nature",
         "soft"
       ]
     },
@@ -116,30 +194,12 @@
       ]
     },
     {
-      "id": "botanical-journal-portrait",
-      "name": "Botanical Journal Portrait",
-      "categories": [
-        "nature",
-        "floral",
-        "scrapbook"
-      ]
-    },
-    {
       "id": "teddy-memory-trio",
       "name": "Teddy Memory Trio",
       "categories": [
         "cartoon",
         "soft",
         "playful"
-      ]
-    },
-    {
-      "id": "ocean-postcard-story",
-      "name": "Ocean Postcard Story",
-      "categories": [
-        "nature",
-        "scrapbook",
-        "soft"
       ]
     },
     {
@@ -156,15 +216,6 @@
       "categories": [
         "nature",
         "playful"
-      ]
-    },
-    {
-      "id": "butterfly-notes-arch",
-      "name": "Butterfly Notes Arch",
-      "categories": [
-        "soft",
-        "nature",
-        "scrapbook"
       ]
     },
     {
@@ -375,14 +426,6 @@
       ]
     },
     {
-      "id": "citrus-club-mini",
-      "name": "Citrus Club Mini",
-      "categories": [
-        "playful",
-        "nature"
-      ]
-    },
-    {
       "id": "pixel-play-mini",
       "name": "Pixel Play Mini",
       "categories": [
@@ -408,27 +451,11 @@
       ]
     },
     {
-      "id": "festive-wishes-offset",
-      "name": "Festive Wishes Offset",
-      "categories": [
-        "seasonal",
-        "party"
-      ]
-    },
-    {
       "id": "retro-diner-offset",
       "name": "Retro Diner Offset",
       "categories": [
         "retro",
         "playful"
-      ]
-    },
-    {
-      "id": "denim-daisy-portrait",
-      "name": "Denim Daisy Portrait",
-      "categories": [
-        "floral",
-        "scrapbook"
       ]
     },
     {
@@ -471,32 +498,6 @@
       "categories": [
         "soft",
         "nature",
-        "scrapbook"
-      ]
-    },
-    {
-      "id": "cherry-kiss-story",
-      "name": "Cherry Kiss Story",
-      "categories": [
-        "romantic",
-        "playful",
-        "retro"
-      ]
-    },
-    {
-      "id": "garden-paint-story",
-      "name": "Garden Paint Story",
-      "categories": [
-        "floral",
-        "nature",
-        "soft"
-      ]
-    },
-    {
-      "id": "coffee-date-polaroid",
-      "name": "Coffee Date Polaroid",
-      "categories": [
-        "retro",
         "scrapbook"
       ]
     },

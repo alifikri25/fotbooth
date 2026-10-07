@@ -1,6 +1,6 @@
 # Registry 60 frame Fotbooth
 
-Katalog aktif: **60 frame** — 16 frame sebelumnya dan 44 edisi dekoratif dari 26 tema baru. Beberapa tema punya lebih dari satu komposisi; ini bukan klaim 60 tema independen. Batas katalog mengikuti permintaan terakhir pengguna. ID frame di luar katalog diarsipkan lokal dan tidak ikut build. Aset versi 1 dan 2 tetap dilayani agar sesi yang sudah terbuka dapat selesai. Katalog aktif memakai versi 3 pada delapan desain unggulan dan versi 2 pada 52 edisi lainnya.
+Katalog aktif: **60 frame** — 16 frame sebelumnya dan 44 edisi dekoratif dari 26 tema baru. Beberapa tema punya lebih dari satu komposisi; ini bukan klaim 60 tema independen. Batas katalog mengikuti permintaan terakhir pengguna. ID frame di luar katalog diarsipkan lokal dan tidak ikut build. Aset versi 1 dan 2 tetap dilayani agar sesi yang sudah terbuka dapat selesai. Katalog aktif memakai versi 3 pada 18 desain unggulan dan versi 2 pada 42 edisi lainnya.
 
 Setiap paket versi 2, 3 berisi manifest, background SVG, foreground SVG dan thumbnail PNG hasil renderer aplikasi. Strip: 1200×3600; card: 1800×2700. Mask foto valid dan luas foto minimal 55%. Artwork baru memiliki mask tambahan agar dekorasi tidak menutupi interior foto atau area judul/caption/tanggal.
 
@@ -26,25 +26,25 @@ Setiap paket versi 2, 3 berisi manifest, background SVG, foreground SVG dan thum
 | Petal Post Arch | petal-post-arch | Petal Post | strip | 3 |
 | Petal Post Mosaic | petal-post-mosaic | Petal Post | card | 4 |
 | Petal Post Story | petal-post-story | Petal Post | card | 3 |
-| Ribbon Diary Trio | ribbon-diary-trio | Ribbon Diary | strip | 3 |
+| Rose Ribbon Salon | ribbon-diary-trio | Ribbon Diary | strip | 3 |
 | Ribbon Diary Wander | ribbon-diary-wander | Ribbon Diary | strip | 3 |
 | Ribbon Diary Portrait | ribbon-diary-portrait | Ribbon Diary | card | 2 |
 | Ribbon Diary Polaroid | ribbon-diary-polaroid | Ribbon Diary | card | 4 |
 | Cherry Kiss Trio | cherry-kiss-trio | Cherry Kiss | strip | 3 |
 | Cherry Kiss Film | cherry-kiss-film | Cherry Kiss | strip | 3 |
-| Cherry Kiss Story | cherry-kiss-story | Cherry Kiss | card | 3 |
+| Cherry Velvet Club | cherry-kiss-story | Cherry Kiss | card | 3 |
 | Denim Daisy Trio | denim-daisy-trio | Denim Daisy | strip | 3 |
-| Denim Daisy Portrait | denim-daisy-portrait | Denim Daisy | card | 2 |
+| Denim Bloom Studio | denim-daisy-portrait | Denim Daisy | card | 2 |
 | Denim Daisy Polaroid | denim-daisy-polaroid | Denim Daisy | card | 4 |
 | Star Studio Wander | star-studio-wander | Star Studio | strip | 3 |
 | Midnight Film Film | midnight-film-film | Midnight Film | strip | 3 |
 | Velvet Premiere | midnight-film-polaroid | Midnight Film | card | 4 |
-| Citrus Club Mini | citrus-club-mini | Citrus Club | strip | 4 |
+| Citrus Sunset | citrus-club-mini | Citrus Club | strip | 4 |
 | Ocean Postcard Trio | ocean-postcard-trio | Ocean Postcard | strip | 3 |
-| Ocean Postcard Story | ocean-postcard-story | Ocean Postcard | card | 3 |
+| Azure Riviera | ocean-postcard-story | Ocean Postcard | card | 3 |
 | Botanical Journal Trio | botanical-journal-trio | Botanical Journal | strip | 3 |
-| Botanical Journal Portrait | botanical-journal-portrait | Botanical Journal | card | 2 |
-| Butterfly Notes Arch | butterfly-notes-arch | Butterfly Notes | strip | 3 |
+| Emerald Herbarium | botanical-journal-portrait | Botanical Journal | card | 2 |
+| Lilac Conservatory | butterfly-notes-arch | Butterfly Notes | strip | 3 |
 | Butterfly Notes Story | butterfly-notes-story | Butterfly Notes | card | 3 |
 | Retro Diner Offset | retro-diner-offset | Retro Diner | strip | 3 |
 | Pixel Play Mini | pixel-play-mini | Pixel Play | strip | 4 |
@@ -56,29 +56,31 @@ Setiap paket versi 2, 3 berisi manifest, background SVG, foreground SVG dan thum
 | Gingham Picnic Mini | gingham-picnic-mini | Gingham Picnic | strip | 4 |
 | Teddy Memory Trio | teddy-memory-trio | Teddy Memory | strip | 3 |
 | Teddy Memory Mosaic | teddy-memory-mosaic | Teddy Memory | card | 4 |
-| Coffee Date Polaroid | coffee-date-polaroid | Coffee Date | card | 4 |
+| Café Lumière | coffee-date-polaroid | Coffee Date | card | 4 |
 | Popstar Birthday | birthday-confetti-story | Birthday Confetti | card | 3 |
 | Graduation Club Duo | graduation-club-duo | Graduation Club | strip | 2 |
 | Wedding Bloom Trio | wedding-bloom-trio | Wedding Bloom | strip | 3 |
 | Pearl Vows | wedding-bloom-portrait | Wedding Bloom | card | 2 |
 | Holo Encore | kpop-starlight-wander | Kpop Starlight | strip | 3 |
 | Halloween Party Mosaic | halloween-party-mosaic | Halloween Party | card | 4 |
-| Festive Wishes Offset | festive-wishes-offset | Festive Wishes | strip | 3 |
-| Garden Paint Story | garden-paint-story | Garden Paint | card | 3 |
+| Champagne Countdown | festive-wishes-offset | Festive Wishes | strip | 3 |
+| Monet Garden Party | garden-paint-story | Garden Paint | card | 3 |
 | Pop Doodle Wander | pop-doodle-wander | Pop Doodle | strip | 3 |
 
 ## Lisensi dan referensi
 
-Komposisi SVG dan ilustrasi contoh dibuat orisinal untuk Fotbooth. Empat bahan raster untuk edisi signature dihasilkan dengan tool imagegen bawaan: velvet, kain sage, foil holografis dan sutra ivory. Original, JPEG web dan prompt lengkap disimpan pada artwork/originals, artwork/materials dan artwork/provenance/signature-materials-20261007.json; tidak memakai foto referensi atau aset template Canva. Font DM Sans dan Fraunces memakai SIL Open Font License 1.1; salinan lisensi ada di public/fonts.
+Komposisi SVG dan ilustrasi dibuat orisinal untuk Fotbooth. Empat belas bahan raster untuk edisi signature dihasilkan dengan tool imagegen bawaan, termasuk velvet, renda, satin, denim bordir, bahan holografis, tekstil café, citrus dan seni taman. Original, JPEG web dan prompt lengkap disimpan pada artwork/originals, artwork/materials serta artwork/provenance/signature-materials-20261007.json dan encore-materials-20261007.json; tidak memakai foto referensi atau aset template Canva. Font DM Sans dan Fraunces memakai SIL Open Font License 1.1; salinan lisensi ada di public/fonts.
 
 Referensi gaya yang diperiksa: [Canva photo strip](https://www.canva.com/templates/s/photo-strip/?continuation=150) dan [photo booth](https://www.canva.com/templates/s/photo-booth/?continuation=150). Referensi mencakup pita, floral denim, collage scrapbook, checker, karakter ilustratif dan film analog. Tidak ada file template atau aset Canva yang disalin ke paket.
 
 ## Arah desain cetakan kertas
 
-Arah pengguna: kartu dan strip seperti cetakan photobooth di kertas, dengan hiasan tema yang diperdalam. Versi 2 memakai tepian putih hangat, serat matte halus, alas kertas pada edisi Polaroid, dan ilustrasi pendamping khusus tiap tema. Pixel Play mempunyai konsol/tombol arcade; Denim Daisy memakai patch dan jahitan; tema surat, botani, pantai dan kopi memakai perangko, label spesimen, bintang laut dan struk. Delapan desain signature terbaru memperkuat arah ini: Velvet Premiere, Popstar Birthday, After Hours Ticket, Sage Atelier, Pearl Vows, Holo Encore, Rouge Romance dan Disco Royale. Setiap tema mempunyai komposisi khusus, tipografi kuat dan detail bahan yang nyata, bukan mengganti warna atau mengulang stiker kecil. Slot foto dan dimensi ekspor tetap. Frame berikutnya mengikuti standar visual ini tanpa melewati batas 60 frame aktif.
+Arah pengguna: kartu dan strip seperti cetakan photobooth di kertas, dengan hiasan tema yang diperdalam. Versi 2 memakai tepian putih hangat, serat matte halus, alas kertas pada edisi Polaroid, dan ilustrasi pendamping khusus tiap tema. Pixel Play mempunyai konsol/tombol arcade; Denim Daisy memakai patch dan jahitan; tema surat, botani, pantai dan kopi memakai perangko, label spesimen, bintang laut dan struk. Delapan desain signature pertama memperkuat arah ini: Velvet Premiere, Popstar Birthday, After Hours Ticket, Sage Atelier, Pearl Vows, Holo Encore, Rouge Romance dan Disco Royale. Sepuluh edisi berikutnya: Rose Ribbon Salon, Azure Riviera, Denim Bloom Studio, Lilac Conservatory, Cherry Velvet Club, Citrus Sunset, Café Lumière, Emerald Herbarium, Champagne Countdown dan Monet Garden Party. Galeri seluruh 60 frame memakai area foto netral tanpa orang, sesuai pilihan pengguna. Foto contoh lama hanya menjadi bukti historis; pengguna mengisi sendiri fotonya. Thumbnail aktif bernama thumbnail-neutral.png; thumbnail.png sebelumnya tetap tersedia. Setiap tema mempunyai komposisi khusus, tipografi kuat dan detail bahan yang nyata, bukan mengganti warna atau mengulang stiker kecil. Slot foto dan dimensi ekspor tetap. Frame berikutnya mengikuti standar visual ini tanpa melewati batas 60 frame aktif.
 
 ## Bukti visual
 
+- [Board sepuluh frame terbaru](qa/signature-encore-board.png)
+- [Board delapan frame pertama, netral](qa/signature-design-board.png)
 - [Board 12 pilihan dekoratif](qa/decorated-design-board.png)
 - [Contact sheet seluruh 60 frame](qa/frame-contact-sheet.png)
 - [Daftar thumbnail yang dihasilkan](qa/library-generation.json)

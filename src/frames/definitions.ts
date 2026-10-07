@@ -214,4 +214,9 @@ export const definitions: FrameDefinition[] = [
     'Piknik gingham, buah peach tersenyum, bunga kecil dan kartu kenangan.',
   ),
   ...collectionFrames,
-].map(refineSignature);
+]
+  .map(refineSignature)
+  .map((frame) => ({
+    ...frame,
+    thumbnail: `/frames/${frame.id}/v${frame.version}/thumbnail-neutral.png`,
+  }));

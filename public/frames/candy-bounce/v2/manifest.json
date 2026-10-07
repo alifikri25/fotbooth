@@ -71,7 +71,7 @@
     "background": "/frames/candy-bounce/v2/background.svg",
     "foreground": "/frames/candy-bounce/v2/foreground.svg"
   },
-  "thumbnail": "/frames/candy-bounce/v2/thumbnail.png",
+  "thumbnail": "/frames/candy-bounce/v2/thumbnail-neutral.png",
   "licenses": [
     "Original vector artwork © Fotbooth contributors. CC0-1.0.",
     "DM Sans and Fraunces: SIL Open Font License 1.1."

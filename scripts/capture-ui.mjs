@@ -32,7 +32,7 @@ try {
   await page.screenshot({ path: 'docs/qa/cartoon-gallery-mobile.png', fullPage: true });
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.getByRole('button', { name: 'Semua frame', exact: true }).click();
-  await page.getByRole('button', { name: 'Pakai frame Ribbon Diary Trio', exact: true }).click();
+  await page.getByRole('button', { name: 'Pakai frame Rose Ribbon Salon', exact: true }).click();
   const image = await page.evaluate(async () => {
     const source = new Image();
     source.src = '/samples/friend-2.svg';

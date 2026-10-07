@@ -57,7 +57,7 @@
     "background": "/frames/bubble-pop/v2/background.svg",
     "foreground": "/frames/bubble-pop/v2/foreground.svg"
   },
-  "thumbnail": "/frames/bubble-pop/v2/thumbnail.png",
+  "thumbnail": "/frames/bubble-pop/v2/thumbnail-neutral.png",
   "licenses": [
     "Original vector artwork © Fotbooth contributors. CC0-1.0.",
     "DM Sans and Fraunces: SIL Open Font License 1.1."

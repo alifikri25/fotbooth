@@ -1,6 +1,6 @@
 import type { FrameDefinition } from '../core/types';
 
-export const signatureIds = [
+export const originalSignatureIds = [
   'midnight-film-polaroid',
   'birthday-confetti-story',
   'concert-pass',
@@ -10,6 +10,19 @@ export const signatureIds = [
   'heart-mail-story',
   'cosmic-disco-mosaic',
 ];
+export const encoreIds = [
+  'ribbon-diary-trio',
+  'ocean-postcard-story',
+  'denim-daisy-portrait',
+  'butterfly-notes-arch',
+  'cherry-kiss-story',
+  'citrus-club-mini',
+  'coffee-date-polaroid',
+  'botanical-journal-portrait',
+  'festive-wishes-offset',
+  'garden-paint-story',
+];
+export const signatureIds = [...originalSignatureIds, ...encoreIds];
 
 const designs: Record<
   string,
@@ -81,6 +94,76 @@ const designs: Record<
     colors: ['#18132c', '#ffedcc', '#e2b966', '#7652b2'],
     serif: true,
   },
+  'ribbon-diary-trio': {
+    name: 'Rose Ribbon Salon',
+    description:
+      'Ribbon Diary couture dengan satin blush, mawar, pita besar, renda gading dan untaian mutiara.',
+    colors: ['#e8bec8', '#653849', '#c3a16b', '#fff1e9'],
+    serif: true,
+  },
+  'ocean-postcard-story': {
+    name: 'Azure Riviera',
+    description:
+      'Cetakan Riviera dengan sutra aqua, kerang mother-of-pearl, kilau air dan tepian kartu pos champagne.',
+    colors: ['#b7dbe4', '#264d63', '#c6aa6c', '#f6f1e5'],
+    serif: true,
+  },
+  'denim-daisy-portrait': {
+    name: 'Denim Bloom Studio',
+    description:
+      'Denim Daisy couture dengan kain indigo, bordir daisy timbul, jahitan ganda, renda dan kancing mutiara.',
+    colors: ['#7fa0bb', '#243e57', '#f4d57b', '#f6f0e4'],
+    serif: true,
+  },
+  'butterfly-notes-arch': {
+    name: 'Lilac Conservatory',
+    description:
+      'Kartu taman kaca lilac dengan kupu-kupu organza, hydrangea, filigree dan kertas botani berlapis.',
+    colors: ['#dbcae8', '#574266', '#bc9a64', '#f4edf6'],
+    serif: true,
+  },
+  'cherry-kiss-story': {
+    name: 'Cherry Velvet Club',
+    description:
+      'Editorial ceri dengan velvet burgundy, pita merah, renda dan bingkai foil emas di atas kertas ivory.',
+    colors: ['#5c142a', '#6c2135', '#d9b278', '#f7edde'],
+    serif: true,
+  },
+  'citrus-club-mini': {
+    name: 'Citrus Sunset',
+    description:
+      'Summer club dengan sutra tangerine, irisan jeruk segar, bunga citrus, linen dan detail anyaman.',
+    colors: ['#e6a75c', '#735034', '#9a8247', '#fff4d8'],
+    serif: true,
+  },
+  'coffee-date-polaroid': {
+    name: 'Café Lumière',
+    description:
+      'Kafe pagi dengan latte art, linen mocha, satin karamel, kertas struk, pita cokelat dan brass clip.',
+    colors: ['#b7977c', '#51372d', '#b28e5e', '#f4eadb'],
+    serif: true,
+  },
+  'botanical-journal-portrait': {
+    name: 'Emerald Herbarium',
+    description:
+      'Herbarium kolektor dengan velvet emerald, kain buku, daun pakis, eucalyptus dan filigree emas.',
+    colors: ['#244f40', '#244438', '#c9a466', '#f5edde'],
+    serif: true,
+  },
+  'festive-wishes-offset': {
+    name: 'Champagne Countdown',
+    description:
+      'Pesta champagne dengan glitter emas, pita metalik, bokeh, confetti dan tiket kenangan.',
+    colors: ['#dfc58e', '#65502d', '#ba9855', '#fff5dc'],
+    serif: true,
+  },
+  'garden-paint-story': {
+    name: 'Monet Garden Party',
+    description:
+      'Garden Paint dengan taman pastel impasto, kertas aquarelle, iris, bunga dan tepian undangan foil.',
+    colors: ['#d6dbc1', '#415b4e', '#bf9766', '#f7f1e4'],
+    serif: true,
+  },
 };
 
 export function refineSignature(frame: FrameDefinition): FrameDefinition {
@@ -110,6 +193,14 @@ export function refineSignature(frame: FrameDefinition): FrameDefinition {
     Object.assign(title, { y: 0.063, h: 0.036, fontSize: 89 });
   if (frame.id === 'cosmic-disco-mosaic')
     Object.assign(title, { y: 0.025, h: 0.04, fontSize: 116 });
+  if (encoreIds.includes(frame.id))
+    Object.assign(title, {
+      x: 0.12,
+      w: 0.76,
+      y: 0.033,
+      h: 0.039,
+      fontSize: frame.format === 'card' ? 108 : 88,
+    });
   return {
     ...frame,
     name: design.name,
@@ -120,17 +211,15 @@ export function refineSignature(frame: FrameDefinition): FrameDefinition {
     thumbnail: `${base}/thumbnail.png`,
     textAreas: [
       title,
-      ...frame.textAreas
-        .slice(1)
-        .map((area) => ({
-          ...area,
-          color:
-            frame.id === 'cosmic-disco-mosaic'
-              ? '#382349'
-              : frame.id === 'midnight-film-polaroid'
-                ? '#fff2c5'
-                : colors[1],
-        })),
+      ...frame.textAreas.slice(1).map((area) => ({
+        ...area,
+        color:
+          frame.id === 'cosmic-disco-mosaic'
+            ? '#382349'
+            : frame.id === 'midnight-film-polaroid'
+              ? '#fff2c5'
+              : colors[1],
+      })),
     ],
     licenses: [
       ...frame.licenses,

@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-07",
+  "tool": "Built-in imagegen",
+  "purpose": "Ten original photobooth signature material backgrounds. No people or reference template assets. Neutral gallery rendering is separate.",
+  "assets": [
+    {
+      "name": "encore-rose",
+      "prompt": "Use case: product-mockup. Asset type: full-bleed original photobooth print material background, vertical 2:3. A sumptuous blush-pink couture flat lay: folded rose silk satin, tactile fine French ivory lace, oversized dusty-rose satin ribbon loops entering from upper corners, small real-looking blush garden roses and champagne pearl strands along outer edges. Romantic boutique photobooth print, sophisticated editorial macro realism, soft directional studio light, convincing silky folds and stitched lace. The middle 65 percent is uninterrupted pale rose satin for photos to be placed later; lavish material detail concentrates along the outer edges and top/bottom. Flat front view, fill canvas, no perspective on the whole print. Rich but disciplined composition, exact blush/cream/champagne palette. No text, letters, logos, people, faces, hands, existing photos, photo placeholders, white rectangles, watermark or Canva assets. Create the material itself, not a mockup of a frame on a desk.",
+      "generatedPath": "C:\\Users\\aliif\\.codex\\generated_images\\01a1132f-c7fe-7cc1-9db2-18be619a036b\\exec-97fc3886-4d05-406e-a55e-13dd295cb6c6.png",
+      "original": "artwork/originals/encore-rose.png",
+      "production": "artwork/materials/encore-rose.jpg",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "productionBytes": 362631
+    },
+    {
+      "name": "encore-riviera",
+      "prompt": "Use case: product-mockup. Asset type: original luxury coastal photobooth print background, portrait 2:3. A dreamy Azure Riviera material collage photographed directly from above, pale blue rippled silk mingling with translucent turquoise glass-water caustics, delicate ivory scallop shells, small mother-of-pearl shell fragments and short pearl strands concentrated at the outside corners. Subtle cream textured postcard paper corner layers with fine champagne-gold edge, bright Mediterranean daylight, realistic physical textures, premium seaside invitation art direction. The central 65 percent stays softly aqua and quiet because user photos will be composited later; edge ornaments carry the theme. Entire canvas filled with material, orthographic flat print, no scene outside the print. No writing or typography, people, faces, existing photos, rectangular photo windows, logos or watermark. Original artwork rather than any existing template.",
+      "generatedPath": "C:\\Users\\aliif\\.codex\\generated_images\\01a1132f-c7fe-7cc1-9db2-18be619a036b\\exec-eeea0dab-49a9-4b6a-b7fe-feba6ab8bbe7.png",
+      "original": "artwork/originals/encore-riviera.png",
+      "production": "artwork/materials/encore-riviera.jpg",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "productionBytes": 365259
+    },
+    {
+      "name": "encore-denim",
+      "prompt": "Use case: product-mockup. Asset type: original photobooth print material background, vertical 2:3. Premium indigo and faded sky-blue denim collage with convincing woven cotton threads, contrasting white double stitching and irregular overlapping denim panels. Large embroidered ivory daisies with raised yellow centres clustered along upper left and lower right outside edges, little ivory cotton lace trim crossing a corner, a few silver sewing pins and pearl buttons at extreme edges. Fashion studio couture scrapbook, deeply tactile, editorial macro photography directly from above, realistic thread detail and soft dimensional shadows. Center 60 percent remains uninterrupted faded blue denim, no defined photo windows. Material fills the whole canvas in a flat print composition. No people, faces, hands, text, brand labels, logos, photos or watermark. Original design, clean lavish palette of denim blue, butter-yellow and ivory.",
+      "generatedPath": "C:\\Users\\aliif\\.codex\\generated_images\\01a1132f-c7fe-7cc1-9db2-18be619a036b\\exec-c23d3aa7-720a-43cd-8250-e4910e0c4ca8.png",
+      "original": "artwork/originals/encore-denim.png",
+      "production": "artwork/materials/encore-denim.jpg",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "productionBytes": 748098
+    },
+    {
+      "name": "encore-lilac",
+      "prompt": "Use case: stylized-concept. Asset type: original luxury photobooth printed material background, portrait 2:3. Lilac Conservatory: layered lavender silk and antique botanical paper, dreamy translucent glasshouse reflections, delicate realistic lilac and ivory butterfly ornaments made of gauzy fabric concentrated at upper right and lower left edges, pressed pale-purple hydrangea petals and thin champagne-gold filigree stems along borders. Refined romantic collector-card art direction, fine paper grain and silk folds, realistic flat-lay craft material with subtle dimensional depth, quiet soft lavender light. Central 65 percent is pale lavender paper/silk with minimal detail to accept photos later; no photo frames/windows. Entire image filled, flat straight-on print, no outer scene. No people, faces, hands, photos, lettering, numbers, logos or watermarks. Design must feel lavish and carefully curated, not repeated tiny clip-art stickers.",
+      "generatedPath": "C:\\Users\\aliif\\.codex\\generated_images\\01a1132f-c7fe-7cc1-9db2-18be619a036b\\exec-4f04a26e-2136-4be4-80cb-38c1ee31dcf2.png",
+      "original": "artwork/originals/encore-lilac.png",
+      "production": "artwork/materials/encore-lilac.jpg",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "productionBytes": 473781
+    },
+    {
+      "name": "encore-cherry",
+      "prompt": "Use case: product-mockup. Asset type: original luxurious photobooth print material background, portrait 2:3. Cherry Velvet Club: deep glossy burgundy velvet with rich folded nap, ivory antique letter-paper edges, a bold long red satin ribbon winding along the outer left and bottom edges, realistic ripe dark-red paired cherries with slender green stems at upper right and lower left corners, small champagne gold foil fragments and a delicate scalloped lace corner. High-fashion cherry editorial, tactile flat lay directly from above, expensive layered craft materials, glowing soft studio light. Middle 65 percent is quiet burgundy velvet; all large cherries and bows concentrate at outside edges for later photo overlay. Full bleed flat print, no outer desk or surrounding scene. No text, labels, logos, people, hands, faces, photographs, photo placeholders or watermark. Original asset.",
+      "generatedPath": "C:\\Users\\aliif\\.codex\\generated_images\\01a1132f-c7fe-7cc1-9db2-18be619a036b\\exec-43c48b58-fb95-40b8-a019-91037e30635e.png",
+      "original": "artwork/originals/encore-cherry.png",
+      "production": "artwork/materials/encore-cherry.jpg",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "productionBytes": 336252
+    },
+    {
+      "name": "encore-citrus",
+      "prompt": "Use case: product-mockup. Asset type: original joyful luxury photobooth print material, vertical 2:3. Citrus Sunset: softly folded glowing tangerine and terracotta silk, subtle ivory linen-paper layers and woven summer rattan strands. Vivid freshly cut orange slices, tiny white orange blossoms and glossy dark-green citrus leaves concentrated at the upper left and lower right edges, a pale butter-yellow satin ribbon entering from a corner. Warm golden-hour editorial flat-lay macro realism, juicy pulp detail and tactile fabric, sophisticated summer club vibe. Central 65 percent smooth warm orange/cream material with quiet detail, no defined photo windows. Flat whole-image print fills the entire canvas, no outside mockup setting. No lettering, numbers, branding, people, photos or watermarks. Make a rich original scene rather than tiny repeated stickers.",
+      "generatedPath": "C:\\Users\\aliif\\.codex\\generated_images\\01a1132f-c7fe-7cc1-9db2-18be619a036b\\exec-6e88d6f0-c383-4507-89e7-8ca151b0ecdf.png",
+      "original": "artwork/originals/encore-citrus.png",
+      "production": "artwork/materials/encore-citrus.jpg",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "productionBytes": 404970
+    },
+    {
+      "name": "encore-cafe",
+      "prompt": "Use case: product-mockup. Asset type: original premium café photobooth print background, portrait 2:3. Café Lumière: fine mocha-brown linen and ivory deckle-edge stationery with broad caramel silk folds at outer edges. A small elegant porcelain espresso cup with delicate heart-shaped latte art in the upper left extreme corner, rich roasted coffee beans at outer bottom edge, unlettered kraft receipt-paper strips, a thin dark chocolate velvet ribbon and brass paper clip along the opposite edge. Warm Paris café editorial art direction, soft morning window light, convincing 3D surface textures photographed directly from above. Central 65 percent mostly quiet ivory/mocha craft paper for photo overlay, do not draw photo borders or windows. Full bleed flat print, no outer table or perspective. No words, numbers, logos, people, hands, faces, existing photographs or watermark. Original artwork.",
+      "generatedPath": "C:\\Users\\aliif\\.codex\\generated_images\\01a1132f-c7fe-7cc1-9db2-18be619a036b\\exec-0bb01991-15b6-4e67-a983-c78ff7ec6374.png",
+      "original": "artwork/originals/encore-cafe.png",
+      "production": "artwork/materials/encore-cafe.jpg",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "productionBytes": 372950
+    },
+    {
+      "name": "encore-emerald",
+      "prompt": "Use case: product-mockup. Asset type: original sumptuous botanical photobooth print material, portrait 2:3. Emerald Herbarium: deep emerald velvet and dark moss-green embossed book cloth layered with warm ivory handmade botanical paper. Delicate pressed fern fronds, real small eucalyptus sprigs and tiny cream blossoms concentrate along the outside corners, thin champagne gold botanical foil engraving and gold corner filigree, a narrow dark-green satin bookmark at an edge. A luxurious collector's herbarium invitation flat lay, realistic velvet nap, paper fibres and metal gleam, natural directional light, rich restrained styling. Central 65 percent remains a quiet green/ivory field for later photo overlay, no defined photo windows. Image fills the canvas as a flat print, no surrounding desk. No writing, specimen labels, logos, people, hands, faces, photos or watermark. Original material artwork.",
+      "generatedPath": "C:\\Users\\aliif\\.codex\\generated_images\\01a1132f-c7fe-7cc1-9db2-18be619a036b\\exec-ef6a469f-5969-46ee-8551-76154a3eab7b.png",
+      "original": "artwork/originals/encore-emerald.png",
+      "production": "artwork/materials/encore-emerald.jpg",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "productionBytes": 498022
+    },
+    {
+      "name": "encore-champagne",
+      "prompt": "Use case: product-mockup. Asset type: original premium celebration photobooth print material, vertical 2:3. Champagne Countdown: luminous champagne silk folds layered over creamy handmade invitation paper with fine real gold glitter, realistic curled metallic gold streamers and tiny foil confetti concentrated around outside corners. Warm sparkling party bokeh seen through translucent silk, delicate gold fireworks etched as abstract very fine radial filaments at upper right edge, one long sculptural satin ribbon entering lower left. Sophisticated glamorous soirée art direction, editorial flat-lay material photography, soft depth and convincing metal reflections. The central 65 percent is quiet luminous champagne material for photo overlays later. Full bleed flat print without a surrounding scene. No drink bottles or brands, text, years, numbers, lettering, people, faces, hands, existing photographs, photo rectangles or watermark. Original carefully curated material composition.",
+      "generatedPath": "C:\\Users\\aliif\\.codex\\generated_images\\01a1132f-c7fe-7cc1-9db2-18be619a036b\\exec-615a7836-37db-42f0-9132-7699565e4400.png",
+      "original": "artwork/originals/encore-champagne.png",
+      "production": "artwork/materials/encore-champagne.jpg",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "productionBytes": 417083
+    },
+    {
+      "name": "encore-garden",
+      "prompt": "Use case: stylized-concept. Asset type: original fine-art garden party photobooth print material background, portrait 2:3. A lush original impressionist garden composition on visibly textured cotton aquarelle paper: layered painterly pale sage and celadon greens, a little dreamy aqua pond colour, lavender irises, blush peonies and tiny ivory flowers around the outer edges, handmade torn-paper collage corners and fine muted champagne-gold foil. Thick delicate oil-paint impasto and feathery watercolour edges, soft bright garden daylight, elegant invitation stationery art direction, sophisticated pastel brushwork. Central 65 percent has a calm pale sage painted wash for photo placement later; floral art intensifies at outside top/bottom corners. Full bleed flat print from directly above, no frame mockup or room. No people, faces, hands, writing, logos, existing photographs, photo windows or watermarks. Create original garden artwork, not a reproduction of a specific painting.",
+      "generatedPath": "C:\\Users\\aliif\\.codex\\generated_images\\01a1132f-c7fe-7cc1-9db2-18be619a036b\\exec-da7c5120-7eb1-497b-bf18-9742f64b3a7a.png",
+      "original": "artwork/originals/encore-garden.png",
+      "production": "artwork/materials/encore-garden.jpg",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "productionBytes": 490928
+    }
+  ],
+  "packaging": "JPEG quality 88, optimized/progressive. Format/size conversion only; generated content unchanged."
+}

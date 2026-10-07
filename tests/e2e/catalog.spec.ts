@@ -1,4 +1,48 @@
 import { test, expect } from '@playwright/test';
+test('all gallery photo areas contain neutral matte instead of people', async ({ page }) => {
+  await page.goto('/tests/harness.html');
+  const evidence = await page.evaluate(async () => {
+    const { definitions } = await import('/src/frames/definitions.ts');
+    const { loadLayer } = await import('/src/core/renderer.ts');
+    return Promise.all(
+      definitions.map(async (frame) => {
+        const image = await loadLayer(frame.thumbnail);
+        // Use a separate canvas per loaded thumbnail so concurrent decodes cannot change its pixels.
+        const sample = document.createElement('canvas');
+        sample.width = image.naturalWidth;
+        sample.height = image.naturalHeight;
+        const c = sample.getContext('2d')!;
+        c.drawImage(image, 0, 0);
+        let mismatches = 0;
+        for (const slot of frame.slots) {
+          const expected = slot.matteColor.match(/[a-f\d]{2}/gi)!.map((v) => parseInt(v, 16));
+          const angle = (slot.rotationDeg * Math.PI) / 180;
+          for (const x of [0.35, 0.5, 0.65])
+            for (const y of [0.35, 0.5, 0.65]) {
+              const dx = (x - 0.5) * slot.w * image.naturalWidth;
+              const dy = (y - 0.5) * slot.h * image.naturalHeight;
+              const px =
+                (slot.x + slot.w / 2) * image.naturalWidth +
+                dx * Math.cos(angle) -
+                dy * Math.sin(angle);
+              const py =
+                (slot.y + slot.h / 2) * image.naturalHeight +
+                dx * Math.sin(angle) +
+                dy * Math.cos(angle);
+              const pixel = c.getImageData(Math.round(px), Math.round(py), 1, 1).data;
+              if (expected.some((value, i) => Math.abs(value - pixel[i]) > 1) || pixel[3] !== 255)
+                mismatches++;
+            }
+        }
+        sample.width = 1;
+        sample.height = 1;
+        return { id: frame.id, mismatches };
+      }),
+    );
+  });
+  expect(evidence).toHaveLength(60);
+  for (const frame of evidence) expect(frame.mismatches, frame.id).toBe(0);
+});
 test('all 60 packages load real thumbnails, preserve protected photo interiors, and export standard/light files', async ({
   page,
 }) => {

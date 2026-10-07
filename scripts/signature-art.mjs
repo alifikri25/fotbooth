@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import { encoreArt } from './encore-art.mjs';
 
 const materials = new Map();
 const xml = (s) =>
@@ -442,7 +443,7 @@ export function signatureArt(frame, outline) {
       break;
     }
     default:
-      return null;
+      return encoreArt(frame, outline);
   }
   const textMasks = frame.textAreas
     .map((t) => rect(t.x * w, t.y * h, t.w * w, t.h * h, 'black'))

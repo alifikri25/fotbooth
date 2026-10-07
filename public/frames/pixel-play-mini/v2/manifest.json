@@ -71,7 +71,7 @@
     "background": "/frames/pixel-play-mini/v2/background.svg",
     "foreground": "/frames/pixel-play-mini/v2/foreground.svg"
   },
-  "thumbnail": "/frames/pixel-play-mini/v2/thumbnail.png",
+  "thumbnail": "/frames/pixel-play-mini/v2/thumbnail-neutral.png",
   "licenses": [
     "Original vector artwork © Fotbooth contributors. CC0-1.0.",
     "DM Sans and Fraunces: SIL Open Font License 1.1."

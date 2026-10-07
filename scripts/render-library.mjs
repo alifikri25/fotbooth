@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import { chromium } from '@playwright/test';
 import { definitions } from '../src/frames/definitions.ts';
+import { encoreIds, originalSignatureIds } from '../src/frames/signature.ts';
 
 // Bounded batches prevent the QA generator from retaining a canvas per frame.
 const baseURL = process.env.FOTBOOTH_BASE_URL ?? 'http://127.0.0.1:5173';
@@ -25,9 +26,6 @@ try {
         const photos = await Promise.all(
           [1, 2, 3].map((n) => loadLayer(`/samples/friend-${n}.svg`)),
         );
-        const signaturePhotos = await Promise.all(
-          ['a', 'b', 'c'].map((letter) => loadLayer(`/samples/signature-portrait-${letter}.jpg`)),
-        );
         const canvas = document.createElement('canvas');
         const thumb = document.createElement('canvas');
         const output = [];
@@ -41,15 +39,14 @@ try {
               photoId: String(i % 3),
               fitMode: 'cover',
               centerX: 0.5,
-              centerY: frame.version === 3 ? 0.3 : 0.5,
+              centerY: 0.5,
               zoom: 1,
               rotation: 0,
               mirror: false,
             })),
           };
-          const selectedPhotos = frame.version === 3 ? signaturePhotos : photos;
           const resolve = async (id) => {
-            const image = selectedPhotos[Number(id)];
+            const image = photos[Number(id)];
             return { image, width: image.naturalWidth, height: image.naturalHeight };
           };
           await renderComposition(
@@ -61,6 +58,12 @@ try {
             frame.designHeight,
           );
           const standard = canvas.toDataURL('image/png').split(',')[1];
+          // Public gallery shows empty frames. Sample fixtures are only used for export QA.
+          await renderComposition(
+            canvas, frame, { placements: [], caption: '', date: '' },
+            async () => { throw new Error('Neutral gallery must not resolve sample photos'); },
+            frame.designWidth, frame.designHeight,
+          );
           thumb.height = 600;
           thumb.width = Math.round((600 * frame.designWidth) / frame.designHeight);
           thumb.getContext('2d').drawImage(canvas, 0, 0, thumb.width, thumb.height);
@@ -133,7 +136,8 @@ try {
   for (const [name, items, columns] of [
     ['frame-contact-sheet', thumbnails, 6],
     ['decorated-design-board', thumbnails.slice(0, 12), 4],
-    ['signature-design-board', thumbnails.slice(0, 8), 4],
+    ['signature-design-board', thumbnails.filter((frame) => originalSignatureIds.includes(frame.id)), 4],
+    ['signature-encore-board', thumbnails.filter((frame) => encoreIds.includes(frame.id)), 5],
     ['cartoon-contact-sheet', thumbnails.filter((f) => f.categories.includes('cartoon')), 4],
     ...Array.from({ length: Math.ceil(thumbnails.length / 12) }, (_, i) => [
       `library-${String(i + 1).padStart(2, '0')}`,
@@ -178,6 +182,7 @@ try {
       {
         date: new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Bangkok' }).format(new Date()),
         versions: [...new Set(definitions.map((f) => f.version))],
+        gallery: 'Neutral empty photo areas; no photographic or illustrated people',
         count: definitions.length,
         decorated: definitions.filter((f) => f.artwork).length,
         frames: thumbnails.map(({ thumbnail, ...f }) => f),

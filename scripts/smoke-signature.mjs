@@ -8,10 +8,9 @@ const browserName = process.env.FOTBOOTH_SMOKE_BROWSER ?? 'chromium';
 const reportPath = process.env.FOTBOOTH_SIGNATURE_REPORT ?? 'docs/qa/signature-smoke.json';
 const browser = await { chromium, webkit }[browserName].launch();
 const evidence = [];
+const viewport = { width: Number(process.env.FOTBOOTH_SMOKE_WIDTH ?? 1440), height: 900 };
 try {
-  const page = await browser.newPage({
-    viewport: { width: Number(process.env.FOTBOOTH_SMOKE_WIDTH ?? 1440), height: 900 },
-  });
+  const page = await browser.newPage({ viewport });
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
   page.on('response', (response) => {
@@ -79,6 +78,7 @@ try {
         date: new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Bangkok' }).format(new Date()),
         baseURL,
         browser: browserName,
+        viewport,
         evidence,
         errors,
       },
@@ -87,7 +87,7 @@ try {
     ) + '\n',
   );
   console.log(
-    `Signature smoke passed on ${browserName}: all eight designs, uploads, captions and 16 decoded PNG/JPEG downloads.`,
+    `Signature smoke passed on ${browserName}: all ${evidence.length} designs, uploads, captions and ${evidence.length * 2} decoded PNG/JPEG downloads.`,
   );
 } finally {
   await browser.close();

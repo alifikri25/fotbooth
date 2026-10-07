@@ -47,7 +47,7 @@ try {
   }
   await page.getByLabel('Cari frame').fill('ribbon diary');
   await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(4);
-  await page.getByRole('button', { name: 'Pakai frame Ribbon Diary Trio', exact: true }).click();
+  await page.getByRole('button', { name: 'Pakai frame Rose Ribbon Salon', exact: true }).click();
   const fixture = await page.evaluate(() => {
     const c = document.createElement('canvas');
     c.width = 800;
