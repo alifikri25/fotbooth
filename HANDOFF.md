@@ -1,6 +1,18 @@
 # Handoff Web Photobooth — 7 Oktober 2026
 
-## Status terbaru: delapan frame unggulan sudah publik
+## Status terbaru: sepuluh edisi baru dan galeri tanpa orang sudah publik
+
+Pengguna meminta sepuluh frame lagi dengan tema yang hidup, kemudian memilih **tanpa orang, pakai area foto netral** untuk galeri. Sepuluh edisi lama disempurnakan menjadi versi 3 sehingga tetap sesuai batas 60 frame: Rose Ribbon Salon, Azure Riviera, Denim Bloom Studio, Lilac Conservatory, Cherry Velvet Club, Citrus Sunset, Café Lumière, Emerald Herbarium, Champagne Countdown dan Monet Garden Party. Total kini 18 v3 dan 42 v2. Seluruh 60 thumbnail sudah netral, termasuk delapan desain unggulan sebelumnya; foto pengguna diisi dalam sesi sendiri.
+
+Komposisi SVG memakai sepuluh bahan raster baru hasil tool imagegen bawaan, dengan gambar asli/JPEG/prompt di [artwork](artwork/README.md). Bahan aktif berjumlah 14. Tiga model fiktif historis dan thumbnail lama masih tersedia sebagai aset kompatibilitas tetapi tidak dimuat galeri sekarang. Current URL memakai thumbnail-neutral.png. Seluruh slot, format, dimensi, kategori dan koleksi dipertahankan. Tidak ada foto pengguna/reference atau template Canva yang diimpor.
+
+**46 unit + build lulus; suite penuh 63 lulus, 3 skip, 0 gagal/flaky (209,9 detik).** Sesudah kontras label disempurnakan, katalog/render ulang 6/6 lulus. Preview dan produksi lulus seluruh 18 desain × PNG/JPEG pada Chromium 1440/WebKit 360 px (36 file per engine), galeri 60 thumbnail/180 URL, upload/caption dan keamanan. Kamera enam ukuran: 3 lulus, 1 skip per origin. Pemeriksaan galeri produksi kedua engine cocok seluruh 1.683 piksel sampel interior pada 60 thumbnail per engine, tanpa request foto model.
+
+Source kandidat: 0260be14c41d1090c0b128f5eb8317300d8b2432; preview: 4c1d776e-79d2-4425-bbc9-9b3fe00e0f39; produksi: 16d4bffa-5e83-48dc-893a-94e38782559e. [Bukti revisi](docs/qa/encore-release-20261007.json), [board sepuluh desain](docs/qa/signature-encore-board.png). Kandidat lokal **617 file**, SHA-256 **e2106e84b97aff099e190e2ab53c64cdc644e79bb82c90c5efd7af8868a052d3**. Semua 384 artwork lama byte-identik; SHA-256 127 file produksi cocok kandidat. Produksi sebelumnya 1bd7ac36-6d11-470b-ab05-29f5364bc42e dan arsip 527 file tetap tersedia untuk pemulihan. Preview/produksi memakai build sama; GitHub push masih CI saja.
+
+GitHub Actions source kandidat selesai sukses: check/build dan suite Chromium/WebKit, run 37554781186. Revisi sudah selesai dan publik; tidak ada automation atau subagent. Dev server localhost:5173 tetap tersedia. HP/kamera fisik dan batas QA PRD lainnya belum diverifikasi. Foto/caption hanya di memori tab; simpan hasil sebelum memuat ulang.
+
+## Catatan historis: delapan frame unggulan
 
 Pengguna meminta tema yang lebih mewah/utuh dengan referensi theatre, ulang tahun pop, tiket cetak dan tekstil/renda. Delapan desain versi 3 sudah terbit di **https://fotbooth.pages.dev** dan tampil paling depan: Velvet Premiere, Popstar Birthday, After Hours Ticket, Sage Atelier, Pearl Vows, Holo Encore, Rouge Romance, Disco Royale. Katalog tetap 60 ID (8 v3, 52 v2).
 

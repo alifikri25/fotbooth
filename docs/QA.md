@@ -1,6 +1,22 @@
 # QA Web Photobooth — 7 Oktober 2026
 
-## Revisi aktif: delapan frame unggulan
+## Revisi aktif: sepuluh edisi baru dan galeri tanpa orang
+
+Revisi sudah publik di **https://fotbooth.pages.dev**. Katalog tetap 60 ID, kini 18 versi 3 dan 42 versi 2. Semua 60 thumbnail memakai area foto netral sesuai pilihan pengguna. [Bukti lengkap](qa/encore-release-20261007.json), [sepuluh desain baru](qa/signature-encore-board.png), [galeri desktop](qa/gallery-desktop.png), [galeri mobile](qa/library-mobile.png), [gambar dan prompt](../artwork/README.md).
+
+- 46 unit test, TypeScript dan build lulus. Suite Chromium/WebKit: 66 dijadwalkan, 63 lulus, 3 skip capture sintetis WebKit, 0 gagal/flaky, 209,9 detik. Sesudah perbaikan kontras tulisan velvet/denim, enam pemeriksaan katalog/render ulang lulus pada kandidat terakhir.
+- Regresi baru terlebih dahulu gagal pada versi lama: sepuluh ID belum versi 3 dan thumbnail masih memakai orang. Sesudah revisi, slot/format/dimensi sepuluh edisi sama dengan versi sebelumnya. Piksel area foto semua 60 thumbnail netral pada kedua engine; dekorasi dan teks tetap memakai renderer aplikasi.
+- Sepuluh komposisi memiliki bahan raster orisinal hasil imagegen bawaan. Board sepuluh edisi, delapan edisi sebelumnya yang kini netral, lima contact sheet dan detail Cherry Velvet Club ditinjau. Label kecil pada velvet/denim diperjelas. Tidak ada foto pengguna/reference atau file Canva yang diterbitkan.
+- Preview dan produksi HTTPS: 18 desain × PNG/JPEG ringan dibuka kembali, 36 file per engine pada Chromium 1440 px dan WebKit 360 px; dimensi tepat, tanpa HTTP/page error. Galeri 60 thumbnail/180 URL, search/upload/caption dan header keamanan lulus. Produksi memakai build identik dengan preview.
+- Galeri produksi kedua engine: 60 thumbnail aktual dipilih pada URL neutral yang benar, 1.683 sampel piksel interior per engine cocok matte netral, tanpa request foto model. Preview juga lulus pemeriksaan galeri netral Chromium.
+- Kamera HTTPS pada enam ukuran layar tetap lulus (3 lulus, 1 skip per origin). Denial/reopen kedua engine dan capture/cancel/timer sintetis Chromium memakai klik koordinat tanpa scroll.
+- Semua 384 file background/foreground/thumbnail dari kandidat rilis sebelumnya cocok SHA-256 dan tetap tersedia. Kandidat 617 entri masih cocok final dist; 127 file produksi cocok SHA-256, mencakup seluruh thumbnail netral, 18 paket v3, sepuluh background v2 sebelumnya serta HTML/bundel. Thumbnail lama tidak ditimpa.
+
+GitHub Actions source final 0260be14c41d1090c0b128f5eb8317300d8b2432 selesai sukses: check/build dan suite Chromium/WebKit, [run 37554781186](https://github.com/alifikri25/fotbooth/actions/runs/37554781186).
+
+HP/kamera fisik, pembaca layar, performa perangkat referensi, uji manusia dan latihan rollback belum diverifikasi. WebKit 360 px adalah browser otomatis pada Windows, bukan iPhone nyata. Suite penuh mendahului penyempurnaan kontras label; pemeriksaan terarah dan HTTPS memverifikasi kandidat terakhir.
+
+## Bukti historis: delapan frame unggulan
 
 Delapan desain dengan tema utuh sudah publik di **https://fotbooth.pages.dev**. Katalog tetap 60 ID, delapan versi 3 dan 52 versi 2. [Bukti lengkap](qa/signature-release-20261007.json), [board final](qa/signature-design-board.png), [gambar dan prompt](../artwork/README.md).
 

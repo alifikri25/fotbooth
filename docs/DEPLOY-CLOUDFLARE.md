@@ -4,7 +4,7 @@ Source public: https://github.com/alifikri25/fotbooth. Situs publik sejak **7 Ok
 
 Project aktif menggunakan **Direct Upload**, production branch `main`. Pratinjau: https://preview.fotbooth.pages.dev. Deployment produksi pertama: `ef45b121-2b33-4102-8773-4d274875b49b`; preview pertama: `360f9f7b-8b6a-4003-8b75-91f9127976b6`. Custom domain belum dipasang.
 
-Untuk revisi, jalankan pemeriksaan lokal, `npm run deploy:preview`, periksa preview HTTPS, lalu `npm run deploy:cloudflare`. Push GitHub hanya menjalankan CI; belum ada automatic deploy. Bukti terbaru: [signature-release-20261007.json](qa/signature-release-20261007.json); bukti rilis pertama tetap disimpan.
+Untuk revisi, jalankan pemeriksaan lokal, `npm run deploy:preview`, periksa preview HTTPS, lalu `npm run deploy:cloudflare`. Push GitHub hanya menjalankan CI; belum ada automatic deploy. Bukti terbaru: [encore-release-20261007.json](qa/encore-release-20261007.json); bukti rilis sebelumnya tetap disimpan. Produksi terbaru: 16d4bffa-5e83-48dc-893a-94e38782559e, source 0260be14c41d1090c0b128f5eb8317300d8b2432.
 
 ## Alternatif project baru dengan Git integration
 
@@ -63,7 +63,7 @@ $env:FOTBOOTH_CAMERA_TEST_URL = 'https://fotbooth.pages.dev'
 npx playwright test mobile-camera --project=chromium --project=webkit --reporter=list
 ```
 
-Delapan frame unggulan diperiksa satu per satu untuk PNG dan JPEG melalui origin HTTPS yang sama:
+Seluruh 18 frame unggulan diperiksa satu per satu untuk PNG dan JPEG melalui origin HTTPS yang sama:
 
 ```powershell
 $env:FOTBOOTH_SMOKE_URL = 'https://fotbooth.pages.dev'
@@ -73,7 +73,7 @@ $env:FOTBOOTH_SIGNATURE_REPORT = 'docs/qa/signature-production-smoke.json'
 node scripts/smoke-signature.mjs
 ```
 
-Katalog aktif memakai artwork versi 3 pada delapan desain unggulan dan versi 2 pada 52 lainnya. Pertahankan semua aset versi 1 dan 2 dari 60 ID aktif agar sesi yang sudah terbuka masih dapat menyelesaikan ekspor; versi lama tidak menambah pilihan dalam katalog. Bahan raster signature tertanam di SVG; tiga JPEG model fiktif hanya menjadi contoh galeri. Gambar asli dan prompt berada di artwork/, tidak membutuhkan panggilan imagegen saat runtime.
+Katalog aktif memakai artwork versi 3 pada 18 desain unggulan dan versi 2 pada 42 lainnya. Seluruh 60 thumbnail memakai thumbnail-neutral.png dengan area foto kosong netral. Pertahankan thumbnail.png lama dan semua aset v1/v2/v3 sebelumnya agar sesi yang sudah terbuka masih dapat menyelesaikan ekspor; versi lama tidak menambah pilihan katalog. Empat belas bahan raster signature tertanam di SVG. Tiga JPEG model fiktif historis tidak dimuat galeri saat ini. Gambar asli dan prompt berada di artwork/, tidak membutuhkan panggilan imagegen saat runtime.
 
 ## Pemeriksaan di URL HTTPS
 
