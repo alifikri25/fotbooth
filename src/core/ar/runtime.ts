@@ -12,6 +12,8 @@ export class ARRuntime {
       resolve: (value: ARDetection) => void;
       reject: (error: Error) => void;
       timer: ReturnType<typeof setTimeout>;
+      canvas: HTMLCanvasElement;
+      kind: ARKind;
     }
   >();
   constructor() {
@@ -28,13 +30,10 @@ export class ARRuntime {
     this.worker.onmessage = (
       event: MessageEvent<{ id: number; result?: ARDetection; error?: string }>,
     ) => {
-      this.settle(
-        event.data.id,
-        event.data.result,
-        event.data.error ? new Error(event.data.error) : undefined,
-      );
+      if (event.data.error) this.fallbackFromWorker();
+      else this.settle(event.data.id, event.data.result);
     };
-    this.worker.onerror = () => this.fail(new Error('Efek AR belum bisa dimuat di browser ini.'));
+    this.worker.onerror = () => this.fallbackFromWorker();
   }
   infer(image: CanvasImageSource, kind: ARKind): Promise<ARDetection> {
     const task = this.queue.then(async () => {
@@ -47,22 +46,32 @@ export class ARRuntime {
       canvas.width = Math.max(1, Math.round(w * scale));
       canvas.height = Math.max(1, Math.round(h * scale));
       canvas.getContext('2d')!.drawImage(image, 0, 0, canvas.width, canvas.height);
-      const bitmap = await createImageBitmap(canvas);
-      canvas.width = canvas.height = 1;
-      if (this.closed) {
-        bitmap.close();
-        throw stopped();
+      try {
+        const bitmap = await createImageBitmap(canvas);
+        if (this.closed) {
+          bitmap.close();
+          throw stopped();
+        }
+        return await new Promise<ARDetection>((resolve, reject) => {
+          const id = ++this.sequence;
+          const timer = setTimeout(
+            () =>
+              this.fail(new Error('Efek AR terlalu lama dimuat. Coba lagi atau pilih Tanpa AR.')),
+            45000,
+          );
+          this.pending.set(id, { resolve, reject, timer, canvas, kind });
+          if (this.worker) {
+            try {
+              this.worker.postMessage({ id, kind, image: bitmap }, [bitmap]);
+            } catch {
+              bitmap.close();
+              this.fallbackFromWorker();
+            }
+          } else void this.inferLocally(id, bitmap, kind);
+        });
+      } finally {
+        canvas.width = canvas.height = 1;
       }
-      return new Promise<ARDetection>((resolve, reject) => {
-        const id = ++this.sequence;
-        const timer = setTimeout(
-          () => this.fail(new Error('Efek AR terlalu lama dimuat. Coba lagi atau pilih Tanpa AR.')),
-          45000,
-        );
-        this.pending.set(id, { resolve, reject, timer });
-        if (this.worker) this.worker.postMessage({ id, kind, image: bitmap }, [bitmap]);
-        else void this.inferLocally(id, bitmap, kind);
-      });
     });
     this.queue = task.then(
       () => {},
@@ -77,6 +86,34 @@ export class ARRuntime {
     this.pending.delete(id);
     if (error) request.reject(error);
     else request.resolve(result!);
+  }
+  private fallbackFromWorker() {
+    if (!this.worker || this.closed) return;
+    const worker = this.worker;
+    this.worker = undefined;
+    worker.onmessage = null;
+    worker.onerror = null;
+    worker.terminate();
+    for (const [id, request] of this.pending) {
+      // A main-thread feature probe cannot prove worker GPU support. Retain the same
+      // bounded frame until inference settles so a worker failure can retry it locally.
+      void (async () => {
+        try {
+          const bitmap = await createImageBitmap(request.canvas);
+          if (this.closed || !this.pending.has(id)) {
+            bitmap.close();
+            return;
+          }
+          await this.inferLocally(id, bitmap, request.kind);
+        } catch (error) {
+          this.settle(
+            id,
+            undefined,
+            error instanceof Error ? error : new Error('Efek AR belum bisa dimuat.'),
+          );
+        }
+      })();
+    }
   }
   private async inferLocally(id: number, bitmap: ImageBitmap, kind: ARKind) {
     try {

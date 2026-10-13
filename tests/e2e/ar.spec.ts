@@ -98,9 +98,9 @@ test('real local face and person models produce aligned accessories and masked b
         const offscreen = typeof OffscreenCanvas !== 'undefined';
         const canvas = offscreen ? new OffscreenCanvas(1, 1) : null;
         const gl = canvas?.getContext('webgl2');
-        const workerWebGL2 = !!gl;
+        const offscreenWebGL2OnMainThread = !!gl;
         gl?.getExtension('WEBGL_lose_context')?.loseContext();
-        return { offscreen, workerWebGL2, userAgent: navigator.userAgent };
+        return { offscreen, offscreenWebGL2OnMainThread, userAgent: navigator.userAgent };
       });
       throw new Error(
         `${error.message}\nAR capabilities: ${JSON.stringify(capabilities)}\nAR console: ${diagnostics.slice(-10).join('\n')}`,
