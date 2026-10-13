@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1350" viewBox="0 0 1800 1350">
+  <rect
+    x="34"
+    y="34"
+    width="1732"
+    height="1282"
+    rx="6"
+    fill="none"
+    stroke="#d9b9a0"
+    stroke-width="2"
+    stroke-dasharray="10 9"
+  />
+  <rect
+    x="81"
+    y="81"
+    width="1638"
+    height="972"
+    rx="16"
+    fill="none"
+    stroke="#b38c76"
+    stroke-width="3"
+  />
+  <g fill="#9d7361" font-family="sans-serif" font-size="18" letter-spacing="5">
+    <text x="86" y="61">KARTU POS / FOTO BARENG</text>
+    <text x="1714" y="61" text-anchor="end">DIKIRIM DENGAN RINDU</text>
+  </g>
+  <text
+    x="89"
+    y="1179"
+    font-family="Georgia,serif"
+    font-size="85"
+    font-style="italic"
+    fill="#724a43"
+  >
+    Surat rindu.
+  </text>
+  <text x="94" y="1237" font-family="sans-serif" font-size="25" letter-spacing="3" fill="#a77d69">
+    UNTUK KAMU, DARI TEMPATKU.
+  </text>
+  <g transform="translate(1517 1163) rotate(7)">
+    <rect
+      x="-93"
+      y="-92"
+      width="186"
+      height="185"
+      rx="5"
+      fill="#f5dfca"
+      stroke="#b67564"
+      stroke-width="4"
+      stroke-dasharray="5 7"
+    />
+    <rect x="-76" y="-75" width="152" height="151" fill="none" stroke="#cc9b7c" stroke-width="2" />
+    <path d="M0 22C-54-17-37-61 0-37C37-61 54-17 0 22Z" fill="#bf5d58" />
+    <text
+      y="57"
+      text-anchor="middle"
+      font-family="serif"
+      font-size="20"
+      letter-spacing="3"
+      fill="#9b594e"
+    >
+      WITH LOVE
+    </text>
+  </g>
+  <g
+    transform="translate(1438 1140) rotate(-12)"
+    fill="none"
+    stroke="#b78371"
+    stroke-width="2"
+    opacity=".7"
+  >
+    <circle r="61" />
+    <circle r="52" />
+    <path d="M-135-22c37-12 75 12 112 0M-135 0c37-12 75 12 112 0M-135 22c37-12 75 12 112 0" />
+  </g>
+</svg>

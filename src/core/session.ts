@@ -7,11 +7,18 @@ export const defaultCrop: Crop = {
   rotation: 0,
   mirror: false,
 };
-const fresh = (slotId: string, photoId: string, mirror = false): Placement => ({
+const fresh = (
+  slotId: string,
+  photoId: string,
+  mirror = false,
+  effects: Partial<Crop> = {},
+): Placement => ({
   ...defaultCrop,
   slotId,
   photoId,
   mirror,
+  effect: effects.effect ?? 'none',
+  effectIntensity: effects.effectIntensity ?? 1,
 });
 const key = (id: string, version: number) => `${id}@${version}`;
 export function createSession(frame: FrameDefinition): Session {
@@ -32,11 +39,12 @@ export function assignPhoto(
   slotId: string,
   photoId: string,
   mirror = false,
+  effects: Partial<Crop> = {},
 ): Session {
   if (!session.slotIds.includes(slotId) || !session.photoIds.includes(photoId)) return session;
   const placements = session.placements
     .filter((p) => p.slotId !== slotId)
-    .concat(fresh(slotId, photoId, mirror));
+    .concat(fresh(slotId, photoId, mirror, effects));
   placements.sort((a, b) => session.slotIds.indexOf(a.slotId) - session.slotIds.indexOf(b.slotId));
   return { ...session, placements, revision: session.revision + 1 };
 }
@@ -45,6 +53,7 @@ export function addPhoto(
   photoId: string,
   replaceSlot?: string,
   mirror = false,
+  effects: Partial<Crop> = {},
 ): Session {
   if (session.photoIds.length >= 8 && !session.photoIds.includes(photoId)) return session;
   const next = {
@@ -56,7 +65,7 @@ export function addPhoto(
   };
   const slotId =
     replaceSlot ?? session.slotIds.find((id) => !session.placements.some((p) => p.slotId === id));
-  return slotId ? assignPhoto(next, slotId, photoId, mirror) : next;
+  return slotId ? assignPhoto(next, slotId, photoId, mirror, effects) : next;
 }
 export function swapPhotos(session: Session, first: string, second: string): Session {
   const a = session.placements.find((p) => p.slotId === first),
@@ -64,8 +73,8 @@ export function swapPhotos(session: Session, first: string, second: string): Ses
   if (first === second || !session.slotIds.includes(first) || !session.slotIds.includes(second))
     return session;
   const placements = session.placements.filter((p) => p.slotId !== first && p.slotId !== second);
-  if (a) placements.push(fresh(second, a.photoId, a.mirror));
-  if (b) placements.push(fresh(first, b.photoId, b.mirror));
+  if (a) placements.push(fresh(second, a.photoId, a.mirror, a));
+  if (b) placements.push(fresh(first, b.photoId, b.mirror, b));
   placements.sort((a, b) => session.slotIds.indexOf(a.slotId) - session.slotIds.indexOf(b.slotId));
   return { ...session, placements, revision: session.revision + 1 };
 }
@@ -86,7 +95,13 @@ export function switchFrame(session: Session, frame: FrameDefinition): Session {
     const photoId = i < session.slotIds.length ? current?.photoId : cached?.photoId;
     if (!photoId || !session.photoIds.includes(photoId)) return;
     placements.push(
-      cached?.photoId === photoId ? cached : fresh(slot.id, photoId, current?.mirror ?? false),
+      cached?.photoId === photoId
+        ? {
+            ...cached,
+            effect: current?.effect ?? cached.effect,
+            effectIntensity: current?.effectIntensity ?? cached.effectIntensity,
+          }
+        : fresh(slot.id, photoId, current?.mirror ?? false, current),
     );
   });
   return {

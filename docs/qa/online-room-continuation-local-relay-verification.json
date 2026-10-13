@@ -1,0 +1,19 @@
+{
+  "verifiedAt": "2026-10-13T12:32:03.818Z",
+  "site": "http://127.0.0.1:5173",
+  "transport": "relay",
+  "syntheticCameras": true,
+  "result": {
+    "bytes": 1341487,
+    "hash": "3fb009ef5b9b189fb6f90dd7ca4616ef120e87aa2adc480034e02dd2ed270040"
+  },
+  "identicalResult": true,
+  "mobileWidth": 390,
+  "retake": true,
+  "offlineRetakeAndRecapture": true,
+  "disconnect": true,
+  "downloadAfterPartnerLeft": true,
+  "resultAfterPartnerRejoined": true,
+  "downloadAfterCameraEnded": true,
+  "downloadAfterServerDisconnected": true
+}

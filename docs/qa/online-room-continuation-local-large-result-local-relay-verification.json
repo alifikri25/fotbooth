@@ -1,0 +1,27 @@
+{
+  "testedAt": "2026-10-13T12:34:37.308Z",
+  "transport": "relay",
+  "coordinator": "local Vite proxy",
+  "frameId": "kpop-starlight-wander",
+  "hostEngine": "chromium",
+  "guestEngine": "webkit",
+  "fixture": "deterministic opaque RGB1280×720 PNG portraits, seed12345; pre-encoded snapshots, no physical camera",
+  "bothParticipantsAcceptSameCaptureBeforeSending": true,
+  "sharedShutterHonored": true,
+  "originalReceiptWithin45sOfShutter": true,
+  "finalModes": [
+    "relay",
+    "relay"
+  ],
+  "resultBytes": 11498468,
+  "originalBytes": 3171661,
+  "poses": 3,
+  "transferMs": 18309,
+  "identicalDownloadBytes": true,
+  "sha256": [
+    "ca4c9f537c807d303d8263887d58197744720aa7bcdde657e48243bcf4d3a9f2",
+    "ca4c9f537c807d303d8263887d58197744720aa7bcdde657e48243bcf4d3a9f2"
+  ],
+  "width": 1200,
+  "height": 3600
+}

@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-07",
+  "baseURL": "https://fotbooth.pages.dev",
+  "browser": "chromium",
+  "headers": {
+    "access-control-allow-origin": "*",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "cache-control": "no-cache",
+    "cf-ray": "a49e51aebe5d4068-SIN",
+    "content-encoding": "br",
+    "content-security-policy": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self'; media-src 'self' blob:; connect-src 'self' https://fotbooth-rooms.aliifikriii25.workers.dev wss://fotbooth-rooms.aliifikriii25.workers.dev; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 12:24:03 GMT",
+    "etag": "W/\"c83ebc35c8ef996cb79c69160dfd0697\"",
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "permissions-policy": "camera=(self), microphone=()",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=qjSGlWQaYzS%2FyEXjtm0zKACG0RXtMbGPyg%2FiEBWsukuW4JnOq5N0dhIyivIOxtPzHG3qh1je9WtBvAhf%2B5VXviYRPqo52Nz8yOFgch74uKFsfvt2oW86D%2BfmTgj8eY33QDI%2F1A0%3D\"}]}",
+    "server": "cloudflare",
+    "x-content-type-options": "nosniff"
+  },
+  "assets": [
+    {
+      "url": "/ar/face_landmarker-v1.task",
+      "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+      "cache": "no-cache, public, max-age=31536000, immutable"
+    },
+    {
+      "url": "/ar/selfie_segmenter-v1.tflite",
+      "sha256": "191ac9529ae506ee0beefa6b2c945a172dab9d07d1e802a290a4e4038226658b",
+      "cache": "no-cache, public, max-age=31536000, immutable"
+    },
+    {
+      "url": "/ar/mediapipe-1.1.0/vision_wasm_module_internal.js",
+      "sha256": "70eff3956521b7de058d7173a4935c95e4a223c26ea624b9f5a936d3a043dcb0",
+      "cache": "no-cache, public, max-age=31536000, immutable"
+    },
+    {
+      "url": "/ar/mediapipe-1.1.0/vision_wasm_module_internal.wasm",
+      "sha256": "ee03b14a878e6c3c053a1bfa62e166dc45244be54dc0bbe61c578f710b771f6a",
+      "cache": "no-cache, public, max-age=31536000, immutable"
+    }
+  ],
+  "model": {
+    "faces": 1,
+    "landmarks": 478,
+    "person": 1,
+    "background": 0
+  },
+  "effects": [
+    "Kitty Club",
+    "Bunny Pop",
+    "Teddy Mood",
+    "Disco Glasses",
+    "Golden Crown",
+    "Ribbon Crush",
+    "Party Time",
+    "Peach Freckles",
+    "Heart Orbit",
+    "Butterfly Halo",
+    "Smile Confetti",
+    "Comic Boom",
+    "Peach Studio",
+    "Aqua World",
+    "Neon City",
+    "Neon Silhouette"
+  ],
+  "exports": [
+    {
+      "format": "png",
+      "bytes": 1253795,
+      "dimensions": [
+        600,
+        1800
+      ],
+      "sha256": "370885cb8944b1369fc899ca24ab6fa402dac2a0d4178312d1513f0a13d2c9ad"
+    },
+    {
+      "format": "jpg",
+      "bytes": 274396,
+      "dimensions": [
+        600,
+        1800
+      ],
+      "sha256": "114086be0a36e529993e2625ae411ea99787553adc49d97cf25dc84c3bcca3b5"
+    }
+  ],
+  "errors": [],
+  "external": [],
+  "scope": "All 16 live AR selections, synthetic camera capture, reversible editor, real model masks/landmarks and PNG/JPEG under actual HTTPS CSP."
+}

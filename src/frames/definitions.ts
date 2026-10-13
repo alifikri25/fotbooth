@@ -2,6 +2,7 @@ import type { FrameDefinition } from '../core/types';
 import { frame, slot } from './factory.ts';
 import { collectionFrames } from './collections.ts';
 import { refineSignature } from './signature.ts';
+import { maximalistFrames } from './maximalist.ts';
 export const definitions: FrameDefinition[] = [
   frame(
     'orbit-club',
@@ -214,6 +215,7 @@ export const definitions: FrameDefinition[] = [
     'Piknik gingham, buah peach tersenyum, bunga kecil dan kartu kenangan.',
   ),
   ...collectionFrames,
+  ...maximalistFrames,
 ]
   .map(refineSignature)
   .map((frame) => ({

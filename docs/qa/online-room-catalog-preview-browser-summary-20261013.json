@@ -1,0 +1,12 @@
+{
+  "verifiedAt": "2026-10-13T06:24:32.859Z",
+  "startTime": "2026-10-13T06:18:26.863Z",
+  "duration": 296706.772,
+  "expected": 11,
+  "skipped": 7,
+  "unexpected": 0,
+  "flaky": 0,
+  "site": "https://e2e8f932.fotbooth.pages.dev",
+  "scope": "Actual deployed HTTPS UI with real coordinator; single-shot lifecycle,4freshpairedposes,83selectorchoices,cancel/reconnect/late-decode recovery; synthetic cameras",
+  "physicalCameras": false
+}

@@ -1,0 +1,36 @@
+{
+  "width": 360,
+  "targetMinimumPx": 44,
+  "contrastMinimum": 4.5,
+  "contrasts": [
+    {
+      "checks": 6,
+      "minimum": 5.235907477334718
+    },
+    {
+      "checks": 25,
+      "minimum": 5.235907477334718
+    },
+    {
+      "checks": 8,
+      "minimum": 5.235907477334718
+    },
+    {
+      "checks": 51,
+      "minimum": 5.2158816608483285
+    },
+    {
+      "checks": 41,
+      "minimum": 5.2158816608483285
+    },
+    {
+      "checks": 10,
+      "minimum": 5.235907477334718
+    },
+    {
+      "checks": 12,
+      "minimum": 5.235907477334718
+    }
+  ],
+  "scope": "Home, gallery, source, camera denial, editor, result, clear dialog; visible control targets including checkbox labels; flat-background UI text, excluding image/gradient-backed decorative text and disabled controls."
+}

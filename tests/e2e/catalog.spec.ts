@@ -40,10 +40,10 @@ test('all gallery photo areas contain neutral matte instead of people', async ({
       }),
     );
   });
-  expect(evidence).toHaveLength(60);
+  expect(evidence).toHaveLength(80);
   for (const frame of evidence) expect(frame.mismatches, frame.id).toBe(0);
 });
-test('all 60 packages load real thumbnails, preserve protected photo interiors, and export standard/light files', async ({
+test('all 80 packages load real thumbnails, preserve protected photo interiors, and export standard/light files', async ({
   page,
 }) => {
   test.setTimeout(180_000);
@@ -133,7 +133,7 @@ test('all 60 packages load real thumbnails, preserve protected photo interiors, 
     }
     return results;
   });
-  expect(evidence).toHaveLength(60);
+  expect(evidence).toHaveLength(80);
   for (const frame of evidence) {
     expect(frame.blocked, frame.id).toBe(0);
     expect(frame.thumb).toBeGreaterThan(100);
@@ -153,16 +153,16 @@ test('all 60 packages load real thumbnails, preserve protected photo interiors, 
 
 test('new cartoon and dynamic collections filter and open usable frames', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByText('60 frame orisinal', { exact: true })).toBeVisible();
+  await expect(page.getByText('80 frame orisinal', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Mulai bikin foto' }).click();
-  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(60);
+  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(80);
   await expect(page.getByRole('button', { name: /^Pakai frame / }).first()).toHaveAccessibleName(
-    'Pakai frame Velvet Premiere',
+    'Pakai frame Night Market',
   );
   await page.getByRole('button', { name: 'Cartoon', exact: true }).click();
-  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(13);
+  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(14);
   await page.getByRole('button', { name: 'Dynamic', exact: true }).click();
-  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(10);
+  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(30);
   for (const name of ['Comic Dash', 'Candy Bounce', 'Space Pals', 'Monster Moods'])
     await expect(
       page.getByRole('button', { name: `Pakai frame ${name}`, exact: true }),

@@ -1,0 +1,15 @@
+{
+  "verifiedAt": "2026-10-12T22:32:29.378Z",
+  "command": "npx playwright test --project=chromium --project=webkit --reporter=list,json --output=test-results/online-room-final",
+  "startTime": "2026-10-12T22:25:27.900Z",
+  "duration": 408957.63700000005,
+  "expected": 93,
+  "skipped": 17,
+  "unexpected": 0,
+  "flaky": 0,
+  "source": "Final frozen local source and built assets",
+  "physicalCameras": false,
+  "notes": [
+    "17 skips cover Windows WebKit synthetic-camera/WebRTC limitations and duplicate cross-engine project runs. Mixed Chromium/WebKit relay is executed inside the Chromium project."
+  ]
+}

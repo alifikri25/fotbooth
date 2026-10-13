@@ -2,12 +2,190 @@
   "date": "2026-10-07",
   "versions": [
     2,
-    3
+    3,
+    1
   ],
   "gallery": "Neutral empty photo areas; no photographic or illustrated people",
-  "count": 60,
-  "decorated": 44,
+  "count": 80,
+  "decorated": 64,
   "frames": [
+    {
+      "id": "night-market",
+      "name": "Night Market",
+      "categories": [
+        "party",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "aquarium-parade",
+      "name": "Aquarium Parade",
+      "categories": [
+        "nature",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "pit-lane",
+      "name": "Pit Lane",
+      "categories": [
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "circus-cabinet",
+      "name": "Circus Cabinet",
+      "categories": [
+        "party",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "street-scramble",
+      "name": "Street Scramble",
+      "categories": [
+        "scrapbook",
+        "dynamic"
+      ]
+    },
+    {
+      "id": "ramen-social",
+      "name": "Ramen Social",
+      "categories": [
+        "playful",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "stellar-atlas",
+      "name": "Stellar Atlas",
+      "categories": [
+        "futuristic",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "safari-stamps",
+      "name": "Safari Stamps",
+      "categories": [
+        "nature",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "sugar-arcade",
+      "name": "Sugar Arcade",
+      "categories": [
+        "playful",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "pinball-fever",
+      "name": "Pinball Fever",
+      "categories": [
+        "futuristic",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "mixtape-motel",
+      "name": "Mixtape Motel",
+      "categories": [
+        "retro",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "skate-zine",
+      "name": "Skate Zine",
+      "categories": [
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "comic-bureau",
+      "name": "Comic Bureau",
+      "categories": [
+        "cartoon",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "desert-bazaar",
+      "name": "Desert Bazaar",
+      "categories": [
+        "retro",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "jungle-jam",
+      "name": "Jungle Jam",
+      "categories": [
+        "nature",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "snow-globe",
+      "name": "Snow Globe Club",
+      "categories": [
+        "seasonal",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "pirate-radio",
+      "name": "Pirate Radio",
+      "categories": [
+        "retro",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "bakery-confetti",
+      "name": "Bakery Confetti",
+      "categories": [
+        "playful",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "dragon-lantern",
+      "name": "Dragon Lantern",
+      "categories": [
+        "seasonal",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
+    {
+      "id": "neon-district",
+      "name": "Neon District",
+      "categories": [
+        "futuristic",
+        "dynamic",
+        "scrapbook"
+      ]
+    },
     {
       "id": "midnight-film-polaroid",
       "name": "Velvet Premiere",

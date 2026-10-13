@@ -5,6 +5,7 @@ import { cartoonArt } from './cartoon-art.mjs';
 import { collectionArt } from './collection-art.mjs';
 import { printPaper } from './print-paper.mjs';
 import { signatureArt } from './signature-art.mjs';
+import { maximalistArt } from './maximalist-art.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const svg = (w, h, body) =>
@@ -44,7 +45,7 @@ for (const f of definitions) {
   const { designWidth: w, designHeight: h, palette: p } = f;
   let bg = `<rect width="${w}" height="${h}" fill="${p.background}"/>`;
   let fg = f.slots.map((s) => outline(s, f)).join('');
-  const signature = signatureArt(f, outline);
+  const signature = maximalistArt(f, outline) ?? signatureArt(f, outline);
   if (signature) {
     bg = signature.background;
     fg = signature.foreground;

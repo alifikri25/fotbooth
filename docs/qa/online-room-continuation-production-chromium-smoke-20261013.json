@@ -1,0 +1,1263 @@
+{
+  "date": "2026-10-13",
+  "baseURL": "https://fotbooth.pages.dev",
+  "browser": "chromium",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "frames": 80,
+  "thumbnailCount": 80,
+  "assetsMatchedToBuild": 240,
+  "assetParity": [
+    {
+      "asset": "/frames/orbit-club/v2/background.svg",
+      "bytes": 1347,
+      "sha256": "1e661b7db8456cf5a1a471d6b532200d804c7acadc7eb5766cd91f135004b135"
+    },
+    {
+      "asset": "/frames/orbit-club/v2/foreground.svg",
+      "bytes": 971,
+      "sha256": "1f6ee276bd757a52dbc5dd91e180ffd532b481523a035e1a790892679a9bd454"
+    },
+    {
+      "asset": "/frames/orbit-club/v2/thumbnail-neutral.png",
+      "bytes": 48716,
+      "sha256": "b9b43a948aea8dcf398dccbd3e7d8e220c4ca0e1d8dff76585d8d83c30b2a2f9"
+    },
+    {
+      "asset": "/frames/bubble-pop/v2/background.svg",
+      "bytes": 1611,
+      "sha256": "21be03a9b9e5889ca298ac4069831d9d1c47bb1698193a0be1e4b26f402a8e26"
+    },
+    {
+      "asset": "/frames/bubble-pop/v2/foreground.svg",
+      "bytes": 736,
+      "sha256": "25b22dd77fe7aea99263b3c3418ccb1469d99e1116c2f7807b070727fe8fa019"
+    },
+    {
+      "asset": "/frames/bubble-pop/v2/thumbnail-neutral.png",
+      "bytes": 36230,
+      "sha256": "c26ba0f7ef2cf2c88729e0b5b6eee300f6397279b1bbaaf58836f5df485a008b"
+    },
+    {
+      "asset": "/frames/studio-notes/v2/background.svg",
+      "bytes": 4811,
+      "sha256": "c86ca29bb8b7d1a46a40ac5875078f7121c353d095df4d4ee31bf83ffd9158e2"
+    },
+    {
+      "asset": "/frames/studio-notes/v2/foreground.svg",
+      "bytes": 852,
+      "sha256": "d39adcf6d34168a8cffd4e640c0498206bd5a3f27d6b95c9d9ff30cc5b782502"
+    },
+    {
+      "asset": "/frames/studio-notes/v2/thumbnail-neutral.png",
+      "bytes": 49606,
+      "sha256": "89ca86d8ecced378848a9e37ccd7b1ad37fd1da8851111a163884fdd32b1ddd7"
+    },
+    {
+      "asset": "/frames/concert-pass/v3/background.svg",
+      "bytes": 3038,
+      "sha256": "b8804552bff70ec56cb75c6e4da7b1f50c9ff1ddd67c63be5b041adfd49081b8"
+    },
+    {
+      "asset": "/frames/concert-pass/v3/foreground.svg",
+      "bytes": 22491,
+      "sha256": "9457b5b74e896cb2849e0dbb86f672b41a363c26a9856b5903b661def586c80d"
+    },
+    {
+      "asset": "/frames/concert-pass/v3/thumbnail-neutral.png",
+      "bytes": 15821,
+      "sha256": "012530af4f92ee3b93afc454325c5f184d328d2fe382fe043248f71dc8fe4f6d"
+    },
+    {
+      "asset": "/frames/pocket-arcade/v2/background.svg",
+      "bytes": 1297,
+      "sha256": "4747518cf1b8fda629599c50cd61f26b4db89e86c7901c231d47617efc75569d"
+    },
+    {
+      "asset": "/frames/pocket-arcade/v2/foreground.svg",
+      "bytes": 2327,
+      "sha256": "722d71c86c116ae95bfe40c1d6d9c40d6b854e8a6f05a353ffca421681104ec2"
+    },
+    {
+      "asset": "/frames/pocket-arcade/v2/thumbnail-neutral.png",
+      "bytes": 33573,
+      "sha256": "9d9ec71fdfbc6e2dfb17fb8112631c05f658db642d226c4728403cdaf2f4097e"
+    },
+    {
+      "asset": "/frames/sticker-rush/v2/background.svg",
+      "bytes": 1301,
+      "sha256": "aa0d186714beb1789e674aa7f3aa548ed64765e39ea75a31f9aaf999bcf472e7"
+    },
+    {
+      "asset": "/frames/sticker-rush/v2/foreground.svg",
+      "bytes": 1046,
+      "sha256": "88428c6acaedf9c201b58204d383218629a6b0c2e0eee09369e9c9956077d073"
+    },
+    {
+      "asset": "/frames/sticker-rush/v2/thumbnail-neutral.png",
+      "bytes": 29441,
+      "sha256": "d1b33249961468230e6335a3832e8164646f08da1085503866191e504a6c5a59"
+    },
+    {
+      "asset": "/frames/cloud-windows/v2/background.svg",
+      "bytes": 1408,
+      "sha256": "a49223f48f5fc626798523ce272f38d3fe6b1ef925fcb5c4276d79d2e7c3df14"
+    },
+    {
+      "asset": "/frames/cloud-windows/v2/foreground.svg",
+      "bytes": 1039,
+      "sha256": "aa6edf3041050288cc39f1104d63db67356e15fc31b045623fd6b58f9fa09521"
+    },
+    {
+      "asset": "/frames/cloud-windows/v2/thumbnail-neutral.png",
+      "bytes": 38726,
+      "sha256": "ca319b81bf64abd182367c052963c4413e1727b08b6ff0db2715e0442370bab3"
+    },
+    {
+      "asset": "/frames/gallery-issue/v2/background.svg",
+      "bytes": 1291,
+      "sha256": "1aad39d99aa0315d39fc6c32a0653980cae19200ecd23fa5153bce7d4719b31d"
+    },
+    {
+      "asset": "/frames/gallery-issue/v2/foreground.svg",
+      "bytes": 1302,
+      "sha256": "0862b939ef198f0a8f541395c063c274ef4e2f47ee6b5da2ae379a4c6829f510"
+    },
+    {
+      "asset": "/frames/gallery-issue/v2/thumbnail-neutral.png",
+      "bytes": 38396,
+      "sha256": "ff7467f6c82e047e9a7a8a0154eb754cc233390ec28f16e966dc69d4490b50e9"
+    },
+    {
+      "asset": "/frames/mochi-party/v2/background.svg",
+      "bytes": 18550,
+      "sha256": "bd0fe8b36bba00b743f04efadc212d0d155f2df3158ff6b477141c0cf801e5f7"
+    },
+    {
+      "asset": "/frames/mochi-party/v2/foreground.svg",
+      "bytes": 6024,
+      "sha256": "698cfa9cf333a4ad421353e51d98148ebd68f3df2075730539e2baee241ec237"
+    },
+    {
+      "asset": "/frames/mochi-party/v2/thumbnail-neutral.png",
+      "bytes": 43513,
+      "sha256": "39deca64877f02be713cd6cc77cc1d43a91c25265bf89732ca8c2b1ade3fb857"
+    },
+    {
+      "asset": "/frames/kitty-club/v2/background.svg",
+      "bytes": 7193,
+      "sha256": "c241b6874bf801ee61cfcad65df7fccbd92e069493d026feaeb0e4c43602d702"
+    },
+    {
+      "asset": "/frames/kitty-club/v2/foreground.svg",
+      "bytes": 4998,
+      "sha256": "7603828d24bb1ec7d647fc49fde689d00e61a15a22d59b5af3137d288321746f"
+    },
+    {
+      "asset": "/frames/kitty-club/v2/thumbnail-neutral.png",
+      "bytes": 48504,
+      "sha256": "a3435f449632d310c51ac1093c32ce65fdf3e55214f4d0cbae01f01f8d4764d2"
+    },
+    {
+      "asset": "/frames/comic-dash/v2/background.svg",
+      "bytes": 5882,
+      "sha256": "9f78b32080c449b5c368021e64e80e1f878cf256ee853d02346d9a0dd0aa2cb6"
+    },
+    {
+      "asset": "/frames/comic-dash/v2/foreground.svg",
+      "bytes": 5612,
+      "sha256": "e1c2345a7a1b2d90e3a6e842799ddba50f99445cb4610d92b085cec5202c8a49"
+    },
+    {
+      "asset": "/frames/comic-dash/v2/thumbnail-neutral.png",
+      "bytes": 99512,
+      "sha256": "1fcbd5e81a8ea39fc87994cce4804cc86913d8144149636124e03e1258a0da03"
+    },
+    {
+      "asset": "/frames/froggy-day/v2/background.svg",
+      "bytes": 12179,
+      "sha256": "e72e2aa169b1ecf15d966b9df9b90ceb3f7538cbe599c24dc650e4915eccfce2"
+    },
+    {
+      "asset": "/frames/froggy-day/v2/foreground.svg",
+      "bytes": 5650,
+      "sha256": "3167a3d590c92c3aecb8a5b18a4cfb3f2b7b8231a88855e4a986a172dfa8540f"
+    },
+    {
+      "asset": "/frames/froggy-day/v2/thumbnail-neutral.png",
+      "bytes": 66471,
+      "sha256": "c646c57fbecf60cadd3cd3157c041c41a823018e1e4e533ab3f2741e8dec4759"
+    },
+    {
+      "asset": "/frames/candy-bounce/v2/background.svg",
+      "bytes": 16859,
+      "sha256": "c526437f9bab94f2e539fea5de684bce7891a48129ef98a6a17b1fba9900c59c"
+    },
+    {
+      "asset": "/frames/candy-bounce/v2/foreground.svg",
+      "bytes": 6368,
+      "sha256": "82f40e28778b83aa459245a4912e4214fd2167016140e0ed43c333be94586c6a"
+    },
+    {
+      "asset": "/frames/candy-bounce/v2/thumbnail-neutral.png",
+      "bytes": 53075,
+      "sha256": "d9604cf226f11e84aed2bc7d4673c84782f27bbbce5cce929c3ec4c657e90594"
+    },
+    {
+      "asset": "/frames/space-pals/v2/background.svg",
+      "bytes": 6538,
+      "sha256": "9e1f19d46a84301db453afabb4e6af836ac3f978617e423487fbfaf5dcb40c90"
+    },
+    {
+      "asset": "/frames/space-pals/v2/foreground.svg",
+      "bytes": 4788,
+      "sha256": "c3e6529c731ba493218e0ec1a0ea17c0bf1294e3c6c8e127ba969df063ae6a91"
+    },
+    {
+      "asset": "/frames/space-pals/v2/thumbnail-neutral.png",
+      "bytes": 42131,
+      "sha256": "4fe7b7019bbe9427aa926add4356dbe17d6f189255af8b9893de473e6679a9dc"
+    },
+    {
+      "asset": "/frames/monster-moods/v2/background.svg",
+      "bytes": 6859,
+      "sha256": "8f5f910b5c7d04427ad9a27017035f16d4426a1e12448e5e3efb0dde23dc58f2"
+    },
+    {
+      "asset": "/frames/monster-moods/v2/foreground.svg",
+      "bytes": 5032,
+      "sha256": "a6cb7eba0dd2186ee7edb60946b1cd5639e334015485dc5464ffa0680ff3635a"
+    },
+    {
+      "asset": "/frames/monster-moods/v2/thumbnail-neutral.png",
+      "bytes": 79498,
+      "sha256": "a14502f62e112353db8adada6150ea8cb7f46aa3bfdd3448313dae8ea01203fe"
+    },
+    {
+      "asset": "/frames/peach-picnic/v2/background.svg",
+      "bytes": 13263,
+      "sha256": "6052577195669fed3c87b56737c270dd884ea175a000a8c3b2d08b006ca914bb"
+    },
+    {
+      "asset": "/frames/peach-picnic/v2/foreground.svg",
+      "bytes": 6532,
+      "sha256": "5985cc513b8cb362ee34198dc6e519eaa0579b598e56326f5c5ad547d3a21995"
+    },
+    {
+      "asset": "/frames/peach-picnic/v2/thumbnail-neutral.png",
+      "bytes": 72676,
+      "sha256": "d2bc1ed9876448f828fa031270fd1a04f22583b28a217c5dd8732ec74607a116"
+    },
+    {
+      "asset": "/frames/petal-post-trio/v2/background.svg",
+      "bytes": 3797,
+      "sha256": "b8ce42b143a4f8dec5529a2339bc293228545c36574d6bedd3c61ce86b285feb"
+    },
+    {
+      "asset": "/frames/petal-post-trio/v2/foreground.svg",
+      "bytes": 55944,
+      "sha256": "b99aa6ede1c9d18af1803564d9a11019c304de8f4350b548116637ad9ecbe156"
+    },
+    {
+      "asset": "/frames/petal-post-trio/v2/thumbnail-neutral.png",
+      "bytes": 61005,
+      "sha256": "e2a0a2f48d98030bf1ca832e5f96aaa74748732fb5da1188fc42ead08cec2a83"
+    },
+    {
+      "asset": "/frames/petal-post-arch/v2/background.svg",
+      "bytes": 4338,
+      "sha256": "98d89a536cc3b71cfa992f54df0c6dc0be8e378938bbdafcff40deb367a1ecb6"
+    },
+    {
+      "asset": "/frames/petal-post-arch/v2/foreground.svg",
+      "bytes": 55866,
+      "sha256": "0152b2d5c0344235a579e946ac5f6187554b21b4b9505c5b43b055b274701b7a"
+    },
+    {
+      "asset": "/frames/petal-post-arch/v2/thumbnail-neutral.png",
+      "bytes": 60329,
+      "sha256": "03479eb4e030f6a720410ba715a64a4cdd23c97b55ef9a4afb6d7c110a63de64"
+    },
+    {
+      "asset": "/frames/petal-post-mosaic/v2/background.svg",
+      "bytes": 4946,
+      "sha256": "3e3af2b60b95f82c796205add88fac7d4905158d006b5ffdd40eedb87468a16e"
+    },
+    {
+      "asset": "/frames/petal-post-mosaic/v2/foreground.svg",
+      "bytes": 53655,
+      "sha256": "e23c702736dee98f66d484b97a509b5eb1aa7cc1efe124ca03ea2dc1c13e8466"
+    },
+    {
+      "asset": "/frames/petal-post-mosaic/v2/thumbnail-neutral.png",
+      "bytes": 114995,
+      "sha256": "1b70e83d13d1139675e6cb42b1f1c315b0226e1dc4dd6e3f3b31196df3f653ac"
+    },
+    {
+      "asset": "/frames/petal-post-story/v2/background.svg",
+      "bytes": 4069,
+      "sha256": "a7e9af0eff777fbdbbd7a4a4a43e71d4b8cbd1161ca56233dabdf168f39daf80"
+    },
+    {
+      "asset": "/frames/petal-post-story/v2/foreground.svg",
+      "bytes": 46640,
+      "sha256": "e1e5fce911572760884bf925eaa1585a236c465cbf9d75525604f359dcffda8d"
+    },
+    {
+      "asset": "/frames/petal-post-story/v2/thumbnail-neutral.png",
+      "bytes": 105503,
+      "sha256": "036753d73b27218c9d857c2c585fca277700eb4eb2cf870ea99ce60bf127e272"
+    },
+    {
+      "asset": "/frames/ribbon-diary-trio/v3/background.svg",
+      "bytes": 486763,
+      "sha256": "ea96c9c2dedd07ee24774f84bceb2e9b9e82febd61faf3972ed02e4b6740ebc7"
+    },
+    {
+      "asset": "/frames/ribbon-diary-trio/v3/foreground.svg",
+      "bytes": 15593,
+      "sha256": "4fcfd25b98ec9f7df30a5574d1a2a8fea1a635d11ff5cb7098c0996570c1fed7"
+    },
+    {
+      "asset": "/frames/ribbon-diary-trio/v3/thumbnail-neutral.png",
+      "bytes": 129113,
+      "sha256": "182a2c5a025b947b57ad7a4a2b083f542545b3cc8b839b62e42bafc0711acd14"
+    },
+    {
+      "asset": "/frames/ribbon-diary-wander/v2/background.svg",
+      "bytes": 4371,
+      "sha256": "f8eb1a131ff1973eea6592f9b3d90bd225617a5313ffc7dd6111e3f17289095d"
+    },
+    {
+      "asset": "/frames/ribbon-diary-wander/v2/foreground.svg",
+      "bytes": 28887,
+      "sha256": "d3250f139b6c13fe22520220399d32b287c905513db160cad6cee042715baa99"
+    },
+    {
+      "asset": "/frames/ribbon-diary-wander/v2/thumbnail-neutral.png",
+      "bytes": 75391,
+      "sha256": "56ce701eff864c59fa3748f31ae86637d873b91a8fab6f33ee8a0747e54c2f50"
+    },
+    {
+      "asset": "/frames/ribbon-diary-portrait/v2/background.svg",
+      "bytes": 4112,
+      "sha256": "9a7b725206f962a45f16ae23459f289c3209cb8a3ec433ff5469f27418afc869"
+    },
+    {
+      "asset": "/frames/ribbon-diary-portrait/v2/foreground.svg",
+      "bytes": 19850,
+      "sha256": "bac71469f774cb7549a0f22a915c0b0df1c1e64c920c382515286b25da33a97e"
+    },
+    {
+      "asset": "/frames/ribbon-diary-portrait/v2/thumbnail-neutral.png",
+      "bytes": 107840,
+      "sha256": "1b29659a9ce75d7353949cdf469d0678f5f19d2d9629c4cc8f317827a9516371"
+    },
+    {
+      "asset": "/frames/ribbon-diary-polaroid/v2/background.svg",
+      "bytes": 6707,
+      "sha256": "84076c8fefba6dfa2013de3b04a113e88bb9fe6be3713fb9b772634732ef379f"
+    },
+    {
+      "asset": "/frames/ribbon-diary-polaroid/v2/foreground.svg",
+      "bytes": 24874,
+      "sha256": "64ff5741f9ffa152e10242efb5d3f1f1339fb8b6e05fa9261ecc3d67f61185b1"
+    },
+    {
+      "asset": "/frames/ribbon-diary-polaroid/v2/thumbnail-neutral.png",
+      "bytes": 133976,
+      "sha256": "b5bb70747e6b4a8c6727894e35065b9a4b39e9167a377830c549a12758b1c3d2"
+    },
+    {
+      "asset": "/frames/cherry-kiss-trio/v2/background.svg",
+      "bytes": 3861,
+      "sha256": "fef69faa7d7b9a83fce969ef337093647c35c296a38534097cc13dbea2bc42c0"
+    },
+    {
+      "asset": "/frames/cherry-kiss-trio/v2/foreground.svg",
+      "bytes": 20251,
+      "sha256": "5269c667df760d51af8aa96a492c551aa97c888464ab4b97e55eccfa7158cd6e"
+    },
+    {
+      "asset": "/frames/cherry-kiss-trio/v2/thumbnail-neutral.png",
+      "bytes": 58640,
+      "sha256": "c2c8bf91291b79ad9a15acb71fc5b76079a57eb5288cefc937dbbb477a1d49fd"
+    },
+    {
+      "asset": "/frames/cherry-kiss-film/v2/background.svg",
+      "bytes": 3843,
+      "sha256": "f1f811339148634d076d178d3644ee10abba9f5c0b80279a88f79d352f2e95cf"
+    },
+    {
+      "asset": "/frames/cherry-kiss-film/v2/foreground.svg",
+      "bytes": 20155,
+      "sha256": "5eebf96c73a13518c742d63777497b6e7abafbbd56c3153f8168cd697272b285"
+    },
+    {
+      "asset": "/frames/cherry-kiss-film/v2/thumbnail-neutral.png",
+      "bytes": 61539,
+      "sha256": "9cbcbe2e4c9cc2703db0ac5741c7ef6cf613d4821b6ecee6a28854a4e30a171d"
+    },
+    {
+      "asset": "/frames/cherry-kiss-story/v3/background.svg",
+      "bytes": 451840,
+      "sha256": "8dd52f4bf4b75eefe34fff637f7da1015ac4916b1608495e5cf69a375e25f3a0"
+    },
+    {
+      "asset": "/frames/cherry-kiss-story/v3/foreground.svg",
+      "bytes": 3308,
+      "sha256": "41fcdbd4ef7f1ab20fe1493c204f009633487b58b2f889112a274cf13490578d"
+    },
+    {
+      "asset": "/frames/cherry-kiss-story/v3/thumbnail-neutral.png",
+      "bytes": 199946,
+      "sha256": "05ceaae9437a10c6cb97ca3df3cd1aea0762d5f9cb9f8fbb295f5f58f190975d"
+    },
+    {
+      "asset": "/frames/denim-daisy-trio/v2/background.svg",
+      "bytes": 14157,
+      "sha256": "c84897334f281795d4f2d2fd067a9dc3748a9bb061e80fd39f44bca8b5220d27"
+    },
+    {
+      "asset": "/frames/denim-daisy-trio/v2/foreground.svg",
+      "bytes": 31009,
+      "sha256": "a9f9672cefb96e4db802b0cca58e6de6aa91ee02eba1a5a734f21e575fdbbc83"
+    },
+    {
+      "asset": "/frames/denim-daisy-trio/v2/thumbnail-neutral.png",
+      "bytes": 60189,
+      "sha256": "39e51a72282e475f0d5f41ad73ecde4c12e74e15da5771a26faa7faf3c1edcd3"
+    },
+    {
+      "asset": "/frames/denim-daisy-portrait/v3/background.svg",
+      "bytes": 1001408,
+      "sha256": "8db2ac7551406da9d9826bee95b0e94eba7ce87653e6daa9f12033f19c94f2a3"
+    },
+    {
+      "asset": "/frames/denim-daisy-portrait/v3/foreground.svg",
+      "bytes": 6009,
+      "sha256": "a1fbd1bf075eaaa96af25b5fa1576bbfd8544af667d4baea19c579ab784ef54e"
+    },
+    {
+      "asset": "/frames/denim-daisy-portrait/v3/thumbnail-neutral.png",
+      "bytes": 224802,
+      "sha256": "d317afa12d6ebb65b7db962a3b2fc4873e591e0c6833ed66a2767b2b6d8c452e"
+    },
+    {
+      "asset": "/frames/denim-daisy-polaroid/v2/background.svg",
+      "bytes": 12435,
+      "sha256": "4eca345f30a1e2ba137fbd70400009cbd48bc22ddb78762dc443d6bc44140344"
+    },
+    {
+      "asset": "/frames/denim-daisy-polaroid/v2/foreground.svg",
+      "bytes": 31284,
+      "sha256": "a9043c2013bf821a65bdae1b0c88a35d224c9ec0ca949a9abf5b981a2665bbc6"
+    },
+    {
+      "asset": "/frames/denim-daisy-polaroid/v2/thumbnail-neutral.png",
+      "bytes": 116813,
+      "sha256": "cb44df4420e874f4dd607b1b6e80fd211d13bc08d052e4250722315c4cb0c776"
+    },
+    {
+      "asset": "/frames/star-studio-wander/v2/background.svg",
+      "bytes": 9165,
+      "sha256": "0f108e9e5ae1b1748b739d3fb7459d67fd73564560a4ca77b982f081954c3860"
+    },
+    {
+      "asset": "/frames/star-studio-wander/v2/foreground.svg",
+      "bytes": 13677,
+      "sha256": "106a5081c37013c202bee5e178a0ad36231b73bc5e9a351d4147392ea41f5466"
+    },
+    {
+      "asset": "/frames/star-studio-wander/v2/thumbnail-neutral.png",
+      "bytes": 65897,
+      "sha256": "1863c4e0ae8314ce510c6692044b789cf7af46a57e2f93901f700b1e03b191af"
+    },
+    {
+      "asset": "/frames/midnight-film-film/v2/background.svg",
+      "bytes": 7281,
+      "sha256": "270641d6091b99c2ecd1656b58882be36b1a53bd1c891ad905c4475d1763b47d"
+    },
+    {
+      "asset": "/frames/midnight-film-film/v2/foreground.svg",
+      "bytes": 14102,
+      "sha256": "49cb8d421cef2e4f963e8a3019ba3d3256e87eee6b82506de17ac9b6c3196c6b"
+    },
+    {
+      "asset": "/frames/midnight-film-film/v2/thumbnail-neutral.png",
+      "bytes": 57835,
+      "sha256": "25f25b8807a23d917ccdca92be21f917311639103a251e6d8debc421d039c359"
+    },
+    {
+      "asset": "/frames/midnight-film-polaroid/v3/background.svg",
+      "bytes": 370751,
+      "sha256": "f5bebaf3219d07605cd8ba9c9e6d5845bee0436445b9bf3718c9a739089f1cd4"
+    },
+    {
+      "asset": "/frames/midnight-film-polaroid/v3/foreground.svg",
+      "bytes": 21221,
+      "sha256": "837c9ddcf18ca53b6dd311710b5be914cfdd468218e2458849f1f79f322c1b5b"
+    },
+    {
+      "asset": "/frames/midnight-film-polaroid/v3/thumbnail-neutral.png",
+      "bytes": 213321,
+      "sha256": "da9fc8b5fdb747e67569c6622f0b3816e49471d0f54e2616581fa94b7917795b"
+    },
+    {
+      "asset": "/frames/citrus-club-mini/v3/background.svg",
+      "bytes": 545266,
+      "sha256": "9ee57e7eac79aead9c2970293d2548e4c7bc7d303a3de848a24bff434b5f9b8f"
+    },
+    {
+      "asset": "/frames/citrus-club-mini/v3/foreground.svg",
+      "bytes": 5544,
+      "sha256": "d8a00c0c01ec57aee12c8871e26a7276b05f30faa9bec6d4b9a8a0b070ea05da"
+    },
+    {
+      "asset": "/frames/citrus-club-mini/v3/thumbnail-neutral.png",
+      "bytes": 115611,
+      "sha256": "6ca61f713138e669b12966535f49142d3413f8cdaf8475820fb48f805e0dc53b"
+    },
+    {
+      "asset": "/frames/ocean-postcard-trio/v2/background.svg",
+      "bytes": 9770,
+      "sha256": "4ed9bd61c4db054185dd1dd57d89e0768a09cad2d3324ed29e4abdfd49743dde"
+    },
+    {
+      "asset": "/frames/ocean-postcard-trio/v2/foreground.svg",
+      "bytes": 12756,
+      "sha256": "6523f33afb421e5fa0fd777dafdc873f8207c315ecf360ae690fb4b9ec9a2a07"
+    },
+    {
+      "asset": "/frames/ocean-postcard-trio/v2/thumbnail-neutral.png",
+      "bytes": 59810,
+      "sha256": "ef3cb661d707748a207ccb431911bee50a6d9d3b4039e05dfbfb4da9b846237b"
+    },
+    {
+      "asset": "/frames/ocean-postcard-story/v3/background.svg",
+      "bytes": 490638,
+      "sha256": "df4a50142958f2245f5664021023bff2e10370fd473cdcacb5af4dd87ee2643e"
+    },
+    {
+      "asset": "/frames/ocean-postcard-story/v3/foreground.svg",
+      "bytes": 3326,
+      "sha256": "ae973f5b5085f07b86161fdbdc89f0124f8a0079c7516f7092ede7531705e4db"
+    },
+    {
+      "asset": "/frames/ocean-postcard-story/v3/thumbnail-neutral.png",
+      "bytes": 216891,
+      "sha256": "fb8ec432890954811cae544d20fd4f806d4729af69aa7259040e62e569b460a9"
+    },
+    {
+      "asset": "/frames/botanical-journal-trio/v2/background.svg",
+      "bytes": 9150,
+      "sha256": "d919d827c5a2cb64129784c969feb1e3b2ef486632a02d96e1f81e1a18208b34"
+    },
+    {
+      "asset": "/frames/botanical-journal-trio/v2/foreground.svg",
+      "bytes": 18853,
+      "sha256": "5b82e8b7576990c662a4d53b3d5df69a72fa87849dd5a559604c2132a56d3300"
+    },
+    {
+      "asset": "/frames/botanical-journal-trio/v2/thumbnail-neutral.png",
+      "bytes": 59172,
+      "sha256": "450a3a646d61394f2ef2a6cc8ae28db1e0c735465be4f227f4bf108f054ff593"
+    },
+    {
+      "asset": "/frames/botanical-journal-portrait/v3/background.svg",
+      "bytes": 667946,
+      "sha256": "5a9f1e58aa104eda18117f37ad299fa01607a217c309ea261fb42edf9d8ac959"
+    },
+    {
+      "asset": "/frames/botanical-journal-portrait/v3/foreground.svg",
+      "bytes": 4851,
+      "sha256": "369f10b20b75b044ce320900a1275fe4f24ed33bf76f10601c357f3c69fe0829"
+    },
+    {
+      "asset": "/frames/botanical-journal-portrait/v3/thumbnail-neutral.png",
+      "bytes": 207664,
+      "sha256": "0ba4ced1cbd2404a874935575397a22cdfc7b21bb60124379a3ada9018d02b82"
+    },
+    {
+      "asset": "/frames/butterfly-notes-arch/v3/background.svg",
+      "bytes": 635981,
+      "sha256": "da8bfc1a55b9c435b18c9117697efdb7bf157d0c847b99b923f91fdadb9d09f3"
+    },
+    {
+      "asset": "/frames/butterfly-notes-arch/v3/foreground.svg",
+      "bytes": 3970,
+      "sha256": "fd0281298ea88c82ee3625df600d94abe84eadbb9d48a07513b7a53ea1fe16c0"
+    },
+    {
+      "asset": "/frames/butterfly-notes-arch/v3/thumbnail-neutral.png",
+      "bytes": 130673,
+      "sha256": "c5b8f5d3c8b3d1fbabf5283c5792c010997c934714f15b11edb86eac1ec4a41b"
+    },
+    {
+      "asset": "/frames/butterfly-notes-story/v2/background.svg",
+      "bytes": 7948,
+      "sha256": "5d2bfbd23c283fcdb78aaac203de9ef9d7e296de3cfc4e91203b28be272eb617"
+    },
+    {
+      "asset": "/frames/butterfly-notes-story/v2/foreground.svg",
+      "bytes": 27878,
+      "sha256": "16c991d0c6bb5a0c20cbaa98f9686fc31ac0958289561caf5bfe787f8a183a48"
+    },
+    {
+      "asset": "/frames/butterfly-notes-story/v2/thumbnail-neutral.png",
+      "bytes": 96396,
+      "sha256": "81f943a7f46f4c447fcd92cdad83a46d623da13635e2a2f9dd256569e4111108"
+    },
+    {
+      "asset": "/frames/retro-diner-offset/v2/background.svg",
+      "bytes": 3791,
+      "sha256": "dc96392336a37641f540400ded8541f69de097cf4411227b3f947d2da2e6db26"
+    },
+    {
+      "asset": "/frames/retro-diner-offset/v2/foreground.svg",
+      "bytes": 13893,
+      "sha256": "002f3166b4592a587028543322a94d2b97d54ac4942a7dce05c6e7291d3b8fdd"
+    },
+    {
+      "asset": "/frames/retro-diner-offset/v2/thumbnail-neutral.png",
+      "bytes": 54360,
+      "sha256": "c95e69d8b6c06a40f952cc5b0c6549ebbd40f69e13c12352dc273ad35b8325c8"
+    },
+    {
+      "asset": "/frames/pixel-play-mini/v2/background.svg",
+      "bytes": 4473,
+      "sha256": "d68f50bbde2c03ca3dfd6e83d1ca8fe688f55998f09ddf47e53adcad124738f8"
+    },
+    {
+      "asset": "/frames/pixel-play-mini/v2/foreground.svg",
+      "bytes": 16096,
+      "sha256": "df8106519e5cdf092dc095eeb6050c0353f2783b261b73baac15dc91845cbfc9"
+    },
+    {
+      "asset": "/frames/pixel-play-mini/v2/thumbnail-neutral.png",
+      "bytes": 63555,
+      "sha256": "019c0adaf10e3668410a42174122c46a6e91c59fbf665c2ed8fe0cbfc7fa2c3d"
+    },
+    {
+      "asset": "/frames/cosmic-disco-mosaic/v3/background.svg",
+      "bytes": 5132,
+      "sha256": "5840ca8fdb44aa7cc5b411d09cddcea776b6ff1fb7e64e3ffaba1af6b06f0e8f"
+    },
+    {
+      "asset": "/frames/cosmic-disco-mosaic/v3/foreground.svg",
+      "bytes": 52007,
+      "sha256": "8c0c9ff4b0cc43bbc06c28c43c3aa64a5be66d5e2ce703dca1d22a21489ad1be"
+    },
+    {
+      "asset": "/frames/cosmic-disco-mosaic/v3/thumbnail-neutral.png",
+      "bytes": 77905,
+      "sha256": "790b8be57eeb05cb0a2148ff49acc0393fc3b82ff9d220d76a5b8fee83f9cb28"
+    },
+    {
+      "asset": "/frames/heart-mail-trio/v2/background.svg",
+      "bytes": 9150,
+      "sha256": "763497be7ecf2dfde52164dae32330e30a31c24ab8e9180249c87de56130d3e1"
+    },
+    {
+      "asset": "/frames/heart-mail-trio/v2/foreground.svg",
+      "bytes": 15832,
+      "sha256": "91cc2b6fdd8e346d9e11caf0332954008641e8ecd75e5a08fd8d581ca2158efe"
+    },
+    {
+      "asset": "/frames/heart-mail-trio/v2/thumbnail-neutral.png",
+      "bytes": 58324,
+      "sha256": "a971530d178a5f0c0e8bfaca7ed3230f9e4ba8e955dfd2a7570d5559ace3bc1d"
+    },
+    {
+      "asset": "/frames/heart-mail-duo/v2/background.svg",
+      "bytes": 8806,
+      "sha256": "36b4225491d2e595a70266d87e70e02e1153b2829a4873b55986c5eb9537fdce"
+    },
+    {
+      "asset": "/frames/heart-mail-duo/v2/foreground.svg",
+      "bytes": 12112,
+      "sha256": "d09e244c4177118307b040230663834ccf5f8f74cf8f7cbc4818ffaf446c1aae"
+    },
+    {
+      "asset": "/frames/heart-mail-duo/v2/thumbnail-neutral.png",
+      "bytes": 57156,
+      "sha256": "5e0aeec5d68692dd17d61994e5f6cb1f8f0720cba146c1d035cbeb6c91a43ea1"
+    },
+    {
+      "asset": "/frames/heart-mail-story/v3/background.svg",
+      "bytes": 4260,
+      "sha256": "0b6ec16eb06785bb30a151fc1bb80f55c156297bc60fc07b192be18291c4abb5"
+    },
+    {
+      "asset": "/frames/heart-mail-story/v3/foreground.svg",
+      "bytes": 4882,
+      "sha256": "461171d82fae64355c08ac3634c3a6a84942257356c2cb96bfb301f232bcf046"
+    },
+    {
+      "asset": "/frames/heart-mail-story/v3/thumbnail-neutral.png",
+      "bytes": 27535,
+      "sha256": "bd9a880d573627a5b0295d9e61a2b2f30db34db76d5c5333baf93ff57274dac5"
+    },
+    {
+      "asset": "/frames/lace-story-arch/v3/background.svg",
+      "bytes": 761120,
+      "sha256": "c7fdb0e886fc29b4357ba37ab7b7bc391cec79a026341536bc7b1ac9f5d5b6f9"
+    },
+    {
+      "asset": "/frames/lace-story-arch/v3/foreground.svg",
+      "bytes": 28335,
+      "sha256": "af66a9af1fd816d155b83df13a8f2edaf759e1d8153846fe509dcb9271b8f091"
+    },
+    {
+      "asset": "/frames/lace-story-arch/v3/thumbnail-neutral.png",
+      "bytes": 122745,
+      "sha256": "8b34c828f4b6fe19bc094fa0b8d67f8eb5c9d6fd4e6433cc393c3bcfe6074004"
+    },
+    {
+      "asset": "/frames/gingham-picnic-mini/v2/background.svg",
+      "bytes": 4473,
+      "sha256": "8000d1402f17da5a8393a3d7ecea1a54256e7de1e2ec1f5f8427528efa9638dd"
+    },
+    {
+      "asset": "/frames/gingham-picnic-mini/v2/foreground.svg",
+      "bytes": 40063,
+      "sha256": "6b35b949bc1ef0723dd68b38aef09eaccd13bda2baa4bc0dd18af35c83f85d0e"
+    },
+    {
+      "asset": "/frames/gingham-picnic-mini/v2/thumbnail-neutral.png",
+      "bytes": 66047,
+      "sha256": "b1e0fae9c8a7eac046eca7042b5818baf2580c9cbafa25a74e1a95ef82799ab1"
+    },
+    {
+      "asset": "/frames/teddy-memory-trio/v2/background.svg",
+      "bytes": 14157,
+      "sha256": "eb15a9803094048cd6f4489dbb4f1b815a5ac20d1a17ee08429162c2feea4808"
+    },
+    {
+      "asset": "/frames/teddy-memory-trio/v2/foreground.svg",
+      "bytes": 19302,
+      "sha256": "a3e80990fe7b79232d516f944255e05794621cd3abdd3bbb4594bb29e5d2e5b4"
+    },
+    {
+      "asset": "/frames/teddy-memory-trio/v2/thumbnail-neutral.png",
+      "bytes": 58201,
+      "sha256": "41883a551b817de15f171fa0ef8f497e7f89e8c1b57a6340e6c9a0ef7185bc04"
+    },
+    {
+      "asset": "/frames/teddy-memory-mosaic/v2/background.svg",
+      "bytes": 11386,
+      "sha256": "04729b3bd45131639690a9172a941e39e90d3d398a59089cf362aa7db20e56b6"
+    },
+    {
+      "asset": "/frames/teddy-memory-mosaic/v2/foreground.svg",
+      "bytes": 19704,
+      "sha256": "5a6be9dbe5b2025b4e37a28b95d851d2133b016da2befe5088183c5d6a07d3d2"
+    },
+    {
+      "asset": "/frames/teddy-memory-mosaic/v2/thumbnail-neutral.png",
+      "bytes": 101722,
+      "sha256": "17f696a907dc6e352a763b5e1a7843b655d2923b2fe72adf14fa7d361c58dfb3"
+    },
+    {
+      "asset": "/frames/coffee-date-polaroid/v3/background.svg",
+      "bytes": 503134,
+      "sha256": "b4a60ec349315d054b2b4180399fc3c0960b39f01b589900b36faf1d9467a67d"
+    },
+    {
+      "asset": "/frames/coffee-date-polaroid/v3/foreground.svg",
+      "bytes": 3404,
+      "sha256": "47bf8cd58123497a08eecc0ee7703bc559b3eccf7572fe5841c1e2eb59b278d5"
+    },
+    {
+      "asset": "/frames/coffee-date-polaroid/v3/thumbnail-neutral.png",
+      "bytes": 176792,
+      "sha256": "ffa6b4d1715bb2281caadf0ee8e193eb68d831f8fca18805140d5e8be0099696"
+    },
+    {
+      "asset": "/frames/birthday-confetti-story/v3/background.svg",
+      "bytes": 3648,
+      "sha256": "5dd6ca627bf391e9a9b3824cf13984eb2e60ecaf6cf22520ab354491adf4fd6a"
+    },
+    {
+      "asset": "/frames/birthday-confetti-story/v3/foreground.svg",
+      "bytes": 6906,
+      "sha256": "205136f156baa396de0a064dace8597f1f15c993f4032bf537e062ed1045482c"
+    },
+    {
+      "asset": "/frames/birthday-confetti-story/v3/thumbnail-neutral.png",
+      "bytes": 43118,
+      "sha256": "226eed2514a347605a8a0276bdb30e20a4133774b04827d581881fb77a52e49c"
+    },
+    {
+      "asset": "/frames/graduation-club-duo/v2/background.svg",
+      "bytes": 3453,
+      "sha256": "a825b8e33168ec3062c12f6e32b9dc02495debf57f04b3bb2df8a2eaa80fd3e8"
+    },
+    {
+      "asset": "/frames/graduation-club-duo/v2/foreground.svg",
+      "bytes": 15715,
+      "sha256": "e9bbed09b89cece09e0c7a43233efb8809d2d9c4d387736d36849fbcfa48c17a"
+    },
+    {
+      "asset": "/frames/graduation-club-duo/v2/thumbnail-neutral.png",
+      "bytes": 56799,
+      "sha256": "0ab701fb6872907a923bdccedefccd0bdf32516a1d8d37d81358efbb016a1b37"
+    },
+    {
+      "asset": "/frames/wedding-bloom-trio/v2/background.svg",
+      "bytes": 4356,
+      "sha256": "b64fc3135ca1f8462b259d792a80f35669acd6596e99c167cf898298c243bd19"
+    },
+    {
+      "asset": "/frames/wedding-bloom-trio/v2/foreground.svg",
+      "bytes": 55248,
+      "sha256": "31162dd5a2f71e95f07e0d324ac029ff7fd5940100f30a9bb32fe6f5be3454af"
+    },
+    {
+      "asset": "/frames/wedding-bloom-trio/v2/thumbnail-neutral.png",
+      "bytes": 63026,
+      "sha256": "dac4f968040c2643e5920ea1794ba3942368af5331874b01f2f7279983167e49"
+    },
+    {
+      "asset": "/frames/wedding-bloom-portrait/v3/background.svg",
+      "bytes": 449216,
+      "sha256": "df5be72a9d7c46a695be49dca0f0466ab8dd2f87ee74eb0907a1cd0e25874db5"
+    },
+    {
+      "asset": "/frames/wedding-bloom-portrait/v3/foreground.svg",
+      "bytes": 9960,
+      "sha256": "62560f5f1f994b6b44bbadf43a7819b38155044d17e286ae20b234effcd4516e"
+    },
+    {
+      "asset": "/frames/wedding-bloom-portrait/v3/thumbnail-neutral.png",
+      "bytes": 226662,
+      "sha256": "e7e225a87a2080bb7bc17e3c75f52cebc93c78dd38c5482e9d7180ca928ffde6"
+    },
+    {
+      "asset": "/frames/kpop-starlight-wander/v3/background.svg",
+      "bytes": 530888,
+      "sha256": "458c90e16879bfc2ffaf82ed2eb7e5ba2e65f93ca7d29b2260550b31489e85dc"
+    },
+    {
+      "asset": "/frames/kpop-starlight-wander/v3/foreground.svg",
+      "bytes": 3873,
+      "sha256": "361c06b72c36094254a9777427b71d524eb9b44ad5814f1307b3ec2f40dbccba"
+    },
+    {
+      "asset": "/frames/kpop-starlight-wander/v3/thumbnail-neutral.png",
+      "bytes": 151631,
+      "sha256": "041e4edd1c95f3d2f2ca96830a4073d0b7d8afcbebd75a7a1122cd4926882f1c"
+    },
+    {
+      "asset": "/frames/halloween-party-mosaic/v2/background.svg",
+      "bytes": 4946,
+      "sha256": "b58c28199dbf5b8f7d55a2c9f73591b02e86579b9501ac61e6c61f941e58966c"
+    },
+    {
+      "asset": "/frames/halloween-party-mosaic/v2/foreground.svg",
+      "bytes": 14540,
+      "sha256": "4b8cd40c965f6635e020aa1a911cdfb7b4ab61066d000ef01426ac8704141a86"
+    },
+    {
+      "asset": "/frames/halloween-party-mosaic/v2/thumbnail-neutral.png",
+      "bytes": 102389,
+      "sha256": "795189789372a48ef3d23222e263de5fb6269f34b6bae617080f5b8f03385051"
+    },
+    {
+      "asset": "/frames/festive-wishes-offset/v3/background.svg",
+      "bytes": 560402,
+      "sha256": "76a2474d04d1b5eaa3c2e6f22d07400c5860315d3183b948d9c74e45034fbbb8"
+    },
+    {
+      "asset": "/frames/festive-wishes-offset/v3/foreground.svg",
+      "bytes": 8865,
+      "sha256": "bafc30bcd0fadba708a265c17e836219f390bef3f4070a67c8f15ed7e9eee004"
+    },
+    {
+      "asset": "/frames/festive-wishes-offset/v3/thumbnail-neutral.png",
+      "bytes": 124688,
+      "sha256": "234b686cf2a75f1aea207ddee2562bcb933417804f0061adfc0c21242129561a"
+    },
+    {
+      "asset": "/frames/garden-paint-story/v3/background.svg",
+      "bytes": 659822,
+      "sha256": "93359f6d645e72afe781c17add735576216a774bba046036a51b3fa9ff0a42b9"
+    },
+    {
+      "asset": "/frames/garden-paint-story/v3/foreground.svg",
+      "bytes": 5353,
+      "sha256": "cc6c41675835a722106d036f6520209c46392ea671fdc579dd71d4889ba8af2d"
+    },
+    {
+      "asset": "/frames/garden-paint-story/v3/thumbnail-neutral.png",
+      "bytes": 197843,
+      "sha256": "f6f7085667d445309e88e5ae7f2459cb55a3e329cde660b71476986d081f27f0"
+    },
+    {
+      "asset": "/frames/pop-doodle-wander/v2/background.svg",
+      "bytes": 3876,
+      "sha256": "27b52ad654b4ae8ecb1e21389f16fa8fca166f52efbfdf5f5c78817af250a765"
+    },
+    {
+      "asset": "/frames/pop-doodle-wander/v2/foreground.svg",
+      "bytes": 14940,
+      "sha256": "1f728edc9c235e94af65df4a2c76fa539814230e6d191ee36408a5702fee58f6"
+    },
+    {
+      "asset": "/frames/pop-doodle-wander/v2/thumbnail-neutral.png",
+      "bytes": 71014,
+      "sha256": "2098748fe3e8de0077644c2de8a124ebd4099b27361186e3a102dcd4b109c70c"
+    },
+    {
+      "asset": "/frames/night-market/v1/background.svg",
+      "bytes": 790743,
+      "sha256": "ef041ec3154c98076918e616f8c3b202d8f00417a6d1ed63e93c8f0ea02dd20f"
+    },
+    {
+      "asset": "/frames/night-market/v1/foreground.svg",
+      "bytes": 1521,
+      "sha256": "3f4d29619df2bd0949f135e7347c5a2bf2f74172b96ce6a5cd2cfeb5f64ce04c"
+    },
+    {
+      "asset": "/frames/night-market/v1/thumbnail-neutral.png",
+      "bytes": 99514,
+      "sha256": "1ad82b18f94aac866911c06735e418330f063866a3012617061796c8cc488215"
+    },
+    {
+      "asset": "/frames/aquarium-parade/v1/background.svg",
+      "bytes": 839880,
+      "sha256": "ca0cfebc40c55c80dd2be359eeadfe3b2f389af3594a1b3a74ef558b34c1afe3"
+    },
+    {
+      "asset": "/frames/aquarium-parade/v1/foreground.svg",
+      "bytes": 1110,
+      "sha256": "039ac35a0277f55be2892840f32c6ee7aa12233f708ea3f31129d62c7e63e461"
+    },
+    {
+      "asset": "/frames/aquarium-parade/v1/thumbnail-neutral.png",
+      "bytes": 197287,
+      "sha256": "6b082e6ce578b0e4702b08310e7c433cc9ff2bdf084ab424d681c8ad3b8ff4d8"
+    },
+    {
+      "asset": "/frames/pit-lane/v1/background.svg",
+      "bytes": 740808,
+      "sha256": "d31504f3d9b37c3ae23ff790b70fd0a68ed8abf12a8b9d7ade48f5101c47fc79"
+    },
+    {
+      "asset": "/frames/pit-lane/v1/foreground.svg",
+      "bytes": 2013,
+      "sha256": "cb0e47765b18d2ba32a4d0979fc92c2235efed871c22d3cad5e909d58513a588"
+    },
+    {
+      "asset": "/frames/pit-lane/v1/thumbnail-neutral.png",
+      "bytes": 98895,
+      "sha256": "44cfdfe75f1bf350c4e5db0f0c4f322820f81f8e0f17485e6954db42b28e58e3"
+    },
+    {
+      "asset": "/frames/circus-cabinet/v1/background.svg",
+      "bytes": 773343,
+      "sha256": "0a192c44756ae11171e48aa1b3a90622d94ff3a88defce3c17371a0c01bdb5d6"
+    },
+    {
+      "asset": "/frames/circus-cabinet/v1/foreground.svg",
+      "bytes": 1605,
+      "sha256": "4aa88828ce879a968c3788a1edbcd430dafb3a6f0451cd1b5000262857a16206"
+    },
+    {
+      "asset": "/frames/circus-cabinet/v1/thumbnail-neutral.png",
+      "bytes": 197037,
+      "sha256": "8ed3ef37584911a9209eb81a83175e65c3d56d57eb19155c0d76f1da903a2640"
+    },
+    {
+      "asset": "/frames/street-scramble/v1/background.svg",
+      "bytes": 971329,
+      "sha256": "ce0c7220a38a7fef90345238972050acbf25ce041ce47b795e783324af971637"
+    },
+    {
+      "asset": "/frames/street-scramble/v1/foreground.svg",
+      "bytes": 2004,
+      "sha256": "76d4dc02708be6beb74c51fc316a85ce6e31cf69f7fb40a9f0cd04a1e87f48fa"
+    },
+    {
+      "asset": "/frames/street-scramble/v1/thumbnail-neutral.png",
+      "bytes": 193134,
+      "sha256": "b8917785d1d3208bac86c6ed8c8831893f450d238872570c0b7b3cc4af7d2b6e"
+    },
+    {
+      "asset": "/frames/ramen-social/v1/background.svg",
+      "bytes": 810167,
+      "sha256": "adbdd496f39d6589ed2f225fed1d62d8aefede342e34e9b2c6431884771bda3f"
+    },
+    {
+      "asset": "/frames/ramen-social/v1/foreground.svg",
+      "bytes": 1520,
+      "sha256": "a64d9070d9a42cd0c5d8810139b1ae136cde807231a9d3784305dac121d8fec2"
+    },
+    {
+      "asset": "/frames/ramen-social/v1/thumbnail-neutral.png",
+      "bytes": 102670,
+      "sha256": "86d213a6833a2fbb17ffe7b200936976b1f330e02018e4c87af72ae6488e9793"
+    },
+    {
+      "asset": "/frames/stellar-atlas/v1/background.svg",
+      "bytes": 910128,
+      "sha256": "02039ba392e1faac2bcb821088009ebf093d7a1de7597ce139c7804d80d8241b"
+    },
+    {
+      "asset": "/frames/stellar-atlas/v1/foreground.svg",
+      "bytes": 1109,
+      "sha256": "b915671f9b09f308fd409d22a249e5a3332fc03c7404d2f2bfc7e39a250b6c0d"
+    },
+    {
+      "asset": "/frames/stellar-atlas/v1/thumbnail-neutral.png",
+      "bytes": 197678,
+      "sha256": "799cb55315567d4990860d9071bf9519233a0d3e8931b81a8748a3d8f062c113"
+    },
+    {
+      "asset": "/frames/safari-stamps/v1/background.svg",
+      "bytes": 808067,
+      "sha256": "a4e299f36613c48bb6c12e96bf4c7f4b8ad72b565443954dab740f641e019cf1"
+    },
+    {
+      "asset": "/frames/safari-stamps/v1/foreground.svg",
+      "bytes": 1601,
+      "sha256": "054517bc88a28c50b738f9fb27a034a07863724687b8b01b671aa93419598ef3"
+    },
+    {
+      "asset": "/frames/safari-stamps/v1/thumbnail-neutral.png",
+      "bytes": 198922,
+      "sha256": "fad9ec6a160353e561871dbd4cf9c7f5927257b1b902ed54e8fc20d858ac272e"
+    },
+    {
+      "asset": "/frames/sugar-arcade/v1/background.svg",
+      "bytes": 718140,
+      "sha256": "b0a61c1bb03b56bc0b97e63678229118294e0fdd6b3c4b40485f353cb0bd3ba4"
+    },
+    {
+      "asset": "/frames/sugar-arcade/v1/foreground.svg",
+      "bytes": 2014,
+      "sha256": "34f13cfcf06fc5348e666ae53e36cc4523767f431586f43c7170d117e7540b86"
+    },
+    {
+      "asset": "/frames/sugar-arcade/v1/thumbnail-neutral.png",
+      "bytes": 98024,
+      "sha256": "1e20d082a5d691f1d3c633f8d1afef5e0d29dfce1d004f2427970c94fb75f4ec"
+    },
+    {
+      "asset": "/frames/pinball-fever/v1/background.svg",
+      "bytes": 814145,
+      "sha256": "06cdbe1100d412d87b20d24415d40760370932e88119675d2871c2e1369cc1f6"
+    },
+    {
+      "asset": "/frames/pinball-fever/v1/foreground.svg",
+      "bytes": 1998,
+      "sha256": "1ecae735cf7a161cffa0f5fcff5de29f55113cf209646b5bbef155afe4127d57"
+    },
+    {
+      "asset": "/frames/pinball-fever/v1/thumbnail-neutral.png",
+      "bytes": 191864,
+      "sha256": "95a7a1f415e580aaeb3696002aa29580d0a7a5a351607178714efceadd921f2f"
+    },
+    {
+      "asset": "/frames/mixtape-motel/v1/background.svg",
+      "bytes": 759631,
+      "sha256": "b715caff463ed5efa789184734a6f513621819181d5733570ce4350a9a3b9314"
+    },
+    {
+      "asset": "/frames/mixtape-motel/v1/foreground.svg",
+      "bytes": 1527,
+      "sha256": "039947b4bf721ea08872ed133d98205448f80d987a98b306e6afdd4bcdcda9b4"
+    },
+    {
+      "asset": "/frames/mixtape-motel/v1/thumbnail-neutral.png",
+      "bytes": 96452,
+      "sha256": "cdfe9caf1039e9c3b3fec3e03c337ed23f3505168d6d110f7464aa239bbba503"
+    },
+    {
+      "asset": "/frames/skate-zine/v1/background.svg",
+      "bytes": 924566,
+      "sha256": "9104eacdfd9cc572357de8894b9faa338bbf26e3e83f6c52cda2cd4259b1500c"
+    },
+    {
+      "asset": "/frames/skate-zine/v1/foreground.svg",
+      "bytes": 1597,
+      "sha256": "08a64f64253f4a7f5b4a2cfeadbb0f08c619ede23a5bb6ce472a74eb13013ed4"
+    },
+    {
+      "asset": "/frames/skate-zine/v1/thumbnail-neutral.png",
+      "bytes": 204584,
+      "sha256": "3707428a60832dd7c0459fd17d2198998f5b853a7bed6b44d898e59eab9279a1"
+    },
+    {
+      "asset": "/frames/comic-bureau/v1/background.svg",
+      "bytes": 941487,
+      "sha256": "adda45b60a4ba164a8ec188a833647535c16ccdc46f225f639c3dee9d35bb299"
+    },
+    {
+      "asset": "/frames/comic-bureau/v1/foreground.svg",
+      "bytes": 1520,
+      "sha256": "340704611664043891c0ff2078ec20aac32e053fb1b576fa1faa04d21e28cd01"
+    },
+    {
+      "asset": "/frames/comic-bureau/v1/thumbnail-neutral.png",
+      "bytes": 103172,
+      "sha256": "8730e9601f411cfdf38dd599369aaae1982dad0e5c8b439e53af987bf2493694"
+    },
+    {
+      "asset": "/frames/desert-bazaar/v1/background.svg",
+      "bytes": 900456,
+      "sha256": "a4d4613f6077760eed29b5877ae68d4027df8f9063d103eeca1c1eec8000b0db"
+    },
+    {
+      "asset": "/frames/desert-bazaar/v1/foreground.svg",
+      "bytes": 1114,
+      "sha256": "2ed6a4d21fb97e253d1e0e4b35284a34d2757b923022b8ce19bdcaaac2f32be8"
+    },
+    {
+      "asset": "/frames/desert-bazaar/v1/thumbnail-neutral.png",
+      "bytes": 201232,
+      "sha256": "e88cb0b3d0ae6797228205ff823489e81f6bbc099cb460510f6c06d1d97790bd"
+    },
+    {
+      "asset": "/frames/jungle-jam/v1/background.svg",
+      "bytes": 806469,
+      "sha256": "47debc9192eaf3e2c85c7b55f3d47f470703ba044370be0ee4157a38c1a90dca"
+    },
+    {
+      "asset": "/frames/jungle-jam/v1/foreground.svg",
+      "bytes": 1996,
+      "sha256": "4d12abc9d320f1bb9398c22d5f963c5cc056a9a8a52a7150817910a8e05c5d04"
+    },
+    {
+      "asset": "/frames/jungle-jam/v1/thumbnail-neutral.png",
+      "bytes": 183283,
+      "sha256": "05f56b8725f2df6b6bd6f66d99f64ab5ff5e6696f11d010c56bf06ae7dfab870"
+    },
+    {
+      "asset": "/frames/snow-globe/v1/background.svg",
+      "bytes": 859435,
+      "sha256": "6025305095d39861b5014435ae81efde03735f582504325367253a2532a1685d"
+    },
+    {
+      "asset": "/frames/snow-globe/v1/foreground.svg",
+      "bytes": 1519,
+      "sha256": "0f2964b58a598afe5bcdb9085dacef1774193de001c21cd7c651864fc6854979"
+    },
+    {
+      "asset": "/frames/snow-globe/v1/thumbnail-neutral.png",
+      "bytes": 105448,
+      "sha256": "f2f2de2d8681e44ce9414daac36705e4602924447456a645c52e3401015c831f"
+    },
+    {
+      "asset": "/frames/pirate-radio/v1/background.svg",
+      "bytes": 890639,
+      "sha256": "9372be6b6126ff024c309f292399b082cdb9d1fcea92bd705010e14d28d51e7d"
+    },
+    {
+      "asset": "/frames/pirate-radio/v1/foreground.svg",
+      "bytes": 1597,
+      "sha256": "421af60caa2c40d85bdd36f3d1253d88ed938a9f60fb85d5490e7859b7d3706c"
+    },
+    {
+      "asset": "/frames/pirate-radio/v1/thumbnail-neutral.png",
+      "bytes": 203025,
+      "sha256": "03d29bd0c4c238fa2f5a4eff2f399a5937ee5fe7d73f19e2693a3c0c30208172"
+    },
+    {
+      "asset": "/frames/bakery-confetti/v1/background.svg",
+      "bytes": 710644,
+      "sha256": "568ec8fbb02ad6b7d5847a5e266c23027e1ff19331a8c1dd5ae8f41dfcee2f46"
+    },
+    {
+      "asset": "/frames/bakery-confetti/v1/foreground.svg",
+      "bytes": 2017,
+      "sha256": "37474b380301f09ffd144c0c60bcfb3bc10acc8dc8fdffb29a74c80cf100325a"
+    },
+    {
+      "asset": "/frames/bakery-confetti/v1/thumbnail-neutral.png",
+      "bytes": 98149,
+      "sha256": "0f60fe1e1a833813644806f3e36e10e7b8d6b0aca3b0c6d9372103bb4a0b3eeb"
+    },
+    {
+      "asset": "/frames/dragon-lantern/v1/background.svg",
+      "bytes": 796808,
+      "sha256": "238f2f0d5b688ad824d713a5975890f79380c6ca659d6487865e9733e88e3c4d"
+    },
+    {
+      "asset": "/frames/dragon-lantern/v1/foreground.svg",
+      "bytes": 1103,
+      "sha256": "53c70f0436ab5a5ab6641ac3d6575672b6e4accdebd055bebdbc696ee6176c75"
+    },
+    {
+      "asset": "/frames/dragon-lantern/v1/thumbnail-neutral.png",
+      "bytes": 195192,
+      "sha256": "7c416c28c05118d3273f668c6e05d1694f575cfc0a85dc04f720625626ae919c"
+    },
+    {
+      "asset": "/frames/neon-district/v1/background.svg",
+      "bytes": 883613,
+      "sha256": "23d75ea090cb79767674b9ed2f75845eae2f21394ad908bc2243e950d316a5ed"
+    },
+    {
+      "asset": "/frames/neon-district/v1/foreground.svg",
+      "bytes": 2000,
+      "sha256": "9753ba69f60b8c17e8acfec9edc385716f6122ddc6c2309b9697a63d59050a0d"
+    },
+    {
+      "asset": "/frames/neon-district/v1/thumbnail-neutral.png",
+      "bytes": 194856,
+      "sha256": "9d4238724c32752ec27c14e73e2b8a02ffb9ac9cb0068a35674ea309c10fa051"
+    }
+  ],
+  "headers": {
+    "access-control-allow-origin": "*",
+    "alt-svc": "h3=\":443\"; ma=86400",
+    "cache-control": "no-cache",
+    "cf-ray": "a49e4e647c72fdaa-SIN",
+    "content-encoding": "br",
+    "content-security-policy": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self'; media-src 'self' blob:; connect-src 'self' https://fotbooth-rooms.aliifikriii25.workers.dev wss://fotbooth-rooms.aliifikriii25.workers.dev; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Tue, 13 Oct 2026 12:21:48 GMT",
+    "etag": "W/\"c83ebc35c8ef996cb79c69160dfd0697\"",
+    "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "permissions-policy": "camera=(self), microphone=()",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=T3q6VoztIFr84%2Fr28m8JHyhRNWjIOMlagAYiFN67r10svMcQcA6sHEpmbZ2B4JCUngYXrhwoLJ%2BbH7aTCczLPmUDNpO77i%2BIKjG7f%2FtPqzPnqtIr64fCaCsRbXw9aYVPSXXBmPY%3D\"}]}",
+    "server": "cloudflare",
+    "x-content-type-options": "nosniff"
+  },
+  "exports": [
+    {
+      "format": "png",
+      "dimensions": [
+        600,
+        1800
+      ],
+      "photoPixel": [
+        111,
+        111,
+        111,
+        255
+      ],
+      "bytes": 888158
+    },
+    {
+      "format": "jpg",
+      "dimensions": [
+        600,
+        1800
+      ],
+      "photoPixel": [
+        111,
+        111,
+        111,
+        255
+      ],
+      "bytes": 178670
+    }
+  ],
+  "errors": [],
+  "scope": "Cloudflare Pages HTTPS deployment: built app, all 240 layer/thumbnail URLs, search, upload, caption, photo effects, result and decoded PNG/JPEG pixels. Physical cameras and phones are not covered."
+}

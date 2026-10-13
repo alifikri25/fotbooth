@@ -1,0 +1,13 @@
+{
+  "verifiedAt": "2026-10-13T12:25:30.485Z",
+  "command": "npm run build -- --outDir C:/Users/aliif/.codex/tmp/fotbooth-continuation-build",
+  "exitCode": 0,
+  "buildDirectory": "C:/Users/aliif/.codex/tmp/fotbooth-continuation-build",
+  "originalDistUntouched": true,
+  "comparedFiles": 730,
+  "mismatches": [],
+  "warnings": [
+    "Vite main JS chunk exceeds 500kB minified; warning only"
+  ],
+  "manifest": "docs/qa/online-room-catalog-candidate-manifest-20261013.json"
+}

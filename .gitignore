@@ -5,6 +5,8 @@ playwright-report/
 *.tsbuildinfo
 .env
 .env.*
+.dev.vars
+.dev.vars.*
 !.env.example
 .wrangler/
 .frame-archive/
@@ -22,6 +24,14 @@ docs/qa/*
 !docs/qa/signature-release-20261007.json
 !docs/qa/signature-encore-board.png
 !docs/qa/encore-release-20261007.json
+!docs/qa/festival-design-board.png
+!docs/qa/festival-release-20261007.json
+!docs/qa/effects-editor-mobile.png
+!docs/qa/ar-camera-mobile.png
+!docs/qa/ar-effects-board.png
+!docs/qa/ar-release-20261007.json
+!docs/qa/online-room-*.png
+!docs/qa/online-room-*.json
 *.log
 .DS_Store
 Thumbs.db

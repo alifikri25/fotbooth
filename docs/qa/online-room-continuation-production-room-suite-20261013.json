@@ -1,0 +1,1340 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\fotbooth\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/e2e/online-room.spec.ts",
+      "tests/e2e/room-catalog.spec.ts",
+      "tests/e2e/room-lifecycle.spec.ts",
+      "tests/e2e/room-series-recovery.spec.ts",
+      "--config=docs/qa/.continuation-playwright.config.ts",
+      "--project=chromium",
+      "--project=webkit"
+    ],
+    "configFile": "C:\\fotbooth\\docs\\qa\\.continuation-playwright.config.ts",
+    "rootDir": "C:/fotbooth/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/fotbooth/test-results/continuation-production",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/fotbooth/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/fotbooth/test-results/continuation-production",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/fotbooth/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/fotbooth/test-results/continuation-production",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/fotbooth/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "docs/qa/online-room-continuation-production-room-suite-20261013.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "online-room.spec.ts",
+      "file": "online-room.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "online entry explains invitation sharing before camera access",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 466,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:24:04.144Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c7d8b0819750b60b09f1-a6c8f1c834cfc38bcbf3",
+          "file": "online-room.spec.ts",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "two people join, capture identical PNGs and retake using direct",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 32310,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:24:04.684Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c7d8b0819750b60b09f1-4a863e6dcac6070920ca",
+          "file": "online-room.spec.ts",
+          "line": 57,
+          "column": 3
+        },
+        {
+          "title": "two people join, capture identical PNGs and retake using relay",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 150000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 65525,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:24:37.002Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c7d8b0819750b60b09f1-c7cecd1d76c62888480e",
+          "file": "online-room.spec.ts",
+          "line": 57,
+          "column": 3
+        },
+        {
+          "title": "online entry explains invitation sharing before camera access",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1354,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:28:10.618Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c7d8b0819750b60b09f1-7f98bf0301b27935dbdd",
+          "file": "online-room.spec.ts",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "two people join, capture identical PNGs and retake using direct",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "The synthetic moving camera uses Chromium captureStream.",
+                  "location": {
+                    "file": "C:\\fotbooth\\tests\\e2e\\online-room.spec.ts",
+                    "line": 61,
+                    "column": 10
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:28:12.032Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The synthetic moving camera uses Chromium captureStream.",
+                      "location": {
+                        "file": "C:\\fotbooth\\tests\\e2e\\online-room.spec.ts",
+                        "line": 61,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "c7d8b0819750b60b09f1-2387cae5dce1d5ed8755",
+          "file": "online-room.spec.ts",
+          "line": 57,
+          "column": 3
+        },
+        {
+          "title": "two people join, capture identical PNGs and retake using relay",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "The synthetic moving camera uses Chromium captureStream.",
+                  "location": {
+                    "file": "C:\\fotbooth\\tests\\e2e\\online-room.spec.ts",
+                    "line": 61,
+                    "column": 10
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:28:12.039Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The synthetic moving camera uses Chromium captureStream.",
+                      "location": {
+                        "file": "C:\\fotbooth\\tests\\e2e\\online-room.spec.ts",
+                        "line": 61,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "c7d8b0819750b60b09f1-e70b4dc98c9486e4dcc6",
+          "file": "online-room.spec.ts",
+          "line": 57,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "room-catalog.spec.ts",
+      "file": "room-catalog.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "room offers every prepared catalogue frame and keeps the three dedicated choices",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1355,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:25:42.559Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e9162378a6e032310615-2aca842f1a86abee572e",
+          "file": "room-catalog.spec.ts",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "four fresh paired poses fill a prepared frame and both downloads match using direct",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 23319,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:25:43.922Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e9162378a6e032310615-3d3f838629e8d007dd7c",
+          "file": "room-catalog.spec.ts",
+          "line": 80,
+          "column": 3
+        },
+        {
+          "title": "four fresh paired poses fill a prepared frame and both downloads match using relay",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 33893,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:26:07.252Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e9162378a6e032310615-bf69be0a3696c31c9cbc",
+          "file": "room-catalog.spec.ts",
+          "line": 80,
+          "column": 3
+        },
+        {
+          "title": "room offers every prepared catalogue frame and keeps the three dedicated choices",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2157,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:28:12.059Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e9162378a6e032310615-2877227fdbf94bd3d1bb",
+          "file": "room-catalog.spec.ts",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "four fresh paired poses fill a prepared frame and both downloads match using direct",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Synthetic moving cameras require captureStream.",
+                  "location": {
+                    "file": "C:\\fotbooth\\tests\\e2e\\room-catalog.spec.ts",
+                    "line": 84,
+                    "column": 10
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 1,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:28:14.222Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Synthetic moving cameras require captureStream.",
+                      "location": {
+                        "file": "C:\\fotbooth\\tests\\e2e\\room-catalog.spec.ts",
+                        "line": 84,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "e9162378a6e032310615-fa0f1fd7d467c2706648",
+          "file": "room-catalog.spec.ts",
+          "line": 80,
+          "column": 3
+        },
+        {
+          "title": "four fresh paired poses fill a prepared frame and both downloads match using relay",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Synthetic moving cameras require captureStream.",
+                  "location": {
+                    "file": "C:\\fotbooth\\tests\\e2e\\room-catalog.spec.ts",
+                    "line": 84,
+                    "column": 10
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:28:14.228Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Synthetic moving cameras require captureStream.",
+                      "location": {
+                        "file": "C:\\fotbooth\\tests\\e2e\\room-catalog.spec.ts",
+                        "line": 84,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "e9162378a6e032310615-a1415a404375bc2ea34f",
+          "file": "room-catalog.spec.ts",
+          "line": 80,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "room-lifecycle.spec.ts",
+      "file": "room-lifecycle.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "host choices made before camera activation survive the initial room state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3686,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:26:41.178Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "393d2cd5115a42575288-4cc25903837067737aed",
+          "file": "room-lifecycle.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "a camera track ending clears its stream and offers camera activation again",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1960,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:26:44.872Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "393d2cd5115a42575288-5fd678a854581a525c0c",
+          "file": "room-lifecycle.spec.ts",
+          "line": 63,
+          "column": 1
+        },
+        {
+          "title": "opening another invitation while inside a room starts a fresh join screen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 407,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:26:46.838Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "393d2cd5115a42575288-c70546c817520b1759c5",
+          "file": "room-lifecycle.spec.ts",
+          "line": 86,
+          "column": 1
+        },
+        {
+          "title": "an unexpected server disconnect stops the camera and offers recovery outside a capture",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4827,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:26:47.252Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "393d2cd5115a42575288-9fced7d95230f10ba548",
+          "file": "room-lifecycle.spec.ts",
+          "line": 114,
+          "column": 3
+        },
+        {
+          "title": "room expiry stops the camera and offers recovery outside a capture",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3814,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:26:52.085Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "393d2cd5115a42575288-be4249277b5f59ecb512",
+          "file": "room-lifecycle.spec.ts",
+          "line": 114,
+          "column": 3
+        },
+        {
+          "title": "host choices made before camera activation survive the initial room state",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "These lifecycle checks use a real canvas captureStream.",
+                  "location": {
+                    "file": "C:\\fotbooth\\tests\\e2e\\room-lifecycle.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:28:14.248Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "These lifecycle checks use a real canvas captureStream.",
+                      "location": {
+                        "file": "C:\\fotbooth\\tests\\e2e\\room-lifecycle.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "393d2cd5115a42575288-0691d8a311f76b07ff99",
+          "file": "room-lifecycle.spec.ts",
+          "line": 45,
+          "column": 1
+        },
+        {
+          "title": "a camera track ending clears its stream and offers camera activation again",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "These lifecycle checks use a real canvas captureStream.",
+                  "location": {
+                    "file": "C:\\fotbooth\\tests\\e2e\\room-lifecycle.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:28:14.254Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "These lifecycle checks use a real canvas captureStream.",
+                      "location": {
+                        "file": "C:\\fotbooth\\tests\\e2e\\room-lifecycle.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "393d2cd5115a42575288-ff448cb02af02b6bc6a5",
+          "file": "room-lifecycle.spec.ts",
+          "line": 63,
+          "column": 1
+        },
+        {
+          "title": "opening another invitation while inside a room starts a fresh join screen",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "These lifecycle checks use a real canvas captureStream.",
+                  "location": {
+                    "file": "C:\\fotbooth\\tests\\e2e\\room-lifecycle.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:28:14.260Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "These lifecycle checks use a real canvas captureStream.",
+                      "location": {
+                        "file": "C:\\fotbooth\\tests\\e2e\\room-lifecycle.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "393d2cd5115a42575288-24cd66af17e71da9c4a5",
+          "file": "room-lifecycle.spec.ts",
+          "line": 86,
+          "column": 1
+        },
+        {
+          "title": "an unexpected server disconnect stops the camera and offers recovery outside a capture",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "These lifecycle checks use a real canvas captureStream.",
+                  "location": {
+                    "file": "C:\\fotbooth\\tests\\e2e\\room-lifecycle.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:28:14.266Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "These lifecycle checks use a real canvas captureStream.",
+                      "location": {
+                        "file": "C:\\fotbooth\\tests\\e2e\\room-lifecycle.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "393d2cd5115a42575288-22598df2ea8d57c73a77",
+          "file": "room-lifecycle.spec.ts",
+          "line": 114,
+          "column": 3
+        },
+        {
+          "title": "room expiry stops the camera and offers recovery outside a capture",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "These lifecycle checks use a real canvas captureStream.",
+                  "location": {
+                    "file": "C:\\fotbooth\\tests\\e2e\\room-lifecycle.spec.ts",
+                    "line": 4,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:28:14.273Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "These lifecycle checks use a real canvas captureStream.",
+                      "location": {
+                        "file": "C:\\fotbooth\\tests\\e2e\\room-lifecycle.spec.ts",
+                        "line": 4,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "393d2cd5115a42575288-e3f8d1e903f342f8ce0f",
+          "file": "room-lifecycle.spec.ts",
+          "line": 114,
+          "column": 3
+        }
+      ]
+    },
+    {
+      "title": "room-series-recovery.spec.ts",
+      "file": "room-series-recovery.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "guest cancellation clears an unfinished four-pose series before same-room two-pose restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 18628,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:26:55.917Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "93aab12fad9370bc2f86-6532730722ac638329af",
+          "file": "room-series-recovery.spec.ts",
+          "line": 203,
+          "column": 3
+        },
+        {
+          "title": "guest disconnect with relay clears an unfinished four-pose series before same-room two-pose restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 37092,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:27:14.552Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "93aab12fad9370bc2f86-0a6d7e6a0a98e60a794f",
+          "file": "room-series-recovery.spec.ts",
+          "line": 203,
+          "column": 3
+        },
+        {
+          "title": "canceling while a portrait decode is pending releases late bitmaps and does not repopulate the next series",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 18475,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:27:51.653Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "93aab12fad9370bc2f86-e627ce165d96ca4b6e15",
+          "file": "room-series-recovery.spec.ts",
+          "line": 224,
+          "column": 1
+        },
+        {
+          "title": "guest cancellation clears an unfinished four-pose series before same-room two-pose restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "The moving camera fixture uses canvas.captureStream.",
+                  "location": {
+                    "file": "C:\\fotbooth\\tests\\e2e\\room-series-recovery.spec.ts",
+                    "line": 12,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:28:14.295Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The moving camera fixture uses canvas.captureStream.",
+                      "location": {
+                        "file": "C:\\fotbooth\\tests\\e2e\\room-series-recovery.spec.ts",
+                        "line": 12,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "93aab12fad9370bc2f86-3909d34285a9e7ce0e23",
+          "file": "room-series-recovery.spec.ts",
+          "line": 203,
+          "column": 3
+        },
+        {
+          "title": "guest disconnect with relay clears an unfinished four-pose series before same-room two-pose restart",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "The moving camera fixture uses canvas.captureStream.",
+                  "location": {
+                    "file": "C:\\fotbooth\\tests\\e2e\\room-series-recovery.spec.ts",
+                    "line": 12,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:28:14.300Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The moving camera fixture uses canvas.captureStream.",
+                      "location": {
+                        "file": "C:\\fotbooth\\tests\\e2e\\room-series-recovery.spec.ts",
+                        "line": 12,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "93aab12fad9370bc2f86-d316865c090bf1a20a82",
+          "file": "room-series-recovery.spec.ts",
+          "line": 203,
+          "column": 3
+        },
+        {
+          "title": "canceling while a portrait decode is pending releases late bitmaps and does not repopulate the next series",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "The moving camera fixture uses canvas.captureStream.",
+                  "location": {
+                    "file": "C:\\fotbooth\\tests\\e2e\\room-series-recovery.spec.ts",
+                    "line": 12,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-13T12:28:14.306Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "The moving camera fixture uses canvas.captureStream.",
+                      "location": {
+                        "file": "C:\\fotbooth\\tests\\e2e\\room-series-recovery.spec.ts",
+                        "line": 12,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "93aab12fad9370bc2f86-abb84fcc147a984b03cd",
+          "file": "room-series-recovery.spec.ts",
+          "line": 224,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-13T12:24:03.665Z",
+    "duration": 250673.179,
+    "expected": 16,
+    "skipped": 12,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

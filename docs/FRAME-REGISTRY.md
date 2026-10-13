@@ -1,8 +1,35 @@
-# Registry 60 frame Fotbooth
+# Registry 80 frame Fotbooth
 
-Katalog aktif: **60 frame** — 16 frame sebelumnya dan 44 edisi dekoratif dari 26 tema baru. Beberapa tema punya lebih dari satu komposisi; ini bukan klaim 60 tema independen. Batas katalog mengikuti permintaan terakhir pengguna. ID frame di luar katalog diarsipkan lokal dan tidak ikut build. Aset versi 1 dan 2 tetap dilayani agar sesi yang sudah terbuka dapat selesai. Katalog aktif memakai versi 3 pada 18 desain unggulan dan versi 2 pada 42 edisi lainnya.
+Katalog aktif: **80 frame**. Dua puluh tema Festival Editions ditambahkan pada 60 frame sebelumnya sesuai permintaan 7 Oktober 2026. Katalog memakai 20 paket baru v1, 18 desain signature v3, serta 42 edisi v2. Seluruh aset terdahulu dipertahankan untuk sesi yang sudah terbuka.
 
-Setiap paket versi 2, 3 berisi manifest, background SVG, foreground SVG dan thumbnail PNG hasil renderer aplikasi. Strip: 1200×3600; card: 1800×2700. Mask foto valid dan luas foto minimal 55%. Artwork baru memiliki mask tambahan agar dekorasi tidak menutupi interior foto atau area judul/caption/tanggal.
+Setiap paket berisi manifest, background SVG, foreground SVG dan thumbnail PNG hasil renderer aplikasi. Strip: 1200×3600; kartu: 1800×2700. Luas mask foto minimal 55%; judul, caption dan tanggal berada di luar area foto. Semua thumbnail galeri mempunyai jendela foto netral tanpa orang.
+
+## Festival Editions
+
+- **Night Market**: Bianglala, lampion, tiket, tenda dan lampu pasar malam.
+- **Aquarium Parade**: Ubur-ubur, ikan badut, koral, gelembung dan kaca laut.
+- **Pit Lane**: Mobil balap, bendera checker, ban, helm dan jejak kecepatan.
+- **Circus Cabinet**: Kuda carousel, tenda sirkus, harlequin dan tiket pertunjukan.
+- **Street Scramble**: Poster sobek, cat semprot, safety pin dan stiker jalanan.
+- **Ramen Social**: Mangkuk ramen, sumpit, narutomaki, lentera dan tirai kedai.
+- **Stellar Atlas**: Peta bintang, teleskop kuningan, planet dan fase bulan.
+- **Safari Stamps**: Jerapah, zebra, gajah, kompas dan label ekspedisi.
+- **Sugar Arcade**: Lollipop, gummy bear, bonbon dan taburan permen warna-warni.
+- **Pinball Fever**: Flipper krom, bola pinball, bumper dan kilat arcade.
+- **Mixtape Motel**: Kaset, vinyl, kabel headphone, tuts synthesizer dan gelang konser.
+- **Skate Zine**: Skateboard, sneaker, roda, rantai dan kolase majalah skate.
+- **Comic Bureau**: Ledakan halftone, panel komik, pena dan potongan koran.
+- **Desert Bazaar**: Ubin mosaik, lampu kuningan, karpet, delima dan manik-manik.
+- **Jungle Jam**: Monstera, toucan, katak pohon, hibiscus dan motif harimau.
+- **Snow Globe Club**: Chalet bersalju, penguin, syal rajut, ski dan kristal es.
+- **Pirate Radio**: Peta laut, kapal kayu, simpul tali, jangkar dan harta koin.
+- **Bakery Confetti**: Kue strawberry, croissant, macaron, whipped cream dan gingham.
+- **Dragon Lantern**: Naga parade, lentera merah, simpul keberuntungan dan kipas jade.
+- **Neon District**: Gedung kota, tabung neon, refleksi hujan dan detail sirkuit.
+
+Material terpisah dibuat untuk setiap tema dengan tool ImageGen bawaan. File asli, JPEG web dan prompt disimpan pada artwork/originals, artwork/materials dan [provenance Festival Editions](../artwork/provenance/festival-materials-20261007.json). Komposisi foto, rim, label dan caption memakai SVG/canvas native. Bahan strip diulang pada proporsi aslinya, tanpa meregangkan objek cetak.
+
+## Paket lengkap
 
 | Frame | ID | Koleksi | Format | Foto |
 | --- | --- | --- | --- | --- |
@@ -66,23 +93,35 @@ Setiap paket versi 2, 3 berisi manifest, background SVG, foreground SVG dan thum
 | Champagne Countdown | festive-wishes-offset | Festive Wishes | strip | 3 |
 | Monet Garden Party | garden-paint-story | Garden Paint | card | 3 |
 | Pop Doodle Wander | pop-doodle-wander | Pop Doodle | strip | 3 |
+| Night Market | night-market | Festival Editions | strip | 3 |
+| Aquarium Parade | aquarium-parade | Festival Editions | card | 2 |
+| Pit Lane | pit-lane | Festival Editions | strip | 4 |
+| Circus Cabinet | circus-cabinet | Festival Editions | card | 3 |
+| Street Scramble | street-scramble | Festival Editions | card | 4 |
+| Ramen Social | ramen-social | Festival Editions | strip | 3 |
+| Stellar Atlas | stellar-atlas | Festival Editions | card | 2 |
+| Safari Stamps | safari-stamps | Festival Editions | card | 3 |
+| Sugar Arcade | sugar-arcade | Festival Editions | strip | 4 |
+| Pinball Fever | pinball-fever | Festival Editions | card | 4 |
+| Mixtape Motel | mixtape-motel | Festival Editions | strip | 3 |
+| Skate Zine | skate-zine | Festival Editions | card | 3 |
+| Comic Bureau | comic-bureau | Festival Editions | strip | 3 |
+| Desert Bazaar | desert-bazaar | Festival Editions | card | 2 |
+| Jungle Jam | jungle-jam | Festival Editions | card | 4 |
+| Snow Globe Club | snow-globe | Festival Editions | strip | 3 |
+| Pirate Radio | pirate-radio | Festival Editions | card | 3 |
+| Bakery Confetti | bakery-confetti | Festival Editions | strip | 4 |
+| Dragon Lantern | dragon-lantern | Festival Editions | card | 2 |
+| Neon District | neon-district | Festival Editions | card | 4 |
 
-## Lisensi dan referensi
+## Lisensi dan sumber
 
-Komposisi SVG dan ilustrasi dibuat orisinal untuk Fotbooth. Empat belas bahan raster untuk edisi signature dihasilkan dengan tool imagegen bawaan, termasuk velvet, renda, satin, denim bordir, bahan holografis, tekstil café, citrus dan seni taman. Original, JPEG web dan prompt lengkap disimpan pada artwork/originals, artwork/materials serta artwork/provenance/signature-materials-20261007.json dan encore-materials-20261007.json; tidak memakai foto referensi atau aset template Canva. Font DM Sans dan Fraunces memakai SIL Open Font License 1.1; salinan lisensi ada di public/fonts.
-
-Referensi gaya yang diperiksa: [Canva photo strip](https://www.canva.com/templates/s/photo-strip/?continuation=150) dan [photo booth](https://www.canva.com/templates/s/photo-booth/?continuation=150). Referensi mencakup pita, floral denim, collage scrapbook, checker, karakter ilustratif dan film analog. Tidak ada file template atau aset Canva yang disalin ke paket.
-
-## Arah desain cetakan kertas
-
-Arah pengguna: kartu dan strip seperti cetakan photobooth di kertas, dengan hiasan tema yang diperdalam. Versi 2 memakai tepian putih hangat, serat matte halus, alas kertas pada edisi Polaroid, dan ilustrasi pendamping khusus tiap tema. Pixel Play mempunyai konsol/tombol arcade; Denim Daisy memakai patch dan jahitan; tema surat, botani, pantai dan kopi memakai perangko, label spesimen, bintang laut dan struk. Delapan desain signature pertama memperkuat arah ini: Velvet Premiere, Popstar Birthday, After Hours Ticket, Sage Atelier, Pearl Vows, Holo Encore, Rouge Romance dan Disco Royale. Sepuluh edisi berikutnya: Rose Ribbon Salon, Azure Riviera, Denim Bloom Studio, Lilac Conservatory, Cherry Velvet Club, Citrus Sunset, Café Lumière, Emerald Herbarium, Champagne Countdown dan Monet Garden Party. Galeri seluruh 60 frame memakai area foto netral tanpa orang, sesuai pilihan pengguna. Foto contoh lama hanya menjadi bukti historis; pengguna mengisi sendiri fotonya. Thumbnail aktif bernama thumbnail-neutral.png; thumbnail.png sebelumnya tetap tersedia. Setiap tema mempunyai komposisi khusus, tipografi kuat dan detail bahan yang nyata, bukan mengganti warna atau mengulang stiker kecil. Slot foto dan dimensi ekspor tetap. Frame berikutnya mengikuti standar visual ini tanpa melewati batas 60 frame aktif.
+Komposisi SVG orisinal untuk Fotbooth. Empat belas material signature terdahulu dan 20 material festival dibuat memakai ImageGen bawaan; tidak memakai file template atau foto pengguna. DM Sans dan Fraunces memakai SIL Open Font License 1.1, dengan salinan lisensi di public/fonts.
 
 ## Bukti visual
 
-- [Board sepuluh frame terbaru](qa/signature-encore-board.png)
-- [Board delapan frame pertama, netral](qa/signature-design-board.png)
-- [Board 12 pilihan dekoratif](qa/decorated-design-board.png)
-- [Contact sheet seluruh 60 frame](qa/frame-contact-sheet.png)
-- [Daftar thumbnail yang dihasilkan](qa/library-generation.json)
+- [Dua puluh frame Festival Editions](qa/festival-design-board.png)
+- [Contact sheet seluruh katalog](qa/frame-contact-sheet.png)
+- [Daftar hasil generator](qa/library-generation.json)
 
-Regenerasi: npm run assets:build, kemudian npm run qa:frames dengan dev server aktif.
+Regenerasi: npm run assets:build, lalu npm run qa:frames dengan dev server aktif, lalu node scripts/write-registry.mjs.

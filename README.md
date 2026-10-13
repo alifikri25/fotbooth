@@ -1,76 +1,71 @@
 # Fotbooth
 
-Photobooth web berbahasa Indonesia dengan **60 frame**, kamera, unggah foto, editor crop dan unduhan PNG/JPEG. Foto dan caption diproses di browser serta hanya berada di memori tab.
+Photobooth web berbahasa Indonesia dengan **80 frame**, kamera, unggah foto, editor crop, **12 pilihan efek foto** termasuk Original, **16 efek AR** dan unduhan PNG/JPEG. Mode solo memproses foto dan caption secara lokal di browser. Mode room membagikan kamera dan foto kepada peserta melalui koneksi langsung atau relay sementara, tanpa penyimpanan foto server.
 
-**Situs publik:** [fotbooth.pages.dev](https://fotbooth.pages.dev), diterbitkan 7 Oktober 2026.
+Situs publik: [fotbooth.pages.dev](https://fotbooth.pages.dev).
 
-Katalog tetap **60 frame**: 18 desain unggulan versi 3 tampil pertama, sementara 42 edisi lainnya memakai versi 2 bergaya cetakan kertas. Sepuluh edisi baru: Rose Ribbon Salon, Azure Riviera, Denim Bloom Studio, Lilac Conservatory, Cherry Velvet Club, Citrus Sunset, Café Lumière, Emerald Herbarium, Champagne Countdown dan Monet Garden Party. Mereka melengkapi delapan desain unggulan sebelumnya. Semua thumbnail galeri memakai **area foto netral tanpa orang**; foto pengguna diisi ketika membuat hasil. Ada pencarian nama/deskripsi serta filter kategori, koleksi, format dan jumlah foto.
+## Foto Bareng Online
 
-![Sepuluh edisi unggulan baru, tanpa contoh orang](docs/qa/signature-encore-board.png)
+Foto Bareng Online dengan koleksi frame sudah diterbitkan di [situs utama](https://fotbooth.pages.dev) pada **13 Oktober 2026**, atas persetujuan pengguna untuk pengujian HP fisik. Deployment produksi: [b88cf128](https://b88cf128.fotbooth.pages.dev); [pratinjau yang diperiksa](https://e2e8f932.fotbooth.pages.dev) tetap tersedia. [Panduan room](docs/ONLINE-ROOMS.md), [bukti pemeriksaan](docs/qa/online-room-catalog-release-20261013.json).
+
+Fitur room privat menghubungkan dua kamera, memisahkan latar secara lokal, lalu menempatkan kedua peserta berdampingan dalam frame pilihan. Seluruh **80 frame koleksi yang sudah tersedia** dapat dipakai, bersama tiga frame khusus room: Satu Tempat, Surat Rindu, dan Night Date. Frame dengan 2–4 slot mengambil 2–4 pose bersama; setiap slot berisi foto berdua yang baru. Pembuat room membagikan undangan, keduanya menandai siap sekali, lalu hitung mundur setiap pose berlangsung otomatis. Tiga latar bersama tersedia.
+
+Room memakai coordinator online dan WebRTC, dengan relay sementara saat sambungan langsung tidak tersedia. Host menghasilkan PNG sekali dan mengirim file yang sama kepada peserta lainnya. Hasil selesai tetap dapat diunduh ketika pasangan keluar atau koneksi terputus; foto ulang menghapus hasil lama dan dapat diteruskan setelah reconnect. Kamera/foto dibagikan kepada peserta room; server tidak menyimpan foto. Mode solo tetap lokal. Lihat [cara menjalankan, privasi dan batas koneksi](docs/ONLINE-ROOMS.md).
+
+Pemeriksaan ulang situs produksi: **16 tes room lulus, 12 skip terkait fixture WebKit, tanpa gagal/flaky**; unduhan empat pose identik melalui koneksi langsung maupun relay, termasuk foto ulang dan pemulihan koneksi. Empat smoke HTTPS solo/AR Chromium dan WebKit juga lulus. Seluruh 729 file yang dilayani produksi cocok dengan kandidat build; 146 unit test, TypeScript dan build lulus. [Audit kelanjutan](docs/qa/online-room-continuation-audit-20261013.json). Kamera dan HP fisik belum tercakup dalam bukti otomatis.
+
+Dua puluh **Festival Editions** memperluas 60 frame sebelumnya: Night Market, Aquarium Parade, Pit Lane, Circus Cabinet, Street Scramble, Ramen Social, Stellar Atlas, Safari Stamps, Sugar Arcade, Pinball Fever, Mixtape Motel, Skate Zine, Comic Bureau, Desert Bazaar, Jungle Jam, Snow Globe Club, Pirate Radio, Bakery Confetti, Dragon Lantern, dan Neon District. Tema memakai 20 material ImageGen terpisah, dengan kolase kertas yang ramai, rim dan label native serta layout strip/kartu untuk 2–4 foto. Frame lama dan aset versinya tetap tersedia.
+
+![Dua puluh frame baru, dengan area foto kosong](docs/qa/festival-design-board.png)
+
+Galeri selalu menampilkan area foto netral tanpa contoh orang. Pencarian tersedia berdasarkan nama/deskripsi, dengan filter kategori, koleksi, format dan jumlah foto. Pilih koleksi **Festival Editions** untuk melihat semua tambahan.
+
+## Efek foto
+
+Original, Hitam putih, Sepia, Vintage, Warm, Cool, Vivid, Soft, Noir, Faded, Rose dan Cinema. Pilih sebelum memotret untuk melihat efek pada kamera, atau sesudahnya per slot di editor. Intensitas 0–100%. Efek mengikuti foto saat ditukar atau frame diganti, mendukung undo/redo, dan ikut dirender ke PNG/JPEG. Foto asli tetap tersedia selama sesi, sehingga efek dapat dihapus tanpa mengambil foto ulang.
+
+Preview kamera memakai CSS; hasil komposisi memakai operasi piksel pada permukaan foto terpisah agar bekerja di Chromium/WebKit tanpa bergantung pada dukungan canvas.filter. Dekorasi, caption dan area kosong tidak ikut diberi efek.
+
+## AR playground
+
+Pilih AR di layar kamera: Kitty Club, Bunny Pop, Teddy Mood, Disco Glasses, Golden Crown, Ribbon Crush, Party Time, Peach Freckles, Heart Orbit, Butterfly Halo, Smile Confetti, Comic Boom, Peach Studio, Aqua World, Neon City dan Neon Silhouette. Aksesori mengikuti posisi/sudut hingga dua wajah; reaksi menggunakan ekspresi senyum/mulut. Tiga latar virtual dan siluet memakai mask orang.
+
+Foto asli dan snapshot AR disimpan terpisah. Checkbox **Tampilkan AR pada foto ini** di editor memulihkan foto asli; mendukung undo/redo. AR mengikuti mirror, crop dan putaran serta masuk ke hasil PNG/JPEG bersama efek warna. Animasi dibekukan saat shutter pada frame foto yang sama. Sisakan ruang di atas kepala agar aksesori masuk dalam panduan slot.
+
+Model/WASM dimuat dari situs sendiri hanya setelah AR dipilih. Inferensi 640px, pratinjau maksimal 10Hz; worker di browser yang mendukung WebGL OffscreenCanvas, jalur utama terbatas di Safari lama. Keluar kamera, tab tersembunyi atau Tanpa AR menghentikan runtime. Jika model gagal, coba ulang atau lanjut memotret tanpa AR. Lihat [rincian dan batas AR](docs/AR-OPTIONS.md), [provenance model](artwork/provenance/ar-runtime-20261007.json).
 
 ## Jalankan
 
-Gunakan Node 24.14.1 sesuai `.node-version`; lockfile disertakan.
-
-```powershell
-npm ci
-npm run dev
-```
+Gunakan Node 24.14.1 sesuai .node-version. Jalankan npm ci lalu npm run dev.
 
 Buka http://127.0.0.1:5173/. Kamera memerlukan localhost atau HTTPS. Unggah tersedia ketika kamera ditolak.
 
 ## Pemeriksaan
 
-```powershell
-npm run check
-npx playwright install chromium webkit
-npm run test:e2e
-```
+Jalankan npm run check, npx playwright install chromium webkit dan npm run test:e2e. Playwright menyalakan Vite dan coordinator room lokal, lalu menghentikan server yang dimulainya setelah tes selesai.
 
-Unit tests memeriksa katalog, geometri, file foto, sesi, crop, teks dan ekspor. Suite browser memuat semua 60 thumbnail/layer, memeriksa interior foto, membuka kembali PNG/JPEG standar/ringan, menguji pencarian, kamera sintetis, editor, keyboard, viewport dan privasi jaringan. Chromium/WebKit otomatis di komputer belum menggantikan pengujian HP/kamera nyata.
+Unit tests memeriksa katalog, geometri, file foto, sesi, history, crop, teks, efek dan ekspor. Suite browser memeriksa seluruh thumbnail/layer, interior foto, PNG/JPEG standar/ringan, pencarian, kamera sintetis, editor, efek, AR dengan model nyata, keyboard, viewport dan privasi jaringan. Pengujian Chromium/WebKit otomatis belum menggantikan HP dan kamera fisik.
 
-Revisi 7 Oktober 2026 sudah publik. **46 unit test dan build lulus; 63 browser test lulus, 3 skip kamera sintetis WebKit.** Setelah penyempurnaan kontras tulisan, enam pemeriksaan katalog/render ulang lulus. Pratinjau dan produksi HTTPS lulus pada Chromium desktop/WebKit 360 px: 60 thumbnail, 180 URL aset, unggah, caption, header keamanan serta 36 unduhan PNG/JPEG untuk seluruh 18 desain unggulan pada setiap engine. Piksel area foto seluruh 60 thumbnail produksi diperiksa pada kedua engine: netral dan tanpa request foto contoh model. Kamera dan tombol tetap terlihat bersamaan pada enam ukuran layar. Kamera fisik dan HP nyata belum diuji. [Bukti revisi](docs/qa/encore-release-20261007.json).
+Suite lengkap setelah perbaikan coordinator: **120 lulus, 24 skip, 0 gagal/flaky** pada Chromium/WebKit. Kedua server pengujian berhenti setelah run. [Laporan lengkap](docs/qa/online-room-continuation-local-20261013.json).
 
 ## Cloudflare Pages
 
-Repo public: [alifikri25/fotbooth](https://github.com/alifikri25/fotbooth).
+Repo public: [alifikri25/fotbooth](https://github.com/alifikri25/fotbooth). Project fotbooth memakai Direct Upload, production branch main, build npm run build, output dist. Push GitHub belum otomatis menerbitkan revisi.
 
-Project `fotbooth` sudah aktif dengan **Direct Upload**, production branch `main`, build `npm run build`, output `dist`. Alamat publik: https://fotbooth.pages.dev. Custom domain belum dipasang. `wrangler.jsonc`, script deploy dan header keamanan tersedia.
+Setelah pemeriksaan lokal, jalankan npm run deploy:preview, periksa preview HTTPS, lalu npm run deploy:cloudflare.
 
-Ikuti [panduan Cloudflare](docs/DEPLOY-CLOUDFLARE.md). Untuk revisi berikutnya, setelah pemeriksaan lokal lulus:
+[Panduan Cloudflare](docs/DEPLOY-CLOUDFLARE.md), [rilis dan rollback](docs/RELEASE.md). Jangan commit .env, token, atau konfigurasi login.
 
-```powershell
-npm run deploy:preview
-# Periksa URL preview HTTPS sebelum menerbitkan revisi:
-npm run deploy:cloudflare
-```
+## Artwork
 
-GitHub Actions menjalankan pemeriksaan pada push/PR; push GitHub belum otomatis menerbitkan revisi. Publikasi memakai script di atas dengan login Cloudflare pengguna. Jangan commit `.env`, API token atau konfigurasi login pengguna.
+[Registry 80 frame](docs/FRAME-REGISTRY.md), [provenance artwork](artwork/README.md), [board Festival Editions](docs/qa/festival-design-board.png), [contact sheet](docs/qa/frame-contact-sheet.png).
 
-## Artwork dan dokumentasi
+Regenerasi: npm run assets:build, npm run qa:frames dengan dev server aktif, lalu node scripts/write-registry.mjs.
 
-Komposisi dekorasi dibuat sebagai artwork SVG orisinal dengan 14 bahan raster hasil tool imagegen bawaan, termasuk sepuluh bahan baru untuk revisi ini. [Gambar asli, jalur aset dan prompt](artwork/README.md) disimpan dalam repo. Tiga foto contoh model fiktif dari rilis sebelumnya dipertahankan sebagai aset lama; galeri saat ini tidak memuatnya. Screenshot Canva dari pengguna menjadi referensi arah gaya. Tidak ada file template atau foto referensi yang diimpor. Font DM Sans dan Fraunces dilayani secara lokal, dengan lisensi SIL OFL disertakan.
-
-- [Registry 60 frame](docs/FRAME-REGISTRY.md)
-- [Sepuluh desain unggulan baru](docs/qa/signature-encore-board.png)
-- [Delapan desain unggulan](docs/qa/signature-design-board.png)
-- [Contact sheet lengkap](docs/qa/frame-contact-sheet.png)
-- [Laporan QA](docs/QA.md)
-- [Rencana 60 frame](docs/superpowers/plans/2026-10-06-60-decorated-frames.md)
-- [Rilis dan rollback](docs/RELEASE.md)
-
-```powershell
-npm run assets:build
-# Dengan dev server aktif:
-npm run qa:frames
-npm run qa:ui
-node scripts/write-registry.mjs
-```
-
-Generator thumbnail memakai renderer aplikasi dan sesi foto kosong, dengan batch terbatas. `public/frames/{id}/v3` menyimpan 18 paket unggulan; 42 lainnya tetap aktif pada `v2`. Galeri memakai `thumbnail-neutral.png`; semua `thumbnail.png`, layer `v1`/`v2` dan delapan paket `v3` sebelumnya tetap tersedia untuk sesi yang sudah terbuka. Source manifest berada di `src/frames/manifests`. Board pilihan dan contact sheet disertakan dalam repository; ekspor QA penuh dan arsip lokal tidak ikut Git.
+Material signature sebelumnya tetap ada. Thumbnail lama dan paket v1/v2/v3 dipertahankan. Source manifest berada di src/frames/manifests; source definisi baru di src/frames/maximalist.ts. Semua bahan web berada di repository dan tidak memerlukan panggilan ImageGen saat runtime.
 
 ## Batas dukungan
 
-Input: JPG, PNG, WebP diam; maksimal 20 MB, 24 MP per foto dan 8 foto per sesi. Caption maksimal 40 grapheme, history 30 langkah. HEIC, SVG upload, animasi dan URL foto bebas tidak diterima. Akun, draft tersimpan, filter foto, share dan frame builder belum tersedia.
+Input: JPG, PNG, WebP diam; maksimal 20 MB, 24 MP per foto dan 8 foto per sesi. Caption maksimal 40 grapheme; history 30 langkah. HEIC, SVG upload, animasi dan URL foto bebas tidak diterima. Akun, draft tersimpan, share dan frame builder belum tersedia. Menutup atau memuat ulang tab mengakhiri sesi.
 
-Strip standar: 1200×3600; kartu: 1800×2700. Ukuran ringan tepat setengah. Menutup atau memuat ulang tab mengakhiri sesi.
+Strip standar: 1200×3600; kartu: 1800×2700. Ukuran ringan tepat setengah.

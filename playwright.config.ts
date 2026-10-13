@@ -10,9 +10,16 @@ export default defineConfig({
     { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
     { name: 'webkit', use: { ...devices['Desktop Safari'] } },
   ],
-  webServer: {
-    command: 'npm run dev',
-    url: 'http://127.0.0.1:5173/tests/harness.html',
-    reuseExistingServer: true,
-  },
+  webServer: [
+    {
+      command: 'npm run rooms:dev',
+      url: 'http://127.0.0.1:8787',
+      reuseExistingServer: true,
+    },
+    {
+      command: 'npm run dev',
+      url: 'http://127.0.0.1:5173/tests/harness.html',
+      reuseExistingServer: true,
+    },
+  ],
 });

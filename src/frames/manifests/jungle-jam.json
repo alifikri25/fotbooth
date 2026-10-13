@@ -1,0 +1,124 @@
+{
+  "id": "jungle-jam",
+  "name": "Jungle Jam",
+  "version": 1,
+  "format": "card",
+  "categories": [
+    "nature",
+    "dynamic",
+    "scrapbook"
+  ],
+  "designWidth": 1800,
+  "designHeight": 2700,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.08,
+      "y": 0.13,
+      "w": 0.4,
+      "h": 0.35,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.52,
+      "y": 0.13,
+      "w": 0.4,
+      "h": 0.35,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.08,
+      "y": 0.51,
+      "w": 0.4,
+      "h": 0.35,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p4",
+      "order": 4,
+      "x": 0.52,
+      "y": 0.51,
+      "w": 0.4,
+      "h": 0.35,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Monstera, toucan, katak pohon, hibiscus dan motif harimau.",
+  "palette": {
+    "background": "#235d3d",
+    "ink": "#f7f4c8",
+    "accent": "#f58b48",
+    "secondary": "#db6494"
+  },
+  "layers": {
+    "background": "/frames/jungle-jam/v1/background.svg",
+    "foreground": "/frames/jungle-jam/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/jungle-jam/v1/thumbnail-neutral.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1.",
+    "Original material artwork generated for Fotbooth with the built-in ImageGen tool."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "JUNGLE JAM",
+      "x": 0.07,
+      "y": 0.024,
+      "w": 0.86,
+      "h": 0.043,
+      "fontId": "sans",
+      "fontSize": 100,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#f7f4c8"
+    },
+    {
+      "id": "caption",
+      "x": 0.12,
+      "y": 0.894,
+      "w": 0.76,
+      "h": 0.05,
+      "fontId": "sans",
+      "fontSize": 61,
+      "minFontSize": 32,
+      "maxLines": 2,
+      "color": "#235d3d"
+    },
+    {
+      "id": "date",
+      "x": 0.2,
+      "y": 0.965,
+      "w": 0.6,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 32,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#f7f4c8"
+    }
+  ],
+  "collection": "Festival Editions",
+  "artwork": {
+    "motif": "jungle-jam",
+    "edition": 1
+  }
+}

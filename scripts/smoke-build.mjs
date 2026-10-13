@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { chromium, webkit, expect } from '@playwright/test';
 import { definitions } from '../src/frames/definitions.ts';
 
@@ -18,13 +19,14 @@ try {
     if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`);
   });
   const response = await page.goto(baseURL);
+  expect((await response.body()).equals(await fs.readFile('dist/index.html'))).toBe(true);
   const headers = response.headers();
   expect(headers['content-security-policy']).toContain("default-src 'self'");
   expect(headers['permissions-policy']).toBe('camera=(self), microphone=()');
   expect(headers['x-content-type-options']).toBe('nosniff');
-  await expect(page.getByText('60 frame orisinal', { exact: true })).toBeVisible();
+  await expect(page.getByText('80 frame orisinal', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Mulai bikin foto' }).click();
-  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(60);
+  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(80);
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(
     viewport.width,
   );
@@ -37,12 +39,16 @@ try {
     );
     return images.map((image) => image.naturalWidth);
   });
-  expect(thumbs).toHaveLength(60);
+  expect(thumbs).toHaveLength(80);
   expect(thumbs.every((width) => width >= 200)).toBe(true);
+  const assetParity=[];
   for (const frame of definitions) {
     for (const asset of [frame.layers.background, frame.layers.foreground, frame.thumbnail]) {
       const assetResponse = await page.request.get(`${baseURL}${asset}`);
       expect(assetResponse.status(), asset).toBe(200);
+      const bytes=await assetResponse.body();
+      expect(bytes.equals(await fs.readFile(`dist${asset}`)),asset).toBe(true);
+      assetParity.push({asset,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')});
     }
   }
   await page.getByLabel('Cari frame').fill('ribbon diary');
@@ -71,6 +77,8 @@ try {
     viewport.width,
   );
   await page.getByLabel('Caption').fill('frame baru, cerita baru');
+  await page.getByRole('button', { name: 'Efek Hitam putih', exact: true }).click();
+  await expect(page.getByRole('button', { name: 'Efek Hitam putih', exact: true })).toHaveAttribute('aria-pressed', 'true');
   await page.getByRole('button', { name: 'Lihat hasil' }).click();
   const exports = [];
   await page.getByLabel('Ukuran hasil').selectOption('light');
@@ -81,19 +89,27 @@ try {
     const download = await pendingDownload;
     expect(await download.failure()).toBeNull();
     const bytes = await fs.readFile(await download.path());
-    const dimensions = await page.evaluate(
+    const decoded = await page.evaluate(
       async ({ data, mime }) => {
         const bitmap = await createImageBitmap(
           new Blob([Uint8Array.from(atob(data), (char) => char.charCodeAt(0))], { type: mime }),
         );
-        const result = [bitmap.width, bitmap.height];
+        const canvas=document.createElement('canvas');
+        canvas.width=bitmap.width; canvas.height=bitmap.height;
+        const ctx=canvas.getContext('2d'); ctx.drawImage(bitmap,0,0);
+        const result = {
+          dimensions: [bitmap.width, bitmap.height],
+          photoPixel: Array.from(ctx.getImageData(Math.floor(bitmap.width*.5), Math.floor(bitmap.height*.2675),1,1).data),
+        };
         bitmap.close();
         return result;
       },
       { data: bytes.toString('base64'), mime: format === 'png' ? 'image/png' : 'image/jpeg' },
     );
-    expect(dimensions).toEqual([600, 1800]);
-    exports.push({ format, dimensions, bytes: bytes.length });
+    expect(decoded.dimensions).toEqual([600, 1800]);
+    expect(Math.abs(decoded.photoPixel[0]-decoded.photoPixel[1])).toBeLessThanOrEqual(2);
+    expect(Math.abs(decoded.photoPixel[1]-decoded.photoPixel[2])).toBeLessThanOrEqual(2);
+    exports.push({ format, ...decoded, bytes: bytes.length });
   }
   expect(errors).toEqual([]);
   await fs.writeFile(
@@ -104,19 +120,21 @@ try {
         baseURL,
         browser: browserName,
         viewport,
-        frames: 60,
+        frames: 80,
         thumbnailCount: thumbs.length,
+        assetsMatchedToBuild: assetParity.length,
+        assetParity,
         headers,
         exports,
         errors,
-        scope: `${isRemote ? 'Cloudflare Pages HTTPS deployment' : 'Cloudflare Pages local runtime'}: built app, all 180 layer/thumbnail URLs, search, upload, caption, result and decoded PNG/JPEG downloads. Physical cameras and phones are not covered.`,
+        scope: `${isRemote ? 'Cloudflare Pages HTTPS deployment' : 'Cloudflare Pages local runtime'}: built app, all 240 layer/thumbnail URLs, search, upload, caption, photo effects, result and decoded PNG/JPEG pixels. Physical cameras and phones are not covered.`,
       },
       null,
       2,
     ) + '\n',
   );
   console.log(
-    `Cloudflare Pages ${isRemote ? 'HTTPS' : 'local'} smoke passed: 60 thumbnails, 180 frame assets, security headers and upload/PNG/JPEG download flow.`,
+    `Cloudflare Pages ${isRemote ? 'HTTPS' : 'local'} smoke passed: 80 thumbnails, 240 frame assets, security headers and upload/PNG/JPEG download flow.`,
   );
 } finally {
   await browser.close();

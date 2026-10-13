@@ -190,7 +190,7 @@ test('asymmetric grid photos keep preview/export geometry through rotation, mirr
     landmarkSmall.close();
     return values;
   });
-  expect(results).toHaveLength(60);
+  expect(results).toHaveLength(80);
   await fs.writeFile(
     `docs/qa/geometry-${browserName}.json`,
     JSON.stringify(

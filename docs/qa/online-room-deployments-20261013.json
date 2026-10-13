@@ -1,0 +1,21 @@
+{
+  "verifiedAt": "2026-10-12T22:33:24.8351530Z",
+  "preview": {
+    "Id": "0b4def98-7f5d-4621-874f-a0244fe2c56a",
+    "Environment": "Preview",
+    "Branch": "preview",
+    "Source": "1fd8259",
+    "Deployment": "https://0b4def98.fotbooth.pages.dev",
+    "Status": "41 seconds ago",
+    "Build": "https://dash.cloudflare.com/4c7aeb285b81261a207b01dc16c883d3/pages/view/fotbooth/0b4def98-7f5d-4621-874f-a0244fe2c56a"
+  },
+  "currentProduction": {
+    "Id": "4d1cfcae-ee85-40cf-b513-74b5b4eb1445",
+    "Environment": "Production",
+    "Branch": "main",
+    "Source": "1fd8259",
+    "Deployment": "https://4d1cfcae.fotbooth.pages.dev",
+    "Status": "5 days ago",
+    "Build": "https://dash.cloudflare.com/4c7aeb285b81261a207b01dc16c883d3/pages/view/fotbooth/4d1cfcae-ee85-40cf-b513-74b5b4eb1445"
+  }
+}

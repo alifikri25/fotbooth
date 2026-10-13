@@ -12,9 +12,12 @@ export class PhotoRegistry {
   }
   preview = async (id: string): Promise<PhotoSource> => {
     const p = this.get(id);
-    return { image: p.preview, width: p.width, height: p.height };
+    return { image: p.preview, width: p.width, height: p.height, ar: p.ar };
   };
-  full = async (id: string): Promise<PhotoSource> => decodeSource(this.get(id).blob);
+  full = async (id: string): Promise<PhotoSource> => {
+    const photo = this.get(id);
+    return { ...(await decodeSource(photo.blob)), ar: photo.ar };
+  };
   dispose(photo: PhotoAsset) {
     URL.revokeObjectURL(photo.thumbnailUrl);
     if ('close' in photo.preview) photo.preview.close();

@@ -1,0 +1,191 @@
+{
+  "date": "2026-10-13",
+  "verifiedAt": "2026-10-12T22:36:31.719Z",
+  "status": "verified-preview-awaiting-production-review",
+  "source": {
+    "baseCommit": "1fd82596fcffe5e91b74b30241b5d29eb087e9f1",
+    "changes": "Preserved local uncommitted Festival Editions, photo effects, AR and online room implementation; no commit or GitHub push."
+  },
+  "preview": {
+    "id": "0b4def98-7f5d-4621-874f-a0244fe2c56a",
+    "url": "https://0b4def98.fotbooth.pages.dev",
+    "alias": "https://preview.fotbooth.pages.dev"
+  },
+  "currentProduction": {
+    "id": "4d1cfcae-ee85-40cf-b513-74b5b4eb1445",
+    "url": "https://fotbooth.pages.dev",
+    "deploymentURL": "https://4d1cfcae.fotbooth.pages.dev",
+    "changedByThisPreview": false
+  },
+  "rollbackTarget": "4d1cfcae-ee85-40cf-b513-74b5b4eb1445",
+  "backend": {
+    "url": "https://fotbooth-rooms.aliifikriii25.workers.dev",
+    "version": "bf194d29-3099-44cf-ac9c-6cc2483f7627",
+    "deployedInThisContinuation": false,
+    "paidTurnEnabled": false,
+    "relayPhotoPersistence": false
+  },
+  "features": {
+    "soloFrames": 80,
+    "photoChoicesIncludingOriginal": 12,
+    "arEffects": 16,
+    "roomFrames": [
+      "Satu Tempat",
+      "Surat Rindu",
+      "Night Date"
+    ],
+    "roomScenes": 3,
+    "privateParticipants": 2,
+    "canonicalHostPNG": true,
+    "completedDownloadRetention": true,
+    "reconnectAndOfflineRetake": true
+  },
+  "candidate": {
+    "archive": "C:\\fotbooth\\docs\\qa\\fotbooth-online-room-candidate-20261013.zip",
+    "sha256": "d769923eddda4180cc5f8de623378471ae478b6093faf303433c34017f1aa93a",
+    "files": 730,
+    "verifiedArchiveEntries": 730,
+    "finalDistHashRecheck": true,
+    "manifest": "docs/qa/online-room-candidate-manifest-20261013.json",
+    "uploadedWithoutRebuild": true
+  },
+  "verification": {
+    "unitTests": 127,
+    "unitFiles": 17,
+    "build": "passed",
+    "fullBrowserSuite": {
+      "verifiedAt": "2026-10-12T22:32:29.378Z",
+      "command": "npx playwright test --project=chromium --project=webkit --reporter=list,json --output=test-results/online-room-final",
+      "startTime": "2026-10-12T22:25:27.900Z",
+      "duration": 408957.63700000005,
+      "expected": 93,
+      "skipped": 17,
+      "unexpected": 0,
+      "flaky": 0,
+      "source": "Final frozen local source and built assets",
+      "physicalCameras": false,
+      "notes": [
+        "17 skips cover Windows WebKit synthetic-camera/WebRTC limitations and duplicate cross-engine project runs. Mixed Chromium/WebKit relay is executed inside the Chromium project."
+      ]
+    },
+    "httpsRoomSuite": {
+      "startTime": "2026-10-12T22:33:59.165Z",
+      "duration": 91281.23599999999,
+      "expected": 4,
+      "skipped": 2,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "coordinatorHTTPAndWebSockets": {
+      "local": "passed",
+      "remote": "passed",
+      "command": "node worker/verify-local.mjs",
+      "remoteSQLiteInspection": false
+    },
+    "independentReview": "No remaining actionable defects after offline-retake correction",
+    "whitespace": "passed"
+  },
+  "https": {
+    "direct": {
+      "verifiedAt": "2026-10-12T22:34:23.388Z",
+      "site": "https://0b4def98.fotbooth.pages.dev",
+      "transport": "direct",
+      "syntheticCameras": true,
+      "result": {
+        "bytes": 1341487,
+        "hash": "3fb009ef5b9b189fb6f90dd7ca4616ef120e87aa2adc480034e02dd2ed270040"
+      },
+      "identicalResult": true,
+      "mobileWidth": 390,
+      "retake": true,
+      "offlineRetakeAndRecapture": true,
+      "disconnect": true,
+      "downloadAfterPartnerLeft": true,
+      "resultAfterPartnerRejoined": true,
+      "downloadAfterCameraEnded": true,
+      "downloadAfterServerDisconnected": true
+    },
+    "relay": {
+      "verifiedAt": "2026-10-12T22:35:27.385Z",
+      "site": "https://0b4def98.fotbooth.pages.dev",
+      "transport": "relay",
+      "syntheticCameras": true,
+      "result": {
+        "bytes": 1341487,
+        "hash": "3fb009ef5b9b189fb6f90dd7ca4616ef120e87aa2adc480034e02dd2ed270040"
+      },
+      "identicalResult": true,
+      "mobileWidth": 390,
+      "retake": true,
+      "offlineRetakeAndRecapture": true,
+      "disconnect": true,
+      "downloadAfterPartnerLeft": true,
+      "resultAfterPartnerRejoined": true,
+      "downloadAfterCameraEnded": true,
+      "downloadAfterServerDisconnected": true
+    },
+    "smokes": {
+      "chromium-smoke": {
+        "report": "docs/qa/online-room-preview-chromium-smoke.json",
+        "exitCode": 0,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "assets": 240,
+        "exports": 2
+      },
+      "webkit-smoke": {
+        "report": "docs/qa/online-room-preview-webkit-smoke.json",
+        "exitCode": 0,
+        "viewport": {
+          "width": 360,
+          "height": 900
+        },
+        "assets": 240,
+        "exports": 2
+      },
+      "chromium-ar": {
+        "report": "docs/qa/online-room-preview-chromium-ar.json",
+        "exitCode": 0,
+        "viewport": {
+          "width": 390,
+          "height": 800
+        },
+        "assets": 4,
+        "effects": 16,
+        "exports": 2
+      },
+      "webkit-ar": {
+        "report": "docs/qa/online-room-preview-webkit-ar.json",
+        "exitCode": 0,
+        "viewport": {
+          "width": 390,
+          "height": 800
+        },
+        "assets": 4,
+        "effects": 0,
+        "exports": 0
+      }
+    }
+  },
+  "crossEngine": {
+    "report": "docs/qa/online-room-canonical-remote-relay-verification.json",
+    "scope": "Local production modules with the real HTTPS/WSS coordinator; Chromium host to WebKit guest, pre-encoded portraits, no camera",
+    "identicalDownloadBytes": true,
+    "bytes": 302797,
+    "sha256": "8cc7d6032a4d797392b6d91612b833d452146ee305e246437854fb5b42c72312"
+  },
+  "screenshots": {
+    "desktop": "docs/qa/online-room-direct-desktop.png",
+    "mobile": "docs/qa/online-room-direct-mobile.png",
+    "scope": "HTTPS preview, synthetic portraits, desktop and 390px viewport inspected"
+  },
+  "testCorrection": "Initial HTTPS UI check reached both results but QA fetch(blob:) was blocked by the existing CSP. Test now hashes actual downloaded files; final HTTPS rerun passes without changing the build or CSP.",
+  "limitations": [
+    "Physical Chrome Android/Safari iOS cameras and networks remain untested.",
+    "Windows Playwright WebKit lacks RTCPeerConnection, MediaStream and canvas.captureStream; mixed-engine relay uses pre-encoded portraits.",
+    "AR smoke reports retain the script legacy date 2026-10-07; actual runs were 2026-10-13 Asia/Bangkok at 390x800.",
+    "No rollback exercise or production publication was performed in this continuation."
+  ]
+}

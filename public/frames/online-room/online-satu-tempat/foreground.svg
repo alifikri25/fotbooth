@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1350" viewBox="0 0 1800 1350">
+  <defs><path id="heart" d="M0 20C-55-20-40-65 0-40C40-65 55-20 0 20Z" /></defs>
+  <rect
+    x="33"
+    y="33"
+    width="1734"
+    height="1284"
+    rx="23"
+    fill="none"
+    stroke="#dfcbb5"
+    stroke-width="2"
+  />
+  <rect
+    x="81"
+    y="81"
+    width="1638"
+    height="972"
+    rx="16"
+    fill="none"
+    stroke="#b99885"
+    stroke-width="3"
+  />
+  <g fill="#997165" font-family="sans-serif" font-size="18" letter-spacing="5">
+    <text x="84" y="61">FOTOBOOTH / FOTO BARENG</text>
+    <text x="1715" y="61" text-anchor="end">01 — TOGETHER</text>
+  </g>
+  <text
+    x="88"
+    y="1180"
+    font-family="Georgia,serif"
+    font-size="86"
+    font-style="italic"
+    fill="#653e38"
+  >
+    Satu tempat.
+  </text>
+  <text x="92" y="1238" font-family="sans-serif" font-size="25" letter-spacing="3" fill="#997165">
+    JARAK BOLEH JAUH, MOMEN TETAP SATU.
+  </text>
+  <g transform="translate(1510 1167) rotate(-12)">
+    <circle r="91" fill="none" stroke="#b95657" stroke-width="3" />
+    <circle r="80" fill="none" stroke="#b95657" stroke-width="1" stroke-dasharray="3 7" />
+    <use href="#heart" fill="#b95657" transform="translate(0 10) scale(.85)" />
+    <text
+      y="58"
+      text-anchor="middle"
+      font-family="sans-serif"
+      font-size="16"
+      letter-spacing="4"
+      fill="#b95657"
+    >
+      BERDUA
+    </text>
+  </g>
+  <path d="M1090 1212c63-53 130-42 191-72" fill="none" stroke="#bd9887" stroke-width="2" />
+  <use href="#heart" fill="#d8aaa1" transform="translate(1285 1138) rotate(18) scale(.26)" />
+</svg>

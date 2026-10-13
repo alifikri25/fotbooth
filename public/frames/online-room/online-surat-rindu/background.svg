@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1350" viewBox="0 0 1800 1350">
+  <rect width="1800" height="1350" fill="#fff4e7" />
+  <rect x="67" y="67" width="1666" height="1000" rx="22" fill="#e5cdbb" />
+  <path
+    d="M1000 1100v170M1040 1180h320M1040 1234h230"
+    fill="none"
+    stroke="#ddbea7"
+    stroke-width="2"
+  />
+  <path
+    d="M1610 38l22 10-22 10 22 10M1574 38l22 10-22 10 22 10"
+    fill="none"
+    stroke="#dfc4ae"
+    stroke-width="3"
+  />
+</svg>

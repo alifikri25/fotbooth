@@ -1,0 +1,35 @@
+{
+  "created": "2026-10-07",
+  "package": "@mediapipe/tasks-vision",
+  "version": "1.1.0",
+  "sdkLicense": "Apache-2.0",
+  "licenseSource": "https://github.com/google-ai-edge/mediapipe/blob/master/LICENSE",
+  "faceModelCard": "https://storage.googleapis.com/mediapipe-assets/Model%20Card%20MediaPipe%20Face%20Mesh%20V2.pdf",
+  "personModelCard": "https://storage.googleapis.com/mediapipe-assets/Model%20Card%20MediaPipe%20Selfie%20Segmentation.pdf",
+  "files": [
+    {
+      "file": "public/ar/face_landmarker-v1.task",
+      "url": "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task",
+      "bytes": 3758596,
+      "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff"
+    },
+    {
+      "file": "public/ar/selfie_segmenter-v1.tflite",
+      "url": "https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_segmenter/float16/1/selfie_segmenter.tflite",
+      "bytes": 249537,
+      "sha256": "191ac9529ae506ee0beefa6b2c945a172dab9d07d1e802a290a4e4038226658b"
+    },
+    {
+      "file": "public/ar/mediapipe-1.1.0/vision_wasm_module_internal.js",
+      "packageFile": "node_modules/@mediapipe/tasks-vision/wasm/vision_wasm_module_internal.js",
+      "bytes": 335431,
+      "sha256": "70eff3956521b7de058d7173a4935c95e4a223c26ea624b9f5a936d3a043dcb0"
+    },
+    {
+      "file": "public/ar/mediapipe-1.1.0/vision_wasm_module_internal.wasm",
+      "packageFile": "node_modules/@mediapipe/tasks-vision/wasm/vision_wasm_module_internal.wasm",
+      "bytes": 12997272,
+      "sha256": "ee03b14a878e6c3c053a1bfa62e166dc45244be54dc0bbe61c578f710b771f6a"
+    }
+  ]
+}

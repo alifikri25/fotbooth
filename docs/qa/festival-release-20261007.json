@@ -1,0 +1,395 @@
+{
+  "date": "2026-10-07",
+  "timezone": "Asia/Bangkok",
+  "verifiedAt": "2026-10-07T09:29:11.093Z",
+  "publicURL": "https://fotbooth.pages.dev",
+  "productionDeployment": "29a7c0bf-41d5-4ebf-8a6c-bb0953b995c6",
+  "previewDeployment": "3c400bbd-0552-4591-a732-20b4b833836a",
+  "previousProduction": "16d4bffa-5e83-48dc-893a-94e38782559e",
+  "sourceBaseCommit": "1fd82596fcffe5e91b74b30241b5d29eb087e9f1",
+  "sourceWorkingTreeHasChanges": true,
+  "catalog": {
+    "count": 80,
+    "newFrames": [
+      {
+        "id": "night-market",
+        "name": "Night Market",
+        "version": 1,
+        "format": "strip",
+        "photoCount": 3
+      },
+      {
+        "id": "aquarium-parade",
+        "name": "Aquarium Parade",
+        "version": 1,
+        "format": "card",
+        "photoCount": 2
+      },
+      {
+        "id": "pit-lane",
+        "name": "Pit Lane",
+        "version": 1,
+        "format": "strip",
+        "photoCount": 4
+      },
+      {
+        "id": "circus-cabinet",
+        "name": "Circus Cabinet",
+        "version": 1,
+        "format": "card",
+        "photoCount": 3
+      },
+      {
+        "id": "street-scramble",
+        "name": "Street Scramble",
+        "version": 1,
+        "format": "card",
+        "photoCount": 4
+      },
+      {
+        "id": "ramen-social",
+        "name": "Ramen Social",
+        "version": 1,
+        "format": "strip",
+        "photoCount": 3
+      },
+      {
+        "id": "stellar-atlas",
+        "name": "Stellar Atlas",
+        "version": 1,
+        "format": "card",
+        "photoCount": 2
+      },
+      {
+        "id": "safari-stamps",
+        "name": "Safari Stamps",
+        "version": 1,
+        "format": "card",
+        "photoCount": 3
+      },
+      {
+        "id": "sugar-arcade",
+        "name": "Sugar Arcade",
+        "version": 1,
+        "format": "strip",
+        "photoCount": 4
+      },
+      {
+        "id": "pinball-fever",
+        "name": "Pinball Fever",
+        "version": 1,
+        "format": "card",
+        "photoCount": 4
+      },
+      {
+        "id": "mixtape-motel",
+        "name": "Mixtape Motel",
+        "version": 1,
+        "format": "strip",
+        "photoCount": 3
+      },
+      {
+        "id": "skate-zine",
+        "name": "Skate Zine",
+        "version": 1,
+        "format": "card",
+        "photoCount": 3
+      },
+      {
+        "id": "comic-bureau",
+        "name": "Comic Bureau",
+        "version": 1,
+        "format": "strip",
+        "photoCount": 3
+      },
+      {
+        "id": "desert-bazaar",
+        "name": "Desert Bazaar",
+        "version": 1,
+        "format": "card",
+        "photoCount": 2
+      },
+      {
+        "id": "jungle-jam",
+        "name": "Jungle Jam",
+        "version": 1,
+        "format": "card",
+        "photoCount": 4
+      },
+      {
+        "id": "snow-globe",
+        "name": "Snow Globe Club",
+        "version": 1,
+        "format": "strip",
+        "photoCount": 3
+      },
+      {
+        "id": "pirate-radio",
+        "name": "Pirate Radio",
+        "version": 1,
+        "format": "card",
+        "photoCount": 3
+      },
+      {
+        "id": "bakery-confetti",
+        "name": "Bakery Confetti",
+        "version": 1,
+        "format": "strip",
+        "photoCount": 4
+      },
+      {
+        "id": "dragon-lantern",
+        "name": "Dragon Lantern",
+        "version": 1,
+        "format": "card",
+        "photoCount": 2
+      },
+      {
+        "id": "neon-district",
+        "name": "Neon District",
+        "version": 1,
+        "format": "card",
+        "photoCount": 4
+      }
+    ],
+    "legacyTrackedFrameAssetsUnchanged": true
+  },
+  "photoEffects": {
+    "choices": 12,
+    "colorPresets": 11,
+    "originalPreserved": true,
+    "intensityRange": [
+      0,
+      1
+    ],
+    "cameraPreview": true,
+    "capturedMetadata": true,
+    "editorPerSlot": true,
+    "undoRedo": true,
+    "exports": true,
+    "arImplemented": false
+  },
+  "tests": {
+    "unitPassed": 50,
+    "buildPassed": true,
+    "browserFullRun": {
+      "scheduled": 72,
+      "passed": 66,
+      "skipped": 4,
+      "failed": 2
+    },
+    "correction": "Two all-presets tests used the malformed range value .55; changed test input to 0.55, without changing production code.",
+    "targetedRerun": {
+      "passed": 2,
+      "failed": 0
+    },
+    "finalCoveredPassed": 68,
+    "unresolvedFailures": 0,
+    "skipReason": "WebKit synthetic-camera coverage unavailable."
+  },
+  "origins": {
+    "preview": {
+      "chromium": {
+        "url": "https://3c400bbd.fotbooth.pages.dev",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "thumbnails": 80,
+        "assetsMatchedToBuild": 240,
+        "exports": [
+          {
+            "format": "png",
+            "dimensions": [
+              600,
+              1800
+            ],
+            "photoPixel": [
+              111,
+              111,
+              111,
+              255
+            ],
+            "bytes": 888158
+          },
+          {
+            "format": "jpg",
+            "dimensions": [
+              600,
+              1800
+            ],
+            "photoPixel": [
+              111,
+              111,
+              111,
+              255
+            ],
+            "bytes": 178670
+          }
+        ],
+        "errors": []
+      },
+      "webkit": {
+        "url": "https://3c400bbd.fotbooth.pages.dev",
+        "viewport": {
+          "width": 360,
+          "height": 900
+        },
+        "thumbnails": 80,
+        "assetsMatchedToBuild": 240,
+        "exports": [
+          {
+            "format": "png",
+            "dimensions": [
+              600,
+              1800
+            ],
+            "photoPixel": [
+              111,
+              111,
+              111,
+              255
+            ],
+            "bytes": 698361
+          },
+          {
+            "format": "jpg",
+            "dimensions": [
+              600,
+              1800
+            ],
+            "photoPixel": [
+              111,
+              111,
+              111,
+              255
+            ],
+            "bytes": 178202
+          }
+        ],
+        "errors": []
+      }
+    },
+    "production": {
+      "chromium": {
+        "url": "https://fotbooth.pages.dev",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "thumbnails": 80,
+        "assetsMatchedToBuild": 240,
+        "exports": [
+          {
+            "format": "png",
+            "dimensions": [
+              600,
+              1800
+            ],
+            "photoPixel": [
+              111,
+              111,
+              111,
+              255
+            ],
+            "bytes": 888158
+          },
+          {
+            "format": "jpg",
+            "dimensions": [
+              600,
+              1800
+            ],
+            "photoPixel": [
+              111,
+              111,
+              111,
+              255
+            ],
+            "bytes": 178670
+          }
+        ],
+        "errors": []
+      },
+      "webkit": {
+        "url": "https://fotbooth.pages.dev",
+        "viewport": {
+          "width": 360,
+          "height": 900
+        },
+        "thumbnails": 80,
+        "assetsMatchedToBuild": 240,
+        "exports": [
+          {
+            "format": "png",
+            "dimensions": [
+              600,
+              1800
+            ],
+            "photoPixel": [
+              111,
+              111,
+              111,
+              255
+            ],
+            "bytes": 698361
+          },
+          {
+            "format": "jpg",
+            "dimensions": [
+              600,
+              1800
+            ],
+            "photoPixel": [
+              111,
+              111,
+              111,
+              255
+            ],
+            "bytes": 178202
+          }
+        ],
+        "errors": []
+      }
+    }
+  },
+  "festivalExports": {
+    "chromium": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "effect": {
+        "id": "vintage",
+        "intensity": 0.55
+      },
+      "designs": 20,
+      "downloads": 40,
+      "errors": []
+    },
+    "webkit": {
+      "viewport": {
+        "width": 360,
+        "height": 900
+      },
+      "effect": {
+        "id": "vintage",
+        "intensity": 0.55
+      },
+      "designs": 20,
+      "downloads": 40,
+      "errors": []
+    }
+  },
+  "buildAssets": {
+    "index-DX0sBmvm.css": "bb3ac8b456b6c00ceacfb86f985fce31ace8c26d26943d2aea8af719db2752a9",
+    "index-pGfPHPt8.js": "3eea88b9bb30a3c3c76f0c05b04164acb5e4b9de03a1e0fef1ce1ca6b16e7285"
+  },
+  "art": {
+    "tool": "built-in ImageGen",
+    "materials": 20,
+    "provenance": "artwork/provenance/festival-materials-20261007.json",
+    "board": "docs/qa/festival-design-board.png"
+  },
+  "limitation": "Real phones and physical cameras have not been tested. AR remains a proposal only."
+}

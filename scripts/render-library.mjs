@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import { chromium } from '@playwright/test';
 import { definitions } from '../src/frames/definitions.ts';
 import { encoreIds, originalSignatureIds } from '../src/frames/signature.ts';
+import { maximalistIds } from '../src/frames/maximalist.ts';
 
 // Bounded batches prevent the QA generator from retaining a canvas per frame.
 const baseURL = process.env.FOTBOOTH_BASE_URL ?? 'http://127.0.0.1:5173';
@@ -60,9 +61,14 @@ try {
           const standard = canvas.toDataURL('image/png').split(',')[1];
           // Public gallery shows empty frames. Sample fixtures are only used for export QA.
           await renderComposition(
-            canvas, frame, { placements: [], caption: '', date: '' },
-            async () => { throw new Error('Neutral gallery must not resolve sample photos'); },
-            frame.designWidth, frame.designHeight,
+            canvas,
+            frame,
+            { placements: [], caption: '', date: '' },
+            async () => {
+              throw new Error('Neutral gallery must not resolve sample photos');
+            },
+            frame.designWidth,
+            frame.designHeight,
           );
           thumb.height = 600;
           thumb.width = Math.round((600 * frame.designWidth) / frame.designHeight);
@@ -114,10 +120,12 @@ try {
       orderedIds.slice(start, start + batchSize),
     );
     for (const item of images) {
-      await fs.writeFile(
-        `public${item.thumbnailPath}`,
-        Buffer.from(item.thumbnail, 'base64'),
-      );
+      await fs.writeFile(`public${item.thumbnailPath}`, Buffer.from(item.thumbnail, 'base64'));
+      if (maximalistIds.includes(item.id))
+        await fs.writeFile(
+          `public${item.thumbnailPath.replace('thumbnail-neutral', 'thumbnail')}`,
+          Buffer.from(item.thumbnail, 'base64'),
+        );
       for (const [kind, suffix] of [
         ['standard', ''],
         ['light', '-light'],
@@ -131,12 +139,19 @@ try {
         thumbnail: item.thumbnail,
       });
     }
-    console.log(`Rendered ${Math.min(start + batchSize, orderedIds.length)}/${orderedIds.length} frames.`);
+    console.log(
+      `Rendered ${Math.min(start + batchSize, orderedIds.length)}/${orderedIds.length} frames.`,
+    );
   }
   for (const [name, items, columns] of [
     ['frame-contact-sheet', thumbnails, 6],
+    ['festival-design-board', thumbnails.filter((f) => maximalistIds.includes(f.id)), 5],
     ['decorated-design-board', thumbnails.slice(0, 12), 4],
-    ['signature-design-board', thumbnails.filter((frame) => originalSignatureIds.includes(frame.id)), 4],
+    [
+      'signature-design-board',
+      thumbnails.filter((frame) => originalSignatureIds.includes(frame.id)),
+      4,
+    ],
     ['signature-encore-board', thumbnails.filter((frame) => encoreIds.includes(frame.id)), 5],
     ['cartoon-contact-sheet', thumbnails.filter((f) => f.categories.includes('cartoon')), 4],
     ...Array.from({ length: Math.ceil(thumbnails.length / 12) }, (_, i) => [

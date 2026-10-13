@@ -1,0 +1,59 @@
+{
+  "diagnosedAt": "2026-10-13T13:18:08.21716+07:00",
+  "site": "https://e2e8f932.fotbooth.pages.dev",
+  "sourceTrace": "test-results/catalog-preview-ui/room-series-recovery-guest-94b56--same-room-two-pose-restart-chromium/trace.zip",
+  "traceSha256": "f1a81cd1b0c29ed5b1e865b64981a3450044032578c842d2c07e02898b3d0326",
+  "failure": "Guest frame assertion expired after five seconds before guest room authentication",
+  "assertionStartedAtMs": 91805.535,
+  "assertionEndedAtMs": 96814.619,
+  "guestApiRequests": [
+    {
+      "path": "https://fotbooth-rooms.aliifikriii25.workers.dev/api/ice",
+      "requestStartedAtMs": 91821.535,
+      "status": -1,
+      "durationMs": -1
+    }
+  ],
+  "guestWSSRequests": 0,
+  "hostSettingsFrames": [
+    {
+      "direction": "receive",
+      "unixTimeMs": 1791872015303.9438,
+      "messageType": "state",
+      "frameId": "online-satu-tempat",
+      "cutout": true
+    },
+    {
+      "direction": "send",
+      "unixTimeMs": 1791872015304.231,
+      "messageType": "settings",
+      "frameId": "pocket-arcade",
+      "cutout": false
+    },
+    {
+      "direction": "receive",
+      "unixTimeMs": 1791872015624.853,
+      "messageType": "state",
+      "frameId": "pocket-arcade",
+      "cutout": false
+    }
+  ],
+  "rootCause": "The guest ICE lookup was unfinished when the assertion expired. No guest WSS request had started. Host selected settings were acknowledged correctly; there is no evidence of a lost-settings race.",
+  "testChange": "Wait for both visible room peer statuses to be Terhubung before asserting synchronized guest settings. Production source remains unchanged.",
+  "rerun": {
+    "verifiedAt": "2026-10-13T06:19:05.6149837+00:00",
+    "site": "https://e2e8f932.fotbooth.pages.dev",
+    "command": "npx playwright test room-series-recovery --project=chromium --reporter=list --output=test-results/catalog-preview-series-recovery",
+    "project": "chromium",
+    "passed": 3,
+    "failed": 0,
+    "exitCode": 0,
+    "observedSeconds": [
+      23.5,
+      37.0,
+      23.0
+    ],
+    "scope": "Real HTTPS built UI and room coordinator; synthetic camera streams; guest cancellation, relay disconnect/rejoin, and delayed bitmap decode cancellation; same-room fresh two-pose PNG equality in all three cases",
+    "productionSourceChanged": false
+  }
+}

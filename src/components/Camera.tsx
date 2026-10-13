@@ -9,18 +9,31 @@ import {
 } from 'lucide-react';
 import { CameraController, type CameraState } from '../core/camera';
 import type { FrameDefinition, Session } from '../core/types';
+import { getPhotoFilter, type PhotoEffectId } from '../core/effects';
+import { PhotoEffects } from './PhotoEffects';
+import { AREffects } from './AREffects';
+import { useCameraAR } from './useCameraAR';
+import type { AREffectId, ARSnapshot } from '../core/ar/types';
 export interface CameraProps {
   frame: FrameDefinition;
   session: Session;
   activeSlot: string;
   remaining: number;
   onSlot: (id: string) => void;
-  onCapture: (blob: Blob, slotId: string, mirror: boolean) => Promise<void>;
+  onCapture: (
+    blob: Blob,
+    slotId: string,
+    mirror: boolean,
+    effect: PhotoEffectId,
+    intensity: number,
+    ar?: ARSnapshot,
+  ) => Promise<void>;
   onUpload: () => void;
   onBack: () => void;
 }
 export function Camera(p: CameraProps) {
   const video = useRef<HTMLVideoElement>(null),
+    arPreview = useRef<HTMLCanvasElement>(null),
     controller = useRef(new CameraController()).current,
     alive = useRef(false),
     sequence = useRef(0),
@@ -34,7 +47,16 @@ export function Camera(p: CameraProps) {
     [mirror, setMirror] = useState(true),
     [facing, setFacing] = useState<'user' | 'environment'>('user'),
     [devices, setDevices] = useState<MediaDeviceInfo[]>([]),
-    [deviceId, setDeviceId] = useState('');
+    [deviceId, setDeviceId] = useState(''),
+    [effect, setEffect] = useState<PhotoEffectId>('none'),
+    [intensity, setIntensity] = useState(1),
+    [arEffect, setArEffect] = useState<AREffectId>('none');
+  const ar = useCameraAR(
+    video,
+    arPreview,
+    arEffect,
+    ['live', 'counting', 'capturing'].includes(phase),
+  );
   const live = useRef(p);
   live.current = p;
   const slot = p.frame.slots.find((s) => s.id === p.activeSlot) ?? p.frame.slots[0],
@@ -101,7 +123,7 @@ export function Camera(p: CameraProps) {
     setPhase(controller.state);
   }
   async function capture() {
-    if (taking || phase !== 'live') return;
+    if (taking || phase !== 'live' || !ar.ready) return;
     const token = ++sequence.current;
     setTaking(true);
     setError('');
@@ -115,17 +137,27 @@ export function Camera(p: CameraProps) {
         if (token !== sequence.current || !alive.current || live.current.remaining <= 0) break;
         p.onSlot(id);
         setPhase('counting');
-        const blob = await controller.capture(timer, (n) => {
-          if (alive.current && token === sequence.current) setCount(n);
-        });
+        let snapshot: ARSnapshot | undefined;
+        const blob = await controller.capture(
+          timer,
+          (n) => {
+            if (alive.current && token === sequence.current) setCount(n);
+          },
+          async (frame) => {
+            snapshot = await ar.snapshot(frame);
+          },
+        );
         if (token !== sequence.current || !alive.current) break;
         setPhase('capturing');
-        await p.onCapture(blob, id, mirror);
+        await p.onCapture(blob, id, mirror, effect, intensity, snapshot);
         if (token !== sequence.current || !alive.current) break;
         setPhase('live');
         if (!burst) {
           const empty = live.current.frame.slots.find(
-            (s) => !live.current.session.placements.some((photo) => photo.slotId === s.id),
+            // React may not have committed the new photo props when ingestion resolves.
+            (s) =>
+              s.id !== id &&
+              !live.current.session.placements.some((photo) => photo.slotId === s.id),
           );
           if (empty) p.onSlot(empty.id);
         }
@@ -205,7 +237,21 @@ export function Camera(p: CameraProps) {
               autoPlay
               playsInline
               muted
-              style={{ transform: mirror ? 'scaleX(-1)' : 'none' }}
+              style={{
+                transform: mirror ? 'scaleX(-1)' : 'none',
+                filter: getPhotoFilter(effect, intensity),
+                opacity: ar.visible ? 0 : 1,
+              }}
+            />
+            <canvas
+              ref={arPreview}
+              className="camera-ar-preview"
+              aria-label="Pratinjau kamera dengan AR"
+              style={{
+                visibility: ar.visible ? 'visible' : 'hidden',
+                transform: mirror ? 'scaleX(-1)' : 'none',
+                filter: getPhotoFilter(effect, intensity),
+              }}
             />
             {!ready && !taking && (
               <div className="camera-placeholder">
@@ -236,6 +282,7 @@ export function Camera(p: CameraProps) {
                 aria-label="Ambil foto"
                 disabled={
                   !ready ||
+                  !ar.ready ||
                   p.remaining <= 0 ||
                   (burst && p.session.placements.length === p.frame.slots.length)
                 }
@@ -267,6 +314,7 @@ export function Camera(p: CameraProps) {
           </div>
           <p className="camera-guide">
             Panduan mengikuti bentuk slot. Foto disimpan penuh agar tetap bisa diatur.
+            {arEffect !== 'none' && ' Sisakan ruang di atas kepala untuk aksesori AR.'}
           </p>
         </section>
         <aside className="panel camera-controls">
@@ -340,6 +388,22 @@ export function Camera(p: CameraProps) {
               </button>
             </>
           )}
+          <AREffects
+            effect={arEffect}
+            disabled={taking}
+            state={ar.state}
+            onChange={setArEffect}
+            onRetry={ar.retry}
+          />
+          <PhotoEffects
+            effect={effect}
+            intensity={intensity}
+            disabled={taking}
+            onChange={(next, amount) => {
+              setEffect(next);
+              setIntensity(amount);
+            }}
+          />
           <label className="checkbox-label">
             <input
               type="checkbox"

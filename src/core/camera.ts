@@ -97,7 +97,11 @@ export class CameraController {
       throw cameraError(error);
     }
   }
-  async capture(timer: number, onCount: (remaining: number) => void): Promise<Blob> {
+  async capture(
+    timer: number,
+    onCount: (remaining: number) => void,
+    processFrame?: (canvas: HTMLCanvasElement) => Promise<void>,
+  ): Promise<Blob> {
     if (this.state !== 'live' || !this.video?.videoWidth || !this.video.videoHeight)
       throw new Error('Kamera belum siap. Buka kamera terlebih dulu.');
     const token = this.generation,
@@ -116,6 +120,8 @@ export class CameraController {
       canvas.height = video.videoHeight;
       try {
         canvas.getContext('2d')!.drawImage(video, 0, 0);
+        await processFrame?.(canvas);
+        if (token !== this.generation) throw aborted();
         const blob = await canvasBlob(canvas, 'image/jpeg', 0.95);
         if (token !== this.generation) throw aborted();
         this.state = 'live';

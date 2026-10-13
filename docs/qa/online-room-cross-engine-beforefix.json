@@ -1,0 +1,27 @@
+{
+  "scope": "Before canonical-result transport: actual Chromium and Windows Playwright WebKit pages import exportRoomFrame from the local Vite harness. Both receive identical pre-encoded PNG portrait bytes. Export PNGs are decoded to RGBA independently by sharp, then compared.",
+  "date": "2026-10-13",
+  "inputSha256": ["3a87dc686778a29c149d1b166d3c33aaf763d2fdc500676b472ec08b2b71209e", "989415eff3690fa96de5d2267437765cd000a950b66b41de9b8a1330b0483f2b"],
+  "portraitMode": "Opaque original-background portraits; the full photo area is covered so scene choice does not affect these preset comparisons. Shared-scene controls below independently reveal backdrop raster differences.",
+  "presetComparisons": [
+    {"frame": "online-satu-tempat", "scenes": ["studio", "sunset", "night"], "width": 1800, "height": 1350, "identicalBytes": false, "identicalPixels": false, "changedPixelsPerScene": 1311019, "changedPercent": 53.9514, "maxChannelDifference": 162, "meanAbsoluteChannelDifference": 0.4712},
+    {"frame": "online-surat-rindu", "scenes": ["studio", "sunset", "night"], "width": 1800, "height": 1350, "identicalBytes": false, "identicalPixels": false, "changedPixelsPerScene": 1309368, "changedPercent": 53.8835, "maxChannelDifference": 134, "meanAbsoluteChannelDifference": 0.4986},
+    {"frame": "online-night-date", "scenes": ["studio", "sunset", "night"], "width": 1800, "height": 1350, "identicalBytes": false, "identicalPixels": false, "changedPixelsPerScene": 1312172, "changedPercent": 53.9988, "maxChannelDifference": 152, "meanAbsoluteChannelDifference": 0.5219}
+  ],
+  "controls": {
+    "sourceDecode": {"sources": 2, "identicalPixels": true, "identicalReencodedPngBytes": false, "changedPixels": 0},
+    "solidRed": {"width": 100, "height": 100, "identicalPixels": true, "changedPixels": 0, "identicalBytes": false, "chromiumBytes": 592, "webkitBytes": 601, "chromiumSha256": "e0134114b87b9de715703df46cb85872881a45a5c069361fca9074bb30bdffaf", "webkitSha256": "9028ba68537cbd574d5d9b98f01bffcc939d33a8dbf13408e8a5181829b56904"},
+    "sharedScenes": [
+      {"scene": "studio", "width": 800, "height": 400, "changedPixels": 169200, "changedPercent": 52.875, "maxChannelDifference": 1, "meanAbsoluteChannelDifference": 0.1877},
+      {"scene": "sunset", "width": 800, "height": 400, "changedPixels": 168258, "changedPercent": 52.5806, "maxChannelDifference": 2, "meanAbsoluteChannelDifference": 0.1835},
+      {"scene": "night", "width": 800, "height": 400, "changedPixels": 170535, "changedPercent": 53.2922, "maxChannelDifference": 2, "meanAbsoluteChannelDifference": 0.1899}
+    ],
+    "svgFrameLayersOnly": [
+      {"frame": "online-satu-tempat", "changedPixels": 22585, "changedPercent": 0.9294, "maxChannelDifference": 162, "meanAbsoluteChannelDifference": 0.0748},
+      {"frame": "online-surat-rindu", "changedPixels": 15498, "changedPercent": 0.6378, "maxChannelDifference": 134, "meanAbsoluteChannelDifference": 0.1016},
+      {"frame": "online-night-date", "changedPixels": 23444, "changedPercent": 0.9648, "maxChannelDifference": 152, "meanAbsoluteChannelDifference": 0.1259}
+    ]
+  },
+  "capability": {"chromium": {"RTCPeerConnection": "function", "MediaStream": "function"}, "windowsPlaywrightWebKit": {"RTCPeerConnection": "undefined", "MediaStream": "undefined"}},
+  "evidenceRetention": "Numeric report transcribed exactly from the completed exit-0 audit output after Playwright's automatic output-folder cleanup removed temporary images and script. No tokens or participant data are included."
+}

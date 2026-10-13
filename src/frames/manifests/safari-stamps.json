@@ -1,0 +1,113 @@
+{
+  "id": "safari-stamps",
+  "name": "Safari Stamps",
+  "version": 1,
+  "format": "card",
+  "categories": [
+    "nature",
+    "dynamic",
+    "scrapbook"
+  ],
+  "designWidth": 1800,
+  "designHeight": 2700,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.08,
+      "y": 0.13,
+      "w": 0.84,
+      "h": 0.34,
+      "shape": "roundedRect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.08,
+      "y": 0.51,
+      "w": 0.4,
+      "h": 0.35,
+      "shape": "rect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.52,
+      "y": 0.51,
+      "w": 0.4,
+      "h": 0.35,
+      "shape": "path",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9",
+      "pathRef": "chamfer"
+    }
+  ],
+  "description": "Jerapah, zebra, gajah, kompas dan label ekspedisi.",
+  "palette": {
+    "background": "#796c35",
+    "ink": "#fff1ce",
+    "accent": "#d9984f",
+    "secondary": "#355543"
+  },
+  "layers": {
+    "background": "/frames/safari-stamps/v1/background.svg",
+    "foreground": "/frames/safari-stamps/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/safari-stamps/v1/thumbnail-neutral.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1.",
+    "Original material artwork generated for Fotbooth with the built-in ImageGen tool."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "SAFARI STAMPS",
+      "x": 0.07,
+      "y": 0.024,
+      "w": 0.86,
+      "h": 0.043,
+      "fontId": "sans",
+      "fontSize": 100,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#fff1ce"
+    },
+    {
+      "id": "caption",
+      "x": 0.12,
+      "y": 0.894,
+      "w": 0.76,
+      "h": 0.05,
+      "fontId": "sans",
+      "fontSize": 61,
+      "minFontSize": 32,
+      "maxLines": 2,
+      "color": "#796c35"
+    },
+    {
+      "id": "date",
+      "x": 0.2,
+      "y": 0.965,
+      "w": 0.6,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 32,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#fff1ce"
+    }
+  ],
+  "collection": "Festival Editions",
+  "artwork": {
+    "motif": "safari-stamps",
+    "edition": 1
+  }
+}

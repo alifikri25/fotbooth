@@ -1,0 +1,13 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "fotbooth-rooms",
+  "main": "rooms.ts",
+  "compatibility_date": "2026-10-08",
+  "workers_dev": true,
+  "durable_objects": {
+    "bindings": [{ "name": "ROOMS", "class_name": "PhotoRoom" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["PhotoRoom"] }],
+  "dev": { "ip": "127.0.0.1", "port": 8787, "local_protocol": "http" },
+  "observability": { "enabled": false }
+}

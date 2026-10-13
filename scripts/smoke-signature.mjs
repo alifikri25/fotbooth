@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import { chromium, webkit, expect } from '@playwright/test';
 import { definitions } from '../src/frames/definitions.ts';
 import { signatureIds } from '../src/frames/signature.ts';
+import { maximalistIds } from '../src/frames/maximalist.ts';
 
 const baseURL = process.env.FOTBOOTH_SMOKE_URL ?? 'http://127.0.0.1:5173';
 const browserName = process.env.FOTBOOTH_SMOKE_BROWSER ?? 'chromium';
@@ -9,6 +10,7 @@ const reportPath = process.env.FOTBOOTH_SIGNATURE_REPORT ?? 'docs/qa/signature-s
 const browser = await { chromium, webkit }[browserName].launch();
 const evidence = [];
 const viewport = { width: Number(process.env.FOTBOOTH_SMOKE_WIDTH ?? 1440), height: 900 };
+const festival = process.env.FOTBOOTH_SIGNATURE_SET === 'festival';
 try {
   const page = await browser.newPage({ viewport });
   const errors = [];
@@ -16,11 +18,11 @@ try {
   page.on('response', (response) => {
     if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`);
   });
-  for (const id of signatureIds) {
+  for (const id of festival ? maximalistIds : signatureIds) {
     const frame = definitions.find((frame) => frame.id === id);
     await page.goto(baseURL);
     await page.getByRole('button', { name: 'Mulai bikin foto' }).click();
-    await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(60);
+    await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(80);
     await page.getByRole('button', { name: `Pakai frame ${frame.name}`, exact: true }).click();
     const fixture = await page.evaluate(() => {
       const canvas = document.createElement('canvas');
@@ -44,6 +46,10 @@ try {
       );
     await expect(page.getByTestId('photo-count')).toHaveText('4/8 foto');
     await page.getByLabel('Caption').fill('Hari yang akan selalu kita ingat bersama');
+    if (festival) {
+      await page.getByRole('button', { name: 'Efek Vintage', exact: true }).click();
+      await page.getByLabel('Intensitas efek').fill('0.55');
+    }
     await page.getByRole('button', { name: 'Lihat hasil' }).click();
     await page.getByLabel('Ukuran hasil').selectOption('light');
     const outputs = [];
@@ -79,6 +85,8 @@ try {
         baseURL,
         browser: browserName,
         viewport,
+        collection: festival ? 'Festival Editions' : 'Signature',
+        effect: festival ? { id: 'vintage', intensity: 0.55 } : { id: 'none' },
         evidence,
         errors,
       },

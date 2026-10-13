@@ -1,6 +1,35 @@
-# QA Web Photobooth — 7 Oktober 2026
+# QA Web Photobooth — 13 Oktober 2026
 
-## Revisi aktif: sepuluh edisi baru dan galeri tanpa orang
+## Revisi aktif: Foto Bareng Online dengan koleksi frame
+
+Produksi aktif: [fotbooth.pages.dev](https://fotbooth.pages.dev), deployment **b88cf128-ff60-443d-a8a0-31e919951ee5**. Foto Bareng Online menyediakan 80 frame koleksi dan tiga frame khusus, pose berdua baru per slot, serta satu PNG identik untuk kedua peserta. [Bukti rilis](qa/online-room-catalog-release-20261013.json), [audit kelanjutan](qa/online-room-continuation-audit-20261013.json).
+
+- Pemeriksaan ulang: 146 unit test, TypeScript dan build lulus; seluruh 730 file build sesuai kandidat dan seluruh 729 file produksi yang dilayani cocok byte/SHA-256. `_headers` diterapkan Cloudflare; header keamanan aktual diperiksa terpisah.
+- Smoke produksi solo lulus pada Chromium 1440 px/WebKit 360 px: 80 thumbnail, 240 aset frame, unggah/edit dan PNG/JPEG yang dibuka ulang. AR 390 px memeriksa model wajah/orang nyata pada kedua engine, seluruh 16 efek dan ekspor pada Chromium.
+- Suite room HTTPS terbaru **16 lulus, 12 skip, 0 gagal/flaky**, menguji selektor, pose berurutan, PNG identik melalui koneksi langsung dan relay, pembatalan, reconnect serta hasil selesai setelah gangguan kamera/koneksi. Kamera otomatis memakai fixture sintetis; skip terkait dukungan kamera/WebRTC WebKit pada lingkungan ini.
+- Perbaikan konfigurasi tes menyalakan coordinator lokal sebelum pengujian browser. Tes selektor room mereproduksi `ECONNREFUSED` sebelum perubahan dan lulus sesudahnya; Worker/Vite berhenti setelah tes. Tidak ada perubahan runtime produksi dari perbaikan CI ini.
+- Suite lokal lengkap setelah perbaikan **120 lulus, 24 skip, 0 gagal/flaky**: Chromium 72 lulus; WebKit 48 lulus/24 skip. [Laporan](qa/online-room-continuation-local-20261013.json). Kedua server berhenti; 32 file QA historis dipulihkan identik dan bukti baru disimpan terpisah.
+- Kamera/HP fisik, matriks Android/iOS, performa perangkat referensi, uji pengguna dan latihan rollback belum diverifikasi. Pengujian viewport dan WebKit otomatis tidak menggantikan perangkat nyata.
+
+## Revisi sebelumnya: 16 AR kamera
+
+Sudah publik di [fotbooth.pages.dev](https://fotbooth.pages.dev). Kamera memiliki 16 efek AR dari [daftar implementasi](AR-OPTIONS.md), dari telinga/kacamata hingga reaksi senyum, tiga latar dan siluet neon. Foto asli dan snapshot AR dipisahkan, sehingga editor dapat mematikan AR dan undo memulihkannya. AR mengikuti transformasi foto serta dirender ke PNG/JPEG. [Bukti rilis](qa/ar-release-20261007.json), [contoh semua efek](qa/ar-effects-board.png), [kamera mobile](qa/ar-camera-mobile.png).
+
+- 53 unit test, TypeScript dan build lulus. Suite penuh sebelum perbaikan perpindahan slot: 77 lulus, 7 skip, 0 gagal/flaky. Pemeriksaan final kamera/AR/efek/CSP setelah perbaikan: 24 lulus, 8 skip, 0 gagal/flaky. Skip adalah keterbatasan kamera sintetis/canvas.captureStream WebKit pada lingkungan ini, bukan bukti kamera fisik.
+- Model asli mendeteksi 478 landmark, satu/dua wajah dan mask orang. Seluruh 16 kompositor menghasilkan perubahan piksel; reaksi memiliki threshold senyum/mulut. Pemuatan dibatalkan saat AR berhenti pada worker maupun jalur Safari. Model gagal tetap menawarkan kamera biasa. Inferensi dibatasi 640px dan preview maksimal 10Hz.
+- Piksel AR tetap selaras setelah mirror dan putaran; menonaktifkan AR mengembalikan sumber asli. Burst dan foto satu per satu, perpindahan ke slot kosong, undo, efek warna dan ekspor diuji. Suite penuh memeriksa 80 paket, thumbnail netral, mask dan ekspor standar/ringan di kedua engine.
+- Preview/final HTTPS menggunakan build yang sama. Chromium memuat semua 16 efek, mengambil tiga foto AR, mematikan/memulihkan AR serta membuka PNG/JPEG. WebKit menjalankan model wajah/orang nyata pada jalur Safari dengan CSP sebenarnya. Keempat aset AR cocok SHA-256 dengan build, tanpa request foto eksternal atau error halaman. Kamera/HP fisik dan performa perangkat referensi belum diuji.
+
+## Revisi sebelumnya: 20 Festival Editions dan efek foto
+
+Rilis sebelum AR: total 80 frame, 12 pilihan efek termasuk Original, kamera/editor dengan intensitas per foto, dan ekspor PNG/JPEG. [Bukti rilis](qa/festival-release-20261007.json), [20 frame baru](qa/festival-design-board.png), [kontrol efek mobile](qa/effects-editor-mobile.png), [prompt/material](../artwork/provenance/festival-materials-20261007.json).
+
+- 50 unit test dan build lulus. Dari 72 pemeriksaan browser, 66 lulus dan 4 skip. Dua tes intensitas memakai .55 yang tidak valid untuk input range; setelah dikoreksi menjadi 0.55, keduanya lulus saat diulang. Cakupan akhir 68 lulus, 4 skip kamera sintetis WebKit, 0 kegagalan tersisa.
+- Seluruh 80 paket diperiksa untuk mask, area foto netral, geometri, thumbnail serta ekspor standar/ringan di Chromium/WebKit. Efek mengikuti foto saat swap/frame switch/undo; piksel monochrome/sepia, efek 0%, 11 preset, dan capture → editor diperiksa.
+- Preview dan produksi HTTPS lulus pada Chromium desktop dan WebKit 360 px. Semua 80 thumbnail dan 240 aset frame cocok byte/SHA-256 dengan build lokal; PNG/JPEG yang dibuka kembali mempunyai piksel monochrome. Seluruh 20 Festival Editions menghasilkan 40 unduhan PNG/JPEG per engine memakai Vintage 55%, tanpa error halaman/jaringan.
+- Dua puluh bahan asli dibuat dengan ImageGen bawaan. Gallery tanpa foto orang. Semua aset frame lama yang terlacak tidak berubah. Kamera sintetis, timer/cancel, keyboard, mobile viewport dan privasi jaringan lulus; kamera fisik dan HP nyata belum diuji.
+
+## Revisi sebelumnya: sepuluh edisi baru dan galeri tanpa orang
 
 Revisi sudah publik di **https://fotbooth.pages.dev**. Katalog tetap 60 ID, kini 18 versi 3 dan 42 versi 2. Semua 60 thumbnail memakai area foto netral sesuai pilihan pengguna. [Bukti lengkap](qa/encore-release-20261007.json), [sepuluh desain baru](qa/signature-encore-board.png), [galeri desktop](qa/gallery-desktop.png), [galeri mobile](qa/library-mobile.png), [gambar dan prompt](../artwork/README.md).
 

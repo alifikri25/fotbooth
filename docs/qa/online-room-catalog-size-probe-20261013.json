@@ -1,0 +1,779 @@
+{
+  "verifiedAt": "2026-10-13T05:57:08.039Z",
+  "browser": "Chromium",
+  "browserVersion": "153.0.8010.12",
+  "site": "http://127.0.0.1:5173/tests/harness.html",
+  "scope": "Real catalogue renderer export of opaque synthetic RGB noise. This size probe does not test network transport or physical cameras.",
+  "input": {
+    "width": 1280,
+    "height": 720,
+    "alpha": 255,
+    "noiseSeed": 12345,
+    "noiseGenerator": "LCG seed = (imul(seed,1664525)+1013904223) unsigned32; RGB = high8 bits of three successive values",
+    "portraitBytes": 3171661,
+    "pairs": "Same permitted original PNG used in both roles and every slot to probe output byte size"
+  },
+  "originalPhotoLimitBytes": 8388608,
+  "candidateResultLimitBytes": 20971520,
+  "total": 83,
+  "aboveOriginalLimit": 17,
+  "aboveCandidateResultLimit": 0,
+  "largest": {
+    "id": "kpop-starlight-wander",
+    "slots": 3,
+    "width": 1200,
+    "height": 3600,
+    "bytes": 11498468,
+    "aboveOriginal8MiBLimit": true,
+    "withinCandidate20MiBResultLimit": true
+  },
+  "exports": [
+    {
+      "id": "night-market",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 6971048,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "aquarium-parade",
+      "slots": 2,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 5388452,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "pit-lane",
+      "slots": 4,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 6733403,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "circus-cabinet",
+      "slots": 3,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 8511070,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "street-scramble",
+      "slots": 4,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 5401634,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "ramen-social",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 7019856,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "stellar-atlas",
+      "slots": 2,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 5428212,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "safari-stamps",
+      "slots": 3,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 8512731,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "sugar-arcade",
+      "slots": 4,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 6786975,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "pinball-fever",
+      "slots": 4,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 5248564,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "mixtape-motel",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 6844185,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "skate-zine",
+      "slots": 3,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 8511160,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "comic-bureau",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 7116822,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "desert-bazaar",
+      "slots": 2,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 5522038,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "jungle-jam",
+      "slots": 4,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 5222951,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "snow-globe",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 7035978,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "pirate-radio",
+      "slots": 3,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 8655399,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "bakery-confetti",
+      "slots": 4,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 6803413,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "dragon-lantern",
+      "slots": 2,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 5382734,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "neon-district",
+      "slots": 4,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 5415740,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "midnight-film-polaroid",
+      "slots": 4,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 11339358,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "birthday-confetti-story",
+      "slots": 3,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 7249492,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "concert-pass",
+      "slots": 2,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 4894227,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "lace-story-arch",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 7258754,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "wedding-bloom-portrait",
+      "slots": 2,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 7348891,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "kpop-starlight-wander",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 11498468,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "heart-mail-story",
+      "slots": 3,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 7156848,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "cosmic-disco-mosaic",
+      "slots": 4,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 5724842,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "ribbon-diary-trio",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 7228954,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "ocean-postcard-story",
+      "slots": 3,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 9730974,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "denim-daisy-portrait",
+      "slots": 2,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 7571664,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "butterfly-notes-arch",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 7397939,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "cherry-kiss-story",
+      "slots": 3,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 9621249,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "citrus-club-mini",
+      "slots": 4,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 6579603,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "coffee-date-polaroid",
+      "slots": 4,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 10942870,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "botanical-journal-portrait",
+      "slots": 2,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 7406414,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "festive-wishes-offset",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 7192712,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "garden-paint-story",
+      "slots": 3,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 9704565,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "petal-post-story",
+      "slots": 3,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 8271003,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "cherry-kiss-film",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5633857,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "denim-daisy-polaroid",
+      "slots": 4,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 10150482,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "heart-mail-duo",
+      "slots": 2,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5403142,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "teddy-memory-trio",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5735730,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "midnight-film-film",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5535734,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "gingham-picnic-mini",
+      "slots": 4,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5526007,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "mochi-party",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5223277,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "kitty-club",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 7427221,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "comic-dash",
+      "slots": 3,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 10026879,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "froggy-day",
+      "slots": 2,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 5265585,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "candy-bounce",
+      "slots": 4,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 7049551,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "space-pals",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5722991,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "monster-moods",
+      "slots": 4,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 6718432,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "peach-picnic",
+      "slots": 3,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 6976498,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "orbit-club",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 6212085,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "bubble-pop",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 6032707,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "studio-notes",
+      "slots": 3,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 10263028,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "pocket-arcade",
+      "slots": 4,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5832372,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "sticker-rush",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5378358,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "cloud-windows",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5576603,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "gallery-issue",
+      "slots": 4,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 4531755,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "botanical-journal-trio",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5675753,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "cherry-kiss-trio",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5667624,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "denim-daisy-trio",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5777312,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "heart-mail-trio",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5652997,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "ocean-postcard-trio",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5734342,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "petal-post-trio",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5827491,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "wedding-bloom-trio",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5909976,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "pop-doodle-wander",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 9115226,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "ribbon-diary-wander",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 9330742,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "star-studio-wander",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 9008607,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "pixel-play-mini",
+      "slots": 4,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5451118,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "graduation-club-duo",
+      "slots": 2,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5408351,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "petal-post-arch",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5686831,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "retro-diner-offset",
+      "slots": 3,
+      "width": 1200,
+      "height": 3600,
+      "bytes": 5505210,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "ribbon-diary-portrait",
+      "slots": 2,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 5802175,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "halloween-party-mosaic",
+      "slots": 4,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 5872685,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "petal-post-mosaic",
+      "slots": 4,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 5991828,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "teddy-memory-mosaic",
+      "slots": 4,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 5828756,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "butterfly-notes-story",
+      "slots": 3,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 8173507,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "ribbon-diary-polaroid",
+      "slots": 4,
+      "width": 1800,
+      "height": 2700,
+      "bytes": 10324237,
+      "aboveOriginal8MiBLimit": true,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "online-satu-tempat",
+      "slots": 1,
+      "width": 1800,
+      "height": 1350,
+      "bytes": 2726580,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "online-surat-rindu",
+      "slots": 1,
+      "width": 1800,
+      "height": 1350,
+      "bytes": 2748398,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    },
+    {
+      "id": "online-night-date",
+      "slots": 1,
+      "width": 1800,
+      "height": 1350,
+      "bytes": 2727047,
+      "aboveOriginal8MiBLimit": false,
+      "withinCandidate20MiBResultLimit": true
+    }
+  ]
+}

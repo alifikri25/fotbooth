@@ -1,0 +1,21 @@
+{
+  "testedAt": "2026-10-13T12:33:13.332Z",
+  "transport": "relay",
+  "hostEngine": "chromium",
+  "guestEngine": "webkit",
+  "coordinator": "local Vite proxy",
+  "source": "local imported production RoomConnection and exportRoomFrame modules",
+  "capture": "pre-encoded transparent portrait PNGs; empty track providers; no physical camera",
+  "identicalDownloadBytes": true,
+  "bytes": [
+    302797,
+    302797
+  ],
+  "sha256": [
+    "8cc7d6032a4d797392b6d91612b833d452146ee305e246437854fb5b42c72312",
+    "8cc7d6032a4d797392b6d91612b833d452146ee305e246437854fb5b42c72312"
+  ],
+  "width": 1800,
+  "height": 1350,
+  "limitation": "Windows Playwright WebKit lacks WebRTC and MediaStream; mixed-engine path uses the real room relay."
+}

@@ -1,6 +1,22 @@
-# Handoff Web Photobooth — 7 Oktober 2026
+# Handoff Web Photobooth — 13 Oktober 2026
 
-## Status terbaru: sepuluh edisi baru dan galeri tanpa orang sudah publik
+## Status terbaru: Foto Bareng Online dan sinkronisasi repository
+
+Situs aktif: [fotbooth.pages.dev](https://fotbooth.pages.dev), deployment produksi **b88cf128-ff60-443d-a8a0-31e919951ee5** dengan [URL tetap](https://b88cf128.fotbooth.pages.dev). Pratinjau **e2e8f932-d52a-4071-9cc8-1fcc0d16333f** tetap tersedia. Coordinator room: **f1327cfd-a643-43ed-a5a2-29e9d94c1839**, [fotbooth-rooms.aliifikriii25.workers.dev](https://fotbooth-rooms.aliifikriii25.workers.dev). Publikasi sudah diizinkan pengguna untuk pengujian HP; jangan kembali menyatakan produksi masih menunggu review.
+
+Produk memiliki **80 frame solo, 12 pilihan efek foto dan 16 AR**. Foto Bareng Online memakai **80 frame koleksi ditambah tiga frame khusus**, dengan satu pose berdua baru untuk setiap slot dan satu PNG akhir identik bagi kedua peserta. Capture, foto ulang, pembatalan, reconnect, hasil besar dan retensi hasil selesai memiliki tes. Foto solo diproses lokal; foto room dipertukarkan langsung atau melalui relay sementara tanpa penyimpanan foto server.
+
+Kandidat produksi berisi **730 file**, SHA-256 arsip **8ae789fe1a3bcd46327b363ed4c5eca81c99aa7cc8aedd191dcb25a232d49c39**. Audit kelanjutan mencocokkan seluruh 730 file build dan seluruh 729 file yang dilayani produksi; `_headers` diproses Cloudflare dan kebijakan HTTP diperiksa terpisah. **146 unit test, TypeScript dan build lulus**. Smoke solo dan AR produksi lulus pada Chromium/WebKit; HP dan kamera fisik belum diuji otomatis. Bukti terbaru: [audit kelanjutan](docs/qa/online-room-continuation-audit-20261013.json), [rilis katalog room](docs/qa/online-room-catalog-release-20261013.json).
+
+Pengujian repo kini menjalankan Worker lokal dan Vite melalui `playwright.config.ts`; ini memperbaiki kegagalan room akibat coordinator tidak berjalan di CI. Tes selektor room sudah dibuktikan gagal sebelum perbaikan dan lulus sesudahnya; server yang dimulai tes berhenti otomatis. [Rencana dan bukti perbaikan](docs/superpowers/plans/2026-10-13-ci-room-coordinator.md).
+
+Suite lokal lengkap setelah perbaikan: **120 lulus, 24 skip, 0 gagal/flaky**; Chromium 72 lulus, WebKit 48 lulus/24 skip. [Laporan](docs/qa/online-room-continuation-local-20261013.json). Sebanyak 32 file QA historis dipulihkan byte-identik dan 21 bukti baru disimpan terpisah. Tidak ada listener 5173/8787 atau proses Worker yang tertinggal setelah run. Pekerjaan kelanjutan berhenti setelah push dan laporan sesuai permintaan pengguna; tidak ada monitor lanjutan dibuat.
+
+Office visual multi-agent tidak memiliki pemicu aktif di instruksi global, config, skills, memory atau startup; tidak ada proses/layanan/port 9090 aktif. Penghapusan permanen arsip instalasi dan data lokal ditolak pemeriksaan persetujuan otomatis dengan alasan `blocked by policy`. Sisa file masih ada dan tidak boleh dilaporkan sudah terhapus. Riwayat chat tetap dipertahankan.
+
+Cloudflare memakai Direct Upload; push GitHub menjalankan CI. Rollback Pages tersedia ke rilis AR **4d1cfcae-ee85-40cf-b513-74b5b4eb1445**; Worker sebelumnya **bf194d29-3099-44cf-ac9c-6cc2483f7627** dipulihkan secara terpisah. Latihan rollback dan gate perangkat nyata masih belum dilakukan. Bagian di bawah adalah catatan historis dengan jumlah frame/status source pada waktu masing-masing rilis.
+
+## Catatan historis: sepuluh edisi baru dan galeri tanpa orang
 
 Pengguna meminta sepuluh frame lagi dengan tema yang hidup, kemudian memilih **tanpa orang, pakai area foto netral** untuk galeri. Sepuluh edisi lama disempurnakan menjadi versi 3 sehingga tetap sesuai batas 60 frame: Rose Ribbon Salon, Azure Riviera, Denim Bloom Studio, Lilac Conservatory, Cherry Velvet Club, Citrus Sunset, Café Lumière, Emerald Herbarium, Champagne Countdown dan Monet Garden Party. Total kini 18 v3 dan 42 v2. Seluruh 60 thumbnail sudah netral, termasuk delapan desain unggulan sebelumnya; foto pengguna diisi dalam sesi sendiri.
 

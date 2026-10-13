@@ -1,12 +1,33 @@
 import fs from 'node:fs/promises';
 import { definitions } from '../src/frames/definitions.ts';
+import { maximalistIds } from '../src/frames/maximalist.ts';
 const rows = definitions
   .map(
     (f) =>
-      `| ${f.name} | ${f.id} | ${f.collection ?? 'Original collection'} | ${f.format} | ${f.slots.length} |`,
+      '| ' +
+      f.name +
+      ' | ' +
+      f.id +
+      ' | ' +
+      (f.collection ?? 'Original collection') +
+      ' | ' +
+      f.format +
+      ' | ' +
+      f.slots.length +
+      ' |',
   )
+  .join('\n');
+const themes = definitions
+  .filter((f) => maximalistIds.includes(f.id))
+  .map((f) => '- **' + f.name + '**: ' + f.description)
   .join('\n');
 await fs.writeFile(
   'docs/FRAME-REGISTRY.md',
-  `# Registry ${definitions.length} frame Fotbooth\n\nKatalog aktif: **60 frame** — 16 frame sebelumnya dan 44 edisi dekoratif dari 26 tema baru. Beberapa tema punya lebih dari satu komposisi; ini bukan klaim 60 tema independen. Batas katalog mengikuti permintaan terakhir pengguna. ID frame di luar katalog diarsipkan lokal dan tidak ikut build. Aset versi 1 dan 2 tetap dilayani agar sesi yang sudah terbuka dapat selesai. Katalog aktif memakai versi 3 pada 18 desain unggulan dan versi 2 pada 42 edisi lainnya.\n\nSetiap paket versi ${[...new Set(definitions.map((f) => f.version))].join(', ')} berisi manifest, background SVG, foreground SVG dan thumbnail PNG hasil renderer aplikasi. Strip: 1200×3600; card: 1800×2700. Mask foto valid dan luas foto minimal 55%. Artwork baru memiliki mask tambahan agar dekorasi tidak menutupi interior foto atau area judul/caption/tanggal.\n\n| Frame | ID | Koleksi | Format | Foto |\n| --- | --- | --- | --- | --- |\n${rows}\n\n## Lisensi dan referensi\n\nKomposisi SVG dan ilustrasi dibuat orisinal untuk Fotbooth. Empat belas bahan raster untuk edisi signature dihasilkan dengan tool imagegen bawaan, termasuk velvet, renda, satin, denim bordir, bahan holografis, tekstil café, citrus dan seni taman. Original, JPEG web dan prompt lengkap disimpan pada artwork/originals, artwork/materials serta artwork/provenance/signature-materials-20261007.json dan encore-materials-20261007.json; tidak memakai foto referensi atau aset template Canva. Font DM Sans dan Fraunces memakai SIL Open Font License 1.1; salinan lisensi ada di public/fonts.\n\nReferensi gaya yang diperiksa: [Canva photo strip](https://www.canva.com/templates/s/photo-strip/?continuation=150) dan [photo booth](https://www.canva.com/templates/s/photo-booth/?continuation=150). Referensi mencakup pita, floral denim, collage scrapbook, checker, karakter ilustratif dan film analog. Tidak ada file template atau aset Canva yang disalin ke paket.\n\n## Arah desain cetakan kertas\n\nArah pengguna: kartu dan strip seperti cetakan photobooth di kertas, dengan hiasan tema yang diperdalam. Versi 2 memakai tepian putih hangat, serat matte halus, alas kertas pada edisi Polaroid, dan ilustrasi pendamping khusus tiap tema. Pixel Play mempunyai konsol/tombol arcade; Denim Daisy memakai patch dan jahitan; tema surat, botani, pantai dan kopi memakai perangko, label spesimen, bintang laut dan struk. Delapan desain signature pertama memperkuat arah ini: Velvet Premiere, Popstar Birthday, After Hours Ticket, Sage Atelier, Pearl Vows, Holo Encore, Rouge Romance dan Disco Royale. Sepuluh edisi berikutnya: Rose Ribbon Salon, Azure Riviera, Denim Bloom Studio, Lilac Conservatory, Cherry Velvet Club, Citrus Sunset, Café Lumière, Emerald Herbarium, Champagne Countdown dan Monet Garden Party. Galeri seluruh 60 frame memakai area foto netral tanpa orang, sesuai pilihan pengguna. Foto contoh lama hanya menjadi bukti historis; pengguna mengisi sendiri fotonya. Thumbnail aktif bernama thumbnail-neutral.png; thumbnail.png sebelumnya tetap tersedia. Setiap tema mempunyai komposisi khusus, tipografi kuat dan detail bahan yang nyata, bukan mengganti warna atau mengulang stiker kecil. Slot foto dan dimensi ekspor tetap. Frame berikutnya mengikuti standar visual ini tanpa melewati batas 60 frame aktif.\n\n## Bukti visual\n\n- [Board sepuluh frame terbaru](qa/signature-encore-board.png)\n- [Board delapan frame pertama, netral](qa/signature-design-board.png)\n- [Board 12 pilihan dekoratif](qa/decorated-design-board.png)\n- [Contact sheet seluruh 60 frame](qa/frame-contact-sheet.png)\n- [Daftar thumbnail yang dihasilkan](qa/library-generation.json)\n\nRegenerasi: npm run assets:build, kemudian npm run qa:frames dengan dev server aktif.\n`,
+  '# Registry ' +
+    definitions.length +
+    ' frame Fotbooth\n\nKatalog aktif: **80 frame**. Dua puluh tema Festival Editions ditambahkan pada 60 frame sebelumnya sesuai permintaan 7 Oktober 2026. Katalog memakai 20 paket baru v1, 18 desain signature v3, serta 42 edisi v2. Seluruh aset terdahulu dipertahankan untuk sesi yang sudah terbuka.\n\nSetiap paket berisi manifest, background SVG, foreground SVG dan thumbnail PNG hasil renderer aplikasi. Strip: 1200×3600; kartu: 1800×2700. Luas mask foto minimal 55%; judul, caption dan tanggal berada di luar area foto. Semua thumbnail galeri mempunyai jendela foto netral tanpa orang.\n\n## Festival Editions\n\n' +
+    themes +
+    '\n\nMaterial terpisah dibuat untuk setiap tema dengan tool ImageGen bawaan. File asli, JPEG web dan prompt disimpan pada artwork/originals, artwork/materials dan [provenance Festival Editions](../artwork/provenance/festival-materials-20261007.json). Komposisi foto, rim, label dan caption memakai SVG/canvas native. Bahan strip diulang pada proporsi aslinya, tanpa meregangkan objek cetak.\n\n## Paket lengkap\n\n| Frame | ID | Koleksi | Format | Foto |\n| --- | --- | --- | --- | --- |\n' +
+    rows +
+    '\n\n## Lisensi dan sumber\n\nKomposisi SVG orisinal untuk Fotbooth. Empat belas material signature terdahulu dan 20 material festival dibuat memakai ImageGen bawaan; tidak memakai file template atau foto pengguna. DM Sans dan Fraunces memakai SIL Open Font License 1.1, dengan salinan lisensi di public/fonts.\n\n## Bukti visual\n\n- [Dua puluh frame Festival Editions](qa/festival-design-board.png)\n- [Contact sheet seluruh katalog](qa/frame-contact-sheet.png)\n- [Daftar hasil generator](qa/library-generation.json)\n\nRegenerasi: npm run assets:build, lalu npm run qa:frames dengan dev server aktif, lalu node scripts/write-registry.mjs.\n',
 );

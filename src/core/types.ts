@@ -1,3 +1,5 @@
+import type { PhotoEffectId } from './effects';
+import type { ARSnapshot } from './ar/types';
 export type FitMode = 'cover' | 'contain';
 export type Shape = 'rect' | 'roundedRect' | 'circle' | 'path';
 export interface Crop {
@@ -7,6 +9,9 @@ export interface Crop {
   zoom: number;
   rotation: number;
   mirror: boolean;
+  effect?: PhotoEffectId;
+  effectIntensity?: number;
+  arEnabled?: boolean;
 }
 export interface Placement extends Crop {
   slotId: string;
@@ -76,11 +81,13 @@ export interface PhotoAsset {
   height: number;
   sourceType: 'upload' | 'camera';
   defaultMirror: boolean;
+  ar?: ARSnapshot;
 }
 export type PhotoSource = {
   image: CanvasImageSource;
   width: number;
   height: number;
   release?: () => void;
+  ar?: ARSnapshot;
 };
 export type PhotoResolver = (id: string) => Promise<PhotoSource>;

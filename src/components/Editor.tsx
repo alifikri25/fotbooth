@@ -19,6 +19,7 @@ import type { PhotoRegistry } from '../core/resources';
 import type { History } from '../core/session';
 import { graphemes } from '../core/text';
 import { Preview } from './Preview';
+import { PhotoEffects } from './PhotoEffects';
 export interface EditorProps {
   frame: FrameDefinition;
   session: Session;
@@ -302,6 +303,23 @@ export function Editor(p: EditorProps) {
                 ))}
             </select>
           </fieldset>
+          <PhotoEffects
+            effect={placement?.effect}
+            intensity={placement?.effectIntensity}
+            disabled={!placement || p.busy}
+            onChange={(effect, effectIntensity) => crop({ effect, effectIntensity })}
+          />
+          {placement && p.photos.get(placement.photoId).ar && (
+            <label className="checkbox-label ar-editor-toggle">
+              <input
+                type="checkbox"
+                checked={placement.arEnabled !== false}
+                disabled={p.busy}
+                onChange={(e) => crop({ arEnabled: e.target.checked })}
+              />
+              Tampilkan AR pada foto ini
+            </label>
+          )}
           <div className="personalization">
             <label className="control-label" htmlFor="caption">
               Caption <span>{graphemes(p.session.caption).length}/40</span>

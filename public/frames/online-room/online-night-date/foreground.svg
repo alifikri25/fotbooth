@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1350" viewBox="0 0 1800 1350">
+  <defs><path id="star" d="M0-21 5-5 21 0 5 5 0 21-5 5-21 0-5-5Z" /></defs>
+  <rect
+    x="34"
+    y="34"
+    width="1732"
+    height="1282"
+    rx="22"
+    fill="none"
+    stroke="#89716f"
+    stroke-width="2"
+  />
+  <rect
+    x="81"
+    y="81"
+    width="1638"
+    height="972"
+    rx="16"
+    fill="none"
+    stroke="#cda878"
+    stroke-width="3"
+  />
+  <g fill="#bfa691" font-family="sans-serif" font-size="18" letter-spacing="5">
+    <text x="86" y="61">FOTOBOOTH / AFTER HOURS</text>
+    <text x="1714" y="61" text-anchor="end">UNDER THE SAME SKY</text>
+  </g>
+  <text
+    x="87"
+    y="1182"
+    font-family="Georgia,serif"
+    font-size="88"
+    font-style="italic"
+    fill="#f7e8d4"
+  >
+    Night date.
+  </text>
+  <text x="93" y="1238" font-family="sans-serif" font-size="25" letter-spacing="3" fill="#bfa691">
+    LANGIT YANG SAMA, CERITA BERDUA.
+  </text>
+  <g fill="#e3c091">
+    <use href="#star" transform="translate(1459 1130) scale(.8)" />
+    <use href="#star" transform="translate(1631 1189) scale(.45)" />
+    <use href="#star" transform="translate(1354 1228) scale(.36)" />
+    <use href="#star" transform="translate(1270 1162) scale(.32)" />
+  </g>
+  <g transform="translate(1540 1182) rotate(-12)">
+    <circle r="71" fill="none" stroke="#d4b78e" stroke-width="2" />
+    <path d="M15-48A52 52 0 1 0 36 37A45 45 0 0 1 15-48Z" fill="#e3c091" />
+    <path d="M-91 47c53 40 134 27 181-17" fill="none" stroke="#a79083" stroke-width="2" />
+  </g>
+</svg>

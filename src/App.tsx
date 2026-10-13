@@ -15,6 +15,7 @@ import { Editor } from './components/Editor';
 import { Result } from './components/Result';
 import { Dialog } from './components/Dialog';
 import { Camera } from './components/Camera';
+import { OnlineRoom } from './components/OnlineRoom';
 import { frames, getFrame } from './frames/catalog';
 import { PhotoRegistry } from './core/resources';
 import {
@@ -35,13 +36,15 @@ import type { Crop, FrameDefinition, Session } from './core/types';
 import './fonts.css';
 import './styles.css';
 
-type Screen = 'home' | 'gallery' | 'source' | 'editor' | 'camera' | 'result';
+type Screen = 'home' | 'gallery' | 'source' | 'editor' | 'camera' | 'result' | 'room';
 export default function App() {
   const photos = useRef(new PhotoRegistry()).current,
     history = useRef(new History(createSession(frames[0]))),
     exporter = useRef(new ExportManager()).current;
   const [session, setSession] = useState(history.current.current),
-    [screen, setScreen] = useState<Screen>('home'),
+    [screen, setScreen] = useState<Screen>(() =>
+      new URLSearchParams(location.hash.slice(1)).has('room') ? 'room' : 'home',
+    ),
     [activeSlot, setActiveSlot] = useState('p1');
   const live = useRef(session);
   live.current = session;
@@ -55,6 +58,7 @@ export default function App() {
     [format, setFormat] = useState<ExportFormat>('png'),
     [size, setSize] = useState<ExportSize>('standard'),
     [outputUrl, setOutputUrl] = useState('');
+  const [roomVisit, setRoomVisit] = useState(0);
   const fileInput = useRef<HTMLInputElement>(null),
     replacement = useRef<string | undefined>(undefined),
     lifecycle = useRef(0),
@@ -66,11 +70,25 @@ export default function App() {
     setPreviewError(error ?? '');
   }, []);
   function navigate(next: Screen) {
+    if (screen === 'room' && next !== 'room') historyUrlWithoutRoom();
     setNotice('');
     setPreviewError('');
     setScreen(next);
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
+  function historyUrlWithoutRoom() {
+    window.history.replaceState(null, '', location.pathname + location.search);
+  }
+  useEffect(() => {
+    const openInvitation = () => {
+      if (new URLSearchParams(location.hash.slice(1)).has('room')) {
+        setRoomVisit((value) => value + 1);
+        setScreen('room');
+      }
+    };
+    window.addEventListener('hashchange', openInvitation);
+    return () => window.removeEventListener('hashchange', openInvitation);
+  }, []);
   function releaseOutput() {
     if (outputRef.current) {
       URL.revokeObjectURL(outputRef.current);
@@ -115,6 +133,8 @@ export default function App() {
     replace?: string,
     mirror = false,
     source: 'upload' | 'camera' = 'upload',
+    effects: Partial<Crop> = {},
+    ar?: import('./core/ar/types').ARSnapshot,
   ) {
     if (busyRef.current) return;
     busyRef.current = true;
@@ -131,6 +151,7 @@ export default function App() {
         }
         try {
           const photo = await ingestPhoto(file, source, mirror);
+          photo.ar = ar;
           if (token !== lifecycle.current) {
             photos.dispose(photo);
             break;
@@ -142,6 +163,7 @@ export default function App() {
               photo.id,
               added === 0 ? replace : undefined,
               photo.defaultMirror,
+              effects,
             ),
           );
           added++;
@@ -255,6 +277,9 @@ export default function App() {
           fotbooth<span className="brand-period">●</span>
         </button>
         <nav aria-label="Navigasi utama">
+          <button className="nav-link" disabled={busy} onClick={() => navigate('room')}>
+            Foto bareng
+          </button>
           <button className="nav-link" disabled={busy} onClick={() => navigate('gallery')}>
             Koleksi frame
           </button>
@@ -271,7 +296,7 @@ export default function App() {
         <div className="header-right">
           <span className="privacy-pill">
             <LockKeyhole size={14} />
-            Foto tetap di perangkatmu
+            {screen === 'room' ? 'Room dengan undangan' : 'Foto tetap di perangkatmu'}
           </span>
           {session.photoIds.length > 0 && (
             <button
@@ -329,12 +354,18 @@ export default function App() {
                 dalam <em>satu frame.</em>
               </h1>
               <p>
-                Pita manis, bunga, atau kenangan bergaya retro.
+                Pasar malam, neon, atau kenangan bergaya retro.
                 <br />
                 Pilih frame, ambil atau masukkan foto, lalu buat jadi milikmu.
               </p>
               <button className="button primary start-button" onClick={() => navigate('gallery')}>
                 Mulai bikin foto <ArrowRight size={20} />
+              </button>
+              <button
+                className="button secondary home-online-button"
+                onClick={() => navigate('room')}
+              >
+                Foto bareng online <CameraIcon size={18} />
               </button>
               <div className="home-details">
                 <span>{frames.length} frame orisinal</span>
@@ -352,13 +383,13 @@ export default function App() {
               </span>
               <img
                 className="hero-strip strip-a"
-                src={getFrame('cherry-kiss-film').thumbnail}
-                alt="Cherry Kiss Film dengan ilustrasi foto"
+                src={getFrame('mixtape-motel').thumbnail}
+                alt="Frame Mixtape Motel dengan area foto kosong"
               />
               <img
                 className="hero-strip strip-b"
                 src={frames[0].thumbnail}
-                alt={`${frames[0].name} dengan ilustrasi foto`}
+                alt={`Frame ${frames[0].name} dengan area foto kosong`}
               />
               <div className="hero-spark">✳</div>
               <span className="hero-note">sedikit spontan. banyak kenangan.</span>
@@ -439,6 +470,7 @@ export default function App() {
             </section>
           </main>
         )}
+        {screen === 'room' && <OnlineRoom key={roomVisit} onBack={() => navigate('home')} />}
         {screen === 'editor' && (
           <Editor
             frame={frame}
@@ -472,8 +504,8 @@ export default function App() {
             activeSlot={activeSlot}
             remaining={8 - photos.size}
             onSlot={setActiveSlot}
-            onCapture={async (blob, slot, mirror) => {
-              await ingest([blob], slot, mirror, 'camera');
+            onCapture={async (blob, slot, mirror, effect, effectIntensity, ar) => {
+              await ingest([blob], slot, mirror, 'camera', { effect, effectIntensity }, ar);
             }}
             onUpload={() => {
               navigate('source');
@@ -547,10 +579,15 @@ export default function App() {
             </li>
             <li>Pilih slot, geser atau gunakan tombol arah, lalu periksa dan unduh hasil.</li>
           </ol>
-          <h3>Foto tetap di perangkatmu.</h3>
+          <h3>Foto solo tetap di perangkatmu.</h3>
           <p>
-            Aplikasi memproses foto di browser dan tidak mengirim foto atau caption ke server. Sesi
+            Mode solo memproses foto di browser dan tidak mengirim foto atau caption ke server. Sesi
             tidak disimpan otomatis. Menutup atau memuat ulang tab mengakhiri sesi.
+          </p>
+          <p>
+            Pada Foto Bareng, kamera dan foto dibagikan kepada peserta yang masuk melalui undangan.
+            Koneksi bisa langsung atau melalui server perantara; server room tidak menyimpan foto.
+            Undangan berlaku satu jam. Kamera hanya menyala setelah kamu memilihnya, tanpa mikrofon.
           </p>
           <p>
             Format: JPG, PNG, WebP diam. Maksimal 20 MB, 24 megapiksel per foto dan 8 foto. Untuk

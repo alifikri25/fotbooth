@@ -36,6 +36,28 @@ const encoreIds = [
   'festive-wishes-offset',
   'garden-paint-story',
 ];
+const maximalistIds = [
+  'night-market',
+  'aquarium-parade',
+  'pit-lane',
+  'circus-cabinet',
+  'street-scramble',
+  'ramen-social',
+  'stellar-atlas',
+  'safari-stamps',
+  'sugar-arcade',
+  'pinball-fever',
+  'mixtape-motel',
+  'skate-zine',
+  'comic-bureau',
+  'desert-bazaar',
+  'jungle-jam',
+  'snow-globe',
+  'pirate-radio',
+  'bakery-confetti',
+  'dragon-lantern',
+  'neon-district',
+];
 it('ships ten more signature editions with the previous photo geometry and format', () => {
   for (const id of encoreIds) {
     const current = definitions.find((frame) => frame.id === id)!;
@@ -86,7 +108,11 @@ it('ships eight signature revisions while retaining the previous public artwork 
 it('serves the revised artwork under cache-safe URLs matching its selected manifests', () => {
   for (const frame of definitions) {
     expect(frame.version, frame.id).toBe(
-      [...signatureIds, ...encoreIds].includes(frame.id) ? 3 : 2,
+      maximalistIds.includes(frame.id)
+        ? 1
+        : [...signatureIds, ...encoreIds].includes(frame.id)
+          ? 3
+          : 2,
     );
     for (const asset of [frame.layers.background, frame.layers.foreground, frame.thumbnail]) {
       expect(asset, frame.id).toContain(`/frames/${frame.id}/v${frame.version}/`);
@@ -97,7 +123,7 @@ it('serves the revised artwork under cache-safe URLs matching its selected manif
   }
 });
 it('keeps the previous public artwork reachable for already open photo sessions', () => {
-  for (const frame of definitions) {
+  for (const frame of definitions.filter((f) => !maximalistIds.includes(f.id))) {
     const previous = JSON.parse(
       fs.readFileSync(`public/frames/${frame.id}/v1/manifest.json`, 'utf8'),
     );
@@ -112,15 +138,19 @@ it('keeps the previous public artwork reachable for already open photo sessions'
     }
   }
 });
-it('ships 60 independently usable frame packages with unique IDs and names', () => {
-  expect(definitions).toHaveLength(60);
-  expect(new Set(definitions.map((f) => f.id)).size).toBe(60);
-  expect(new Set(definitions.map((f) => f.name)).size).toBe(60);
+it('ships 80 independently usable frame packages with unique IDs and names', () => {
+  expect(definitions).toHaveLength(80);
+  expect(new Set(definitions.map((f) => f.id)).size).toBe(80);
+  expect(new Set(definitions.map((f) => f.name)).size).toBe(80);
   for (const frame of definitions)
     expect(validateFrame(frame), frame.name).toEqual({ valid: true, errors: [] });
 });
 it('makes every package selectable and leads with decorated editorial picks', () => {
-  expect(frames.slice(0, 18).map((frame) => frame.id)).toEqual([...signatureIds, ...encoreIds]);
+  expect(frames.slice(0, 38).map((frame) => frame.id)).toEqual([
+    ...maximalistIds,
+    ...signatureIds,
+    ...encoreIds,
+  ]);
   expect(frames.map((f) => f.id).sort()).toEqual(definitions.map((f) => f.id).sort());
   for (const id of newIds) {
     const frame = frames.find((f) => f.id === id);
@@ -131,10 +161,11 @@ it('makes every package selectable and leads with decorated editorial picks', ()
     expect.arrayContaining(['comic-dash', 'candy-bounce', 'space-pals', 'monster-moods']),
   );
 });
-it('curates 44 decorated editions across 26 themed collections within the 60-frame limit', () => {
+it('retains the existing 44 decorated editions across 26 themed collections', () => {
   const expanded = definitions.filter(
     (f) =>
       !newIds.includes(f.id) &&
+      !maximalistIds.includes(f.id) &&
       ![
         'orbit-club',
         'bubble-pop',

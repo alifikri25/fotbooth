@@ -1,6 +1,8 @@
 import { containRect, coverRect, effectiveDimensions } from './geometry';
 import type { FrameDefinition, Session, PhotoResolver, SlotDefinition } from './types';
 import { fitText, fontFamily } from './text';
+import { applyEffectPixels, getPhotoFilter } from './effects';
+import { drawAR } from './ar/draw';
 
 const layers = new Map<string, Promise<HTMLImageElement>>();
 export function loadLayer(url: string): Promise<HTMLImageElement> {
@@ -81,30 +83,60 @@ export async function renderComposition(
     const placement = session.placements.find((p) => p.slotId === slot.id);
     if (placement) {
       const source = await resolvePhoto(placement.photoId);
+      let arSurface: HTMLCanvasElement | null = null;
       try {
+        if (source.ar && placement.arEnabled !== false) {
+          arSurface = document.createElement('canvas');
+          arSurface.width = source.width;
+          arSurface.height = source.height;
+          drawAR(arSurface, source.image, source.ar);
+        }
+        const surface =
+          getPhotoFilter(placement.effect, placement.effectIntensity) !== 'none'
+            ? document.createElement('canvas')
+            : null;
+        if (surface) {
+          surface.width = Math.max(1, Math.ceil((sw * width) / frame.designWidth));
+          surface.height = Math.max(1, Math.ceil((sh * height) / frame.designHeight));
+        }
+        const photoContext = surface
+          ? surface.getContext('2d', { willReadFrequently: true })!
+          : ctx;
+        if (surface) photoContext.setTransform(surface.width / sw, 0, 0, surface.height / sh, 0, 0);
+        photoContext.save();
         const size = effectiveDimensions(source.width, source.height, placement.rotation);
         let scale: number;
         if (placement.fitMode === 'contain') {
           const box = containRect(size.width, size.height, sw, sh);
           scale = box.width / size.width;
-          ctx.translate(box.x, box.y);
+          photoContext.translate(box.x, box.y);
         } else {
           const box = coverRect(size.width, size.height, sw, sh, placement);
           scale = box.scale;
-          ctx.translate(-box.x * scale, -box.y * scale);
+          photoContext.translate(-box.x * scale, -box.y * scale);
         }
-        ctx.scale(scale, scale);
+        photoContext.scale(scale, scale);
         if (placement.mirror) {
-          ctx.translate(size.width, 0);
-          ctx.scale(-1, 1);
+          photoContext.translate(size.width, 0);
+          photoContext.scale(-1, 1);
         }
         const rotation = ((placement.rotation % 360) + 360) % 360;
-        if (rotation === 90) ctx.translate(source.height, 0);
-        if (rotation === 180) ctx.translate(source.width, source.height);
-        if (rotation === 270) ctx.translate(0, source.width);
-        ctx.rotate((rotation * Math.PI) / 180);
-        ctx.drawImage(source.image, 0, 0, source.width, source.height);
+        if (rotation === 90) photoContext.translate(source.height, 0);
+        if (rotation === 180) photoContext.translate(source.width, source.height);
+        if (rotation === 270) photoContext.translate(0, source.width);
+        photoContext.rotate((rotation * Math.PI) / 180);
+        photoContext.drawImage(arSurface ?? source.image, 0, 0, source.width, source.height);
+        photoContext.restore();
+        if (surface) {
+          const pixels = photoContext.getImageData(0, 0, surface.width, surface.height);
+          applyEffectPixels(pixels.data, placement.effect, placement.effectIntensity);
+          photoContext.putImageData(pixels, 0, 0);
+          ctx.drawImage(surface, 0, 0, sw, sh);
+          surface.width = 1;
+          surface.height = 1;
+        }
       } finally {
+        if (arSurface) arSurface.width = arSurface.height = 1;
         source.release?.();
       }
     }

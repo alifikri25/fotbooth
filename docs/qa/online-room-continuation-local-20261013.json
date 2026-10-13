@@ -1,0 +1,319 @@
+{
+  "verifiedAt": "2026-10-13T12:41:05.912Z",
+  "status": "passed",
+  "sourceChanges": [
+    "playwright.config.ts starts the room coordinator and Vite through Playwright-managed webServer entries"
+  ],
+  "check": {
+    "command": "npm run check",
+    "exitCode": 0,
+    "unitFiles": 19,
+    "unitTests": 146,
+    "typeScript": "passed",
+    "build": "passed"
+  },
+  "suite": {
+    "command": "npm run test:e2e -- --reporter=list,json --output=test-results/continuation-full",
+    "exitCode": 0,
+    "report": "test-results/continuation-full-20261013.json",
+    "startTime": "2026-10-13T12:28:57.263Z",
+    "duration": 649516.112,
+    "expected": 120,
+    "skipped": 24,
+    "unexpected": 0,
+    "flaky": 0,
+    "projects": {
+      "chromium": {
+        "expected": 72,
+        "unexpected": 0,
+        "skipped": 0,
+        "flaky": 0
+      },
+      "webkit": {
+        "expected": 48,
+        "unexpected": 0,
+        "skipped": 24,
+        "flaky": 0
+      }
+    }
+  },
+  "coordinatorRegression": {
+    "command": "npx playwright test room-catalog --project=chromium --grep 'room offers' --reporter=list",
+    "before": {
+      "failed": 1,
+      "cause": "POST /api/rooms failed with ECONNREFUSED 127.0.0.1:8787 because only Vite was started",
+      "traceDirectory": "test-results/continuation-ci-backend-probe"
+    },
+    "after": {
+      "passed": 1,
+      "failed": 0,
+      "durationSeconds": 4.6,
+      "traceDirectory": "test-results/continuation-ci-backend-green"
+    },
+    "readiness": "The existing worker returns 403 without Origin; installed Playwright considers HTTP status >=200 and <404 available. No production endpoint or authorization change."
+  },
+  "cleanup": {
+    "localServerPorts": [
+      5173,
+      8787
+    ],
+    "listenersAfterSuite": [],
+    "serversStopped": true,
+    "historicalQA": {
+      "files": 32,
+      "restoredByteHashMatches": 32,
+      "reports": [
+        {
+          "file": "docs/qa/accessibility-chromium-1440.json",
+          "sha256": "efcb1ac4a3a45d9573a8bb97bf10722555730286a31b9170e103764484c17c71",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/accessibility-chromium-360.json",
+          "sha256": "3b513a69360fc27bcddfd40c17d0b00b1df4f3ccad59fce48bed2eb794f5498d",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/accessibility-webkit-1440.json",
+          "sha256": "aaed393d55283d17f270688dd2f5f3a8ab50bb09838f57eda7d1d8f0fc7596f5",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/accessibility-webkit-360.json",
+          "sha256": "3b513a69360fc27bcddfd40c17d0b00b1df4f3ccad59fce48bed2eb794f5498d",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/ar-camera-mobile.png",
+          "sha256": "b9f4c008f8c5ebfaaf9919e601d6cdbf4c581811fe4c33d1f6723ba8a509ddc7",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/camera-mobile-1280x720.png",
+          "sha256": "fa8bea9e5a010fa99f4ae78cd6f4ee2793f35473c564e7de12c6b5ec63c113f1",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/camera-mobile-1440x900.png",
+          "sha256": "170f74c12c199d8bff59c3e20c0926af5d4ef8c646e7fff14d811cbe20b8cc96",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/camera-mobile-360x560.png",
+          "sha256": "953730b099471e2c109abb71e3fa020d53b05093c28161fab7e3b34f994672f3",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/camera-mobile-390x700.png",
+          "sha256": "e2168c91270e78985fed0478ed5651e358e134b7a4e5dd58964d7a8ac9f2b802",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/camera-mobile-740x360.png",
+          "sha256": "9e915cf8d30b8f27ae21abf67bb8cfe4cac61b445a06a88280cda099d678c3eb",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/camera-mobile-844x390.png",
+          "sha256": "db921e666e80b8528834de0aaa58dca77224130f40bc2aa50c50d5997af97f43",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/effects-editor-mobile.png",
+          "sha256": "799c70e78f35ca98500cec80b675f07ab2f7dbe44dfe8d3d2d52b289d225e3d3",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/geometry-chromium.json",
+          "sha256": "7b34aaa9d1dfbea50345c884c1819930b11d97552c8f2ae4ded376f543afc319",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/geometry-webkit.json",
+          "sha256": "9208d41141786cc7d2b89f6c0b171f3437a9cdb431a0bd6f7b331bcfdc57d0fa",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-canonical-local-direct-verification.json",
+          "sha256": "e58130d665cb64bb08a63f5f3fda4085bba64f9b8152d016796c55b116b78114",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-canonical-local-relay-verification.json",
+          "sha256": "eee46982311f4683da6f899fe6b64ceb4c6db18a12493d6efb7089749fe08be5",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-catalog-direct-desktop.png",
+          "sha256": "796d98981aa2afd652e491bb644d3403c66e600030a176ff47405d4dfe9b7155",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-catalog-direct-mobile.png",
+          "sha256": "ec95ff266f7915de4746f6062bae3805e6b0fc952b2e8f1b0e9d65f9402b634b",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-catalog-direct-verification.json",
+          "sha256": "09816f541b2a027b23d421cc8a9e2b0994540c44e5163e93b6302a42725aeed2",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-catalog-relay-desktop.png",
+          "sha256": "f8b6dd1edf3a1b6cd2190e52638d749b63832744d5dcb53dd09c00c9848295a8",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-catalog-relay-mobile.png",
+          "sha256": "51af6dca5060a0986583c7a1c6fd2c4a53781db5ed29e3a07787b5e5af719124",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-catalog-relay-verification.json",
+          "sha256": "5ea3053b3d938d0b3f7dc7afadc44e449701e5180a006490f2bacd9180a37b46",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-direct-desktop.png",
+          "sha256": "910bbe65118c07decfebd73e976ae3edc06ee473b0256dfe5654249bac9af9d8",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-direct-mobile.png",
+          "sha256": "f8c2d3e1cb0baf79887d6ebaa9f5714734da919a410ed9eaefb58d6f45d536f7",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-direct-result.png",
+          "sha256": "3fb009ef5b9b189fb6f90dd7ca4616ef120e87aa2adc480034e02dd2ed270040",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-direct-verification.json",
+          "sha256": "1d538012ed5d05e5808e7900291c54ff0712a3a561a7182d727178caa47bc5ce",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-large-result-local-direct-verification.json",
+          "sha256": "f423b42a38cd4a695b2c5aa9e47f90f0a4a735193ee6b068456791fcc9d541d3",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-large-result-local-relay-verification.json",
+          "sha256": "22961a13bd3205d70d969741a59349945e48f2474c99d6ff57471c785631d182",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-relay-desktop.png",
+          "sha256": "acaff3eb57e9c67856492b303ac84808c633daa03faaaebbfc6af8d1a3272c1f",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-relay-mobile.png",
+          "sha256": "77a309878922fdaa30ac776f9d20e01424ccdb6c2d9332561e152b48a4dfbac9",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-relay-result.png",
+          "sha256": "3fb009ef5b9b189fb6f90dd7ca4616ef120e87aa2adc480034e02dd2ed270040",
+          "matchesHistorical": true
+        },
+        {
+          "file": "docs/qa/online-room-relay-verification.json",
+          "sha256": "344198c522094c66f5f67300eb76aa5a5970446b3dd2a969e06dd9a8e6c40f54",
+          "matchesHistorical": true
+        }
+      ]
+    }
+  },
+  "freshReports": [
+    {
+      "file": "docs/qa/online-room-continuation-local-accessibility-chromium-1440.json",
+      "sha256": "aaed393d55283d17f270688dd2f5f3a8ab50bb09838f57eda7d1d8f0fc7596f5"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-accessibility-webkit-1440.json",
+      "sha256": "efcb1ac4a3a45d9573a8bb97bf10722555730286a31b9170e103764484c17c71"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-accessibility-webkit-360.json",
+      "sha256": "9121f4e1607adf055e2d09622024e081944227d6be35649710bc6ff6d58e4a1c"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-camera-mobile-740x360.png",
+      "sha256": "90b1a3a405ffded8a6dd31f6cc571e5f372874a50c5be941e04625391ee8ea42"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-camera-mobile-844x390.png",
+      "sha256": "01fbe781380afc4b7498f5671c76e0976c672123d09e68a0b18a24c824c9d314"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-canonical-local-direct-verification.json",
+      "sha256": "074fa38fe36bc73c5b44f65d57c9fb6653da4ee79123df75d0af6ed633d8161d"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-canonical-local-relay-verification.json",
+      "sha256": "19a0af18a4b03892fdd69b7594827116c49a136a057f202e1c0bd607bbf6fabb"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-catalog-direct-desktop.png",
+      "sha256": "ec5c465d2c9d5fb6e8cbc43b455185a966d2562888b8230ba863244252643ea5"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-catalog-direct-mobile.png",
+      "sha256": "37edd0859f1958a264cf9d7db23f91286c2beeaee62b10ffede71bfd94b1990e"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-catalog-direct-verification.json",
+      "sha256": "ba7d89a1576e019f23a974bd5b4278aa8d51ac821cadc6224cedf604622a9f18"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-catalog-relay-desktop.png",
+      "sha256": "7d089c8e4b53ef5f42378ce8cfa2e5188c5bfe36938a06d0092cce8b7fd6eb8d"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-catalog-relay-mobile.png",
+      "sha256": "26dc47c1d2c1aaea34ad46be1429dce6fc6c1fd9a8bb7a7f024e092a0f89f234"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-catalog-relay-verification.json",
+      "sha256": "8278405de9781204f45ad2f4687136b2c2b0c80333c8030f51c9eed7a96edffb"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-direct-desktop.png",
+      "sha256": "7873b5a316812b4387218f99fcde9c89faaf0b9aca020cea1b58eaff39f8a5fd"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-direct-mobile.png",
+      "sha256": "efc38c6d85240071cd8ff26639d21dc3fdb5dcb10556bf97fea64951a6e3bff9"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-direct-verification.json",
+      "sha256": "452aec38f4469f55e7d822dcf37f7dbbaf502f761ed5f843260144e53b826509"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-large-result-local-direct-verification.json",
+      "sha256": "44754aa72870b0e5a278eb81cba59da8d74174e28265d139a5ba2b426e249726"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-large-result-local-relay-verification.json",
+      "sha256": "27bece84d6c9964e0d222d532b2ddd8659bf99ffab2afb9dc3c960575398ade5"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-relay-desktop.png",
+      "sha256": "cdbcca5b71987bf12cb1de06dd74262d1d4c31c2ba165a4a1858358a83fb98bd"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-relay-mobile.png",
+      "sha256": "f86f87ef8b62180c4cd2f124eabb219ad3d1417be983f8643ed0fe6ae59b94e0"
+    },
+    {
+      "file": "docs/qa/online-room-continuation-local-relay-verification.json",
+      "sha256": "506dfe4acd25786c49aae0e3e75c7a2afe95bc52c21a75eeda4d503f4b573027"
+    }
+  ],
+  "limitations": [
+    "Physical camera devices and mobile networks were not tested.",
+    "24 Windows WebKit cases intentionally skip synthetic camera or WebRTC-only flows; real local WebKit model, renderer, upload, effects, catalogue and paired-frame exports passed."
+  ]
+}

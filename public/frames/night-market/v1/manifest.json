@@ -1,0 +1,112 @@
+{
+  "id": "night-market",
+  "name": "Night Market",
+  "version": 1,
+  "format": "strip",
+  "categories": [
+    "party",
+    "dynamic",
+    "scrapbook"
+  ],
+  "designWidth": 1200,
+  "designHeight": 3600,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.09,
+      "y": 0.105,
+      "w": 0.82,
+      "h": 0.235,
+      "shape": "roundedRect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.09,
+      "y": 0.365,
+      "w": 0.82,
+      "h": 0.235,
+      "shape": "roundedRect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.09,
+      "y": 0.625,
+      "w": 0.82,
+      "h": 0.235,
+      "shape": "roundedRect",
+      "radius": 55,
+      "rotationDeg": 0,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Bianglala, lampion, tiket, tenda dan lampu pasar malam.",
+  "palette": {
+    "background": "#152b43",
+    "ink": "#fff2cc",
+    "accent": "#efb951",
+    "secondary": "#ba3528"
+  },
+  "layers": {
+    "background": "/frames/night-market/v1/background.svg",
+    "foreground": "/frames/night-market/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/night-market/v1/thumbnail-neutral.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1.",
+    "Original material artwork generated for Fotbooth with the built-in ImageGen tool."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "NIGHT MARKET",
+      "x": 0.07,
+      "y": 0.024,
+      "w": 0.86,
+      "h": 0.043,
+      "fontId": "sans",
+      "fontSize": 83,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#fff2cc"
+    },
+    {
+      "id": "caption",
+      "x": 0.12,
+      "y": 0.894,
+      "w": 0.76,
+      "h": 0.05,
+      "fontId": "sans",
+      "fontSize": 53,
+      "minFontSize": 32,
+      "maxLines": 2,
+      "color": "#152b43"
+    },
+    {
+      "id": "date",
+      "x": 0.2,
+      "y": 0.965,
+      "w": 0.6,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 32,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#fff2cc"
+    }
+  ],
+  "collection": "Festival Editions",
+  "artwork": {
+    "motif": "night-market",
+    "edition": 1
+  }
+}

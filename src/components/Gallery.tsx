@@ -65,7 +65,7 @@ export function Gallery({
           </h1>
         </div>
         <p>
-          Pita, bunga, scrapbook, film retro, sampai karakter lucu.
+          Pasar malam, aquarium, racing, neon, sampai scrapbook dan bunga.
           <br />
           Foto dan posisinya bisa diatur setelah ini.
         </p>

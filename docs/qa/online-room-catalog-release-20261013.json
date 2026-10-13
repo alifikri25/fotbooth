@@ -1,0 +1,532 @@
+{
+  "date": "2026-10-13",
+  "verifiedAt": "2026-10-13T12:31:02.694Z",
+  "status": "verified-catalog-production",
+  "source": {
+    "baseCommit": "1fd82596fcffe5e91b74b30241b5d29eb087e9f1",
+    "changes": "Festival frame materials, photo effects, camera AR, online-room catalogue series and CI coordinator startup are included in this repository release. The production snapshot matches the current working-tree build."
+  },
+  "preview": {
+    "id": "e2e8f932-d52a-4071-9cc8-1fcc0d16333f",
+    "url": "https://e2e8f932.fotbooth.pages.dev",
+    "alias": "https://preview.fotbooth.pages.dev",
+    "supersedes": "0b4def98-7f5d-4621-874f-a0244fe2c56a"
+  },
+  "currentProduction": {
+    "id": "b88cf128-ff60-443d-a8a0-31e919951ee5",
+    "url": "https://fotbooth.pages.dev",
+    "deploymentUrl": "https://b88cf128.fotbooth.pages.dev",
+    "branch": "main",
+    "changed": true,
+    "authorization": "User explicitly requested publication for physical-phone testing on 2026-10-13.",
+    "previousId": "4d1cfcae-ee85-40cf-b513-74b5b4eb1445",
+    "candidateUploadedWithoutRebuild": true
+  },
+  "backend": {
+    "url": "https://fotbooth-rooms.aliifikriii25.workers.dev",
+    "version": "f1327cfd-a643-43ed-a5a2-29e9d94c1839",
+    "deployed": true,
+    "previousVersion": "bf194d29-3099-44cf-ac9c-6cc2483f7627",
+    "schemaMigration": false,
+    "paidTURNEnabled": false,
+    "photoPersistence": false
+  },
+  "features": {
+    "preparedFrames": 80,
+    "dedicatedFrames": 3,
+    "selectorChoices": 83,
+    "poses": "One fresh host/guest pair per ordered slot,2–4 for catalog frames",
+    "readiness": "Both ready once; server countdown 4s for each pose, advance only after both original pairs saved/ACKed",
+    "hostCanonicalPNG": true,
+    "completedResultRetainedAfterCameraOff": true,
+    "partialSeriesCancellationAndRejoin": true,
+    "originalLimitBytes": 8388608,
+    "resultLimitBytes": 20971520,
+    "chunkLimitBytes": 16384,
+    "originalTimeoutAfterShutterMs": 45000,
+    "finalTimeoutAfterBothOriginalsMs": 60000
+  },
+  "candidate": {
+    "archive": "C:/fotbooth/docs/qa/fotbooth-online-room-catalog-candidate-20261013.zip",
+    "sha256": "8ae789fe1a3bcd46327b363ed4c5eca81c99aa7cc8aedd191dcb25a232d49c39",
+    "files": 730,
+    "verifiedArchiveEntries": 730,
+    "uploadedWithoutRebuild": true,
+    "finalDistHashRecheck": true,
+    "manifest": "docs/qa/online-room-catalog-candidate-manifest-20261013.json"
+  },
+  "verification": {
+    "unitTests": 146,
+    "unitFiles": 19,
+    "command": "npm run check",
+    "build": "passed",
+    "localRoomAndCatalogSuite": {
+      "verifiedAt": "2026-10-13T06:10:22.607Z",
+      "startTime": "2026-10-13T06:02:47.053Z",
+      "duration": 354957.325,
+      "expected": 42,
+      "skipped": 16,
+      "unexpected": 0,
+      "flaky": 0,
+      "scope": "Final frozen source: room UI, all80 catalogue PNG exports on both engines, series recovery, original lifecycle, canonical mixed-engine results and11.5MB result transport; synthetic cameras",
+      "physicalCameras": false
+    },
+    "httpsUserFlowSuite": {
+      "verifiedAt": "2026-10-13T06:24:32.859Z",
+      "startTime": "2026-10-13T06:18:26.863Z",
+      "duration": 296706.772,
+      "expected": 11,
+      "skipped": 7,
+      "unexpected": 0,
+      "flaky": 0,
+      "site": "https://e2e8f932.fotbooth.pages.dev",
+      "scope": "Actual deployed HTTPS UI with real coordinator; single-shot lifecycle,4freshpairedposes,83selectorchoices,cancel/reconnect/late-decode recovery; synthetic cameras",
+      "physicalCameras": false
+    },
+    "legacyPreviewCompatibility": {
+      "startTime": "2026-10-13T06:14:29.799Z",
+      "duration": 104276.852,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "remoteLargeResultSuite": {
+      "startTime": "2026-10-13T06:33:30.140Z",
+      "duration": 95670.849,
+      "expected": 2,
+      "skipped": 2,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "coordinatorHTTPAndWebSockets": {
+      "local": "passed",
+      "remote": "passed",
+      "series": [
+        2,
+        3,
+        4
+      ],
+      "remoteSQLiteInspection": false
+    },
+    "independentReview": "No actionable production defect found",
+    "whitespace": "passed",
+    "productionUserFlowSuite": {
+      "startTime": "2026-10-13T12:24:03.665Z",
+      "duration": 250673.179,
+      "expected": 16,
+      "skipped": 12,
+      "unexpected": 0,
+      "flaky": 0,
+      "site": "https://fotbooth.pages.dev",
+      "report": "docs/qa/online-room-continuation-production-room-suite-20261013.json",
+      "scope": "Deployed productionHTTPS: invitations,single-shot direct/relay,83frame choices,4fresh paired poses,canonical identical downloads,completed result retention,camera track/disconnect/expiry lifecycle,partial-series cancellation/rejoin/late-decode recovery",
+      "physicalCameras": false
+    },
+    "continuationLocalSuite": {
+      "command": "npm run test:e2e -- --reporter=list,json --output=test-results/continuation-full",
+      "exitCode": 0,
+      "report": "docs/qa/online-room-continuation-local-20261013.json",
+      "startTime": "2026-10-13T12:28:57.263Z",
+      "duration": 649516.112,
+      "expected": 120,
+      "skipped": 24,
+      "unexpected": 0,
+      "flaky": 0,
+      "projects": {
+        "chromium": {
+          "expected": 72,
+          "unexpected": 0,
+          "skipped": 0,
+          "flaky": 0
+        },
+        "webkit": {
+          "expected": 48,
+          "unexpected": 0,
+          "skipped": 24,
+          "flaky": 0
+        }
+      },
+      "physicalCameras": false
+    },
+    "ciCoordinatorRegression": {
+      "command": "npx playwright test room-catalog --project=chromium --grep 'room offers' --reporter=list",
+      "before": {
+        "failed": 1,
+        "cause": "POST /api/rooms failed with ECONNREFUSED 127.0.0.1:8787 because only Vite was started",
+        "traceDirectory": "test-results/continuation-ci-backend-probe"
+      },
+      "after": {
+        "passed": 1,
+        "failed": 0,
+        "durationSeconds": 4.6,
+        "traceDirectory": "test-results/continuation-ci-backend-green"
+      },
+      "readiness": "The existing worker returns 403 without Origin; installed Playwright considers HTTP status >=200 and <404 available. No production endpoint or authorization change."
+    }
+  },
+  "https": {
+    "fourPoseDirect": {
+      "verifiedAt": "2026-10-13T06:21:18.605Z",
+      "site": "https://e2e8f932.fotbooth.pages.dev",
+      "transport": "direct",
+      "syntheticCameras": true,
+      "frame": "pocket-arcade",
+      "poses": 4,
+      "distinctPairsPerSlot": true,
+      "identicalDownloads": true,
+      "bytes": 746297,
+      "sha256": "994a78f71f81538f8c3a29006c319de115c23939782e8b314497c2096725e9b4",
+      "width": 1200,
+      "height": 3600,
+      "samples": [
+        [
+          [
+            255,
+            0,
+            0,
+            255
+          ],
+          [
+            0,
+            255,
+            255,
+            255
+          ]
+        ],
+        [
+          [
+            0,
+            255,
+            0,
+            255
+          ],
+          [
+            255,
+            0,
+            255,
+            255
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            0,
+            255
+          ]
+        ],
+        [
+          [
+            255,
+            136,
+            0,
+            255
+          ],
+          [
+            136,
+            0,
+            255,
+            255
+          ]
+        ]
+      ]
+    },
+    "fourPoseRelay": {
+      "verifiedAt": "2026-10-13T06:21:55.905Z",
+      "site": "https://e2e8f932.fotbooth.pages.dev",
+      "transport": "relay",
+      "syntheticCameras": true,
+      "frame": "pocket-arcade",
+      "poses": 4,
+      "distinctPairsPerSlot": true,
+      "identicalDownloads": true,
+      "bytes": 746297,
+      "sha256": "994a78f71f81538f8c3a29006c319de115c23939782e8b314497c2096725e9b4",
+      "width": 1200,
+      "height": 3600,
+      "samples": [
+        [
+          [
+            255,
+            0,
+            0,
+            255
+          ],
+          [
+            0,
+            255,
+            255,
+            255
+          ]
+        ],
+        [
+          [
+            0,
+            255,
+            0,
+            255
+          ],
+          [
+            255,
+            0,
+            255,
+            255
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            255,
+            255
+          ],
+          [
+            255,
+            255,
+            0,
+            255
+          ]
+        ],
+        [
+          [
+            255,
+            136,
+            0,
+            255
+          ],
+          [
+            136,
+            0,
+            255,
+            255
+          ]
+        ]
+      ]
+    },
+    "singleShotDirectReport": "docs/qa/online-room-direct-verification.json",
+    "singleShotRelayReport": "docs/qa/online-room-relay-verification.json",
+    "largeDirect": {
+      "testedAt": "2026-10-13T06:33:53.248Z",
+      "transport": "direct",
+      "coordinator": "https://fotbooth-rooms.aliifikriii25.workers.dev",
+      "frameId": "kpop-starlight-wander",
+      "hostEngine": "chromium",
+      "guestEngine": "chromium",
+      "fixture": "deterministic opaque RGB1280×720 PNG portraits, seed12345; pre-encoded snapshots, no physical camera",
+      "bothParticipantsAcceptSameCaptureBeforeSending": true,
+      "sharedShutterHonored": true,
+      "originalReceiptWithin45sOfShutter": true,
+      "finalModes": [
+        "direct",
+        "direct"
+      ],
+      "resultBytes": 11498468,
+      "originalBytes": 3171661,
+      "poses": 3,
+      "transferMs": 1260,
+      "identicalDownloadBytes": true,
+      "sha256": [
+        "ca4c9f537c807d303d8263887d58197744720aa7bcdde657e48243bcf4d3a9f2",
+        "ca4c9f537c807d303d8263887d58197744720aa7bcdde657e48243bcf4d3a9f2"
+      ],
+      "width": 1200,
+      "height": 3600
+    },
+    "largeRelay": {
+      "testedAt": "2026-10-13T06:35:05.053Z",
+      "transport": "relay",
+      "coordinator": "https://fotbooth-rooms.aliifikriii25.workers.dev",
+      "frameId": "kpop-starlight-wander",
+      "hostEngine": "chromium",
+      "guestEngine": "webkit",
+      "fixture": "deterministic opaque RGB1280×720 PNG portraits, seed12345; pre-encoded snapshots, no physical camera",
+      "bothParticipantsAcceptSameCaptureBeforeSending": true,
+      "sharedShutterHonored": true,
+      "originalReceiptWithin45sOfShutter": true,
+      "finalModes": [
+        "relay",
+        "relay"
+      ],
+      "resultBytes": 11498468,
+      "originalBytes": 3171661,
+      "poses": 3,
+      "transferMs": 22787,
+      "identicalDownloadBytes": true,
+      "sha256": [
+        "ca4c9f537c807d303d8263887d58197744720aa7bcdde657e48243bcf4d3a9f2",
+        "ca4c9f537c807d303d8263887d58197744720aa7bcdde657e48243bcf4d3a9f2"
+      ],
+      "width": 1200,
+      "height": 3600
+    },
+    "smokes": {
+      "chromium-smoke": {
+        "report": "docs/qa/online-room-catalog-preview-chromium-smoke.json",
+        "exitCode": 0,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "assets": 240,
+        "exports": 2
+      },
+      "webkit-smoke": {
+        "report": "docs/qa/online-room-catalog-preview-webkit-smoke.json",
+        "exitCode": 0,
+        "viewport": {
+          "width": 360,
+          "height": 900
+        },
+        "assets": 240,
+        "exports": 2
+      },
+      "chromium-ar": {
+        "report": "docs/qa/online-room-catalog-preview-chromium-ar.json",
+        "exitCode": 0,
+        "viewport": {
+          "width": 390,
+          "height": 800
+        },
+        "assets": 4,
+        "effects": 16,
+        "exports": 2
+      },
+      "webkit-ar": {
+        "report": "docs/qa/online-room-catalog-preview-webkit-ar.json",
+        "exitCode": 0,
+        "viewport": {
+          "width": 390,
+          "height": 800
+        },
+        "assets": 4,
+        "effects": 0,
+        "exports": 0
+      }
+    }
+  },
+  "sizeProbe": "docs/qa/online-room-catalog-size-probe-20261013.json",
+  "screenshots": {
+    "desktop": "docs/qa/online-room-catalog-direct-desktop.png",
+    "mobile": "docs/qa/online-room-catalog-direct-mobile.png",
+    "scope": "Actual HTTPS preview inspected at desktop and 390px; synthetic colored cameras prove distinct snapshots, not physical users"
+  },
+  "office": {
+    "removedFromActiveTools": true,
+    "autoStartInstructionsRemoved": true,
+    "gatewayStopped": true,
+    "activeProcessesFound": false,
+    "activeServicesOrStartupFound": false,
+    "port9090Active": false,
+    "permanentDeletionCompleted": false,
+    "deletionReview": {
+      "status": "rejected",
+      "reason": "blocked by policy",
+      "action": "Permanent deletion of Office-specific installation archive and user data using validated absolute paths"
+    },
+    "remainingArtifacts": [
+      {
+        "path": "C:/Users/aliif/.codex/removed-tools/office-20261013",
+        "files": 7115,
+        "bytes": 51600642
+      },
+      {
+        "path": "C:/Users/aliif/.open-office",
+        "files": 58,
+        "bytes": 102442
+      },
+      {
+        "path": "C:/Users/aliif/.codex/tools/docs/superpowers/plans/2026-10-12-open-office-install.md",
+        "files": 1,
+        "bytes": 3183
+      }
+    ],
+    "scope": "Historical chats retained; no active Office-specific instruction, skill, process or startup entry found."
+  },
+  "testHistory": [
+    "Initial HTTPS recovery assertion used 5s before guest ICE/authentication completed; trace proved host choices retained. Test waits for both connected participants; final 18 checks passed 11/7skip. Diagnosis saved separately.",
+    "Initial legacy relay guest stalled; focused and full 3-test repeats passed without source changes.",
+    "Large-result harness initially sent before both capture announcements/shared shutter, and used 15s original receipt poll. Harness now matches actual UI timing and 45s original budget.",
+    "A Windows-WebKit remote large-original transfer also stalled once after 45s; failed guest assembler evidence was unavailable, so cause remains unproven. Two later realistic remote runs passed unchanged. Historical failures/traces remain under test-results; no speculative production fix."
+  ],
+  "limitations": [
+    "Physical Chrome Android/Safari iOS cameras and networks remain untested.",
+    "Windows Playwright WebKit lacks WebRTC, MediaStream and canvas.captureStream; mixed-engine tests use pre-encoded PNGs over real relay.",
+    "AR reports retain the script legacy date 2026-10-07; actual HTTPS checks ran 2026-10-13 Asia/Bangkok at 390px.",
+    "Production rollback exercise was not performed.",
+    "Permanent deletion of inactive Office residual files was rejected by automatic approval review."
+  ],
+  "continuationVerification": {
+    "report": "docs/qa/online-room-continuation-audit-20261013.json",
+    "verifiedAt": "2026-10-13T12:31:02.694Z",
+    "unitTests": 146,
+    "sourceBuildMatchedFiles": 730,
+    "productionMatchedFiles": 729,
+    "productionIntegrityReport": "docs/qa/online-room-continuation-production-integrity-20261013.json",
+    "smokes": [
+      {
+        "browser": "chromium",
+        "report": "docs/qa/online-room-continuation-production-chromium-smoke-20261013.json",
+        "exitCode": 0,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "frames": 80,
+        "assetsMatchedToBuild": 240,
+        "exports": 2,
+        "errors": 0
+      },
+      {
+        "browser": "webkit",
+        "report": "docs/qa/online-room-continuation-production-webkit-smoke-20261013.json",
+        "exitCode": 0,
+        "viewport": {
+          "width": 360,
+          "height": 900
+        },
+        "frames": 80,
+        "assetsMatchedToBuild": 240,
+        "exports": 2,
+        "errors": 0
+      }
+    ],
+    "ar": [
+      {
+        "browser": "chromium",
+        "report": "docs/qa/online-room-continuation-production-chromium-ar-20261013.json",
+        "exitCode": 0,
+        "assets": 4,
+        "effects": 16,
+        "exports": 2,
+        "model": {
+          "faces": 1,
+          "landmarks": 478,
+          "person": 1,
+          "background": 0
+        }
+      },
+      {
+        "browser": "webkit",
+        "report": "docs/qa/online-room-continuation-production-webkit-ar-20261013.json",
+        "exitCode": 0,
+        "assets": 4,
+        "effects": 0,
+        "exports": 0,
+        "model": {
+          "faces": 1,
+          "landmarks": 478,
+          "person": 1,
+          "background": 0
+        }
+      }
+    ],
+    "localReport": "docs/qa/online-room-continuation-local-20261013.json"
+  }
+}

@@ -41,9 +41,9 @@ test('the production catalog works with the actual Cloudflare security headers',
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('/');
-  await expect(page.getByText('60 frame orisinal', { exact: true })).toBeVisible();
+  await expect(page.getByText('80 frame orisinal', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Mulai bikin foto' }).click();
-  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(60);
+  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(80);
   await page.getByLabel('Cari frame').fill('ribbon diary');
   await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(4);
   await page.getByRole('button', { name: 'Pakai frame Rose Ribbon Salon', exact: true }).click();
