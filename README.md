@@ -4,6 +4,8 @@ Photobooth web berbahasa Indonesia dengan **80 frame**, kamera, unggah foto, edi
 
 Situs publik: [fotbooth.pages.dev](https://fotbooth.pages.dev).
 
+Perbaikan kompatibilitas AR **14 Oktober 2026** tersedia pada [deployment a8a785e3](https://a8a785e3.fotbooth.pages.dev). Jika worker gagal memakai konteks grafisnya, AR otomatis mencoba gambar yang sama pada jalur utama. [Diagnosis dan verifikasi GitHub](docs/qa/camera-review-webkit-ci-20261014.json).
+
 Alur kamera dengan pemeriksaan tiap foto sudah publik sejak **13 Oktober 2026**, deployment [723ce602](https://723ce602.fotbooth.pages.dev). Kamera menjadi pilihan utama; setelah cekrek, hasil ditampilkan sampai kamu memilih **Pakai foto & lanjut** atau **Ambil ulang**. [Bukti rilis kamera](docs/qa/camera-review-release-20261013.json).
 
 ## Foto Bareng Online

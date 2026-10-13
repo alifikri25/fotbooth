@@ -1,5 +1,9 @@
 # Prosedur staging, rilis dan rollback
 
+## Perbaikan AR dan CI — 14 Oktober 2026
+
+Produksi **a8a785e3-9040-48b2-9221-75b228a7ec13**, [fotbooth.pages.dev](https://fotbooth.pages.dev), memperbaiki kegagalan worker grafis WebKit dengan mencoba gambar yang sama pada jalur utama. Preview **567157fe-c87a-4678-a0e9-3166b8dd516e** memakai kandidat 730 file yang sama. 146 unit/build lulus, lokal 26 browser lulus/8 skip, dan run Linux terfokus 38480149931 lulus 4/2 skip. Smoke HTTPS Chromium memaksa worker gagal dan tetap menghasilkan 16 AR serta PNG/JPEG; WebKit memeriksa model asli. [Bukti](qa/camera-review-webkit-ci-20261014.json). Rollback frontend ke **723ce602-57dd-4f35-b7ef-538207044e82**; tidak ada deployment backend room.
+
 ## Produksi terbaru: kamera dengan pemeriksaan tiap foto
 
 Rilis **13 Oktober 2026**, dikonfirmasi kembali **14 Oktober 2026**: [fotbooth.pages.dev](https://fotbooth.pages.dev), deployment **723ce602-57dd-4f35-b7ef-538207044e82**, [URL tetap](https://723ce602.fotbooth.pages.dev). Buka kamera menjadi pilihan utama. Foto biasa ditampilkan sebagai draft sebelum diterima; ambil ulang tidak mengisi sesi, thumbnail foto tersimpan dapat diperiksa kembali, dan foto terakhir yang diterima membuka editor. Rangkaian otomatis tetap pilihan eksplisit.

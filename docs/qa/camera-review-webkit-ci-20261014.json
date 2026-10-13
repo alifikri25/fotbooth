@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-14",
+  "verifiedAt": "2026-10-13T22:52:27.053Z",
+  "status": "fix-verified-in-linux-focused-ci",
+  "originalFailure": {
+    "runId": 38471608199,
+    "url": "https://github.com/alifikri25/fotbooth/actions/runs/38471608199",
+    "commit": "a82c04590a5d19b018779f84b2e0253fb4b27579",
+    "unitTests": 146,
+    "build": "passed",
+    "browserPassed": 130,
+    "browserSkipped": 31,
+    "browserFailed": 1,
+    "failedTest": "WebKit real local face and person models"
+  },
+  "diagnosis": {
+    "runId": 38479183023,
+    "url": "https://github.com/alifikri25/fotbooth/actions/runs/38479183023",
+    "error": "undefined is not an object (evaluating 'GLctx.activeTexture')",
+    "mainThreadOffscreenWebGL2": true,
+    "cause": "A main-thread feature probe did not guarantee that MediaPipe could initialize its graphics context in a WebKit worker."
+  },
+  "fix": {
+    "workerStoppedOnFailure": true,
+    "sameBoundedFrameRetriedOnMainThread": true,
+    "landmarkAndMaskAssertionsPreserved": true,
+    "inferenceCancelledOnClose": true,
+    "failureArtifactsRetainedDays": 7
+  },
+  "verification": {
+    "redRegressionFailed": 2,
+    "localBrowserStats": {
+      "startTime": "2026-10-13T22:44:13.774Z",
+      "duration": 167129.019,
+      "expected": 26,
+      "skipped": 8,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "unitTests": 146,
+    "build": "passed",
+    "focusedLinux": {
+      "runId": 38480149931,
+      "url": "https://github.com/alifikri25/fotbooth/actions/runs/38480149931",
+      "conclusion": "success",
+      "passed": 4,
+      "skipped": 2,
+      "realModelTestPassedInBothEngines": true
+    },
+    "fullMainCi": "Triggered after integration; see latest Check Fotbooth run."
+  },
+  "limitations": [
+    "Physical phone cameras were not exercised.",
+    "Two injected worker fixtures require Chromium; the original real-model WebKit check remains enabled and passed."
+  ],
+  "publication": {
+    "production": {
+      "id": "a8a785e3-9040-48b2-9221-75b228a7ec13",
+      "url": "https://fotbooth.pages.dev",
+      "deploymentUrl": "https://a8a785e3.fotbooth.pages.dev",
+      "previousId": "723ce602-57dd-4f35-b7ef-538207044e82"
+    },
+    "preview": {
+      "id": "567157fe-c87a-4678-a0e9-3166b8dd516e",
+      "url": "https://567157fe.fotbooth.pages.dev"
+    },
+    "candidate": "docs/qa/camera-review-ar-fallback-candidate-20261014.json",
+    "smokes": [
+      {
+        "file": "docs/qa/camera-review-ar-fallback-preview-chromium-20261014.json",
+        "browser": "chromium",
+        "site": "preview",
+        "effects": 16,
+        "exports": 2,
+        "workerFallback": {
+          "created": 21,
+          "requests": 21,
+          "terminated": 21
+        }
+      },
+      {
+        "file": "docs/qa/camera-review-ar-fallback-preview-webkit-20261014.json",
+        "browser": "webkit",
+        "site": "preview",
+        "effects": 0,
+        "exports": 0,
+        "workerFallback": null
+      },
+      {
+        "file": "docs/qa/camera-review-ar-fallback-production-chromium-20261014.json",
+        "browser": "chromium",
+        "site": "production",
+        "effects": 16,
+        "exports": 2,
+        "workerFallback": {
+          "created": 21,
+          "requests": 21,
+          "terminated": 21
+        }
+      },
+      {
+        "file": "docs/qa/camera-review-ar-fallback-production-webkit-20261014.json",
+        "browser": "webkit",
+        "site": "production",
+        "effects": 0,
+        "exports": 0,
+        "workerFallback": null
+      }
+    ]
+  }
+}

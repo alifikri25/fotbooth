@@ -1,5 +1,11 @@
 # QA Web Photobooth — 14 Oktober 2026
 
+## Perbaikan worker AR pada WebKit Linux
+
+CI commit a82c045 gagal pada satu tes model AR WebKit, setelah 130 tes browser dan seluruh unit/build lulus. Diagnostik Linux menemukan `GLctx.activeTexture` undefined pada worker. Runtime sekarang menghentikan worker yang gagal dan mencoba frame yang sama pada jalur utama, dengan pembatalan dan batas 640px tetap berlaku.
+
+Regresi gagal sebelum perbaikan, kemudian lulus memakai model asli. Pemeriksaan lokal 26 lulus/8 skip; run Linux terfokus 38480149931 lulus 4/2 skip, termasuk tes asli WebKit. Smoke preview/produksi HTTPS memeriksa fallback worker pada Chromium, seluruh 16 AR, review/accept, undo dan PNG/JPEG; WebKit memeriksa model asli dan CSP. [Bukti](qa/camera-review-webkit-ci-20261014.json). Kamera fisik belum diuji. Kegagalan CI selanjutnya menyimpan artefak diagnosis selama tujuh hari.
+
 ## Revisi aktif: kamera utama dan pemeriksaan foto
 
 Produksi **723ce602-57dd-4f35-b7ef-538207044e82** tersedia di [fotbooth.pages.dev](https://fotbooth.pages.dev). Kamera menjadi tindakan utama; foto biasa harus diterima sebelum pindah slot. Draft retake tidak menambah jumlah foto, thumbnail tersimpan dapat ditinjau atau diganti tanpa mengubah slot lain, dan foto terakhir membuka editor. [Bukti rilis](qa/camera-review-release-20261013.json), [pemeriksaan ulang 14 Oktober](qa/camera-review-resume-integrity-20261014.json).

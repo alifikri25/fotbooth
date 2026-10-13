@@ -1,5 +1,13 @@
 # Handoff Web Photobooth — 14 Oktober 2026
 
+## Perbaikan terbaru: kompatibilitas worker AR dan GitHub CI
+
+Notifikasi commit **a82c045** berasal dari satu tes AR WebKit yang gagal di Linux GitHub: build/146 unit lulus, 130 browser lulus, 31 skip. Run diagnostik **38479183023** membuktikan MediaPipe worker gagal dengan `GLctx.activeTexture` undefined meskipun probe OffscreenCanvas pada thread utama berhasil.
+
+Runtime kini menghentikan worker yang gagal dan mencoba gambar 640px yang sama pada jalur utama. Regresi memeriksa model asli, landmark/mask, serta pembatalan sebelum model dimuat. Verifikasi lokal 26 lulus/8 skip; run Linux terfokus **38480149931** lulus 4/2 skip, termasuk tes model WebKit asli. Tes asli tetap aktif; assertion piksel dan landmark tidak dilonggarkan. Workflow menyimpan laporan/traces ketika gagal dan menyediakan filter diagnostik manual; push biasa tetap menjalankan suite penuh.
+
+Produksi **a8a785e3-9040-48b2-9221-75b228a7ec13**, [fotbooth.pages.dev](https://fotbooth.pages.dev), memakai kandidat yang sama dengan preview **567157fe-c87a-4678-a0e9-3166b8dd516e**. Smoke Chromium HTTPS memaksa kegagalan worker dan tetap memeriksa 16 AR, review/accept dan PNG/JPEG; WebKit memeriksa model asli dan CSP. Rollback frontend adalah **723ce602-57dd-4f35-b7ef-538207044e82**. Worker room tidak berubah. [Bukti diagnosis](docs/qa/camera-review-webkit-ci-20261014.json).
+
 ## Status terbaru: kamera utama dan pemeriksaan tiap foto
 
 Alur kamera sudah publik sejak **13 Oktober 2026** di [fotbooth.pages.dev](https://fotbooth.pages.dev), deployment **723ce602-57dd-4f35-b7ef-538207044e82**, [URL tetap](https://723ce602.fotbooth.pages.dev). Pratinjau **5b09357d-58e6-4bdd-b00e-9be322a1acc8** memakai kandidat yang sama. Kelanjutan **14 Oktober 2026** menutup catatan rilis dan sinkronisasi source ke repository; jangan menerbitkan ulang hanya untuk menyamakan metadata commit deployment.

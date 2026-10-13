@@ -1,5 +1,9 @@
 # Publikasi Fotbooth di Cloudflare Pages
 
+Perbaikan AR **14 Oktober 2026** menjadi produksi terbaru: **a8a785e3-9040-48b2-9221-75b228a7ec13**, [fotbooth.pages.dev](https://fotbooth.pages.dev), [URL tetap](https://a8a785e3.fotbooth.pages.dev). Preview **567157fe-c87a-4678-a0e9-3166b8dd516e** memakai dist yang sama. Kegagalan worker grafis kini mencoba jalur utama secara otomatis. Tes model WebKit yang gagal pada GitHub sebelumnya sudah lulus pada run Linux terfokus; smoke HTTPS memeriksa model asli, fallback worker, AR/editor dan PNG/JPEG. [Bukti](qa/camera-review-webkit-ci-20261014.json). Rollback ke **723ce602-57dd-4f35-b7ef-538207044e82**; backend room tetap tidak berubah.
+
+## Riwayat: pemeriksaan foto kamera
+
 Produksi terbaru adalah alur kamera dengan pemeriksaan tiap foto, diterbitkan **13 Oktober 2026** dan dikonfirmasi kembali **14 Oktober 2026**. Situs: [fotbooth.pages.dev](https://fotbooth.pages.dev), deployment **723ce602-57dd-4f35-b7ef-538207044e82**, [URL tetap](https://723ce602.fotbooth.pages.dev). Pratinjau [5b09357d](https://5b09357d.fotbooth.pages.dev) memakai kandidat yang sama. Kamera utama, review/accept/retake, thumbnail tersimpan dan visibilitas hasil di HP sudah diperiksa pada HTTPS.
 
 146 unit test dan build lulus; tes kamera/source HTTPS preview serta produksi masing-masing 11 lulus/7 skip tanpa gagal/flaky. AR dan PNG/JPEG tetap lulus di Chromium; model fallback WebKit lulus. Kandidat 730 file, SHA-256 arsip **6016b05b6f0acf432eeacd4b0bd77c3673bcecd03b4f92558f29f60f3d8716d7**, dipakai untuk kedua deployment tanpa rebuild. [Bukti rilis kamera](qa/camera-review-release-20261013.json). Rollback frontend tersedia ke **b88cf128-ff60-443d-a8a0-31e919951ee5**. Worker room tetap **f1327cfd-a643-43ed-a5a2-29e9d94c1839** dan tidak dideploy ulang. Kamera fisik belum diuji pada versi ini.

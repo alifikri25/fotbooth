@@ -4,6 +4,7 @@ import { chromium, webkit, expect } from '@playwright/test';
 const baseURL = process.env.FOTBOOTH_SMOKE_URL ?? 'http://127.0.0.1:8788';
 const browserName = process.env.FOTBOOTH_SMOKE_BROWSER ?? 'chromium';
 const reportPath = process.env.FOTBOOTH_AR_REPORT ?? 'docs/qa/ar-smoke.json';
+const forceWorkerFailure = process.env.FOTBOOTH_FORCE_AR_WORKER_FAILURE === '1';
 const browser = await { chromium, webkit }[browserName].launch();
 const portrait = await fs.readFile('artwork/materials/portrait-a.jpg');
 const manifest = JSON.parse(
@@ -69,7 +70,30 @@ try {
     exports = [];
   if (browserName === 'chromium') {
     await page.addInitScript(
-      ({ data }) => {
+      ({ data, failARWorker }) => {
+        if (failARWorker) {
+          const NativeWorker = window.Worker;
+          const stats = { created: 0, requests: 0, terminated: 0 };
+          window.arWorkerFallbackStats = stats;
+          window.Worker = class {
+            constructor(url, options) {
+              if (options?.name !== 'Fotbooth AR') return new NativeWorker(url, options);
+              stats.created++;
+            }
+            postMessage(message) {
+              stats.requests++;
+              message.image.close();
+              queueMicrotask(() =>
+                this.onmessage?.({
+                  data: { id: message.id, error: 'Worker graphics initialization fixture failure' },
+                }),
+              );
+            }
+            terminate() {
+              stats.terminated++;
+            }
+          };
+        }
         navigator.mediaDevices.getUserMedia = async () => {
           const im = new Image();
           im.src = 'data:image/jpeg;base64,' + data;
@@ -97,7 +121,7 @@ try {
         };
         navigator.mediaDevices.enumerateDevices = async () => [];
       },
-      { data: portrait.toString('base64') },
+      { data: portrait.toString('base64'), failARWorker: forceWorkerFailure },
     );
     await page.reload();
     await page.getByRole('button', { name: 'Mulai bikin foto' }).click();
@@ -194,11 +218,18 @@ try {
   }
   expect(errors).toEqual([]);
   expect(external).toEqual([]);
+  const workerFallback = await page.evaluate(() => window.arWorkerFallbackStats ?? null);
+  if (forceWorkerFailure && browserName === 'chromium') {
+    expect(workerFallback.created).toBeGreaterThan(0);
+    expect(workerFallback.requests).toBeGreaterThan(0);
+    expect(workerFallback.terminated).toBeGreaterThan(0);
+  }
   await fs.writeFile(
     reportPath,
     JSON.stringify(
       {
-        date: '2026-10-07',
+        date: new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Bangkok' }).format(new Date()),
+        verifiedAt: new Date().toISOString(),
         baseURL,
         browser: browserName,
         headers,
@@ -208,6 +239,7 @@ try {
         exports,
         errors,
         external,
+        workerFallback,
         scope:
           browserName === 'chromium'
             ? 'All 16 live AR selections, synthetic camera capture, reversible editor, real model masks/landmarks and PNG/JPEG under actual HTTPS CSP.'
