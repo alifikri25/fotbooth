@@ -5,6 +5,12 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      test_pattern:
+        description: Optional Playwright title pattern for a focused diagnostic run
+        required: false
+        type: string
+        default: ''
 
 permissions:
   contents: read
@@ -25,4 +31,19 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npx playwright install --with-deps chromium webkit
-      - run: npm run test:e2e
+      - run: |
+          if [ -n "$FOTBOOTH_E2E_PATTERN" ]; then
+            npm run test:e2e -- --grep "$FOTBOOTH_E2E_PATTERN"
+          else
+            npm run test:e2e
+          fi
+        env:
+          FOTBOOTH_E2E_PATTERN: ${{ inputs.test_pattern }}
+      - uses: actions/upload-artifact@v7
+        if: failure()
+        with:
+          name: playwright-failure-${{ github.run_id }}
+          path: |
+            test-results/
+            playwright-report/
+          retention-days: 7

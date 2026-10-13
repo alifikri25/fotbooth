@@ -7,87 +7,105 @@ test('real local face and person models produce aligned accessories and masked b
   page,
 }) => {
   test.setTimeout(90000);
-  await page.goto('/tests/harness.html');
-  const result = await page.evaluate(async () => {
-    const { ARRuntime } = await import('/src/core/ar/runtime.ts');
-    const { drawAR } = await import('/src/core/ar/draw.ts');
-    const image = new Image();
-    image.src = '/artwork/materials/portrait-a.jpg';
-    await image.decode();
-    const engine = new ARRuntime();
-    const face = await engine.infer(image, 'face');
-    const pair = document.createElement('canvas');
-    pair.width = 640;
-    pair.height = 480;
-    const pairContext = pair.getContext('2d')!;
-    pairContext.fillStyle = '#d9cbbd';
-    pairContext.fillRect(0, 0, 640, 480);
-    const pairHeight = (270 * image.naturalHeight) / image.naturalWidth;
-    pairContext.drawImage(image, 35, 35, 270, pairHeight);
-    pairContext.drawImage(image, 335, 35, 270, pairHeight);
-    // Video tracking needs a second frame to acquire a newly entered face.
-    let two = await engine.infer(pair, 'face');
-    for (let i = 0; i < 4 && two.faces.length < 2; i++) two = await engine.infer(pair, 'face');
-    const person = await engine.infer(image, 'person');
-    const c = document.createElement('canvas');
-    c.width = 600;
-    c.height = 900;
-    const ctx = c.getContext('2d')!;
-    drawAR(c, image, { effect: 'none', time: 0, faces: [] });
-    const original = ctx.getImageData(0, 0, 600, 900).data;
-    const changes: Record<string, number> = {};
-    for (const effect of [
-      'cat',
-      'bunny',
-      'bear',
-      'glasses',
-      'crown',
-      'ribbon',
-      'party',
-      'blush',
-      'hearts',
-      'butterflies',
-      'confetti',
-      'comic',
-    ]) {
-      drawAR(c, image, {
-        ...face,
-        effect,
-        time: 1234,
-        faces: face.faces.map((f) => ({
-          ...f,
-          expressions: { mouthSmileLeft: 0.8, mouthSmileRight: 0.8, jawOpen: 0.8 },
-        })),
-      });
-      const data = ctx.getImageData(0, 0, 600, 900).data;
-      changes[effect] = data.reduce((n, v, i) => n + (Math.abs(v - original[i]) > 10 ? 1 : 0), 0);
-    }
-    const alpha = person.mask!.values;
-    for (const effect of ['studio', 'aquarium', 'neon', 'outline']) {
-      drawAR(c, image, { ...person, effect, time: 1234 });
-      const data = ctx.getImageData(0, 0, 600, 900).data;
-      changes[effect] = data.reduce((n, v, i) => n + (Math.abs(v - original[i]) > 10 ? 1 : 0), 0);
-    }
-    const personAt = (x: number, y: number) =>
-      alpha[
-        Math.floor(y * person.mask!.height) * person.mask!.width +
-          Math.floor(x * person.mask!.width)
-      ];
-    drawAR(c, image, { ...person, effect: 'studio', time: 0 });
-    const bg = Array.from(ctx.getImageData(5, 5, 1, 1).data);
-    engine.close();
-    return {
-      faces: face.faces.length,
-      landmarks: face.faces[0]?.points.length,
-      person: alpha.reduce((a, b) => Math.max(a, b), 0),
-      background: alpha.reduce((a, b) => Math.min(a, b), 1),
-      changes,
-      bg,
-      centerPerson: personAt(0.5, 0.4),
-      cornerPerson: personAt(0.01, 0.01),
-      pairFaces: two.faces.length,
-    };
+  const diagnostics: string[] = [];
+  page.on('console', (message) => {
+    if (message.type() === 'error') diagnostics.push(message.text());
   });
+  await page.goto('/tests/harness.html');
+  const result = await page
+    .evaluate(async () => {
+      const { ARRuntime } = await import('/src/core/ar/runtime.ts');
+      const { drawAR } = await import('/src/core/ar/draw.ts');
+      const image = new Image();
+      image.src = '/artwork/materials/portrait-a.jpg';
+      await image.decode();
+      const engine = new ARRuntime();
+      const face = await engine.infer(image, 'face');
+      const pair = document.createElement('canvas');
+      pair.width = 640;
+      pair.height = 480;
+      const pairContext = pair.getContext('2d')!;
+      pairContext.fillStyle = '#d9cbbd';
+      pairContext.fillRect(0, 0, 640, 480);
+      const pairHeight = (270 * image.naturalHeight) / image.naturalWidth;
+      pairContext.drawImage(image, 35, 35, 270, pairHeight);
+      pairContext.drawImage(image, 335, 35, 270, pairHeight);
+      // Video tracking needs a second frame to acquire a newly entered face.
+      let two = await engine.infer(pair, 'face');
+      for (let i = 0; i < 4 && two.faces.length < 2; i++) two = await engine.infer(pair, 'face');
+      const person = await engine.infer(image, 'person');
+      const c = document.createElement('canvas');
+      c.width = 600;
+      c.height = 900;
+      const ctx = c.getContext('2d')!;
+      drawAR(c, image, { effect: 'none', time: 0, faces: [] });
+      const original = ctx.getImageData(0, 0, 600, 900).data;
+      const changes: Record<string, number> = {};
+      for (const effect of [
+        'cat',
+        'bunny',
+        'bear',
+        'glasses',
+        'crown',
+        'ribbon',
+        'party',
+        'blush',
+        'hearts',
+        'butterflies',
+        'confetti',
+        'comic',
+      ]) {
+        drawAR(c, image, {
+          ...face,
+          effect,
+          time: 1234,
+          faces: face.faces.map((f) => ({
+            ...f,
+            expressions: { mouthSmileLeft: 0.8, mouthSmileRight: 0.8, jawOpen: 0.8 },
+          })),
+        });
+        const data = ctx.getImageData(0, 0, 600, 900).data;
+        changes[effect] = data.reduce((n, v, i) => n + (Math.abs(v - original[i]) > 10 ? 1 : 0), 0);
+      }
+      const alpha = person.mask!.values;
+      for (const effect of ['studio', 'aquarium', 'neon', 'outline']) {
+        drawAR(c, image, { ...person, effect, time: 1234 });
+        const data = ctx.getImageData(0, 0, 600, 900).data;
+        changes[effect] = data.reduce((n, v, i) => n + (Math.abs(v - original[i]) > 10 ? 1 : 0), 0);
+      }
+      const personAt = (x: number, y: number) =>
+        alpha[
+          Math.floor(y * person.mask!.height) * person.mask!.width +
+            Math.floor(x * person.mask!.width)
+        ];
+      drawAR(c, image, { ...person, effect: 'studio', time: 0 });
+      const bg = Array.from(ctx.getImageData(5, 5, 1, 1).data);
+      engine.close();
+      return {
+        faces: face.faces.length,
+        landmarks: face.faces[0]?.points.length,
+        person: alpha.reduce((a, b) => Math.max(a, b), 0),
+        background: alpha.reduce((a, b) => Math.min(a, b), 1),
+        changes,
+        bg,
+        centerPerson: personAt(0.5, 0.4),
+        cornerPerson: personAt(0.01, 0.01),
+        pairFaces: two.faces.length,
+      };
+    })
+    .catch(async (error) => {
+      const capabilities = await page.evaluate(() => {
+        const offscreen = typeof OffscreenCanvas !== 'undefined';
+        const canvas = offscreen ? new OffscreenCanvas(1, 1) : null;
+        const gl = canvas?.getContext('webgl2');
+        const workerWebGL2 = !!gl;
+        gl?.getExtension('WEBGL_lose_context')?.loseContext();
+        return { offscreen, workerWebGL2, userAgent: navigator.userAgent };
+      });
+      throw new Error(
+        `${error.message}\nAR capabilities: ${JSON.stringify(capabilities)}\nAR console: ${diagnostics.slice(-10).join('\n')}`,
+      );
+    });
   expect(result.faces).toBeGreaterThan(0);
   expect(result.landmarks).toBe(478);
   expect(result.pairFaces).toBe(2);
