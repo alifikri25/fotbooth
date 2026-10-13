@@ -156,7 +156,7 @@ test('camera AR loads on demand, follows capture into the editor, supports undo 
   await page.setViewportSize({ width: 390, height: 800 });
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
   await page.locator('.camera-live').scrollIntoViewIfNeeded();
-  await page.screenshot({ path: 'docs/qa/ar-camera-mobile.png' });
+  await page.screenshot({ path: test.info().outputPath('ar-camera-mobile.png') });
   await page.getByLabel('Timer kamera').selectOption('0');
   await page.getByLabel('Ambil rangkaian').check();
   await page.getByRole('button', { name: 'Ambil foto', exact: true }).click();
@@ -204,10 +204,18 @@ test('AR model failure leaves normal camera capture available', async ({ page, b
   await expect(page.getByRole('button', { name: 'Ambil foto', exact: true })).toBeEnabled();
   await page.getByLabel('Timer kamera').selectOption('0');
   await page.getByRole('button', { name: 'Ambil foto', exact: true }).click();
+  await expect(page.getByTestId('camera-capture-review')).toBeVisible();
+  await expect(
+    page
+      .getByTestId('camera-capture-review')
+      .getByRole('img', { name: 'Hasil foto 1', exact: true }),
+  ).toBeVisible();
+  await expect(page.getByTestId('camera-progress')).toHaveText('0/3 terisi');
+  await page.getByRole('button', { name: 'Pakai foto & lanjut', exact: true }).click();
   await expect(page.getByTestId('camera-progress')).toHaveText('1/3 terisi');
 });
 
-test('single AR shots advance to the next empty slot after each asynchronous ingestion', async ({
+test('single AR shots stay in review until accepted, then advance after asynchronous ingestion', async ({
   page,
   browserName,
 }) => {
@@ -220,11 +228,30 @@ test('single AR shots advance to the next empty slot after each asynchronous ing
       timeout: 45000,
     });
     await page.getByRole('button', { name: 'Ambil foto', exact: true }).click();
-    await expect(page.getByTestId('camera-progress')).toHaveText(`${i + 1}/3 terisi`);
-    if (i < 2)
+    await expect(page.getByTestId('camera-capture-review')).toBeVisible();
+    await expect(
+      page
+        .getByTestId('camera-capture-review')
+        .getByRole('img', { name: `Hasil foto ${i + 1}`, exact: true }),
+    ).toBeVisible();
+    await expect(page.getByTestId('camera-progress')).toHaveText(`${i}/3 terisi`);
+    await expect(
+      page.getByRole('button', { name: `Pilih foto kamera ${i + 1}`, exact: true }),
+    ).toHaveAttribute('aria-pressed', 'true');
+    await expect
+      .poll(() => page.workers().filter((w) => w.url().includes('/ar/worker')).length)
+      .toBe(0);
+    await page.getByRole('button', { name: 'Pakai foto & lanjut', exact: true }).click();
+    if (i < 2) {
+      await expect(page.getByTestId('camera-progress')).toHaveText(`${i + 1}/3 terisi`);
       await expect(
         page.getByRole('button', { name: `Pilih foto kamera ${i + 2}`, exact: true }),
       ).toHaveAttribute('aria-pressed', 'true');
+    } else {
+      await expect(page.getByRole('heading', { name: 'Atur fotomu' })).toBeVisible();
+      await expect(page.getByTestId('photo-count')).toHaveText('3/8 foto');
+      await expect(page.getByRole('button', { name: 'Lihat hasil', exact: true })).toBeEnabled();
+    }
   }
 });
 

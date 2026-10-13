@@ -89,10 +89,24 @@ test('a complete camera burst exports and retaking slot two preserves the other 
     await page.getByRole('button', { name: 'Pakai kamera', exact: true }).click();
     await expect(page.getByRole('button', { name: 'Ambil foto', exact: true })).toBeEnabled();
     await page.getByRole('button', { name: 'Pilih foto kamera 2', exact: true }).click();
+    await expect(
+      page
+        .getByTestId('camera-capture-review')
+        .getByRole('img', { name: 'Hasil foto 2', exact: true }),
+    ).toBeVisible();
+    await page.getByRole('button', { name: 'Ambil ulang', exact: true }).click();
     await page.getByLabel('Timer kamera').selectOption('0');
     await page.getByRole('button', { name: 'Mirror aktif', exact: true }).click();
     await page.getByRole('button', { name: 'Ambil foto', exact: true }).click();
-    await page.getByRole('button', { name: 'Lanjut edit' }).click();
+    await expect(page.getByTestId('camera-capture-review')).toBeVisible();
+    await expect(
+      page
+        .getByTestId('camera-capture-review')
+        .getByRole('img', { name: 'Hasil foto 2', exact: true }),
+    ).toBeVisible();
+    await expect(page.getByTestId('camera-progress')).toHaveText('3/3 terisi');
+    await page.getByRole('button', { name: 'Pakai foto & lanjut', exact: true }).click();
+    await expect(page.getByRole('heading', { name: 'Atur fotomu' })).toBeVisible();
     await expect(page.getByTestId('photo-count')).toHaveText('4/8 foto');
     await expect(page.getByRole('button', { name: 'Lihat hasil' })).toBeEnabled();
     expect(await unchangedSlots()).toEqual(before);
@@ -169,6 +183,14 @@ test('real browser fake camera captures, cancels a burst, retakes one slot, and 
     const stream = await page.locator('video').evaluateHandle((v: HTMLVideoElement) => v.srcObject);
     await page.getByLabel('Timer kamera').selectOption('0');
     await page.getByRole('button', { name: 'Ambil foto', exact: true }).click();
+    await expect(page.getByTestId('camera-capture-review')).toBeVisible();
+    await expect(
+      page
+        .getByTestId('camera-capture-review')
+        .getByRole('img', { name: 'Hasil foto 1', exact: true }),
+    ).toBeVisible();
+    await expect(page.getByTestId('camera-progress')).toHaveText('0/3 terisi');
+    await page.getByRole('button', { name: 'Pakai foto & lanjut', exact: true }).click();
     await expect(page.getByTestId('camera-progress')).toContainText('1/3 terisi');
     await page.getByLabel('Timer kamera').selectOption('3');
     await page.getByLabel('Ambil rangkaian').check();
@@ -179,6 +201,12 @@ test('real browser fake camera captures, cancels a burst, retakes one slot, and 
     await expect(page.getByTestId('camera-progress')).toContainText('1/3 terisi');
     await page.getByLabel('Ambil rangkaian').uncheck();
     await page.getByRole('button', { name: 'Pilih foto kamera 1' }).click();
+    await expect(
+      page
+        .getByTestId('camera-capture-review')
+        .getByRole('img', { name: 'Hasil foto 1', exact: true }),
+    ).toBeVisible();
+    await page.getByRole('button', { name: 'Ambil ulang', exact: true }).click();
     await page.getByLabel('Timer kamera').selectOption('0');
     // Keep the real encoder, but expose the async interval the lifecycle test must respect.
     await page.evaluate(() => {
@@ -189,8 +217,16 @@ test('real browser fake camera captures, cancels a burst, retakes one slot, and 
       };
     });
     await page.getByRole('button', { name: 'Ambil foto', exact: true }).click();
-    // A retake leaves the filled-slot count unchanged. Wait until encoding and ingest finish.
-    await expect(page.getByRole('button', { name: 'Lanjut edit' })).toBeEnabled();
+    // Encoding completes before review; accepting the retake keeps the filled-slot count unchanged.
+    await expect(page.getByTestId('camera-capture-review')).toBeVisible();
+    await expect(
+      page
+        .getByTestId('camera-capture-review')
+        .getByRole('img', { name: 'Hasil foto 1', exact: true }),
+    ).toBeVisible();
+    await expect(page.getByTestId('camera-progress')).toHaveText('1/3 terisi');
+    await page.getByRole('button', { name: 'Pakai foto & lanjut', exact: true }).click();
+    await expect(page.getByRole('button', { name: 'Ambil foto', exact: true })).toBeEnabled();
     await page.evaluate(() => window.dispatchEvent(new Event('pagehide')));
     expect(
       await stream.evaluate((s: MediaStream) =>

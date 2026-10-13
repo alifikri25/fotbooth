@@ -135,9 +135,23 @@ try {
         timeout: 45000,
       });
       await page.getByRole('button', { name: 'Ambil foto', exact: true }).click();
-      await expect(page.getByTestId('camera-progress')).toHaveText(`${i + 1}/3 terisi`);
+      await expect(page.getByTestId('camera-capture-review')).toBeVisible();
+      await expect(
+        page
+          .getByTestId('camera-capture-review')
+          .getByRole('img', { name: `Hasil foto ${i + 1}`, exact: true }),
+      ).toBeVisible();
+      await expect(page.getByTestId('camera-progress')).toHaveText(`${i}/3 terisi`);
+      await page.getByRole('button', { name: 'Pakai foto & lanjut', exact: true }).click();
+      if (i < 2) {
+        await expect(page.getByTestId('camera-progress')).toHaveText(`${i + 1}/3 terisi`);
+        await expect(
+          page.getByRole('button', { name: `Pilih foto kamera ${i + 2}`, exact: true }),
+        ).toHaveAttribute('aria-pressed', 'true');
+      }
     }
-    await page.getByRole('button', { name: 'Lanjut edit', exact: true }).click();
+    await expect(page.getByRole('heading', { name: 'Atur fotomu' })).toBeVisible();
+    await expect(page.getByTestId('photo-count')).toHaveText('3/8 foto');
     await page.getByRole('button', { name: 'Pilih slot 1', exact: true }).click();
     await expect(page.getByRole('button', { name: 'Lihat hasil', exact: true })).toBeEnabled();
     const sum = () =>

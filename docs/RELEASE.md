@@ -1,5 +1,15 @@
 # Prosedur staging, rilis dan rollback
 
+## Produksi terbaru: kamera dengan pemeriksaan tiap foto
+
+Rilis **13 Oktober 2026**, dikonfirmasi kembali **14 Oktober 2026**: [fotbooth.pages.dev](https://fotbooth.pages.dev), deployment **723ce602-57dd-4f35-b7ef-538207044e82**, [URL tetap](https://723ce602.fotbooth.pages.dev). Buka kamera menjadi pilihan utama. Foto biasa ditampilkan sebagai draft sebelum diterima; ambil ulang tidak mengisi sesi, thumbnail foto tersimpan dapat diperiksa kembali, dan foto terakhir yang diterima membuka editor. Rangkaian otomatis tetap pilihan eksplisit.
+
+146 unit test dan build lulus. Tes terfokus dan integrasi lokal berasal dari dua run: **11 lulus/7 skip** dan **22 lulus/8 skip**. Preview **5b09357d-58e6-4bdd-b00e-9be322a1acc8** dan produksi HTTPS masing-masing **11 lulus/7 skip**, tanpa gagal/flaky. Empat smoke AR memeriksa model wajah/orang, 16 efek Chromium, review/accept, editor dan PNG/JPEG. HTML dan seluruh lima bundel JS/CSS cocok kandidat. Kamera fisik dan latihan rollback belum diuji.
+
+Kandidat 730 file memiliki SHA-256 arsip **6016b05b6f0acf432eeacd4b0bd77c3673bcecd03b4f92558f29f60f3d8716d7**; seluruh entri arsip diverifikasi dan kedua deployment memakai dist yang sama tanpa rebuild. [Bukti rilis](qa/camera-review-release-20261013.json), [pemeriksaan ulang 14 Oktober](qa/camera-review-resume-integrity-20261014.json). Rollback Pages ke **b88cf128-ff60-443d-a8a0-31e919951ee5**; Worker room tetap **f1327cfd-a643-43ed-a5a2-29e9d94c1839**, tidak dideploy ulang.
+
+## Rilis sebelumnya: Foto Bareng Online
+
 Produksi Foto Bareng Online, **13 Oktober 2026**, sudah diterbitkan di [fotbooth.pages.dev](https://fotbooth.pages.dev) atas persetujuan eksplisit pengguna untuk menguji pada HP fisik. Deployment **b88cf128-ff60-443d-a8a0-31e919951ee5**, branch `main`, [URL deployment produksi](https://b88cf128.fotbooth.pages.dev). Room memakai seluruh **80 frame koleksi dan tiga frame khusus**; setiap slot mengambil pose berdua yang baru, dengan satu PNG akhir identik untuk kedua peserta. [Bukti rilis dan pemeriksaan](qa/online-room-catalog-release-20261013.json).
 
 Produksi memakai dist kandidat 730 file yang sama dengan pratinjau **e2e8f932**, tanpa rebuild, dengan SHA-256 arsip **8ae789fe1a3bcd46327b363ed4c5eca81c99aa7cc8aedd191dcb25a232d49c39**. Pemeriksaan UI pada origin produksi **4 lulus, 2 skip kamera sintetis WebKit, 0 gagal/flaky**: empat pose berbeda, unduhan identik lewat koneksi langsung dan relay, foto ulang, reconnect, serta hasil selesai tetap tersedia setelah gangguan kamera/koneksi. Empat smoke HTTPS produksi solo/AR lulus: HTML dan 240 aset frame cocok dist, PNG/JPEG solo terbaca, model wajah/orang nyata bekerja pada kedua engine, dan 16 efek kamera AR beserta editor/ekspor diperiksa di Chromium. Smoke menggunakan Chromium 1440 px, WebKit 360 px dan AR 390 px; kamera/HP fisik belum diuji otomatis, dan pengguna kini akan mengujinya langsung. Angka pratinjau dan lokal berikut tetap dicatat sebagai run terpisah.

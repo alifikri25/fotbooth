@@ -86,7 +86,7 @@ test('live camera lets phone users see their face while capturing and cancelling
         // This slot is 756 × 909.9 design pixels. A height limit must preserve its guide ratio.
         expect(preview.width / preview.height).toBeCloseTo(756 / 909.9, 2);
         await page.screenshot({
-          path: `docs/qa/camera-mobile-${viewport.width}x${viewport.height}.png`,
+          path: test.info().outputPath(`camera-mobile-${viewport.width}x${viewport.height}.png`),
         });
         await page.getByLabel('Timer kamera').selectOption('3');
         const scrollBefore = await page.evaluate(() => window.scrollY);
@@ -108,7 +108,42 @@ test('live camera lets phone users see their face while capturing and cancelling
           capture.action.x + capture.action.width / 2,
           capture.action.y + capture.action.height / 2,
         );
+        await expect(page.getByTestId('camera-capture-review')).toBeVisible();
+        await expect(
+          page
+            .getByTestId('camera-capture-review')
+            .getByRole('img', { name: 'Hasil foto 1', exact: true }),
+        ).toBeVisible();
+        await expect(page.getByTestId('camera-progress')).toHaveText('0/4 terisi');
+        const rejecting = await visibleTogether(page, 'Ambil ulang', viewport.height);
+        await visibleTogether(page, 'Pakai foto & lanjut', viewport.height);
+        expect(await page.evaluate(() => window.scrollY)).toBe(scrollBefore);
+        await page.screenshot({
+          path: test.info().outputPath(`camera-review-${viewport.width}x${viewport.height}.png`),
+        });
+        await page.mouse.click(
+          rejecting.action.x + rejecting.action.width / 2,
+          rejecting.action.y + rejecting.action.height / 2,
+        );
+        await expect(page.getByTestId('camera-capture-review')).toHaveCount(0);
+        await expect(page.getByTestId('camera-progress')).toHaveText('0/4 terisi');
+        await expect(page.getByRole('button', { name: 'Ambil foto', exact: true })).toBeEnabled();
+        const retaking = await visibleTogether(page, 'Ambil foto', viewport.height);
+        await page.mouse.click(
+          retaking.action.x + retaking.action.width / 2,
+          retaking.action.y + retaking.action.height / 2,
+        );
+        await expect(page.getByTestId('camera-capture-review')).toBeVisible();
+        const accepting = await visibleTogether(page, 'Pakai foto & lanjut', viewport.height);
+        await visibleTogether(page, 'Ambil ulang', viewport.height);
+        await page.mouse.click(
+          accepting.action.x + accepting.action.width / 2,
+          accepting.action.y + accepting.action.height / 2,
+        );
         await expect(page.getByTestId('camera-progress')).toHaveText('1/4 terisi');
+        await expect(
+          page.getByRole('button', { name: 'Pilih foto kamera 2', exact: true }),
+        ).toHaveAttribute('aria-pressed', 'true');
         await expect(page.getByRole('button', { name: 'Ambil foto', exact: true })).toBeEnabled();
         await visibleTogether(page, 'Ambil foto', viewport.height);
         expect(await page.evaluate(() => window.scrollY)).toBe(scrollBefore);

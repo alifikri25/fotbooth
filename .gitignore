@@ -1,6 +1,7 @@
 node_modules/
 dist/
 test-results/
+test-results-*/
 playwright-report/
 *.tsbuildinfo
 .env
@@ -32,6 +33,8 @@ docs/qa/*
 !docs/qa/ar-release-20261007.json
 !docs/qa/online-room-*.png
 !docs/qa/online-room-*.json
+!docs/qa/camera-review-*.json
+!docs/qa/camera-review-*.png
 *.log
 .DS_Store
 Thumbs.db

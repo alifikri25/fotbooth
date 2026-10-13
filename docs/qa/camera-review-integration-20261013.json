@@ -1,0 +1,336 @@
+{
+  "testedAt": "2026-10-13T13:24:27.118Z",
+  "scope": "Existing camera, AR, effects, and mobile camera integration; Chromium and WebKit; synthetic camera only",
+  "command": "playwright test tests/e2e/camera.spec.ts tests/e2e/ar.spec.ts tests/e2e/effects.spec.ts tests/e2e/mobile-camera.spec.ts --project=chromium --project=webkit",
+  "stats": {
+    "startTime": "2026-10-13T13:24:27.118Z",
+    "duration": 78627.895,
+    "expected": 21,
+    "skipped": 8,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "historicalQaAssetsPreserved": true,
+  "rawReport": "test-results/camera-review-integration-20261013.json",
+  "initialCases": [
+    {
+      "file": "ar.spec.ts",
+      "title": "real local face and person models produce aligned accessories and masked backgrounds",
+      "project": "chromium",
+      "status": "expected",
+      "durationMs": 1324,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "ar.spec.ts",
+      "title": "camera AR loads on demand, follows capture into the editor, supports undo and exports",
+      "project": "chromium",
+      "status": "expected",
+      "durationMs": 2682,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "ar.spec.ts",
+      "title": "AR model failure leaves normal camera capture available",
+      "project": "chromium",
+      "status": "expected",
+      "durationMs": 1586,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "ar.spec.ts",
+      "title": "single AR shots stay in review until accepted, then advance after asynchronous ingestion",
+      "project": "chromium",
+      "status": "expected",
+      "durationMs": 3412,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "ar.spec.ts",
+      "title": "saved AR shares the photo transform and can be removed in preview and PNG/JPEG",
+      "project": "chromium",
+      "status": "expected",
+      "durationMs": 116,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "ar.spec.ts",
+      "title": "built AR loads real models under the Cloudflare CSP without external photo requests",
+      "project": "chromium",
+      "status": "expected",
+      "durationMs": 1613,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "ar.spec.ts",
+      "title": "stopping AR aborts an in-flight model load promptly in both inference paths",
+      "project": "chromium",
+      "status": "expected",
+      "durationMs": 252,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "ar.spec.ts",
+      "title": "real local face and person models produce aligned accessories and masked backgrounds",
+      "project": "webkit",
+      "status": "expected",
+      "durationMs": 1878,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "ar.spec.ts",
+      "title": "camera AR loads on demand, follows capture into the editor, supports undo and exports",
+      "project": "webkit",
+      "status": "skipped",
+      "durationMs": 110,
+      "skipReason": "Canvas captureStream test camera needs Chromium. Real inference is covered in both engines.",
+      "error": null
+    },
+    {
+      "file": "ar.spec.ts",
+      "title": "AR model failure leaves normal camera capture available",
+      "project": "webkit",
+      "status": "skipped",
+      "durationMs": 116,
+      "skipReason": "Canvas test camera needs Chromium.",
+      "error": null
+    },
+    {
+      "file": "ar.spec.ts",
+      "title": "single AR shots stay in review until accepted, then advance after asynchronous ingestion",
+      "project": "webkit",
+      "status": "skipped",
+      "durationMs": 99,
+      "skipReason": "Canvas test camera needs Chromium.",
+      "error": null
+    },
+    {
+      "file": "ar.spec.ts",
+      "title": "saved AR shares the photo transform and can be removed in preview and PNG/JPEG",
+      "project": "webkit",
+      "status": "expected",
+      "durationMs": 322,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "ar.spec.ts",
+      "title": "built AR loads real models under the Cloudflare CSP without external photo requests",
+      "project": "webkit",
+      "status": "skipped",
+      "durationMs": 106,
+      "skipReason": "Built camera stream uses Chromium; WebKit real models are tested separately.",
+      "error": null
+    },
+    {
+      "file": "ar.spec.ts",
+      "title": "stopping AR aborts an in-flight model load promptly in both inference paths",
+      "project": "webkit",
+      "status": "expected",
+      "durationMs": 612,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "camera.spec.ts",
+      "title": "camera denial preserves an immediately usable upload path",
+      "project": "chromium",
+      "status": "expected",
+      "durationMs": 875,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "camera.spec.ts",
+      "title": "a complete camera burst exports and retaking slot two preserves the other photos and crops",
+      "project": "chromium",
+      "status": "expected",
+      "durationMs": 6829,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "camera.spec.ts",
+      "title": "real browser fake camera captures, cancels a burst, retakes one slot, and stops on exit",
+      "project": "chromium",
+      "status": "expected",
+      "durationMs": 5968,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "camera.spec.ts",
+      "title": "camera denial preserves an immediately usable upload path",
+      "project": "webkit",
+      "status": "expected",
+      "durationMs": 2236,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "camera.spec.ts",
+      "title": "a complete camera burst exports and retaking slot two preserves the other photos and crops",
+      "project": "webkit",
+      "status": "skipped",
+      "durationMs": 1,
+      "skipReason": "Fake-device capture is available only in Chromium.",
+      "error": null
+    },
+    {
+      "file": "camera.spec.ts",
+      "title": "real browser fake camera captures, cancels a burst, retakes one slot, and stops on exit",
+      "project": "webkit",
+      "status": "skipped",
+      "durationMs": 0,
+      "skipReason": "Chromium fake-device coverage; physical cameras tracked separately.",
+      "error": null
+    },
+    {
+      "file": "effects.spec.ts",
+      "title": "per-photo monochrome changes real preview and downloaded pixels, and can be undone",
+      "project": "chromium",
+      "status": "expected",
+      "durationMs": 2506,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "effects.spec.ts",
+      "title": "all presets render on uploaded photos, zero intensity restores the original, and sepia has real color",
+      "project": "chromium",
+      "status": "expected",
+      "durationMs": 1683,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "effects.spec.ts",
+      "title": "live camera selection survives capture and remains reversible in the editor",
+      "project": "chromium",
+      "status": "unexpected",
+      "durationMs": 5964,
+      "skipReason": "",
+      "error": "Whole canvas assertion counted 1503 colored pixels in rounded frame corners; photo interior was fully monochrome. Resolved by sampling photo interior and verified by the passing focused rerun."
+    },
+    {
+      "file": "effects.spec.ts",
+      "title": "per-photo monochrome changes real preview and downloaded pixels, and can be undone",
+      "project": "webkit",
+      "status": "expected",
+      "durationMs": 4292,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "effects.spec.ts",
+      "title": "all presets render on uploaded photos, zero intensity restores the original, and sepia has real color",
+      "project": "webkit",
+      "status": "expected",
+      "durationMs": 5016,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "effects.spec.ts",
+      "title": "live camera selection survives capture and remains reversible in the editor",
+      "project": "webkit",
+      "status": "skipped",
+      "durationMs": 0,
+      "skipReason": "Synthetic camera device is supported by Chromium.",
+      "error": null
+    },
+    {
+      "file": "mobile-camera.spec.ts",
+      "title": "mobile camera preview and reopen action fit together when permission is denied",
+      "project": "chromium",
+      "status": "expected",
+      "durationMs": 6208,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "mobile-camera.spec.ts",
+      "title": "live camera lets phone users see their face while capturing and cancelling without scrolling",
+      "project": "chromium",
+      "status": "expected",
+      "durationMs": 8822,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "mobile-camera.spec.ts",
+      "title": "mobile camera preview and reopen action fit together when permission is denied",
+      "project": "webkit",
+      "status": "expected",
+      "durationMs": 12213,
+      "skipReason": "",
+      "error": null
+    },
+    {
+      "file": "mobile-camera.spec.ts",
+      "title": "live camera lets phone users see their face while capturing and cancelling without scrolling",
+      "project": "webkit",
+      "status": "skipped",
+      "durationMs": 0,
+      "skipReason": "Native synthetic-camera capture is available in Chromium.",
+      "error": null
+    }
+  ],
+  "reruns": [
+    {
+      "command": "playwright test tests/e2e/effects.spec.ts --project=chromium --grep live-camera-selection",
+      "stats": {
+        "startTime": "2026-10-13T13:29:33.955Z",
+        "duration": 1984.3649999999998,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "report": "test-results/camera-review-effect-rerun-20261013.json",
+      "change": "Photo-pixel assertion samples inner 10–90% instead of rounded corners painted with frame background. Production code unchanged."
+    }
+  ],
+  "limitation": "No physical camera or phone tested. Chromium camera fixtures are skipped in WebKit; real model inference, renderer parity, upload fallback, and denied-camera responsive controls are tested in both engines.",
+  "finalStats": {
+    "total": 30,
+    "passed": 22,
+    "skipped": 8,
+    "failed": 0,
+    "flaky": 0
+  },
+  "diagnosis": {
+    "test": "effects.spec.ts: live camera selection survives capture and remains reversible in the editor",
+    "classification": "Test sampled frame background outside rounded photo corners",
+    "reviewCanvas": [
+      720,
+      619
+    ],
+    "coloredPixels": 1503,
+    "cornerCounts": [
+      374,
+      376,
+      376,
+      377
+    ],
+    "interiorColoredPixels": 0,
+    "dominantCornerRGBA": [
+      21,
+      43,
+      67,
+      255
+    ],
+    "dominantCornerPixels": 1284,
+    "frameBackground": "#152b43",
+    "resolution": "Check actual photo interior pixels, retain grayscale and editor reversibility checks",
+    "noProductionFixRequired": true
+  }
+}

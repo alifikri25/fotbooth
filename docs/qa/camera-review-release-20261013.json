@@ -1,0 +1,158 @@
+{
+  "date": "2026-10-13",
+  "verifiedAt": "2026-10-13T13:43:24.264Z",
+  "status": "published-and-verified",
+  "source": {
+    "baseCommit": "5783433941b8326824eb4ce2f34d8a8b78a0b65e",
+    "publishedWorkingTreeSnapshot": true,
+    "changes": "Camera-first source action, pre-ingest single-shot review, accepted thumbnails rendered with crop/mirror/effects/AR, mobile thumbnail scroll-to-review; explicit burst retained"
+  },
+  "production": {
+    "id": "723ce602-57dd-4f35-b7ef-538207044e82",
+    "url": "https://fotbooth.pages.dev",
+    "deploymentUrl": "https://723ce602.fotbooth.pages.dev",
+    "previousId": "b88cf128-ff60-443d-a8a0-31e919951ee5"
+  },
+  "preview": {
+    "id": "5b09357d-58e6-4bdd-b00e-9be322a1acc8",
+    "url": "https://5b09357d.fotbooth.pages.dev"
+  },
+  "candidate": {
+    "manifest": "docs/qa/camera-review-candidate-manifest-20261013.json",
+    "archive": "C:/fotbooth/docs/qa/fotbooth-camera-review-candidate-20261013.zip",
+    "sha256": "6016b05b6f0acf432eeacd4b0bd77c3673bcecd03b4f92558f29f60f3d8716d7",
+    "files": 730,
+    "verifiedArchiveEntries": 730,
+    "uploadedWithoutRebuild": true
+  },
+  "verification": {
+    "check": {
+      "unitTests": 146,
+      "unitFiles": 19,
+      "typeScript": "passed",
+      "build": "passed",
+      "exitCode": 0
+    },
+    "focusedLocal": {
+      "report": "docs/qa/camera-review-local-20261013.json",
+      "stats": {
+        "startTime": "2026-10-13T13:32:15.792Z",
+        "duration": 18790.545000000002,
+        "expected": 11,
+        "skipped": 7,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    "integration": {
+      "report": "docs/qa/camera-review-integration-20261013.json",
+      "stats": {
+        "total": 30,
+        "passed": 22,
+        "skipped": 8,
+        "failed": 0,
+        "flaky": 0
+      }
+    },
+    "preview": {
+      "report": "docs/qa/camera-review-preview-20261013.json"
+    },
+    "production": {
+      "report": "docs/qa/camera-review-production-20261013.json",
+      "stats": {
+        "startTime": "2026-10-13T13:40:52.770Z",
+        "duration": 18748.033000000003,
+        "expected": 11,
+        "skipped": 7,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    "ar": [
+      {
+        "site": "preview",
+        "browser": "chromium",
+        "report": "docs/qa/camera-review-preview-chromium-ar.json",
+        "effects": 16,
+        "exports": 2,
+        "assets": 4,
+        "model": {
+          "faces": 1,
+          "landmarks": 478,
+          "person": 1,
+          "background": 0
+        }
+      },
+      {
+        "site": "preview",
+        "browser": "webkit",
+        "report": "docs/qa/camera-review-preview-webkit-ar.json",
+        "effects": 0,
+        "exports": 0,
+        "assets": 4,
+        "model": {
+          "faces": 1,
+          "landmarks": 478,
+          "person": 1,
+          "background": 0
+        }
+      },
+      {
+        "site": "production",
+        "browser": "chromium",
+        "report": "docs/qa/camera-review-production-chromium-ar.json",
+        "effects": 16,
+        "exports": 2,
+        "assets": 4,
+        "model": {
+          "faces": 1,
+          "landmarks": 478,
+          "person": 1,
+          "background": 0
+        }
+      },
+      {
+        "site": "production",
+        "browser": "webkit",
+        "report": "docs/qa/camera-review-production-webkit-ar.json",
+        "effects": 0,
+        "exports": 0,
+        "assets": 4,
+        "model": {
+          "faces": 1,
+          "landmarks": 478,
+          "person": 1,
+          "background": 0
+        }
+      }
+    ],
+    "productionBundleIntegrity": {
+      "report": "docs/qa/camera-review-production-integrity-20261013.json",
+      "matched": 5
+    }
+  },
+  "cleanup": {
+    "rootOwnedDevelopmentServersStopped": true,
+    "testBrowsersClosed": true,
+    "historicalQaAssetsPreserved": true
+  },
+  "limitations": [
+    "Physical phone/camera behavior remains outside automated evidence.",
+    "WebKit synthetic-camera cases intentionally skip; source ordering, uploads, model inference and strict CSP are verified."
+  ],
+  "continuation": {
+    "date": "2026-10-14",
+    "verifiedAt": "2026-10-13T21:33:26.808Z",
+    "deploymentUnchanged": true,
+    "productionIntegrityReport": "docs/qa/camera-review-resume-integrity-20261014.json",
+    "freshCheck": {
+      "command": "npm run check",
+      "unitTests": 146,
+      "unitFiles": 19,
+      "typeScript": "passed",
+      "build": "passed",
+      "matchedCandidateFiles": 730
+    },
+    "purpose": "Finalize repository source, QA evidence and release documentation synchronization."
+  }
+}

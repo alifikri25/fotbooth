@@ -1,0 +1,15 @@
+{
+  "verifiedAt": "2026-10-13T13:43:24.264Z",
+  "site": "http://127.0.0.1:5173",
+  "stats": {
+    "startTime": "2026-10-13T13:32:15.792Z",
+    "duration": 18790.545000000002,
+    "expected": 11,
+    "skipped": 7,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "errors": [],
+  "scope": "Seven synthetic camera-review regressions plus source priority/upload on Chromium and WebKit",
+  "physicalCameras": false
+}

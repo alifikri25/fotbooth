@@ -6,9 +6,14 @@ import {
   FlipHorizontal,
   Square,
   SwitchCamera,
+  Check,
+  RotateCcw,
 } from 'lucide-react';
 import { CameraController, type CameraState } from '../core/camera';
-import type { FrameDefinition, Session } from '../core/types';
+import type { Crop, FrameDefinition, Session } from '../core/types';
+import type { PhotoRegistry } from '../core/resources';
+import { defaultCrop } from '../core/session';
+import { CameraPhoto } from './CameraPhoto';
 import { getPhotoFilter, type PhotoEffectId } from '../core/effects';
 import { PhotoEffects } from './PhotoEffects';
 import { AREffects } from './AREffects';
@@ -17,6 +22,7 @@ import type { AREffectId, ARSnapshot } from '../core/ar/types';
 export interface CameraProps {
   frame: FrameDefinition;
   session: Session;
+  photos: PhotoRegistry;
   activeSlot: string;
   remaining: number;
   onSlot: (id: string) => void;
@@ -27,13 +33,22 @@ export interface CameraProps {
     effect: PhotoEffectId,
     intensity: number,
     ar?: ARSnapshot,
-  ) => Promise<void>;
+  ) => Promise<boolean>;
   onUpload: () => void;
   onBack: () => void;
+}
+interface CaptureDraft {
+  blob: Blob;
+  slotId: string;
+  crop: Crop;
+  ar?: ARSnapshot;
 }
 export function Camera(p: CameraProps) {
   const video = useRef<HTMLVideoElement>(null),
     arPreview = useRef<HTMLCanvasElement>(null),
+    reviewAction = useRef<HTMLButtonElement>(null),
+    shotAction = useRef<HTMLButtonElement>(null),
+    viewPanel = useRef<HTMLElement>(null),
     controller = useRef(new CameraController()).current,
     alive = useRef(false),
     sequence = useRef(0),
@@ -44,6 +59,10 @@ export function Camera(p: CameraProps) {
     [count, setCount] = useState(0),
     [burst, setBurst] = useState(false),
     [taking, setTaking] = useState(false),
+    [accepting, setAccepting] = useState(false),
+    [draft, setDraft] = useState<CaptureDraft | null>(null),
+    [reviewSlot, setReviewSlot] = useState<string | null>(null),
+    [previewReady, setPreviewReady] = useState(false),
     [mirror, setMirror] = useState(true),
     [facing, setFacing] = useState<'user' | 'environment'>('user'),
     [devices, setDevices] = useState<MediaDeviceInfo[]>([]),
@@ -51,17 +70,23 @@ export function Camera(p: CameraProps) {
     [effect, setEffect] = useState<PhotoEffectId>('none'),
     [intensity, setIntensity] = useState(1),
     [arEffect, setArEffect] = useState<AREffectId>('none');
+  const reviewedPlacement = p.session.placements.find((photo) => photo.slotId === reviewSlot);
+  const reviewing = !!draft || !!reviewedPlacement,
+    blocked = taking || accepting;
   const ar = useCameraAR(
     video,
     arPreview,
     arEffect,
-    ['live', 'counting', 'capturing'].includes(phase),
+    !reviewing && ['live', 'counting', 'capturing'].includes(phase),
   );
   const live = useRef(p);
   live.current = p;
   const slot = p.frame.slots.find((s) => s.id === p.activeSlot) ?? p.frame.slots[0],
     sw = slot.w * p.frame.designWidth,
     sh = slot.h * p.frame.designHeight;
+  useEffect(() => {
+    if (reviewing && previewReady) reviewAction.current?.focus({ preventScroll: true });
+  }, [reviewing, previewReady]);
   async function open(nextFacing = facing, nextDevice = deviceId) {
     const token = ++opening.current;
     setPhase('requesting');
@@ -122,8 +147,60 @@ export function Camera(p: CameraProps) {
     setTaking(false);
     setPhase(controller.state);
   }
+  function nextPhoto(id: string) {
+    const empty = live.current.frame.slots.find(
+      (s) => s.id !== id && !live.current.session.placements.some((photo) => photo.slotId === s.id),
+    );
+    setReviewSlot(null);
+    if (empty) p.onSlot(empty.id);
+    else p.onBack();
+  }
+  async function acceptPhoto() {
+    if (!draft || blocked || !previewReady) return;
+    const shot = draft,
+      token = ++sequence.current;
+    setAccepting(true);
+    setError('');
+    try {
+      const saved = await p.onCapture(
+        shot.blob,
+        shot.slotId,
+        shot.crop.mirror,
+        shot.crop.effect ?? 'none',
+        shot.crop.effectIntensity ?? 1,
+        shot.ar,
+      );
+      if (!alive.current || !saved) return;
+      setDraft(null);
+      if (token === sequence.current) nextPhoto(shot.slotId);
+      else setReviewSlot(shot.slotId);
+    } catch (err) {
+      if (alive.current)
+        setError(err instanceof Error ? err.message : 'Foto belum berhasil disimpan. Coba lagi.');
+    } finally {
+      if (alive.current) setAccepting(false);
+    }
+  }
+  function retake() {
+    setDraft(null);
+    setReviewSlot(null);
+    setError('');
+    if (controller.state !== 'live') void open();
+    queueMicrotask(() => shotAction.current?.focus({ preventScroll: true }));
+  }
+  function selectSlot(id: string) {
+    if (blocked || draft) return;
+    p.onSlot(id);
+    setPreviewReady(false);
+    const filled = p.session.placements.some((photo) => photo.slotId === id);
+    setReviewSlot(filled ? id : null);
+    if (filled)
+      requestAnimationFrame(() =>
+        viewPanel.current?.scrollIntoView({ block: 'start', behavior: 'instant' }),
+      );
+  }
   async function capture() {
-    if (taking || phase !== 'live' || !ar.ready) return;
+    if (blocked || reviewing || phase !== 'live' || !ar.ready) return;
     const token = ++sequence.current;
     setTaking(true);
     setError('');
@@ -149,18 +226,19 @@ export function Camera(p: CameraProps) {
         );
         if (token !== sequence.current || !alive.current) break;
         setPhase('capturing');
-        await p.onCapture(blob, id, mirror, effect, intensity, snapshot);
+        if (!burst) {
+          setPreviewReady(false);
+          setDraft({
+            blob,
+            slotId: id,
+            crop: { ...defaultCrop, mirror, effect, effectIntensity: intensity },
+            ar: snapshot,
+          });
+          break;
+        }
+        if (!(await p.onCapture(blob, id, mirror, effect, intensity, snapshot))) break;
         if (token !== sequence.current || !alive.current) break;
         setPhase('live');
-        if (!burst) {
-          const empty = live.current.frame.slots.find(
-            // React may not have committed the new photo props when ingestion resolves.
-            (s) =>
-              s.id !== id &&
-              !live.current.session.placements.some((photo) => photo.slotId === s.id),
-          );
-          if (empty) p.onSlot(empty.id);
-        }
       }
     } catch (err) {
       if (
@@ -196,13 +274,13 @@ export function Camera(p: CameraProps) {
             Senyum dulu<span className="heading-dot">.</span>
           </h1>
         </div>
-        <button className="button secondary" disabled={taking} onClick={p.onBack}>
+        <button className="button secondary" disabled={blocked} onClick={p.onBack}>
           <ArrowLeft size={17} />
           Kembali
         </button>
       </div>
       <div className="camera-grid">
-        <section className="camera-view-panel">
+        <section ref={viewPanel} className="camera-view-panel">
           <div className="camera-meta">
             <span>
               Foto {slot.order} dari {p.frame.slots.length}
@@ -219,7 +297,8 @@ export function Camera(p: CameraProps) {
             </defs>
           </svg>
           <div
-            className="camera-live"
+            className={`camera-live ${reviewing ? 'camera-review' : ''}`}
+            data-testid={reviewing ? 'camera-capture-review' : undefined}
             style={
               {
                 '--camera-ratio': sw / sh,
@@ -238,6 +317,7 @@ export function Camera(p: CameraProps) {
               playsInline
               muted
               style={{
+                visibility: reviewing ? 'hidden' : 'visible',
                 transform: mirror ? 'scaleX(-1)' : 'none',
                 filter: getPhotoFilter(effect, intensity),
                 opacity: ar.visible ? 0 : 1,
@@ -248,12 +328,27 @@ export function Camera(p: CameraProps) {
               className="camera-ar-preview"
               aria-label="Pratinjau kamera dengan AR"
               style={{
-                visibility: ar.visible ? 'visible' : 'hidden',
+                visibility: !reviewing && ar.visible ? 'visible' : 'hidden',
                 transform: mirror ? 'scaleX(-1)' : 'none',
                 filter: getPhotoFilter(effect, intensity),
               }}
             />
-            {!ready && !taking && (
+            {reviewing && (
+              <CameraPhoto
+                frame={p.frame}
+                slot={slot}
+                crop={draft?.crop ?? reviewedPlacement!}
+                blob={draft?.blob}
+                ar={draft?.ar}
+                photo={
+                  reviewedPlacement && !draft ? p.photos.get(reviewedPlacement.photoId) : undefined
+                }
+                label={`Hasil foto ${slot.order}`}
+                onReady={setPreviewReady}
+                onError={setError}
+              />
+            )}
+            {!reviewing && !ready && !taking && (
               <div className="camera-placeholder">
                 <CameraIcon size={38} />
                 <span>{phase === 'requesting' ? 'Menyiapkan kamera…' : 'Kamera berhenti'}</span>
@@ -265,8 +360,28 @@ export function Camera(p: CameraProps) {
               </div>
             )}
           </div>
-          <div className="camera-shot-controls">
-            {taking ? (
+          <div className={`camera-shot-controls ${reviewing ? 'camera-review-controls' : ''}`}>
+            {reviewing ? (
+              <>
+                <button
+                  ref={reviewAction}
+                  className="button primary full"
+                  disabled={blocked || !previewReady}
+                  onClick={() => (draft ? void acceptPhoto() : nextPhoto(slot.id))}
+                >
+                  <Check size={18} />
+                  {draft ? 'Pakai foto & lanjut' : 'Lanjut ke foto berikutnya'}
+                </button>
+                <button
+                  className="button secondary full"
+                  disabled={blocked || p.remaining <= 0}
+                  onClick={retake}
+                >
+                  <RotateCcw size={18} />
+                  Ambil ulang
+                </button>
+              </>
+            ) : taking ? (
               <button className="button danger full" onClick={cancel}>
                 <Square size={17} />
                 Hentikan
@@ -278,6 +393,7 @@ export function Camera(p: CameraProps) {
               </button>
             ) : (
               <button
+                ref={shotAction}
                 className="button primary full"
                 aria-label="Ambil foto"
                 disabled={
@@ -296,46 +412,74 @@ export function Camera(p: CameraProps) {
                     : 'Ambil foto'}
               </button>
             )}
-            <label className="sr-only" htmlFor="camera-timer">
-              Timer kamera
-            </label>
-            <select
-              id="camera-timer"
-              value={timer}
-              disabled={taking}
-              onChange={(e) => setTimer(Number(e.target.value))}
-            >
-              {[0, 3, 5, 10].map((n) => (
-                <option key={n} value={n}>
-                  {n === 0 ? 'Tanpa timer' : `${n} detik`}
-                </option>
-              ))}
-            </select>
+            {!reviewing && (
+              <>
+                <label className="sr-only" htmlFor="camera-timer">
+                  Timer kamera
+                </label>
+                <select
+                  id="camera-timer"
+                  value={timer}
+                  disabled={taking}
+                  onChange={(e) => setTimer(Number(e.target.value))}
+                >
+                  {[0, 3, 5, 10].map((n) => (
+                    <option key={n} value={n}>
+                      {n === 0 ? 'Tanpa timer' : `${n} detik`}
+                    </option>
+                  ))}
+                </select>
+              </>
+            )}
           </div>
           <p className="camera-guide">
-            Panduan mengikuti bentuk slot. Foto disimpan penuh agar tetap bisa diatur.
-            {arEffect !== 'none' && ' Sisakan ruang di atas kepala untuk aksesori AR.'}
+            {reviewing ? (
+              'Cek hasilnya dulu. Suka? Pakai foto ini. Belum pas? Ambil ulang.'
+            ) : (
+              <>
+                Panduan mengikuti bentuk slot. Foto disimpan penuh agar tetap bisa diatur.
+                {arEffect !== 'none' && ' Sisakan ruang di atas kepala untuk aksesori AR.'}
+              </>
+            )}
           </p>
         </section>
         <aside className="panel camera-controls">
           <h2>{p.frame.name}</h2>
           <p className="muted">Pilih foto yang ingin diisi atau diambil ulang.</p>
-          <div className="slot-buttons">
-            {p.frame.slots.map((s) => (
-              <button
-                key={s.id}
-                aria-label={`Pilih foto kamera ${s.order}`}
-                aria-pressed={s.id === p.activeSlot}
-                className={s.id === p.activeSlot ? 'active' : ''}
-                disabled={taking}
-                onClick={() => p.onSlot(s.id)}
-              >
-                {s.order}
-                {p.session.placements.some((photo) => photo.slotId === s.id) && (
-                  <span className="filled-dot" />
-                )}
-              </button>
-            ))}
+          <div className="slot-buttons camera-slot-thumbnails">
+            {p.frame.slots.map((s) => {
+              const placement = p.session.placements.find((photo) => photo.slotId === s.id);
+              const pending = draft?.slotId === s.id ? draft : null;
+              return (
+                <button
+                  key={s.id}
+                  aria-label={`Pilih foto kamera ${s.order}`}
+                  aria-pressed={s.id === p.activeSlot}
+                  className={s.id === p.activeSlot ? 'active' : ''}
+                  disabled={blocked || !!draft}
+                  onClick={() => selectSlot(s.id)}
+                >
+                  {pending || placement ? (
+                    <CameraPhoto
+                      frame={p.frame}
+                      slot={s}
+                      crop={pending?.crop ?? placement!}
+                      blob={pending?.blob}
+                      ar={pending?.ar}
+                      photo={placement && !pending ? p.photos.get(placement.photoId) : undefined}
+                      label={`Thumbnail foto ${s.order}`}
+                      maxEdge={160}
+                    />
+                  ) : (
+                    <CameraIcon size={20} />
+                  )}
+                  <span className="camera-slot-number">
+                    {s.order}
+                    {placement && !pending && <Check size={12} />}
+                  </span>
+                </button>
+              );
+            })}
           </div>
           {error && (
             <p role="alert" className="camera-error">
@@ -344,7 +488,7 @@ export function Camera(p: CameraProps) {
           )}
           <button
             className={`small-button mirror-button ${mirror ? 'active' : ''}`}
-            disabled={taking}
+            disabled={blocked || reviewing}
             aria-pressed={mirror}
             onClick={() => setMirror(!mirror)}
           >
@@ -359,7 +503,7 @@ export function Camera(p: CameraProps) {
               <select
                 id="camera-device"
                 value={deviceId}
-                disabled={taking}
+                disabled={blocked || reviewing}
                 onChange={(e) => {
                   setDeviceId(e.target.value);
                   void open(facing, e.target.value);
@@ -374,7 +518,7 @@ export function Camera(p: CameraProps) {
               </select>
               <button
                 className="button ghost full"
-                disabled={taking}
+                disabled={blocked || reviewing}
                 onClick={() => {
                   const next = facing === 'user' ? 'environment' : 'user';
                   setFacing(next);
@@ -390,7 +534,7 @@ export function Camera(p: CameraProps) {
           )}
           <AREffects
             effect={arEffect}
-            disabled={taking}
+            disabled={blocked || reviewing}
             state={ar.state}
             onChange={setArEffect}
             onRetry={ar.retry}
@@ -398,7 +542,7 @@ export function Camera(p: CameraProps) {
           <PhotoEffects
             effect={effect}
             intensity={intensity}
-            disabled={taking}
+            disabled={blocked || reviewing}
             onChange={(next, amount) => {
               setEffect(next);
               setIntensity(amount);
@@ -408,25 +552,25 @@ export function Camera(p: CameraProps) {
             <input
               type="checkbox"
               checked={burst}
-              disabled={taking}
+              disabled={blocked || reviewing}
               onChange={(e) => setBurst(e.target.checked)}
             />
             Ambil rangkaian
           </label>
           <p className="control-help">
-            Rangkaian mengisi slot kosong dengan timer baru pada setiap foto. Ambil ulang memakai
-            satu foto per klik.
+            Foto biasa bisa dicek dan diambil ulang sebelum lanjut. Rangkaian otomatis mengisi semua
+            slot kosong tanpa pemeriksaan per foto.
           </p>
           {p.remaining <= 0 && (
             <p className="control-help">
               Sesi sudah berisi 8 foto. Lanjut edit atau hapus sesi untuk memulai lagi.
             </p>
           )}
-          <button className="button secondary full" disabled={taking} onClick={p.onUpload}>
+          <button className="button secondary full" disabled={blocked} onClick={p.onUpload}>
             <ImagePlus size={17} />
             Pilih foto dari perangkat
           </button>
-          <button className="button ghost full" disabled={taking} onClick={p.onBack}>
+          <button className="button ghost full" disabled={blocked || !!draft} onClick={p.onBack}>
             {p.session.photoIds.length ? 'Lanjut edit' : 'Kembali ke frame'}
           </button>
           <p className="limits">

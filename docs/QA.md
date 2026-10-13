@@ -1,6 +1,15 @@
-# QA Web Photobooth — 13 Oktober 2026
+# QA Web Photobooth — 14 Oktober 2026
 
-## Revisi aktif: Foto Bareng Online dengan koleksi frame
+## Revisi aktif: kamera utama dan pemeriksaan foto
+
+Produksi **723ce602-57dd-4f35-b7ef-538207044e82** tersedia di [fotbooth.pages.dev](https://fotbooth.pages.dev). Kamera menjadi tindakan utama; foto biasa harus diterima sebelum pindah slot. Draft retake tidak menambah jumlah foto, thumbnail tersimpan dapat ditinjau atau diganti tanpa mengubah slot lain, dan foto terakhir membuka editor. [Bukti rilis](qa/camera-review-release-20261013.json), [pemeriksaan ulang 14 Oktober](qa/camera-review-resume-integrity-20261014.json).
+
+- 146 unit test dan TypeScript/build lulus. Suite terfokus 11 lulus/7 skip, integrasi kamera/AR/efek/mobile 22 lulus/8 skip; hasil akhir tidak menyisakan kegagalan/flaky.
+- Tes memeriksa accept lewat keyboard, draft retake berulang, thumbnail dan retake slot tersimpan, pagehide/reopen, clear sesi, serta foto terakhir menuju editor. Enam viewport portrait/landscape/desktop menjaga pratinjau dan tombol dalam layar. Regresi klik thumbnail HP terbukti gagal sebelum scroll panel ditambahkan dan lulus sesudahnya.
+- Preview dan produksi HTTPS masing-masing 11 lulus/7 skip. Model asli, 16 AR Chromium, pemeriksaan foto, AR off/undo di editor serta PNG/JPEG tetap lulus. HTML dan lima bundel JS/CSS produksi cocok kandidat.
+- Semua foto/screenshot pengujian sintetis; lampiran pengguna tidak disimpan dalam repo. Skip terkait kamera sintetis/WebRTC WebKit. Kamera/HP fisik belum diuji pada versi baru.
+
+## Revisi sebelumnya: Foto Bareng Online dengan koleksi frame
 
 Produksi aktif: [fotbooth.pages.dev](https://fotbooth.pages.dev), deployment **b88cf128-ff60-443d-a8a0-31e919951ee5**. Foto Bareng Online menyediakan 80 frame koleksi dan tiga frame khusus, pose berdua baru per slot, serta satu PNG identik untuk kedua peserta. [Bukti rilis](qa/online-room-catalog-release-20261013.json), [audit kelanjutan](qa/online-room-continuation-audit-20261013.json).
 

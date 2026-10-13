@@ -4,9 +4,11 @@ Photobooth web berbahasa Indonesia dengan **80 frame**, kamera, unggah foto, edi
 
 Situs publik: [fotbooth.pages.dev](https://fotbooth.pages.dev).
 
+Alur kamera dengan pemeriksaan tiap foto sudah publik sejak **13 Oktober 2026**, deployment [723ce602](https://723ce602.fotbooth.pages.dev). Kamera menjadi pilihan utama; setelah cekrek, hasil ditampilkan sampai kamu memilih **Pakai foto & lanjut** atau **Ambil ulang**. [Bukti rilis kamera](docs/qa/camera-review-release-20261013.json).
+
 ## Foto Bareng Online
 
-Foto Bareng Online dengan koleksi frame sudah diterbitkan di [situs utama](https://fotbooth.pages.dev) pada **13 Oktober 2026**, atas persetujuan pengguna untuk pengujian HP fisik. Deployment produksi: [b88cf128](https://b88cf128.fotbooth.pages.dev); [pratinjau yang diperiksa](https://e2e8f932.fotbooth.pages.dev) tetap tersedia. [Panduan room](docs/ONLINE-ROOMS.md), [bukti pemeriksaan](docs/qa/online-room-catalog-release-20261013.json).
+Foto Bareng Online dengan koleksi frame diterbitkan pada **13 Oktober 2026** dan tetap tersedia di [situs utama](https://fotbooth.pages.dev). Deployment rilis room sebelumnya [b88cf128](https://b88cf128.fotbooth.pages.dev) menjadi pilihan rollback untuk pembaruan kamera; [pratinjau room](https://e2e8f932.fotbooth.pages.dev) tetap tersedia. [Panduan room](docs/ONLINE-ROOMS.md), [bukti pemeriksaan rilis room](docs/qa/online-room-catalog-release-20261013.json).
 
 Fitur room privat menghubungkan dua kamera, memisahkan latar secara lokal, lalu menempatkan kedua peserta berdampingan dalam frame pilihan. Seluruh **80 frame koleksi yang sudah tersedia** dapat dipakai, bersama tiga frame khusus room: Satu Tempat, Surat Rindu, dan Night Date. Frame dengan 2–4 slot mengambil 2–4 pose bersama; setiap slot berisi foto berdua yang baru. Pembuat room membagikan undangan, keduanya menandai siap sekali, lalu hitung mundur setiap pose berlangsung otomatis. Tiga latar bersama tersedia.
 
@@ -19,6 +21,12 @@ Dua puluh **Festival Editions** memperluas 60 frame sebelumnya: Night Market, Aq
 ![Dua puluh frame baru, dengan area foto kosong](docs/qa/festival-design-board.png)
 
 Galeri selalu menampilkan area foto netral tanpa contoh orang. Pencarian tersedia berdasarkan nama/deskripsi, dengan filter kategori, koleksi, format dan jumlah foto. Pilih koleksi **Festival Editions** untuk melihat semua tambahan.
+
+## Kamera
+
+**Buka kamera** menjadi pilihan utama setelah memilih frame; unggah foto tetap tersedia. Setelah mengambil satu foto, periksa hasilnya di layar: pilih **Pakai foto & lanjut** untuk mengisi slot dan menuju foto berikutnya, atau **Ambil ulang** untuk mencoba lagi. Foto yang belum diterima tidak masuk sesi.
+
+Setiap slot yang terisi menampilkan thumbnail. Klik thumbnail untuk memeriksa hasil yang sudah disimpan, lalu lanjutkan atau ambil ulang slot itu. Foto terakhir yang diterima membuka editor. **Ambil rangkaian** tetap tersedia sebagai pilihan otomatis yang mengisi slot tanpa pemeriksaan per foto.
 
 ## Efek foto
 

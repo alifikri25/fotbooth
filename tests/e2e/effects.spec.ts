@@ -87,7 +87,7 @@ test('all presets render on uploaded photos, zero intensity restores the origina
   await page.getByLabel('Intensitas efek').fill('0.55');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
   await page.locator('.photo-effects').scrollIntoViewIfNeeded();
-  await page.screenshot({ path: 'docs/qa/effects-editor-mobile.png' });
+  await page.screenshot({ path: test.info().outputPath('effects-editor-mobile.png') });
 });
 
 test('live camera selection survives capture and remains reversible in the editor', async ({
@@ -111,6 +111,32 @@ test('live camera selection survives capture and remains reversible in the edito
     );
     await page.getByLabel('Timer kamera').selectOption('0');
     await page.getByRole('button', { name: 'Ambil foto', exact: true }).click();
+    await expect(page.getByTestId('camera-capture-review')).toBeVisible();
+    const review = page
+      .getByTestId('camera-capture-review')
+      .getByRole('img', { name: 'Hasil foto 1', exact: true });
+    await expect(review).toBeVisible();
+    await expect
+      .poll(() =>
+        review.evaluate((canvas: HTMLCanvasElement) => {
+          // Night Market has rounded photo corners; their frame-colored background is not photo content.
+          const x = Math.ceil(canvas.width * 0.1),
+            y = Math.ceil(canvas.height * 0.1),
+            width = Math.floor(canvas.width * 0.8),
+            height = Math.floor(canvas.height * 0.8);
+          const pixels = canvas.getContext('2d')!.getImageData(x, y, width, height).data;
+          let colored = 0,
+            opaque = 0;
+          for (let i = 0; i < pixels.length; i += 4) {
+            if (pixels[i + 3]) opaque++;
+            if (pixels[i] !== pixels[i + 1] || pixels[i + 1] !== pixels[i + 2]) colored++;
+          }
+          return { colored, opaque: opaque > 0 };
+        }),
+      )
+      .toEqual({ colored: 0, opaque: true });
+    await expect(page.getByTestId('camera-progress')).toHaveText('0/3 terisi');
+    await page.getByRole('button', { name: 'Pakai foto & lanjut', exact: true }).click();
     await expect(page.getByTestId('camera-progress')).toHaveText('1/3 terisi');
     await page.getByRole('button', { name: 'Lanjut edit', exact: true }).click();
     await page.getByRole('button', { name: 'Pilih slot 1', exact: true }).click();

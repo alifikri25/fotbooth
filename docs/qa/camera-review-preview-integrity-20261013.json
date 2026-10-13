@@ -1,0 +1,39 @@
+{
+  "verifiedAt": "2026-10-13T13:39:08.164Z",
+  "site": "https://5b09357d.fotbooth.pages.dev",
+  "matched": 5,
+  "failures": [],
+  "checks": [
+    {
+      "path": "assets/detector-vwDZ1SPX.js",
+      "bytes": 155599,
+      "sha256": "83d0f97a72c821fe8208266695ba02ce604a6dce7078894c7e430cfa44585bc7"
+    },
+    {
+      "path": "assets/index-BW9eyPWx.css",
+      "bytes": 36773,
+      "sha256": "04d9008dba8cfd93ec79641b8ddcb69d9f269c58740a6b5c2c13f323ed2e41f2"
+    },
+    {
+      "path": "assets/index-CUoOQVO1.js",
+      "bytes": 513763,
+      "sha256": "bb2a9a3514b37127da593129151b39127ec76f57afa2f4c565355d38808acadb"
+    },
+    {
+      "path": "assets/worker-CNfCS7rs.js",
+      "bytes": 156156,
+      "sha256": "c841295e6cb0049a8a30711d112f526a138331853fc3517ed226e9332b82cac6"
+    },
+    {
+      "path": "index.html",
+      "bytes": 698,
+      "sha256": "ceb3d263a3ce7c98361cea6cd0e01480c0af519ea3d8553a9d635c7e3829615e"
+    }
+  ],
+  "headers": {
+    "content-security-policy": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; font-src 'self'; media-src 'self' blob:; connect-src 'self' https://fotbooth-rooms.aliifikriii25.workers.dev wss://fotbooth-rooms.aliifikriii25.workers.dev; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'",
+    "permissions-policy": "camera=(self), microphone=()",
+    "x-content-type-options": "nosniff"
+  },
+  "scope": "HTML and all JS/CSS bundles match frozen candidate; static frame/model assets unchanged"
+}

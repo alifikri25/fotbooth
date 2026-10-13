@@ -1,6 +1,18 @@
-# Handoff Web Photobooth — 13 Oktober 2026
+# Handoff Web Photobooth — 14 Oktober 2026
 
-## Status terbaru: Foto Bareng Online dan sinkronisasi repository
+## Status terbaru: kamera utama dan pemeriksaan tiap foto
+
+Alur kamera sudah publik sejak **13 Oktober 2026** di [fotbooth.pages.dev](https://fotbooth.pages.dev), deployment **723ce602-57dd-4f35-b7ef-538207044e82**, [URL tetap](https://723ce602.fotbooth.pages.dev). Pratinjau **5b09357d-58e6-4bdd-b00e-9be322a1acc8** memakai kandidat yang sama. Kelanjutan **14 Oktober 2026** menutup catatan rilis dan sinkronisasi source ke repository; jangan menerbitkan ulang hanya untuk menyamakan metadata commit deployment.
+
+Setelah memilih frame, **Buka kamera** menjadi tombol utama. Pengambilan biasa menahan hasil sebagai draft: **Pakai foto & lanjut** menyimpan lalu pindah ke slot berikutnya; **Ambil ulang** membuang draft dan kembali ke kamera tanpa menambah jumlah foto. Slot tersimpan menampilkan thumbnail dengan crop, mirror, efek foto dan AR yang sama dengan renderer ekspor. Memilih thumbnail di HP membawa panel hasil dan tombol pemeriksaan ke layar. Foto terakhir yang diterima membuka editor. Rangkaian otomatis tetap opt-in.
+
+Verifikasi 13 Oktober: **146 unit test dan build lulus**, suite terfokus **11 lulus/7 skip**, integrasi kamera/AR/efek/mobile **22 lulus/8 skip**. Preview dan produksi HTTPS masing-masing **11 lulus/7 skip, 0 gagal/flaky**; empat smoke AR memeriksa model asli, 16 pilihan AR Chromium, review/accept dan PNG/JPEG. Kamera fisik belum diuji pada versi ini. Semua screenshot QA baru memakai kamera sintetis; lampiran pengguna tidak masuk repository.
+
+Kandidat **730 file**, SHA-256 arsip **6016b05b6f0acf432eeacd4b0bd77c3673bcecd03b4f92558f29f60f3d8716d7**, diperiksa per file dan dipakai untuk preview/produksi tanpa rebuild. [Bukti rilis](docs/qa/camera-review-release-20261013.json), [pemeriksaan ulang situs pada 14 Oktober](docs/qa/camera-review-resume-integrity-20261014.json). Rollback frontend adalah produksi room **b88cf128-ff60-443d-a8a0-31e919951ee5**. Backend room tetap **f1327cfd-a643-43ed-a5a2-29e9d94c1839**.
+
+Server pengujian dan browser ditutup setelah verifikasi. Tidak ada monitor lanjutan dibuat; berhenti setelah push dan laporan sesuai permintaan pengguna. Status Office yang belum terhapus secara permanen tetap dicatat pada bagian historis berikut.
+
+## Catatan historis: Foto Bareng Online dan sinkronisasi repository, 13 Oktober
 
 Situs aktif: [fotbooth.pages.dev](https://fotbooth.pages.dev), deployment produksi **b88cf128-ff60-443d-a8a0-31e919951ee5** dengan [URL tetap](https://b88cf128.fotbooth.pages.dev). Pratinjau **e2e8f932-d52a-4071-9cc8-1fcc0d16333f** tetap tersedia. Coordinator room: **f1327cfd-a643-43ed-a5a2-29e9d94c1839**, [fotbooth-rooms.aliifikriii25.workers.dev](https://fotbooth-rooms.aliifikriii25.workers.dev). Publikasi sudah diizinkan pengguna untuk pengujian HP; jangan kembali menyatakan produksi masih menunggu review.
 

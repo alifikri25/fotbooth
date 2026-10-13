@@ -136,7 +136,7 @@ export default function App() {
     effects: Partial<Crop> = {},
     ar?: import('./core/ar/types').ARSnapshot,
   ) {
-    if (busyRef.current) return;
+    if (busyRef.current) return false;
     busyRef.current = true;
     setBusy(true);
     setNotice('');
@@ -177,9 +177,10 @@ export default function App() {
       busyRef.current = false;
       setBusy(false);
     }
-    if (token !== lifecycle.current) return;
+    if (token !== lifecycle.current) return false;
     if (added && source === 'upload') navigate('editor');
     setNotice(errors.join(' '));
+    return added > 0;
   }
   function crop(id: string, patch: Partial<Crop>, final: boolean) {
     const current = live.current,
@@ -443,13 +444,13 @@ export default function App() {
                 <br />
                 Posisinya bisa kamu atur setelah ini.
               </p>
-              <button className="button primary full" onClick={() => upload()}>
-                <ImagePlus size={19} />
-                Pilih foto
-              </button>
-              <button className="button secondary full" onClick={() => navigate('camera')}>
+              <button className="button primary full" onClick={() => navigate('camera')}>
                 <CameraIcon size={19} />
                 Buka kamera
+              </button>
+              <button className="button secondary full" onClick={() => upload()}>
+                <ImagePlus size={19} />
+                Pilih foto
               </button>
               <p className="limits">
                 JPG, PNG, WebP · Maks. 20 MB & 24 MP per foto.
@@ -503,9 +504,10 @@ export default function App() {
             session={session}
             activeSlot={activeSlot}
             remaining={8 - photos.size}
+            photos={photos}
             onSlot={setActiveSlot}
             onCapture={async (blob, slot, mirror, effect, effectIntensity, ar) => {
-              await ingest([blob], slot, mirror, 'camera', { effect, effectIntensity }, ar);
+              return await ingest([blob], slot, mirror, 'camera', { effect, effectIntensity }, ar);
             }}
             onUpload={() => {
               navigate('source');

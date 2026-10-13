@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-13",
+  "url": "https://fotbooth.pages.dev",
+  "status": "passed",
+  "projects": [
+    "chromium",
+    "webkit"
+  ],
+  "files": [
+    "tests/e2e/camera-review.spec.ts",
+    "tests/e2e/source-priority.spec.ts"
+  ],
+  "stats": {
+    "startTime": "2026-10-13T13:40:52.77Z",
+    "duration": 18748.033000000003,
+    "expected": 11,
+    "skipped": 7,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "physicalCameraTested": false,
+  "capture": "Chromium synthetic camera",
+  "skipReason": "Seven synthetic-camera cases require Chromium; source priority and upload also passed in WebKit."
+}
