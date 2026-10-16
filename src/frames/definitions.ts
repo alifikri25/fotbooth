@@ -3,6 +3,8 @@ import { frame, slot } from './factory.ts';
 import { collectionFrames } from './collections.ts';
 import { refineSignature } from './signature.ts';
 import { maximalistFrames } from './maximalist.ts';
+import { refineSculpted } from './sculpted.ts';
+import { mixedFrames } from './mixed.ts';
 export const definitions: FrameDefinition[] = [
   frame(
     'orbit-club',
@@ -216,8 +218,10 @@ export const definitions: FrameDefinition[] = [
   ),
   ...collectionFrames,
   ...maximalistFrames,
+  ...mixedFrames,
 ]
   .map(refineSignature)
+  .map(refineSculpted)
   .map((frame) => ({
     ...frame,
     thumbnail: `/frames/${frame.id}/v${frame.version}/thumbnail-neutral.png`,

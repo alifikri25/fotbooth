@@ -1,7 +1,7 @@
 {
   "id": "desert-bazaar",
   "name": "Desert Bazaar",
-  "version": 1,
+  "version": 2,
   "format": "card",
   "categories": [
     "retro",
@@ -14,29 +14,29 @@
     {
       "id": "p1",
       "order": 1,
-      "x": 0.08,
+      "x": 0.045,
       "y": 0.135,
-      "w": 0.4,
-      "h": 0.72,
-      "shape": "roundedRect",
-      "radius": 100,
-      "rotationDeg": 0,
-      "matteColor": "#f2efe9"
+      "w": 0.87,
+      "h": 0.34199999999999997,
+      "shape": "path",
+      "rotationDeg": -1.2,
+      "matteColor": "#f2efe9",
+      "pathRef": "flower"
     },
     {
       "id": "p2",
       "order": 2,
-      "x": 0.52,
-      "y": 0.135,
-      "w": 0.4,
-      "h": 0.72,
-      "shape": "roundedRect",
-      "radius": 100,
-      "rotationDeg": 0,
-      "matteColor": "#f2efe9"
+      "x": 0.085,
+      "y": 0.5129999999999999,
+      "w": 0.87,
+      "h": 0.34199999999999997,
+      "shape": "path",
+      "rotationDeg": 1.2,
+      "matteColor": "#f2efe9",
+      "pathRef": "pebble"
     }
   ],
-  "description": "Ubin mosaik, lampu kuningan, karpet, delima dan manik-manik.",
+  "description": "Ubin mosaik, lampu kuningan, karpet, delima dan manik-manik. Potongan foto kelopak bunga, batu organik.",
   "palette": {
     "background": "#215b6b",
     "ink": "#ffefd0",
@@ -44,10 +44,10 @@
     "secondary": "#bb6545"
   },
   "layers": {
-    "background": "/frames/desert-bazaar/v1/background.svg",
-    "foreground": "/frames/desert-bazaar/v1/foreground.svg"
+    "background": "/frames/desert-bazaar/v2/background.svg",
+    "foreground": "/frames/desert-bazaar/v2/foreground.svg"
   },
-  "thumbnail": "/frames/desert-bazaar/v1/thumbnail-neutral.png",
+  "thumbnail": "/frames/desert-bazaar/v2/thumbnail-neutral.png",
   "licenses": [
     "Original vector artwork © Fotbooth contributors. CC0-1.0.",
     "DM Sans and Fraunces: SIL Open Font License 1.1.",

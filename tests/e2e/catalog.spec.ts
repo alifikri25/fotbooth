@@ -3,7 +3,7 @@ test('all gallery photo areas contain neutral matte instead of people', async ({
   await page.goto('/tests/harness.html');
   const evidence = await page.evaluate(async () => {
     const { definitions } = await import('/src/frames/definitions.ts');
-    const { loadLayer } = await import('/src/core/renderer.ts');
+    const { loadLayer, slotPath } = await import('/src/core/renderer.ts');
     return Promise.all(
       definitions.map(async (frame) => {
         const image = await loadLayer(frame.thumbnail);
@@ -14,11 +14,24 @@ test('all gallery photo areas contain neutral matte instead of people', async ({
         const c = sample.getContext('2d')!;
         c.drawImage(image, 0, 0);
         let mismatches = 0;
+        const sampleCounts = [];
         for (const slot of frame.slots) {
           const expected = slot.matteColor.match(/[a-f\d]{2}/gi)!.map((v) => parseInt(v, 16));
           const angle = (slot.rotationDeg * Math.PI) / 180;
-          for (const x of [0.35, 0.5, 0.65])
-            for (const y of [0.35, 0.5, 0.65]) {
+          const w = slot.w * frame.designWidth,
+            h = slot.h * frame.designHeight;
+          const mask = slotPath(slot, w, h);
+          let sampled = 0;
+          for (let x = 0.15; x <= 0.85; x += 0.1)
+            for (let y = 0.15; y <= 0.85; y += 0.1) {
+              // Sample only matte well inside the true silhouette, clear of decorative borders.
+              if (
+                ![-0.05, 0, 0.05].every((mx) =>
+                  [-0.05, 0, 0.05].every((my) => c.isPointInPath(mask, (x + mx) * w, (y + my) * h)),
+                )
+              )
+                continue;
+              sampled++;
               const dx = (x - 0.5) * slot.w * image.naturalWidth;
               const dy = (y - 0.5) * slot.h * image.naturalHeight;
               const px =
@@ -33,17 +46,22 @@ test('all gallery photo areas contain neutral matte instead of people', async ({
               if (expected.some((value, i) => Math.abs(value - pixel[i]) > 1) || pixel[3] !== 255)
                 mismatches++;
             }
+          sampleCounts.push({ slotId: slot.id, sampled });
         }
         sample.width = 1;
         sample.height = 1;
-        return { id: frame.id, mismatches };
+        return { id: frame.id, mismatches, sampleCounts };
       }),
     );
   });
-  expect(evidence).toHaveLength(80);
-  for (const frame of evidence) expect(frame.mismatches, frame.id).toBe(0);
+  expect(evidence).toHaveLength(120);
+  for (const frame of evidence) {
+    expect(frame.mismatches, frame.id).toBe(0);
+    for (const slot of frame.sampleCounts)
+      expect(slot.sampled, `${frame.id}/${slot.slotId}`).toBeGreaterThanOrEqual(9);
+  }
 });
-test('all 80 packages load real thumbnails, preserve protected photo interiors, and export standard/light files', async ({
+test('all 120 packages load real thumbnails, preserve protected photo interiors, and export standard/light files', async ({
   page,
 }) => {
   test.setTimeout(180_000);
@@ -64,11 +82,13 @@ test('all 80 packages load real thumbnails, preserve protected photo interiors, 
       const c = layer.getContext('2d')!;
       c.drawImage(overlay, 0, 0);
       let blocked = 0;
+      const sampleCounts = [];
       for (const slot of frame.slots) {
         const w = slot.w * frame.designWidth,
           h = slot.h * frame.designHeight;
         const path = slotPath(slot, w, h),
           angle = (slot.rotationDeg * Math.PI) / 180;
+        let sampled = 0;
         for (let y = 0.1; y <= 0.9; y += 0.1)
           for (let x = 0.1; x <= 0.9; x += 0.1) {
             // Protected interior excludes the documented 8% decoration band along the actual mask edge.
@@ -78,6 +98,7 @@ test('all 80 packages load real thumbnails, preserve protected photo interiors, 
               )
             )
               continue;
+            sampled++;
             const dx = (x - 0.5) * w,
               dy = (y - 0.5) * h;
             const px =
@@ -90,6 +111,7 @@ test('all 80 packages load real thumbnails, preserve protected photo interiors, 
               dy * Math.cos(angle);
             if (c.getImageData(Math.round(px), Math.round(py), 1, 1).data[3] > 0) blocked++;
           }
+        sampleCounts.push({ slotId: slot.id, sampled });
       }
       const session = {
         caption: 'Hari yang akan selalu kita ingat bersama',
@@ -127,15 +149,20 @@ test('all 80 packages load real thumbnails, preserve protected photo interiors, 
         id: frame.id,
         format: frame.format,
         blocked,
+        sampleCounts,
         thumb: thumb.naturalWidth,
         dims,
       });
+      // Release full-size backing stores before decoding the next frame in Safari.
+      layer.width = layer.height = canvas.width = canvas.height = 1;
     }
     return results;
   });
-  expect(evidence).toHaveLength(80);
+  expect(evidence).toHaveLength(120);
   for (const frame of evidence) {
     expect(frame.blocked, frame.id).toBe(0);
+    for (const slot of frame.sampleCounts)
+      expect(slot.sampled, `${frame.id}/${slot.slotId}`).toBeGreaterThanOrEqual(9);
     expect(frame.thumb).toBeGreaterThan(100);
     for (const dims of frame.dims) expect(dims[2]).toBeGreaterThan(100);
     const [w, h] = frame.format === 'strip' ? [1200, 3600] : [1800, 2700];
@@ -153,16 +180,16 @@ test('all 80 packages load real thumbnails, preserve protected photo interiors, 
 
 test('new cartoon and dynamic collections filter and open usable frames', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByText('80 frame orisinal', { exact: true })).toBeVisible();
+  await expect(page.getByText('120 frame orisinal', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Mulai bikin foto' }).click();
-  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(80);
+  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(120);
   await expect(page.getByRole('button', { name: /^Pakai frame / }).first()).toHaveAccessibleName(
-    'Pakai frame Night Market',
+    'Pakai frame Rainy Window',
   );
   await page.getByRole('button', { name: 'Cartoon', exact: true }).click();
-  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(14);
+  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(16);
   await page.getByRole('button', { name: 'Dynamic', exact: true }).click();
-  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(30);
+  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(34);
   for (const name of ['Comic Dash', 'Candy Bounce', 'Space Pals', 'Monster Moods'])
     await expect(
       page.getByRole('button', { name: `Pakai frame ${name}`, exact: true }),

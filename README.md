@@ -1,8 +1,26 @@
 # Fotbooth
 
-Photobooth web berbahasa Indonesia dengan **80 frame**, kamera, unggah foto, editor crop, **12 pilihan efek foto** termasuk Original, **16 efek AR** dan unduhan PNG/JPEG. Mode solo memproses foto dan caption secara lokal di browser. Mode room membagikan kamera dan foto kepada peserta melalui koneksi langsung atau relay sementara, tanpa penyimpanan foto server.
+Photobooth web berbahasa Indonesia dengan **120 frame**, kamera, unggah foto, editor crop, **12 pilihan efek foto** termasuk Original, **16 efek AR**, saran lewat email dan unduhan PNG/JPEG. Mode solo memproses foto dan caption secara lokal di browser. Mode room membagikan kamera dan foto kepada peserta melalui koneksi langsung atau relay sementara, tanpa penyimpanan foto server.
 
 Situs publik: [fotbooth.pages.dev](https://fotbooth.pages.dev).
+
+## Mixed Moments dan saran email
+
+Tambahan lokal **16 Oktober 2026** berisi **40 tema baru**, masing-masing untuk **empat foto dengan empat bentuk yang berbeda dalam satu frame**: persegi, bintang, hati, lingkaran, bunga, awan, batu, ombak, kertas sobek atau burst. Tersedia 27 kartu dan 13 photostrip. Tema mencakup onsen kapibara, aurora, keramik, perpustakaan peri, origami, tenis, balon udara dan pasar bunga. Seluruh ilustrasi koleksi ini dibuat dengan SVG native, dengan jendela kosong netral pada galeri. Pilih koleksi **Mixed Moments**. [Lihat 40 desain](docs/qa/mixed-moments-board.png).
+
+Delapan puluh frame sebelum penambahan dipertahankan, termasuk koreksi sembilan kolom panjang di bawah. Semua 120 frame dapat dipakai di mode solo maupun room. Tambahan ini **belum diterbitkan** ke situs publik.
+
+Tombol **Kirim saran** di footer membuka formulir kategori, pesan dan email balasan opsional. Pesan diteruskan melalui [FormSubmit](https://formsubmit.co/documentation) ke **cumanvalo25@gmail.com**, tanpa daftar pesan publik atau dashboard admin. Foto, caption dan undangan room tidak dilampirkan. Pengiriman hanya berlangsung setelah pengunjung menekan tombol kirim; kegagalan mempertahankan draf. FormSubmit memproses dan menyimpan kiriman menurut kebijakannya; mode foto solo tetap lokal.
+
+**Aktivasi pemilik:** setelah kiriman pertama, buka email aktivasi FormSubmit di alamat tujuan dan konfirmasi formulir. Pengujian otomatis mencegat semua kiriman; belum membuktikan email masuk ke inbox dan tidak memicu aktivasi. FormSubmit juga memberikan alamat formulir acak untuk menggantikan alamat email pada endpoint pengiriman bila diperlukan.
+
+**Masalah yang masih terbuka:** percobaan kiriman nyata ditolak layanan pada 16 Oktober 2026; penyebabnya belum terkonfirmasi. Aplikasi sekarang menampilkan alasan penolakan yang diberikan penyedia, termasuk instruksi aktivasi bila memang diminta. Draf tetap tersedia. Penanganan pengiriman nyata dilanjutkan terpisah dari pembaruan katalog ini.
+
+## Potongan foto bebas
+
+Revisi lokal **16 Oktober 2026** hanya mengganti **9 layout dua kolom foto yang panjang dan sempit ke bawah**, termasuk Aquarium Parade. Dua kolom tersebut menjadi potongan lebar berselang dengan bentuk yang mengikuti tema masing-masing: bintang, kelopak, awan, batu organik, ombak, hati dan kertas sobek. **71 frame lainnya serta tiga preset room tetap sama seperti semula**, termasuk jendela persegi, landscape dan layout campuran.
+
+Klip kamera, garis pilihan editor, thumbnail dan PNG/JPEG memakai kontur yang sama. Hanya sembilan paket yang direvisi naik versi; versi terdahulu tetap tersedia. [Contoh seluruh koleksi](docs/qa/frame-contact-sheet.png), [koleksi Festival Editions](docs/qa/festival-design-board.png). Revisi bentuk ini belum diterbitkan ke situs publik.
 
 Perbaikan kompatibilitas AR **14 Oktober 2026** tersedia pada [deployment a8a785e3](https://a8a785e3.fotbooth.pages.dev). Jika worker gagal memakai konteks grafisnya, AR otomatis mencoba gambar yang sama pada jalur utama. [Diagnosis dan verifikasi GitHub](docs/qa/camera-review-webkit-ci-20261014.json).
 
@@ -68,7 +86,7 @@ Setelah pemeriksaan lokal, jalankan npm run deploy:preview, periksa preview HTTP
 
 ## Artwork
 
-[Registry 80 frame](docs/FRAME-REGISTRY.md), [provenance artwork](artwork/README.md), [board Festival Editions](docs/qa/festival-design-board.png), [contact sheet](docs/qa/frame-contact-sheet.png).
+[Registry 120 frame](docs/FRAME-REGISTRY.md), [provenance artwork](artwork/README.md), [board Festival Editions](docs/qa/festival-design-board.png), [contact sheet](docs/qa/frame-contact-sheet.png).
 
 Regenerasi: npm run assets:build, npm run qa:frames dengan dev server aktif, lalu node scripts/write-registry.mjs.
 

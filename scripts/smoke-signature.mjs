@@ -22,7 +22,7 @@ try {
     const frame = definitions.find((frame) => frame.id === id);
     await page.goto(baseURL);
     await page.getByRole('button', { name: 'Mulai bikin foto' }).click();
-    await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(80);
+    await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(120);
     await page.getByRole('button', { name: `Pakai frame ${frame.name}`, exact: true }).click();
     const fixture = await page.evaluate(() => {
       const canvas = document.createElement('canvas');

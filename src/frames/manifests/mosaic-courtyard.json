@@ -1,0 +1,121 @@
+{
+  "id": "mosaic-courtyard",
+  "name": "Mosaic Courtyard",
+  "version": 1,
+  "format": "card",
+  "categories": [
+    "retro",
+    "playful"
+  ],
+  "designWidth": 1800,
+  "designHeight": 2700,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.055,
+      "y": 0.115,
+      "w": 0.43,
+      "h": 0.35,
+      "shape": "path",
+      "pathRef": "heart",
+      "rotationDeg": -0.7,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.515,
+      "y": 0.115,
+      "w": 0.43,
+      "h": 0.35,
+      "shape": "path",
+      "pathRef": "burst",
+      "rotationDeg": 0.7,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.055,
+      "y": 0.51,
+      "w": 0.43,
+      "h": 0.35,
+      "shape": "path",
+      "pathRef": "cloud",
+      "rotationDeg": -0.7,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p4",
+      "order": 4,
+      "x": 0.515,
+      "y": 0.51,
+      "w": 0.43,
+      "h": 0.35,
+      "shape": "rect",
+      "rotationDeg": 0.7,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Ubin geometris, lengkung halaman dan buah delima. Empat foto dengan bentuk berbeda dalam satu frame.",
+  "palette": {
+    "background": "#f0e3c6",
+    "ink": "#315a69",
+    "accent": "#c57f5e",
+    "secondary": "#8aa4a1"
+  },
+  "layers": {
+    "background": "/frames/mosaic-courtyard/v1/background.svg",
+    "foreground": "/frames/mosaic-courtyard/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/mosaic-courtyard/v1/thumbnail-neutral.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Mosaic Courtyard",
+      "x": 0.09,
+      "y": 0.022,
+      "w": 0.82,
+      "h": 0.04,
+      "fontId": "sans",
+      "fontSize": 100,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#315a69"
+    },
+    {
+      "id": "caption",
+      "x": 0.07,
+      "y": 0.92,
+      "w": 0.86,
+      "h": 0.04,
+      "fontId": "sans",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#315a69"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.974,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#315a69"
+    }
+  ],
+  "collection": "Mixed Moments",
+  "artwork": {
+    "motif": "mosaic-courtyard",
+    "edition": 0
+  }
+}

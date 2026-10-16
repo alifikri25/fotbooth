@@ -1,14 +1,331 @@
 {
-  "date": "2026-10-07",
+  "date": "2026-10-16",
   "versions": [
     2,
     3,
+    4,
     1
   ],
   "gallery": "Neutral empty photo areas; no photographic or illustrated people",
-  "count": 80,
-  "decorated": 64,
+  "count": 120,
+  "decorated": 104,
   "frames": [
+    {
+      "id": "rainy-window",
+      "name": "Rainy Window",
+      "categories": [
+        "soft",
+        "playful"
+      ]
+    },
+    {
+      "id": "sakura-station",
+      "name": "Sakura Station",
+      "categories": [
+        "romantic",
+        "playful"
+      ]
+    },
+    {
+      "id": "matcha-ceremony",
+      "name": "Matcha Ceremony",
+      "categories": [
+        "clean",
+        "playful"
+      ]
+    },
+    {
+      "id": "koi-pavilion",
+      "name": "Koi Pavilion",
+      "categories": [
+        "nature",
+        "playful"
+      ]
+    },
+    {
+      "id": "crane-flight",
+      "name": "Crane Flight",
+      "categories": [
+        "scrapbook",
+        "playful"
+      ]
+    },
+    {
+      "id": "capybara-onsen",
+      "name": "Capybara Onsen",
+      "categories": [
+        "cartoon",
+        "playful"
+      ]
+    },
+    {
+      "id": "panda-bamboo",
+      "name": "Panda Bamboo",
+      "categories": [
+        "cartoon",
+        "playful"
+      ]
+    },
+    {
+      "id": "alpine-cabin",
+      "name": "Alpine Cabin",
+      "categories": [
+        "nature",
+        "playful"
+      ]
+    },
+    {
+      "id": "aurora-camp",
+      "name": "Aurora Camp",
+      "categories": [
+        "futuristic",
+        "playful"
+      ]
+    },
+    {
+      "id": "mushroom-almanac",
+      "name": "Mushroom Almanac",
+      "categories": [
+        "nature",
+        "playful"
+      ]
+    },
+    {
+      "id": "fairy-library",
+      "name": "Fairy Library",
+      "categories": [
+        "romantic",
+        "playful"
+      ]
+    },
+    {
+      "id": "potion-shelf",
+      "name": "Potion Shelf",
+      "categories": [
+        "playful"
+      ]
+    },
+    {
+      "id": "enchanted-key",
+      "name": "Enchanted Key",
+      "categories": [
+        "retro",
+        "playful"
+      ]
+    },
+    {
+      "id": "dragonfly-marsh",
+      "name": "Dragonfly Marsh",
+      "categories": [
+        "nature",
+        "playful"
+      ]
+    },
+    {
+      "id": "honeycomb-studio",
+      "name": "Honeycomb Studio",
+      "categories": [
+        "playful"
+      ]
+    },
+    {
+      "id": "lavender-farm",
+      "name": "Lavender Farm",
+      "categories": [
+        "floral",
+        "playful"
+      ]
+    },
+    {
+      "id": "firefly-meadow",
+      "name": "Firefly Meadow",
+      "categories": [
+        "nature",
+        "playful"
+      ]
+    },
+    {
+      "id": "tulip-truck",
+      "name": "Tulip Truck",
+      "categories": [
+        "floral",
+        "playful"
+      ]
+    },
+    {
+      "id": "quilt-cocoa",
+      "name": "Quilt & Cocoa",
+      "categories": [
+        "soft",
+        "playful"
+      ]
+    },
+    {
+      "id": "yarn-social",
+      "name": "Yarn Social",
+      "categories": [
+        "scrapbook",
+        "playful"
+      ]
+    },
+    {
+      "id": "pottery-sunday",
+      "name": "Pottery Sunday",
+      "categories": [
+        "clean",
+        "playful"
+      ]
+    },
+    {
+      "id": "glass-atelier",
+      "name": "Glass Atelier",
+      "categories": [
+        "clean",
+        "playful"
+      ]
+    },
+    {
+      "id": "mosaic-courtyard",
+      "name": "Mosaic Courtyard",
+      "categories": [
+        "retro",
+        "playful"
+      ]
+    },
+    {
+      "id": "terrazzo-club",
+      "name": "Terrazzo Club",
+      "categories": [
+        "clean",
+        "playful"
+      ]
+    },
+    {
+      "id": "bauhaus-play",
+      "name": "Bauhaus Play",
+      "categories": [
+        "dynamic",
+        "playful"
+      ]
+    },
+    {
+      "id": "chess-society",
+      "name": "Chess Society",
+      "categories": [
+        "retro",
+        "playful"
+      ]
+    },
+    {
+      "id": "origami-lab",
+      "name": "Origami Lab",
+      "categories": [
+        "scrapbook",
+        "playful"
+      ]
+    },
+    {
+      "id": "museum-afterhours",
+      "name": "Museum Afterhours",
+      "categories": [
+        "retro",
+        "playful"
+      ]
+    },
+    {
+      "id": "sailor-knot",
+      "name": "Sailor Knot",
+      "categories": [
+        "nature",
+        "playful"
+      ]
+    },
+    {
+      "id": "submarine-logbook",
+      "name": "Submarine Logbook",
+      "categories": [
+        "futuristic",
+        "playful"
+      ]
+    },
+    {
+      "id": "mountain-railway",
+      "name": "Mountain Railway",
+      "categories": [
+        "nature",
+        "playful"
+      ]
+    },
+    {
+      "id": "aerogram-journey",
+      "name": "Aerogram Journey",
+      "categories": [
+        "scrapbook",
+        "playful"
+      ]
+    },
+    {
+      "id": "bicycle-bloom",
+      "name": "Bicycle Bloom",
+      "categories": [
+        "floral",
+        "playful"
+      ]
+    },
+    {
+      "id": "cinema-marquee",
+      "name": "Cinema Marquee",
+      "categories": [
+        "party",
+        "playful"
+      ]
+    },
+    {
+      "id": "hot-air-post",
+      "name": "Hot Air Post",
+      "categories": [
+        "playful"
+      ]
+    },
+    {
+      "id": "tennis-sunday",
+      "name": "Tennis Sunday",
+      "categories": [
+        "dynamic",
+        "playful"
+      ]
+    },
+    {
+      "id": "basketball-court",
+      "name": "Basketball Court",
+      "categories": [
+        "dynamic",
+        "playful"
+      ]
+    },
+    {
+      "id": "roller-disco",
+      "name": "Roller Disco",
+      "categories": [
+        "dynamic",
+        "playful"
+      ]
+    },
+    {
+      "id": "strawberry-farm",
+      "name": "Strawberry Farm",
+      "categories": [
+        "playful"
+      ]
+    },
+    {
+      "id": "paper-theatre",
+      "name": "Paper Theatre",
+      "categories": [
+        "party",
+        "playful"
+      ]
+    },
     {
       "id": "night-market",
       "name": "Night Market",

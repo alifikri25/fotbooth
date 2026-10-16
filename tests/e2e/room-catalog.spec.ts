@@ -66,11 +66,11 @@ test('room offers every prepared catalogue frame and keeps the three dedicated c
   const ids = await select
     .locator('option')
     .evaluateAll((options) => options.map((option) => (option as HTMLOptionElement).value));
-  expect(ids).toHaveLength(83);
+  expect(ids).toHaveLength(123);
   for (const frame of definitions) expect(ids).toContain(frame.id);
   for (const id of ['online-satu-tempat', 'online-surat-rindu', 'online-night-date'])
     expect(ids).toContain(id);
-  await select.selectOption('pocket-arcade');
+  await select.selectOption('rainy-window');
   await expect(page.getByTestId('room-frame-info')).toContainText('4 pose');
   await expect(page.getByLabel('Pratinjau foto bareng', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Keluar room', exact: true }).click();

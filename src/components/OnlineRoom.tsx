@@ -868,9 +868,9 @@ export function OnlineRoom({ onBack }: { onBack: () => void }) {
                   </select>
                 </label>
                 <p data-testid="room-frame-info">
-                  {getRoomFrame(settings.frameId).slots.length} pose · 80 frame koleksi dan 3 frame
-                  khusus berdua. Kalian berdua ada di setiap foto; tiap pose mengisi satu kotak
-                  frame.
+                  {getRoomFrame(settings.frameId).slots.length} pose · {catalogFrames.length} frame
+                  koleksi dan 3 frame khusus berdua. Kalian berdua ada di setiap foto; tiap pose
+                  mengisi satu kotak frame.
                 </p>
                 <label>
                   Latar bersama

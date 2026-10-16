@@ -1,0 +1,100 @@
+{
+  "id": "botanical-journal-portrait",
+  "name": "Emerald Herbarium",
+  "version": 4,
+  "format": "card",
+  "categories": [
+    "nature",
+    "floral",
+    "scrapbook"
+  ],
+  "designWidth": 1800,
+  "designHeight": 2700,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.045,
+      "y": 0.145,
+      "w": 0.87,
+      "h": 0.347,
+      "shape": "path",
+      "rotationDeg": -1.2,
+      "matteColor": "#f2efe9",
+      "pathRef": "pebble"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.085,
+      "y": 0.5279999999999999,
+      "w": 0.87,
+      "h": 0.347,
+      "shape": "path",
+      "rotationDeg": 1.2,
+      "matteColor": "#f2efe9",
+      "pathRef": "flower"
+    }
+  ],
+  "description": "Herbarium kolektor dengan velvet emerald, kain buku, daun pakis, eucalyptus dan filigree emas. Potongan foto batu organik, kelopak bunga.",
+  "palette": {
+    "background": "#244f40",
+    "ink": "#244438",
+    "accent": "#c9a466",
+    "secondary": "#f5edde"
+  },
+  "layers": {
+    "background": "/frames/botanical-journal-portrait/v4/background.svg",
+    "foreground": "/frames/botanical-journal-portrait/v4/foreground.svg"
+  },
+  "thumbnail": "/frames/botanical-journal-portrait/v4/thumbnail-neutral.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1.",
+    "Original signature compositions and generated material artwork for Fotbooth; no Canva template assets."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "EMERALD HERBARIUM",
+      "x": 0.12,
+      "y": 0.033,
+      "w": 0.76,
+      "h": 0.039,
+      "fontId": "serif",
+      "fontSize": 108,
+      "minFontSize": 45,
+      "maxLines": 1,
+      "color": "#244438"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "serif",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#244438"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#244438"
+    }
+  ],
+  "collection": "Botanical Journal",
+  "artwork": {
+    "motif": "leaf",
+    "edition": 7
+  }
+}

@@ -952,6 +952,30 @@ input[type='checkbox'] {
   outline: 1px solid white;
   outline-offset: 1px;
 }
+.slot-outline.is-sculpted {
+  border: 0;
+  outline: 0;
+}
+.slot-outline-shape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+.slot-outline-shape .slot-outline-halo {
+  stroke: #fff;
+  stroke-width: 5;
+}
+.slot-outline.is-sculpted span {
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+}
 .slot-outline span {
   position: absolute;
   left: 4px;
@@ -2336,5 +2360,75 @@ h1[tabindex='-1']:focus {
   .site-footer {
     padding-left: 48px;
     padding-right: 48px;
+  }
+}
+
+.footer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 4px 18px;
+}
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.feedback-form label:not(:first-child) {
+  margin-top: 8px;
+}
+.feedback-form label span,
+.feedback-count {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 400;
+}
+.feedback-form textarea {
+  width: 100%;
+  min-height: 145px;
+  resize: vertical;
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid #d4d9ce;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  padding: 12px;
+}
+.feedback-form textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+.feedback-form textarea::placeholder,
+.feedback-form input::placeholder {
+  color: #6a7167;
+  opacity: 1;
+}
+.dialog-content .feedback-privacy {
+  margin-top: 0;
+}
+.dialog-content .feedback-error {
+  color: #8b2727;
+  background: #fff0ea;
+  border: 1px solid #e3beb2;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin: 6px 0 0;
+}
+.dialog-content .feedback-success {
+  border-left: 3px solid #547346;
+  padding: 8px 0 8px 14px;
+}
+@media (max-width: 600px) {
+  .site-footer {
+    flex-wrap: wrap;
+  }
+  .footer-actions {
+    justify-content: flex-start;
+    gap: 0 16px;
+  }
+  .feedback-dialog .dialog-actions {
+    flex-wrap: wrap;
   }
 }

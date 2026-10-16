@@ -25,7 +25,7 @@ function acknowledge(coordinator: RoomCoordinator, captureId: string) {
   coordinator.handle('guest', { type: 'captured', captureId });
 }
 
-it('accepts all 80 prepared frames and the three dedicated frames, while rejecting arbitrary IDs', () => {
+it('accepts all 120 prepared frames and the three dedicated frames, while rejecting arbitrary IDs', () => {
   for (const frameId of [...definitions.map((frame) => frame.id), 'online-satu-tempat', 'online-surat-rindu', 'online-night-date'])
     expect(createRoomRecord({ name: 'Host', settings: { ...settings, frameId } }).settings.frameId).toBe(frameId);
   for (const frameId of ['frame-1', 'classic-strip', 'unknown-valid-looking'])

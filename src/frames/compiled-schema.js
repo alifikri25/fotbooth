@@ -78,7 +78,20 @@ const schema11 = {
           h: { type: 'number', exclusiveMinimum: 0, maximum: 1 },
           shape: { enum: ['rect', 'roundedRect', 'circle', 'path'] },
           radius: { type: 'number', minimum: 0 },
-          pathRef: { enum: ['arch', 'chamfer'] },
+          pathRef: {
+            enum: [
+              'arch',
+              'chamfer',
+              'star',
+              'flower',
+              'cloud',
+              'pebble',
+              'wave',
+              'torn',
+              'heart',
+              'burst',
+            ],
+          },
           rotationDeg: { type: 'number', minimum: -3, maximum: 3 },
           matteColor: { $ref: '#/definitions/color' },
         },
@@ -1354,7 +1367,18 @@ function validate10(
             }
             if (data14.pathRef !== undefined) {
               let data23 = data14.pathRef;
-              if (!(data23 === 'arch' || data23 === 'chamfer')) {
+              if (!(
+                data23 === 'arch' ||
+                data23 === 'chamfer' ||
+                data23 === 'star' ||
+                data23 === 'flower' ||
+                data23 === 'cloud' ||
+                data23 === 'pebble' ||
+                data23 === 'wave' ||
+                data23 === 'torn' ||
+                data23 === 'heart' ||
+                data23 === 'burst'
+              )) {
                 const err73 = {
                   instancePath: instancePath + '/slots/' + i1 + '/pathRef',
                   schemaPath: '#/properties/slots/items/properties/pathRef/enum',

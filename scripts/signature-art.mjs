@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import { encoreArt } from './encore-art.mjs';
+import { signatureIds } from '../src/frames/signature.ts';
 
 const materials = new Map();
 const xml = (s) =>
@@ -100,7 +101,7 @@ const defs = `<defs>
  </defs>`;
 
 export function signatureArt(frame, outline) {
-  if (frame.version !== 3) return null;
+  if (!signatureIds.includes(frame.id)) return null;
   const { designWidth: w, designHeight: h, palette: p } = frame;
   const sw = w / 1200;
   let bg = defs,

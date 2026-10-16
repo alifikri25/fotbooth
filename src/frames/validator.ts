@@ -1,6 +1,9 @@
 import type { FrameDefinition, SlotDefinition } from '../core/types';
 import validateSchema from './compiled-schema.js';
+import { isSculptedMask, sculptedMaskArea } from '../core/slot-masks';
 export function maskArea(slot: SlotDefinition, w: number, h: number) {
+  if (slot.shape === 'path' && isSculptedMask(slot.pathRef))
+    return sculptedMaskArea(slot.pathRef, w, h);
   if (slot.shape === 'circle') return (Math.PI * w * h) / 4;
   if (slot.shape === 'roundedRect')
     return w * h - (4 - Math.PI) * Math.min(slot.radius ?? 0, w / 2, h / 2) ** 2;
@@ -42,7 +45,11 @@ export function validateFrame(input: unknown): { valid: boolean; errors: string[
       (s.radius === undefined || s.radius < 0 || s.radius > Math.min(w, h) / 2)
     )
       errors.push('Invalid radius');
-    if (s.shape === 'path' && !['arch', 'chamfer'].includes(s.pathRef ?? ''))
+    if (
+      s.shape === 'path' &&
+      !['arch', 'chamfer'].includes(s.pathRef ?? '') &&
+      !isSculptedMask(s.pathRef)
+    )
       errors.push('Unknown path');
     if (s.pathRef === 'arch' && h < w / 2) errors.push('Invalid arch viewport');
     const angle = (s.rotationDeg * Math.PI) / 180,
@@ -71,7 +78,14 @@ export function validateFrame(input: unknown): { valid: boolean; errors: string[
     bounds.push(box);
     area += maskArea(s, w, h);
   }
-  if (area / (f.designWidth * f.designHeight) < 0.55) errors.push('Photo mask area below 55%');
+  // Art cutouts deliberately trade rectangular corners for visible themed artwork.
+  const minimumPhotoArea = f.slots.some(
+    (slot) => slot.shape === 'path' && isSculptedMask(slot.pathRef),
+  )
+    ? 0.4
+    : 0.55;
+  if (area / (f.designWidth * f.designHeight) < minimumPhotoArea)
+    errors.push(`Photo mask area below ${minimumPhotoArea * 100}%`);
   for (const path of [f.layers.background, f.layers.foreground, f.thumbnail]) {
     if (
       !path.startsWith(`/frames/${f.id}/v${f.version}/`) ||

@@ -1,7 +1,7 @@
 {
   "id": "wedding-bloom-portrait",
   "name": "Pearl Vows",
-  "version": 3,
+  "version": 4,
   "format": "card",
   "categories": [
     "romantic",
@@ -13,29 +13,29 @@
     {
       "id": "p1",
       "order": 1,
-      "x": 0.06,
+      "x": 0.045,
       "y": 0.145,
-      "w": 0.415,
-      "h": 0.73,
-      "shape": "roundedRect",
-      "radius": 95,
-      "rotationDeg": 0,
-      "matteColor": "#f2efe9"
+      "w": 0.87,
+      "h": 0.347,
+      "shape": "path",
+      "rotationDeg": -1.2,
+      "matteColor": "#f2efe9",
+      "pathRef": "heart"
     },
     {
       "id": "p2",
       "order": 2,
-      "x": 0.525,
-      "y": 0.145,
-      "w": 0.415,
-      "h": 0.73,
-      "shape": "roundedRect",
-      "radius": 95,
-      "rotationDeg": 0,
-      "matteColor": "#f2efe9"
+      "x": 0.085,
+      "y": 0.5279999999999999,
+      "w": 0.87,
+      "h": 0.347,
+      "shape": "path",
+      "rotationDeg": 1.2,
+      "matteColor": "#f2efe9",
+      "pathRef": "flower"
     }
   ],
-  "description": "Undangan couture dengan sutra ivory, rangkaian mutiara, mawar dan ornamen emas sampanye.",
+  "description": "Undangan couture dengan sutra ivory, rangkaian mutiara, mawar dan ornamen emas sampanye. Potongan foto hati, kelopak bunga.",
   "palette": {
     "background": "#f5ead4",
     "ink": "#5d4931",
@@ -43,10 +43,10 @@
     "secondary": "#fcf8ed"
   },
   "layers": {
-    "background": "/frames/wedding-bloom-portrait/v3/background.svg",
-    "foreground": "/frames/wedding-bloom-portrait/v3/foreground.svg"
+    "background": "/frames/wedding-bloom-portrait/v4/background.svg",
+    "foreground": "/frames/wedding-bloom-portrait/v4/foreground.svg"
   },
-  "thumbnail": "/frames/wedding-bloom-portrait/v3/thumbnail-neutral.png",
+  "thumbnail": "/frames/wedding-bloom-portrait/v4/thumbnail-neutral.png",
   "licenses": [
     "Original vector artwork © Fotbooth contributors. CC0-1.0.",
     "DM Sans and Fraunces: SIL Open Font License 1.1.",

@@ -1,30 +1,75 @@
-# Registry 80 frame Fotbooth
+# Registry 120 frame Fotbooth
 
-Katalog aktif: **80 frame**. Dua puluh tema Festival Editions ditambahkan pada 60 frame sebelumnya sesuai permintaan 7 Oktober 2026. Katalog memakai 20 paket baru v1, 18 desain signature v3, serta 42 edisi v2. Seluruh aset terdahulu dipertahankan untuk sesi yang sudah terbuka.
+Katalog aktif: **120 frame**. Tambahan lokal 16 Oktober 2026 berisi 40 tema Mixed Moments dengan empat foto dan empat bentuk berbeda dalam satu frame. Delapan puluh definisi sebelum penambahan tetap dipertahankan. Revisi sebelumnya hanya mengganti 9 layout dengan dua kolom foto yang panjang sempit ke bawah, seperti Aquarium Parade. Kolom tersebut disusun ulang menjadi potongan lebar berselang. 71 frame lama dengan jendela persegi, landscape dan layout campuran, serta tiga preset room, tetap sama seperti semula. Katalog memakai 56 paket v1, 44 paket v2, 17 paket v3, 3 paket v4. Seluruh aset terdahulu dipertahankan untuk sesi yang sudah terbuka.
 
-Setiap paket berisi manifest, background SVG, foreground SVG dan thumbnail PNG hasil renderer aplikasi. Strip: 1200×3600; kartu: 1800×2700. Luas mask foto minimal 55%; judul, caption dan tanggal berada di luar area foto. Semua thumbnail galeri mempunyai jendela foto netral tanpa orang.
+Setiap paket berisi manifest, background SVG, foreground SVG dan thumbnail PNG hasil renderer aplikasi. Strip: 1200×3600; kartu: 1800×2700. Kontur yang sama dipakai di kamera, editor dan hasil unduhan. Luas mask foto aktual minimal 40% untuk 49 paket yang memakai potongan bebas; 71 paket lama tetap memakai batas 55%. Judul, caption dan tanggal berada di luar area foto. Semua thumbnail galeri mempunyai jendela foto netral tanpa orang.
+
+## Mixed Moments
+
+Empat bentuk berbeda per frame; 27 kartu dan 13 strip. Setiap tema memiliki ilustrasi SVG orisinal yang terpisah. [Lihat 40 desain](qa/mixed-moments-board.png).
+
+- **Rainy Window**: Payung kuning, tetes hujan dan jendela kota yang berkabut. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Sakura Station**: Peron kereta musim semi, tiket kecil dan ranting sakura. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Matcha Ceremony**: Chasen bambu, mangkuk teh hijau dan lingkaran tinta. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Koi Pavilion**: Ikan koi merah, teratai dan riak kolam taman. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Crane Flight**: Burung bangau kertas, tali harapan dan langit lembut. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Capybara Onsen**: Kapibara berendam, buah yuzu dan uap pemandian hangat. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Panda Bamboo**: Panda santai, ruas bambu dan jejak telapak kecil. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Alpine Cabin**: Pondok kayu, puncak gunung dan pohon cemara bersalju. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Aurora Camp**: Tenda mungil di bawah pita aurora dan malam kutub. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Mushroom Almanac**: Jamur tutul, lumut dan label buku penjelajah hutan. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Fairy Library**: Buku bersayap, debu peri dan rak cerita ajaib. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Potion Shelf**: Botol ramuan, kristal dan gelembung laboratorium penyihir. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Enchanted Key**: Kunci antik, lubang kunci dan tanaman rambat rahasia. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Dragonfly Marsh**: Sayap capung, buluh air dan garis rawa yang tenang. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Honeycomb Studio**: Lebah kecil, sarang heksagonal dan sendok madu. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Lavender Farm**: Ikatan lavender, ladang ungu dan pita kain linen. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Firefly Meadow**: Kunang-kunang berpendar, rumput liar dan botol kaca. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Tulip Truck**: Mobil toko bunga, pot tulip dan karcis pasar pagi. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Quilt & Cocoa**: Selimut tambal, cangkir cokelat dan marshmallow hangat. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Yarn Social**: Gulungan benang, jarum rajut dan jahitan buatan tangan. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Pottery Sunday**: Vas tanah liat, roda tembikar dan sapuan glasir. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Glass Atelier**: Botol kaca berwarna, kilau prisma dan garis kaca patri. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Mosaic Courtyard**: Ubin geometris, lengkung halaman dan buah delima. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Terrazzo Club**: Pecahan terrazzo, bentuk kerikil dan komposisi studio. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Bauhaus Play**: Lingkaran, setengah bidang dan ritme cetak Bauhaus. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Chess Society**: Kuda catur, papan kotak dan notasi pertandingan sore. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Origami Lab**: Perahu kertas, lipatan kipas dan garis potong origami. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Museum Afterhours**: Pilar galeri, patung klasik dan tiket museum malam. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Sailor Knot**: Simpul tali, jangkar dan kompas pelayaran. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Submarine Logbook**: Kapal selam kuning, panel radar dan catatan kedalaman. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Mountain Railway**: Lokomotif tua, rel berliku dan tiket perjalanan pegunungan. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Aerogram Journey**: Amplop pos udara, perangko dan pesawat kertas. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Bicycle Bloom**: Sepeda kota berkeranjang bunga dan jalan setapak. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Cinema Marquee**: Papan bioskop, clapperboard dan popcorn premier film. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Hot Air Post**: Balon udara bergaris, awan dan paket pos dari langit. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Tennis Sunday**: Raket kayu, bola tenis dan garis lapangan hijau. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Basketball Court**: Bola basket, ring, jaring dan papan skor lapangan. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Roller Disco**: Sepatu roda retro, roda berwarna dan lantai dansa. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Strawberry Farm**: Stroberi segar, keranjang panen dan taplak pasar buah. Empat foto dengan bentuk berbeda dalam satu frame.
+- **Paper Theatre**: Panggung teater kertas, tirai kecil dan boneka bulan. Empat foto dengan bentuk berbeda dalam satu frame.
 
 ## Festival Editions
 
 - **Night Market**: Bianglala, lampion, tiket, tenda dan lampu pasar malam.
-- **Aquarium Parade**: Ubur-ubur, ikan badut, koral, gelembung dan kaca laut.
+- **Aquarium Parade**: Dua foto berlekuk ombak dan bintang laut, tersusun berselang di antara koral dan gelembung.
 - **Pit Lane**: Mobil balap, bendera checker, ban, helm dan jejak kecepatan.
 - **Circus Cabinet**: Kuda carousel, tenda sirkus, harlequin dan tiket pertunjukan.
 - **Street Scramble**: Poster sobek, cat semprot, safety pin dan stiker jalanan.
 - **Ramen Social**: Mangkuk ramen, sumpit, narutomaki, lentera dan tirai kedai.
-- **Stellar Atlas**: Peta bintang, teleskop kuningan, planet dan fase bulan.
+- **Stellar Atlas**: Peta bintang, teleskop kuningan, planet dan fase bulan. Potongan foto bintang, ombak.
 - **Safari Stamps**: Jerapah, zebra, gajah, kompas dan label ekspedisi.
 - **Sugar Arcade**: Lollipop, gummy bear, bonbon dan taburan permen warna-warni.
 - **Pinball Fever**: Flipper krom, bola pinball, bumper dan kilat arcade.
 - **Mixtape Motel**: Kaset, vinyl, kabel headphone, tuts synthesizer dan gelang konser.
 - **Skate Zine**: Skateboard, sneaker, roda, rantai dan kolase majalah skate.
 - **Comic Bureau**: Ledakan halftone, panel komik, pena dan potongan koran.
-- **Desert Bazaar**: Ubin mosaik, lampu kuningan, karpet, delima dan manik-manik.
+- **Desert Bazaar**: Ubin mosaik, lampu kuningan, karpet, delima dan manik-manik. Potongan foto kelopak bunga, batu organik.
 - **Jungle Jam**: Monstera, toucan, katak pohon, hibiscus dan motif harimau.
 - **Snow Globe Club**: Chalet bersalju, penguin, syal rajut, ski dan kristal es.
 - **Pirate Radio**: Peta laut, kapal kayu, simpul tali, jangkar dan harta koin.
 - **Bakery Confetti**: Kue strawberry, croissant, macaron, whipped cream dan gingham.
-- **Dragon Lantern**: Naga parade, lentera merah, simpul keberuntungan dan kipas jade.
+- **Dragon Lantern**: Naga parade, lentera merah, simpul keberuntungan dan kipas jade. Potongan foto ombak, kelopak bunga.
 - **Neon District**: Gedung kota, tabung neon, refleksi hujan dan detail sirkuit.
 
 Material terpisah dibuat untuk setiap tema dengan tool ImageGen bawaan. File asli, JPEG web dan prompt disimpan pada artwork/originals, artwork/materials dan [provenance Festival Editions](../artwork/provenance/festival-materials-20261007.json). Komposisi foto, rim, label dan caption memakai SVG/canvas native. Bahan strip diulang pada proporsi aslinya, tanpa meregangkan objek cetak.
@@ -113,6 +158,46 @@ Material terpisah dibuat untuk setiap tema dengan tool ImageGen bawaan. File asl
 | Bakery Confetti | bakery-confetti | Festival Editions | strip | 4 |
 | Dragon Lantern | dragon-lantern | Festival Editions | card | 2 |
 | Neon District | neon-district | Festival Editions | card | 4 |
+| Rainy Window | rainy-window | Mixed Moments | card | 4 |
+| Sakura Station | sakura-station | Mixed Moments | card | 4 |
+| Matcha Ceremony | matcha-ceremony | Mixed Moments | strip | 4 |
+| Koi Pavilion | koi-pavilion | Mixed Moments | card | 4 |
+| Crane Flight | crane-flight | Mixed Moments | card | 4 |
+| Capybara Onsen | capybara-onsen | Mixed Moments | strip | 4 |
+| Panda Bamboo | panda-bamboo | Mixed Moments | card | 4 |
+| Alpine Cabin | alpine-cabin | Mixed Moments | card | 4 |
+| Aurora Camp | aurora-camp | Mixed Moments | strip | 4 |
+| Mushroom Almanac | mushroom-almanac | Mixed Moments | card | 4 |
+| Fairy Library | fairy-library | Mixed Moments | card | 4 |
+| Potion Shelf | potion-shelf | Mixed Moments | strip | 4 |
+| Enchanted Key | enchanted-key | Mixed Moments | card | 4 |
+| Dragonfly Marsh | dragonfly-marsh | Mixed Moments | card | 4 |
+| Honeycomb Studio | honeycomb-studio | Mixed Moments | strip | 4 |
+| Lavender Farm | lavender-farm | Mixed Moments | card | 4 |
+| Firefly Meadow | firefly-meadow | Mixed Moments | card | 4 |
+| Tulip Truck | tulip-truck | Mixed Moments | strip | 4 |
+| Quilt & Cocoa | quilt-cocoa | Mixed Moments | card | 4 |
+| Yarn Social | yarn-social | Mixed Moments | card | 4 |
+| Pottery Sunday | pottery-sunday | Mixed Moments | strip | 4 |
+| Glass Atelier | glass-atelier | Mixed Moments | card | 4 |
+| Mosaic Courtyard | mosaic-courtyard | Mixed Moments | card | 4 |
+| Terrazzo Club | terrazzo-club | Mixed Moments | strip | 4 |
+| Bauhaus Play | bauhaus-play | Mixed Moments | card | 4 |
+| Chess Society | chess-society | Mixed Moments | card | 4 |
+| Origami Lab | origami-lab | Mixed Moments | strip | 4 |
+| Museum Afterhours | museum-afterhours | Mixed Moments | card | 4 |
+| Sailor Knot | sailor-knot | Mixed Moments | card | 4 |
+| Submarine Logbook | submarine-logbook | Mixed Moments | strip | 4 |
+| Mountain Railway | mountain-railway | Mixed Moments | card | 4 |
+| Aerogram Journey | aerogram-journey | Mixed Moments | card | 4 |
+| Bicycle Bloom | bicycle-bloom | Mixed Moments | strip | 4 |
+| Cinema Marquee | cinema-marquee | Mixed Moments | card | 4 |
+| Hot Air Post | hot-air-post | Mixed Moments | card | 4 |
+| Tennis Sunday | tennis-sunday | Mixed Moments | strip | 4 |
+| Basketball Court | basketball-court | Mixed Moments | card | 4 |
+| Roller Disco | roller-disco | Mixed Moments | card | 4 |
+| Strawberry Farm | strawberry-farm | Mixed Moments | strip | 4 |
+| Paper Theatre | paper-theatre | Mixed Moments | card | 4 |
 
 ## Lisensi dan sumber
 

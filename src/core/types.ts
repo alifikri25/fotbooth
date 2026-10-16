@@ -1,5 +1,6 @@
 import type { PhotoEffectId } from './effects';
 import type { ARSnapshot } from './ar/types';
+import type { SculptedMaskRef } from './slot-masks';
 export type FitMode = 'cover' | 'contain';
 export type Shape = 'rect' | 'roundedRect' | 'circle' | 'path';
 export interface Crop {
@@ -26,7 +27,7 @@ export interface SlotDefinition {
   h: number;
   shape: Shape;
   radius?: number;
-  pathRef?: 'arch' | 'chamfer';
+  pathRef?: 'arch' | 'chamfer' | SculptedMaskRef;
   rotationDeg: number;
   matteColor: string;
 }

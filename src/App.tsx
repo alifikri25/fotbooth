@@ -16,6 +16,7 @@ import { Result } from './components/Result';
 import { Dialog } from './components/Dialog';
 import { Camera } from './components/Camera';
 import { OnlineRoom } from './components/OnlineRoom';
+import { Feedback } from './components/Feedback';
 import { frames, getFrame } from './frames/catalog';
 import { PhotoRegistry } from './core/resources';
 import {
@@ -53,6 +54,7 @@ export default function App() {
     [ready, setReady] = useState(false),
     [notice, setNotice] = useState(''),
     [previewError, setPreviewError] = useState('');
+  const [feedback, setFeedback] = useState(false);
   const [help, setHelp] = useState(false),
     [confirm, setConfirm] = useState(false),
     [format, setFormat] = useState<ExportFormat>('png'),
@@ -555,16 +557,32 @@ export default function App() {
       />
       <footer className="site-footer">
         <span>fotbooth · simpan yang sederhana.</span>
-        <button
-          className="text-button"
-          onClick={(event) => {
-            modalTrigger.current = event.currentTarget;
-            setHelp(true);
-          }}
-        >
-          Bantuan & privasi <ArrowUpRightIcon />
-        </button>
+        <div className="footer-actions">
+          <button
+            className="text-button"
+            onClick={(event) => {
+              modalTrigger.current = event.currentTarget;
+              setFeedback(true);
+            }}
+          >
+            Kirim saran <ArrowUpRightIcon />
+          </button>
+          <button
+            className="text-button"
+            onClick={(event) => {
+              modalTrigger.current = event.currentTarget;
+              setHelp(true);
+            }}
+          >
+            Bantuan & privasi <ArrowUpRightIcon />
+          </button>
+        </div>
       </footer>
+      <Feedback
+        open={feedback}
+        onClose={() => setFeedback(false)}
+        returnFocus={modalTrigger.current}
+      />
       {help && (
         <Dialog
           returnFocus={modalTrigger.current}

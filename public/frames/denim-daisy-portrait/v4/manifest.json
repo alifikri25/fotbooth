@@ -1,0 +1,99 @@
+{
+  "id": "denim-daisy-portrait",
+  "name": "Denim Bloom Studio",
+  "version": 4,
+  "format": "card",
+  "categories": [
+    "floral",
+    "scrapbook"
+  ],
+  "designWidth": 1800,
+  "designHeight": 2700,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.045,
+      "y": 0.145,
+      "w": 0.87,
+      "h": 0.347,
+      "shape": "path",
+      "rotationDeg": -1.2,
+      "matteColor": "#f2efe9",
+      "pathRef": "flower"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.085,
+      "y": 0.5279999999999999,
+      "w": 0.87,
+      "h": 0.347,
+      "shape": "path",
+      "rotationDeg": 1.2,
+      "matteColor": "#f2efe9",
+      "pathRef": "torn"
+    }
+  ],
+  "description": "Denim Daisy couture dengan kain indigo, bordir daisy timbul, jahitan ganda, renda dan kancing mutiara. Potongan foto kelopak bunga, kertas sobek.",
+  "palette": {
+    "background": "#7fa0bb",
+    "ink": "#243e57",
+    "accent": "#f4d57b",
+    "secondary": "#f6f0e4"
+  },
+  "layers": {
+    "background": "/frames/denim-daisy-portrait/v4/background.svg",
+    "foreground": "/frames/denim-daisy-portrait/v4/foreground.svg"
+  },
+  "thumbnail": "/frames/denim-daisy-portrait/v4/thumbnail-neutral.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1.",
+    "Original signature compositions and generated material artwork for Fotbooth; no Canva template assets."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "DENIM BLOOM STUDIO",
+      "x": 0.12,
+      "y": 0.033,
+      "w": 0.76,
+      "h": 0.039,
+      "fontId": "serif",
+      "fontSize": 108,
+      "minFontSize": 45,
+      "maxLines": 1,
+      "color": "#243e57"
+    },
+    {
+      "id": "caption",
+      "x": 0.16,
+      "y": 0.918,
+      "w": 0.68,
+      "h": 0.045,
+      "fontId": "sans",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#243e57"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.972,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#243e57"
+    }
+  ],
+  "collection": "Denim Daisy",
+  "artwork": {
+    "motif": "daisy",
+    "edition": 7
+  }
+}

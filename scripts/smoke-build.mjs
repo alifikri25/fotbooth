@@ -24,9 +24,9 @@ try {
   expect(headers['content-security-policy']).toContain("default-src 'self'");
   expect(headers['permissions-policy']).toBe('camera=(self), microphone=()');
   expect(headers['x-content-type-options']).toBe('nosniff');
-  await expect(page.getByText('80 frame orisinal', { exact: true })).toBeVisible();
+  await expect(page.getByText('120 frame orisinal', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Mulai bikin foto' }).click();
-  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(80);
+  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(120);
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(
     viewport.width,
   );
@@ -39,7 +39,7 @@ try {
     );
     return images.map((image) => image.naturalWidth);
   });
-  expect(thumbs).toHaveLength(80);
+  expect(thumbs).toHaveLength(120);
   expect(thumbs.every((width) => width >= 200)).toBe(true);
   const assetParity=[];
   for (const frame of definitions) {
@@ -120,7 +120,7 @@ try {
         baseURL,
         browser: browserName,
         viewport,
-        frames: 80,
+        frames: 120,
         thumbnailCount: thumbs.length,
         assetsMatchedToBuild: assetParity.length,
         assetParity,
@@ -134,7 +134,7 @@ try {
     ) + '\n',
   );
   console.log(
-    `Cloudflare Pages ${isRemote ? 'HTTPS' : 'local'} smoke passed: 80 thumbnails, 240 frame assets, security headers and upload/PNG/JPEG download flow.`,
+    `Cloudflare Pages ${isRemote ? 'HTTPS' : 'local'} smoke passed: 120 thumbnails, 360 frame assets, security headers and upload/PNG/JPEG download flow.`,
   );
 } finally {
   await browser.close();

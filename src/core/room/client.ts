@@ -111,10 +111,23 @@ function apiUrl(apiBase: string, pathname: string): URL {
 }
 
 export async function createRoom(apiBase: string, name: string, settings: RoomSettings): Promise<RoomCreated> {
-  const response = await fetch(apiUrl(apiBase, '/api/rooms'), {
-    method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, settings }), signal: AbortSignal.timeout(15000),
-  });
+  const url = apiUrl(apiBase, '/api/rooms');
+  const signal = AbortSignal.timeout(15000);
+  let response: Response;
+  try {
+    response = await fetch(url, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, settings }), signal,
+    });
+  } catch (error) {
+    if (error instanceof TypeError) {
+      throw new Error('Tidak dapat menjangkau layanan room. Periksa koneksi internet atau coba lewat Wi-Fi, lalu buat room lagi.', { cause: error });
+    }
+    if (error instanceof Error && error.name === 'TimeoutError') {
+      throw new Error('Layanan room terlalu lama merespons. Coba lagi sebentar.', { cause: error });
+    }
+    throw error;
+  }
   const body = await response.json();
   if (!response.ok) throw new Error(body.message ?? 'Room belum dapat dibuat. Coba lagi sebentar.');
   if (typeof body.roomId !== 'string' || typeof body.hostToken !== 'string' || typeof body.guestToken !== 'string'

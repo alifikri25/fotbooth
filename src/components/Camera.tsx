@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useId, useRef, useState, type CSSProperties } from 'react';
 import {
   ArrowLeft,
   Camera as CameraIcon,
@@ -19,6 +19,7 @@ import { PhotoEffects } from './PhotoEffects';
 import { AREffects } from './AREffects';
 import { useCameraAR } from './useCameraAR';
 import type { AREffectId, ARSnapshot } from '../core/ar/types';
+import { isSculptedMask, sculptedMaskPath } from '../core/slot-masks';
 export interface CameraProps {
   frame: FrameDefinition;
   session: Session;
@@ -44,6 +45,7 @@ interface CaptureDraft {
   ar?: ARSnapshot;
 }
 export function Camera(p: CameraProps) {
+  const cameraClipId = `camera-mask-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const video = useRef<HTMLVideoElement>(null),
     arPreview = useRef<HTMLCanvasElement>(null),
     reviewAction = useRef<HTMLButtonElement>(null),
@@ -257,13 +259,18 @@ export function Camera(p: CameraProps) {
   }
   const ready = phase === 'live',
     r = sw / 2 / sh;
+  const sculptedRef =
+    slot.shape === 'path' && isSculptedMask(slot.pathRef) ? slot.pathRef : undefined;
+  const cameraMaskPath = sculptedRef
+    ? sculptedMaskPath(sculptedRef, 1, 1)
+    : `M0 1V${r}C0 0 1 0 1 ${r}V1Z`;
   const clip =
     slot.shape === 'circle'
       ? 'ellipse(50% 50% at 50% 50%)'
       : slot.pathRef === 'chamfer'
         ? 'polygon(9% 0,91% 0,100% 9%,100% 91%,91% 100%,9% 100%,0 91%,0 9%)'
-        : slot.pathRef === 'arch'
-          ? `url(#camera-arch)`
+        : slot.pathRef === 'arch' || sculptedRef
+          ? `url(#${cameraClipId})`
           : 'none';
   return (
     <main className="camera-page">
@@ -291,8 +298,8 @@ export function Camera(p: CameraProps) {
           </div>
           <svg className="camera-clip-definitions" width="0" height="0" aria-hidden="true">
             <defs>
-              <clipPath id="camera-arch" clipPathUnits="objectBoundingBox">
-                <path d={`M0 1V${r}C0 0 1 0 1 ${r}V1Z`} />
+              <clipPath id={cameraClipId} clipPathUnits="objectBoundingBox">
+                <path d={cameraMaskPath} />
               </clipPath>
             </defs>
           </svg>

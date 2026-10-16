@@ -1,0 +1,121 @@
+{
+  "id": "bicycle-bloom",
+  "name": "Bicycle Bloom",
+  "version": 1,
+  "format": "strip",
+  "categories": [
+    "floral",
+    "playful"
+  ],
+  "designWidth": 1200,
+  "designHeight": 3600,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.05,
+      "y": 0.1,
+      "w": 0.86,
+      "h": 0.18,
+      "shape": "rect",
+      "rotationDeg": -0.7,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.09,
+      "y": 0.30000000000000004,
+      "w": 0.86,
+      "h": 0.18,
+      "shape": "path",
+      "pathRef": "star",
+      "rotationDeg": 0.7,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.05,
+      "y": 0.5,
+      "w": 0.86,
+      "h": 0.18,
+      "shape": "path",
+      "pathRef": "heart",
+      "rotationDeg": -0.7,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p4",
+      "order": 4,
+      "x": 0.09,
+      "y": 0.7000000000000001,
+      "w": 0.86,
+      "h": 0.18,
+      "shape": "path",
+      "pathRef": "flower",
+      "rotationDeg": 0.7,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Sepeda kota berkeranjang bunga dan jalan setapak. Empat foto dengan bentuk berbeda dalam satu frame.",
+  "palette": {
+    "background": "#e7e6d2",
+    "ink": "#4a5540",
+    "accent": "#bc7d82",
+    "secondary": "#a7b88c"
+  },
+  "layers": {
+    "background": "/frames/bicycle-bloom/v1/background.svg",
+    "foreground": "/frames/bicycle-bloom/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/bicycle-bloom/v1/thumbnail-neutral.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Bicycle Bloom",
+      "x": 0.09,
+      "y": 0.022,
+      "w": 0.82,
+      "h": 0.04,
+      "fontId": "sans",
+      "fontSize": 76,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#4a5540"
+    },
+    {
+      "id": "caption",
+      "x": 0.07,
+      "y": 0.92,
+      "w": 0.86,
+      "h": 0.04,
+      "fontId": "sans",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#4a5540"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.974,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#4a5540"
+    }
+  ],
+  "collection": "Mixed Moments",
+  "artwork": {
+    "motif": "bicycle-bloom",
+    "edition": 10
+  }
+}

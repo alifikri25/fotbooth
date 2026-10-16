@@ -1,0 +1,121 @@
+{
+  "id": "mountain-railway",
+  "name": "Mountain Railway",
+  "version": 1,
+  "format": "card",
+  "categories": [
+    "nature",
+    "playful"
+  ],
+  "designWidth": 1800,
+  "designHeight": 2700,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.055,
+      "y": 0.115,
+      "w": 0.43,
+      "h": 0.35,
+      "shape": "path",
+      "pathRef": "heart",
+      "rotationDeg": -0.7,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.515,
+      "y": 0.115,
+      "w": 0.43,
+      "h": 0.35,
+      "shape": "path",
+      "pathRef": "burst",
+      "rotationDeg": 0.7,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.055,
+      "y": 0.51,
+      "w": 0.43,
+      "h": 0.35,
+      "shape": "path",
+      "pathRef": "cloud",
+      "rotationDeg": -0.7,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p4",
+      "order": 4,
+      "x": 0.515,
+      "y": 0.51,
+      "w": 0.43,
+      "h": 0.35,
+      "shape": "rect",
+      "rotationDeg": 0.7,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Lokomotif tua, rel berliku dan tiket perjalanan pegunungan. Empat foto dengan bentuk berbeda dalam satu frame.",
+  "palette": {
+    "background": "#e0e7de",
+    "ink": "#3b5149",
+    "accent": "#b47455",
+    "secondary": "#b9c49d"
+  },
+  "layers": {
+    "background": "/frames/mountain-railway/v1/background.svg",
+    "foreground": "/frames/mountain-railway/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/mountain-railway/v1/thumbnail-neutral.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Mountain Railway",
+      "x": 0.09,
+      "y": 0.022,
+      "w": 0.82,
+      "h": 0.04,
+      "fontId": "sans",
+      "fontSize": 100,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#3b5149"
+    },
+    {
+      "id": "caption",
+      "x": 0.07,
+      "y": 0.92,
+      "w": 0.86,
+      "h": 0.04,
+      "fontId": "sans",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#3b5149"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.974,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#3b5149"
+    }
+  ],
+  "collection": "Mixed Moments",
+  "artwork": {
+    "motif": "mountain-railway",
+    "edition": 8
+  }
+}

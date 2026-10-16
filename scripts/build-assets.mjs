@@ -6,6 +6,8 @@ import { collectionArt } from './collection-art.mjs';
 import { printPaper } from './print-paper.mjs';
 import { signatureArt } from './signature-art.mjs';
 import { maximalistArt } from './maximalist-art.mjs';
+import { mixedArt } from './mixed-art.mjs';
+import { isSculptedMask, sculptedMaskPath } from '../src/core/slot-masks.ts';
 
 const root = path.resolve(import.meta.dirname, '..');
 const svg = (w, h, body) =>
@@ -33,6 +35,8 @@ function outline(s, f, mask = false, style) {
     (mask ? 'fill="black"' : `fill="none" stroke="${f.palette.ink}" stroke-width="${width}"`);
   let shape = `<rect x="0" y="0" width="${w}" height="${h}" rx="${s.shape === 'roundedRect' ? s.radius : 0}" ${attr}/>`;
   if (s.shape === 'circle') shape = `<circle cx="${w / 2}" cy="${h / 2}" r="${w / 2}" ${attr}/>`;
+  if (s.shape === 'path' && isSculptedMask(s.pathRef))
+    shape = `<path d="${sculptedMaskPath(s.pathRef, w, h)}" stroke-linejoin="round" ${attr}/>`;
   if (s.pathRef === 'arch')
     shape = `<path d="M0,${h}V${w / 2}C0,0 ${w},0 ${w},${w / 2}V${h}Z" ${attr}/>`;
   if (s.pathRef === 'chamfer') {
@@ -45,7 +49,7 @@ for (const f of definitions) {
   const { designWidth: w, designHeight: h, palette: p } = f;
   let bg = `<rect width="${w}" height="${h}" fill="${p.background}"/>`;
   let fg = f.slots.map((s) => outline(s, f)).join('');
-  const signature = maximalistArt(f, outline) ?? signatureArt(f, outline);
+  const signature = mixedArt(f, outline) ?? maximalistArt(f, outline) ?? signatureArt(f, outline);
   if (signature) {
     bg = signature.background;
     fg = signature.foreground;

@@ -2,11 +2,13 @@ import type { FrameDefinition } from '../core/types';
 import { validateFrame } from './validator';
 import { signatureIds } from './signature';
 import { maximalistIds } from './maximalist';
+import { mixedIds } from './mixed';
 const manifests = import.meta.glob<FrameDefinition>('./manifests/*.json', {
   eager: true,
   import: 'default',
 });
 const sequence = [
+  ...mixedIds,
   ...maximalistIds,
   ...signatureIds,
   'ribbon-diary-trio',

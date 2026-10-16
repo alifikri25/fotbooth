@@ -39,14 +39,31 @@ test('the production catalog works with the actual Cloudflare security headers',
     }
   });
   const errors: string[] = [];
+  let feedbackRequests = 0;
+  await page.route('https://formsubmit.co/**', async (route) => {
+    feedbackRequests++;
+    expect(route.request().method()).toBe('POST');
+    await route.fulfill({
+      json: { success: true },
+      headers: { 'Access-Control-Allow-Origin': '*' },
+    });
+  });
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('/');
-  await expect(page.getByText('80 frame orisinal', { exact: true })).toBeVisible();
+  await expect(page.getByText('120 frame orisinal', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Mulai bikin foto' }).click();
-  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(80);
+  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(120);
   await page.getByLabel('Cari frame').fill('ribbon diary');
   await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(4);
   await page.getByRole('button', { name: 'Pakai frame Rose Ribbon Salon', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Mulai dengan senyum kamu.' })).toBeVisible();
+  await page.getByRole('button', { name: 'Kirim saran', exact: true }).click();
+  const feedback = page.getByRole('dialog', { name: 'Kirim saran', exact: true });
+  await feedback
+    .getByLabel('Pesanmu')
+    .fill('Tolong tambah tema layang-layang di koleksi berikutnya.');
+  await feedback.getByRole('button', { name: 'Kirim saran', exact: true }).click();
+  await expect(feedback.getByRole('status')).toContainText('Saran diterima layanan pengiriman');
+  expect(feedbackRequests).toBe(1);
   expect(errors).toEqual([]);
 });

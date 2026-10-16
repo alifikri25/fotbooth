@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
 
-test('finds a frame in the 80-frame library by name, collection, format and photo count', async ({
+test('finds a frame in the 120-frame library by name, collection, format and photo count', async ({
   page,
 }) => {
   await page.goto('/');
-  await expect(page.getByText('80 frame orisinal', { exact: true })).toBeVisible();
+  await expect(page.getByText('120 frame orisinal', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Mulai bikin foto' }).click();
-  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(80);
+  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(120);
   await page.getByLabel('Cari frame').fill('ribbon diary');
   await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(4);
   await page.getByLabel('Format frame').selectOption('card');
@@ -29,5 +29,5 @@ test('collection filtering and an empty search can recover the complete catalog'
   await page.getByLabel('Cari frame').fill('tidak ada frame ini');
   await expect(page.getByText('Frame belum ketemu.')).toBeVisible();
   await page.getByRole('button', { name: 'Reset filter', exact: true }).click();
-  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(80);
+  await expect(page.getByRole('button', { name: /^Pakai frame / })).toHaveCount(120);
 });

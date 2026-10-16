@@ -84,8 +84,8 @@ describe('online room frames keep one shared photograph', () => {
 describe('online rooms use the prepared catalog', () => {
   it('makes each prepared frame available without replacing its artwork or slot geometry', () => {
     const available = (presets as Record<string, any>).onlineRoomFrames;
-    expect(available).toHaveLength(83);
-    expect(new Set(available.map((frame: { id: string }) => frame.id)).size).toBe(83);
+    expect(available).toHaveLength(123);
+    expect(new Set(available.map((frame: { id: string }) => frame.id)).size).toBe(123);
     for (const frame of frames) {
       expect(available).toContain(frame);
       expect(presets.getRoomFrame(frame.id)).toBe(frame);

@@ -1,7 +1,7 @@
 {
   "id": "ribbon-diary-portrait",
   "name": "Ribbon Diary Portrait",
-  "version": 2,
+  "version": 3,
   "format": "card",
   "categories": [
     "romantic",
@@ -13,29 +13,29 @@
     {
       "id": "p1",
       "order": 1,
-      "x": 0.06,
+      "x": 0.045,
       "y": 0.145,
-      "w": 0.415,
-      "h": 0.73,
-      "shape": "roundedRect",
-      "radius": 95,
-      "rotationDeg": 0,
-      "matteColor": "#f2efe9"
+      "w": 0.87,
+      "h": 0.347,
+      "shape": "path",
+      "rotationDeg": -1.2,
+      "matteColor": "#f2efe9",
+      "pathRef": "heart"
     },
     {
       "id": "p2",
       "order": 2,
-      "x": 0.525,
-      "y": 0.145,
-      "w": 0.415,
-      "h": 0.73,
-      "shape": "roundedRect",
-      "radius": 95,
-      "rotationDeg": 0,
-      "matteColor": "#f2efe9"
+      "x": 0.085,
+      "y": 0.5279999999999999,
+      "w": 0.87,
+      "h": 0.347,
+      "shape": "path",
+      "rotationDeg": 1.2,
+      "matteColor": "#f2efe9",
+      "pathRef": "cloud"
     }
   ],
-  "description": "Pita satin, renda scallop, mutiara dan label buku harian. Edisi Portrait, 2 foto.",
+  "description": "Pita satin, renda scallop, mutiara dan label buku harian. Edisi Portrait, 2 foto. Potongan foto hati, awan.",
   "palette": {
     "background": "#fff0f4",
     "ink": "#743747",
@@ -43,10 +43,10 @@
     "secondary": "#c5b6df"
   },
   "layers": {
-    "background": "/frames/ribbon-diary-portrait/v2/background.svg",
-    "foreground": "/frames/ribbon-diary-portrait/v2/foreground.svg"
+    "background": "/frames/ribbon-diary-portrait/v3/background.svg",
+    "foreground": "/frames/ribbon-diary-portrait/v3/foreground.svg"
   },
-  "thumbnail": "/frames/ribbon-diary-portrait/v2/thumbnail-neutral.png",
+  "thumbnail": "/frames/ribbon-diary-portrait/v3/thumbnail-neutral.png",
   "licenses": [
     "Original vector artwork © Fotbooth contributors. CC0-1.0.",
     "DM Sans and Fraunces: SIL Open Font License 1.1."

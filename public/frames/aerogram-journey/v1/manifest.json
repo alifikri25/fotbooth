@@ -1,0 +1,121 @@
+{
+  "id": "aerogram-journey",
+  "name": "Aerogram Journey",
+  "version": 1,
+  "format": "card",
+  "categories": [
+    "scrapbook",
+    "playful"
+  ],
+  "designWidth": 1800,
+  "designHeight": 2700,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.055,
+      "y": 0.115,
+      "w": 0.43,
+      "h": 0.35,
+      "shape": "rect",
+      "rotationDeg": -0.7,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.515,
+      "y": 0.115,
+      "w": 0.43,
+      "h": 0.35,
+      "shape": "path",
+      "pathRef": "torn",
+      "rotationDeg": 0.7,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.055,
+      "y": 0.51,
+      "w": 0.43,
+      "h": 0.35,
+      "shape": "path",
+      "pathRef": "star",
+      "rotationDeg": -0.7,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p4",
+      "order": 4,
+      "x": 0.515,
+      "y": 0.51,
+      "w": 0.43,
+      "h": 0.35,
+      "shape": "path",
+      "pathRef": "pebble",
+      "rotationDeg": 0.7,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Amplop pos udara, perangko dan pesawat kertas. Empat foto dengan bentuk berbeda dalam satu frame.",
+  "palette": {
+    "background": "#e9e1cd",
+    "ink": "#3b5067",
+    "accent": "#bd7464",
+    "secondary": "#a8bbc0"
+  },
+  "layers": {
+    "background": "/frames/aerogram-journey/v1/background.svg",
+    "foreground": "/frames/aerogram-journey/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/aerogram-journey/v1/thumbnail-neutral.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Aerogram Journey",
+      "x": 0.09,
+      "y": 0.022,
+      "w": 0.82,
+      "h": 0.04,
+      "fontId": "sans",
+      "fontSize": 100,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#3b5067"
+    },
+    {
+      "id": "caption",
+      "x": 0.07,
+      "y": 0.92,
+      "w": 0.86,
+      "h": 0.04,
+      "fontId": "sans",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#3b5067"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.974,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#3b5067"
+    }
+  ],
+  "collection": "Mixed Moments",
+  "artwork": {
+    "motif": "aerogram-journey",
+    "edition": 9
+  }
+}

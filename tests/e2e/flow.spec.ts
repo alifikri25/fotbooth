@@ -99,7 +99,7 @@ for (const width of [360, 1440]) {
     const bytes = await photoBytes(page);
     const tabTo = async (target: import('@playwright/test').Locator) => {
       await expect(target).toBeEnabled();
-      for (let i = 0; i < 80; i++) {
+      for (let i = 0; i < 160; i++) {
         if (await target.evaluate((element) => element === document.activeElement)) return;
         await page.keyboard.press('Tab');
       }

@@ -65,7 +65,7 @@ export function Gallery({
           </h1>
         </div>
         <p>
-          Pasar malam, aquarium, racing, neon, sampai scrapbook dan bunga.
+          Onsen kapibara, aurora, keramik, sampai scrapbook dan bunga.
           <br />
           Foto dan posisinya bisa diatur setelah ini.
         </p>

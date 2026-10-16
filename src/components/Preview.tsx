@@ -4,6 +4,7 @@ import { clampPlacement, toSlotLocal, coverRect, effectiveDimensions } from '../
 import { renderComposition, slotPath } from '../core/renderer';
 import { ensureFonts } from '../core/text';
 import type { PhotoRegistry } from '../core/resources';
+import { isSculptedMask, sculptedMaskPath } from '../core/slot-masks';
 export function Preview({
   frame,
   session,
@@ -143,6 +144,10 @@ export function Preview({
     }
   }
   const slot = frame.slots.find((s) => s.id === activeSlot);
+  const sculptedOutline =
+    slot?.shape === 'path' && isSculptedMask(slot.pathRef)
+      ? sculptedMaskPath(slot.pathRef, slot.w * frame.designWidth, slot.h * frame.designHeight)
+      : undefined;
   return (
     <div
       className={`composition ${frame.format}`}
@@ -175,7 +180,7 @@ export function Preview({
         )}
       {interactive && slot && (
         <div
-          className="slot-outline"
+          className={`slot-outline${sculptedOutline ? ' is-sculpted' : ''}`}
           style={{
             left: `${slot.x * 100}%`,
             top: `${slot.y * 100}%`,
@@ -185,6 +190,21 @@ export function Preview({
             borderRadius: slot.shape === 'circle' ? '50%' : '10px',
           }}
         >
+          {sculptedOutline && (
+            <svg
+              className="slot-outline-shape"
+              viewBox={`0 0 ${slot.w * frame.designWidth} ${slot.h * frame.designHeight}`}
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path
+                className="slot-outline-halo"
+                d={sculptedOutline}
+                vectorEffect="non-scaling-stroke"
+              />
+              <path d={sculptedOutline} vectorEffect="non-scaling-stroke" />
+            </svg>
+          )}
           <span>FOTO {slot.order}</span>
         </div>
       )}

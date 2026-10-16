@@ -53,6 +53,25 @@ test('online entry explains invitation sharing before camera access', async ({ p
   ).toBe(false);
 });
 
+test('room creation keeps the name and allows retry after a network failure', async ({ page }) => {
+  await page.route('**/api/rooms', async (route) => {
+    await route.abort('failed');
+  }, { times: 1 });
+  await page.goto(site);
+  await page.getByRole('button', { name: 'Foto bareng online', exact: true }).click();
+  await page.getByLabel('Nama kamu', { exact: true }).fill('Ari');
+  await page.getByRole('button', { name: 'Buat room', exact: true }).click();
+
+  await expect(page.getByRole('alert')).toContainText(/layanan room.*Wi-Fi/i);
+  await expect(page.getByLabel('Nama kamu', { exact: true })).toHaveValue('Ari');
+  await expect(page.getByRole('button', { name: 'Buat room', exact: true })).toBeEnabled();
+  expect(new URL(page.url()).hash).toBe('');
+
+  await page.getByRole('button', { name: 'Buat room', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Room foto bareng', exact: true })).toBeVisible();
+  await expect(page.getByRole('alert')).toHaveCount(0);
+});
+
 for (const transport of ['direct', 'relay'] as const) {
   test(`two people join, capture identical PNGs and retake using ${transport}`, async ({
     browser,

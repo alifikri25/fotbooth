@@ -1,7 +1,7 @@
 {
   "id": "botanical-journal-portrait",
   "name": "Emerald Herbarium",
-  "version": 3,
+  "version": 4,
   "format": "card",
   "categories": [
     "nature",
@@ -14,29 +14,29 @@
     {
       "id": "p1",
       "order": 1,
-      "x": 0.06,
+      "x": 0.045,
       "y": 0.145,
-      "w": 0.415,
-      "h": 0.73,
-      "shape": "roundedRect",
-      "radius": 95,
-      "rotationDeg": 0,
-      "matteColor": "#f2efe9"
+      "w": 0.87,
+      "h": 0.347,
+      "shape": "path",
+      "rotationDeg": -1.2,
+      "matteColor": "#f2efe9",
+      "pathRef": "pebble"
     },
     {
       "id": "p2",
       "order": 2,
-      "x": 0.525,
-      "y": 0.145,
-      "w": 0.415,
-      "h": 0.73,
-      "shape": "roundedRect",
-      "radius": 95,
-      "rotationDeg": 0,
-      "matteColor": "#f2efe9"
+      "x": 0.085,
+      "y": 0.5279999999999999,
+      "w": 0.87,
+      "h": 0.347,
+      "shape": "path",
+      "rotationDeg": 1.2,
+      "matteColor": "#f2efe9",
+      "pathRef": "flower"
     }
   ],
-  "description": "Herbarium kolektor dengan velvet emerald, kain buku, daun pakis, eucalyptus dan filigree emas.",
+  "description": "Herbarium kolektor dengan velvet emerald, kain buku, daun pakis, eucalyptus dan filigree emas. Potongan foto batu organik, kelopak bunga.",
   "palette": {
     "background": "#244f40",
     "ink": "#244438",
@@ -44,10 +44,10 @@
     "secondary": "#f5edde"
   },
   "layers": {
-    "background": "/frames/botanical-journal-portrait/v3/background.svg",
-    "foreground": "/frames/botanical-journal-portrait/v3/foreground.svg"
+    "background": "/frames/botanical-journal-portrait/v4/background.svg",
+    "foreground": "/frames/botanical-journal-portrait/v4/foreground.svg"
   },
-  "thumbnail": "/frames/botanical-journal-portrait/v3/thumbnail-neutral.png",
+  "thumbnail": "/frames/botanical-journal-portrait/v4/thumbnail-neutral.png",
   "licenses": [
     "Original vector artwork © Fotbooth contributors. CC0-1.0.",
     "DM Sans and Fraunces: SIL Open Font License 1.1.",

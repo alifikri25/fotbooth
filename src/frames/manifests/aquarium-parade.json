@@ -1,7 +1,7 @@
 {
   "id": "aquarium-parade",
   "name": "Aquarium Parade",
-  "version": 1,
+  "version": 2,
   "format": "card",
   "categories": [
     "nature",
@@ -14,29 +14,29 @@
     {
       "id": "p1",
       "order": 1,
-      "x": 0.08,
+      "x": 0.045,
       "y": 0.135,
-      "w": 0.4,
-      "h": 0.72,
-      "shape": "roundedRect",
-      "radius": 100,
-      "rotationDeg": 0,
-      "matteColor": "#f2efe9"
+      "w": 0.87,
+      "h": 0.34199999999999997,
+      "shape": "path",
+      "rotationDeg": -1.2,
+      "matteColor": "#f2efe9",
+      "pathRef": "wave"
     },
     {
       "id": "p2",
       "order": 2,
-      "x": 0.52,
-      "y": 0.135,
-      "w": 0.4,
-      "h": 0.72,
-      "shape": "roundedRect",
-      "radius": 100,
-      "rotationDeg": 0,
-      "matteColor": "#f2efe9"
+      "x": 0.085,
+      "y": 0.5129999999999999,
+      "w": 0.87,
+      "h": 0.34199999999999997,
+      "shape": "path",
+      "rotationDeg": 1.2,
+      "matteColor": "#f2efe9",
+      "pathRef": "star"
     }
   ],
-  "description": "Ubur-ubur, ikan badut, koral, gelembung dan kaca laut.",
+  "description": "Dua foto berlekuk ombak dan bintang laut, tersusun berselang di antara koral dan gelembung.",
   "palette": {
     "background": "#076e80",
     "ink": "#e9fffa",
@@ -44,10 +44,10 @@
     "secondary": "#ec7794"
   },
   "layers": {
-    "background": "/frames/aquarium-parade/v1/background.svg",
-    "foreground": "/frames/aquarium-parade/v1/foreground.svg"
+    "background": "/frames/aquarium-parade/v2/background.svg",
+    "foreground": "/frames/aquarium-parade/v2/foreground.svg"
   },
-  "thumbnail": "/frames/aquarium-parade/v1/thumbnail-neutral.png",
+  "thumbnail": "/frames/aquarium-parade/v2/thumbnail-neutral.png",
   "licenses": [
     "Original vector artwork © Fotbooth contributors. CC0-1.0.",
     "DM Sans and Fraunces: SIL Open Font License 1.1.",

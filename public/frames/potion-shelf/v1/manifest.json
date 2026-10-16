@@ -1,0 +1,120 @@
+{
+  "id": "potion-shelf",
+  "name": "Potion Shelf",
+  "version": 1,
+  "format": "strip",
+  "categories": [
+    "playful"
+  ],
+  "designWidth": 1200,
+  "designHeight": 3600,
+  "slots": [
+    {
+      "id": "p1",
+      "order": 1,
+      "x": 0.05,
+      "y": 0.1,
+      "w": 0.86,
+      "h": 0.18,
+      "shape": "rect",
+      "rotationDeg": -0.7,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p2",
+      "order": 2,
+      "x": 0.09,
+      "y": 0.30000000000000004,
+      "w": 0.86,
+      "h": 0.18,
+      "shape": "path",
+      "pathRef": "pebble",
+      "rotationDeg": 0.7,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p3",
+      "order": 3,
+      "x": 0.05,
+      "y": 0.5,
+      "w": 0.86,
+      "h": 0.18,
+      "shape": "path",
+      "pathRef": "star",
+      "rotationDeg": -0.7,
+      "matteColor": "#f2efe9"
+    },
+    {
+      "id": "p4",
+      "order": 4,
+      "x": 0.09,
+      "y": 0.7000000000000001,
+      "w": 0.86,
+      "h": 0.18,
+      "shape": "path",
+      "pathRef": "heart",
+      "rotationDeg": 0.7,
+      "matteColor": "#f2efe9"
+    }
+  ],
+  "description": "Botol ramuan, kristal dan gelembung laboratorium penyihir. Empat foto dengan bentuk berbeda dalam satu frame.",
+  "palette": {
+    "background": "#31384f",
+    "ink": "#f3e6c9",
+    "accent": "#b7bd80",
+    "secondary": "#b493be"
+  },
+  "layers": {
+    "background": "/frames/potion-shelf/v1/background.svg",
+    "foreground": "/frames/potion-shelf/v1/foreground.svg"
+  },
+  "thumbnail": "/frames/potion-shelf/v1/thumbnail-neutral.png",
+  "licenses": [
+    "Original vector artwork © Fotbooth contributors. CC0-1.0.",
+    "DM Sans and Fraunces: SIL Open Font License 1.1."
+  ],
+  "textAreas": [
+    {
+      "id": "title",
+      "text": "Potion Shelf",
+      "x": 0.09,
+      "y": 0.022,
+      "w": 0.82,
+      "h": 0.04,
+      "fontId": "sans",
+      "fontSize": 76,
+      "minFontSize": 48,
+      "maxLines": 1,
+      "color": "#f3e6c9"
+    },
+    {
+      "id": "caption",
+      "x": 0.07,
+      "y": 0.92,
+      "w": 0.86,
+      "h": 0.04,
+      "fontId": "sans",
+      "fontSize": 48,
+      "minFontSize": 28,
+      "maxLines": 2,
+      "color": "#f3e6c9"
+    },
+    {
+      "id": "date",
+      "x": 0.15,
+      "y": 0.974,
+      "w": 0.7,
+      "h": 0.018,
+      "fontId": "sans",
+      "fontSize": 34,
+      "minFontSize": 26,
+      "maxLines": 1,
+      "color": "#f3e6c9"
+    }
+  ],
+  "collection": "Mixed Moments",
+  "artwork": {
+    "motif": "potion-shelf",
+    "edition": 0
+  }
+}

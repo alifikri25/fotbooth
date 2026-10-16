@@ -3,6 +3,7 @@ import type { FrameDefinition, Session, PhotoResolver, SlotDefinition } from './
 import { fitText, fontFamily } from './text';
 import { applyEffectPixels, getPhotoFilter } from './effects';
 import { drawAR } from './ar/draw';
+import { isSculptedMask, sculptedMaskPath } from './slot-masks';
 
 const layers = new Map<string, Promise<HTMLImageElement>>();
 export function loadLayer(url: string): Promise<HTMLImageElement> {
@@ -23,6 +24,8 @@ export function loadLayer(url: string): Promise<HTMLImageElement> {
   return layers.get(url)!;
 }
 export function slotPath(slot: SlotDefinition, width: number, height: number): Path2D {
+  if (slot.shape === 'path' && isSculptedMask(slot.pathRef))
+    return new Path2D(sculptedMaskPath(slot.pathRef, width, height));
   const path = new Path2D();
   if (slot.shape === 'circle')
     path.ellipse(width / 2, height / 2, width / 2, height / 2, 0, 0, Math.PI * 2);

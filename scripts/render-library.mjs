@@ -3,6 +3,21 @@ import { chromium } from '@playwright/test';
 import { definitions } from '../src/frames/definitions.ts';
 import { encoreIds, originalSignatureIds } from '../src/frames/signature.ts';
 import { maximalistIds } from '../src/frames/maximalist.ts';
+import { mixedIds } from '../src/frames/mixed.ts';
+import { setTimeout as delay } from 'node:timers/promises';
+
+async function writeBoard(file, data) {
+  for (let attempt = 0; ; attempt++) {
+    try {
+      await fs.writeFile(file, data);
+      return;
+    } catch (error) {
+      // Retry transient Windows file-access failures when refreshing an existing QA board.
+      if (!['UNKNOWN', 'EBUSY', 'EPERM'].includes(error.code) || attempt >= 3) throw error;
+      await delay(150 * (attempt + 1));
+    }
+  }
+}
 
 // Bounded batches prevent the QA generator from retaining a canvas per frame.
 const baseURL = process.env.FOTBOOTH_BASE_URL ?? 'http://127.0.0.1:5173';
@@ -145,6 +160,12 @@ try {
   }
   for (const [name, items, columns] of [
     ['frame-contact-sheet', thumbnails, 6],
+    ['mixed-moments-board', thumbnails.filter((f) => mixedIds.includes(f.id)), 5],
+    ...Array.from({ length: 4 }, (_, i) => [
+      `mixed-moments-${i + 1}`,
+      thumbnails.filter((f) => mixedIds.includes(f.id)).slice(i * 10, i * 10 + 10),
+      5,
+    ]),
     ['festival-design-board', thumbnails.filter((f) => maximalistIds.includes(f.id)), 5],
     ['decorated-design-board', thumbnails.slice(0, 12), 4],
     [
@@ -189,7 +210,7 @@ try {
       },
       { items, columns },
     );
-    await fs.writeFile(`docs/qa/${name}.png`, Buffer.from(data, 'base64'));
+    await writeBoard(`docs/qa/${name}.png`, Buffer.from(data, 'base64'));
   }
   await fs.writeFile(
     'docs/qa/library-generation.json',
@@ -207,7 +228,7 @@ try {
     ) + '\n',
   );
   console.log(
-    `Generated ${thumbnails.length} thumbnails and full/light/detail evidence, with 5 paged contact sheets.`,
+    `Generated ${thumbnails.length} thumbnails and full/light/detail evidence, with ${Math.ceil(thumbnails.length / 12)} paged contact sheets.`,
   );
 } finally {
   await browser.close();

@@ -1,10 +1,11 @@
 import type { ARMask } from '../ar/types';
 import { coverRect } from '../geometry';
 import { canvasBlob, decodeSource, validateInput } from '../ingest';
-import { renderComposition } from '../renderer';
+import { renderComposition, slotPath } from '../renderer';
+import { isSculptedMask } from '../slot-masks';
 import { createSession, defaultCrop } from '../session';
 import { ensureFonts } from '../text';
-import type { FrameDefinition, PhotoSource } from '../types';
+import type { FrameDefinition, PhotoSource, SlotDefinition } from '../types';
 
 type RoomScene = 'studio' | 'sunset' | 'night';
 
@@ -169,23 +170,108 @@ export function drawRoomScene(
     context.globalCompositeOperation = 'source-over';
     context.clearRect(0, 0, width, height);
     drawBackdrop(context, width, height, scene);
-    [host, guest].forEach((source, side) => {
-      if (!source) return;
-      const dimensions = sourceDimensions(source);
-      if (!dimensions.width || !dimensions.height) return;
-      const crop = roomPersonCrop(dimensions.width, dimensions.height, width / 2, height);
-      context.drawImage(
-        source,
-        crop.x,
-        crop.y,
-        crop.width,
-        crop.height,
-        (side * width) / 2,
-        0,
-        width / 2,
-        height,
-      );
-    });
+    drawRoomPeople(context, width, height, host, guest);
+  } finally {
+    context.restore();
+  }
+}
+
+function drawRoomPeople(
+  context: CanvasRenderingContext2D,
+  width: number,
+  height: number,
+  host: CanvasImageSource | null,
+  guest: CanvasImageSource | null,
+) {
+  [host, guest].forEach((source, side) => {
+    if (!source) return;
+    const dimensions = sourceDimensions(source);
+    if (!dimensions.width || !dimensions.height) return;
+    const crop = roomPersonCrop(dimensions.width, dimensions.height, width / 2, height);
+    context.drawImage(
+      source,
+      crop.x,
+      crop.y,
+      crop.width,
+      crop.height,
+      (side * width) / 2,
+      0,
+      width / 2,
+      height,
+    );
+  });
+}
+
+function sculptedPortraitScale(
+  context: CanvasRenderingContext2D,
+  width: number,
+  height: number,
+  slot: SlotDefinition,
+  host: CanvasImageSource | null,
+  guest: CanvasImageSource | null,
+) {
+  const path = slotPath(slot, width, height);
+  const headPoints: { x: number; y: number }[] = [];
+  [host, guest].forEach((source, side) => {
+    if (!source) return;
+    const dimensions = sourceDimensions(source);
+    if (!dimensions.width || !dimensions.height) return;
+    const crop = roomPersonCrop(dimensions.width, dimensions.height, width / 2, height);
+    // A centered forehead-and-eyes envelope in each camera, projected through the real crop.
+    // Narrow photo windows need more room on the outside of each person's head.
+    for (const x of [0.4, 0.5, 0.6]) {
+      for (const y of [0.06, 0.15, 0.26]) {
+        headPoints.push({
+          x: side / 2 + (x * dimensions.width - crop.x) / crop.width / 2,
+          y: (y * dimensions.height - crop.y) / crop.height,
+        });
+      }
+    }
+  });
+  // Choose the largest uniform portrait layer that clears this mask's actual notches.
+  // Anchoring at the bottom moves heads inward/down and leaves a continuous backdrop above.
+  for (let step = 0; step <= 17; step++) {
+    const scale = 1 - step * 0.02;
+    if (
+      headPoints.every(({ x, y }) =>
+        context.isPointInPath(
+          path,
+          (x * scale + (1 - scale) / 2) * width,
+          (y * scale + 1 - scale) * height,
+        ),
+      )
+    )
+      return scale;
+  }
+  return 0.66;
+}
+
+function drawRoomSlotScene(
+  canvas: HTMLCanvasElement,
+  host: CanvasImageSource | null,
+  guest: CanvasImageSource | null,
+  scene: RoomScene,
+  slot: SlotDefinition,
+) {
+  if (slot.shape !== 'path' || !isSculptedMask(slot.pathRef)) {
+    drawRoomScene(canvas, host, guest, scene);
+    return;
+  }
+  const context = canvas.getContext('2d');
+  if (!context || !canvas.width || !canvas.height) throw new Error('Kanvas foto belum siap.');
+  const width = canvas.width,
+    height = canvas.height;
+  context.save();
+  try {
+    context.setTransform(1, 0, 0, 1, 0, 0);
+    context.globalAlpha = 1;
+    context.globalCompositeOperation = 'source-over';
+    context.clearRect(0, 0, width, height);
+    drawBackdrop(context, width, height, scene);
+    const scale = sculptedPortraitScale(context, width, height, slot, host, guest);
+    context.translate((width * (1 - scale)) / 2, height * (1 - scale));
+    context.scale(scale, scale);
+    drawRoomPeople(context, width, height, host, guest);
   } finally {
     context.restore();
   }
@@ -214,7 +300,7 @@ export async function drawRoomFrame(
       pair.height = size.height;
       surfaces.set(slot.id, pair);
       const sources = completedPairs[index] ?? { host, guest };
-      drawRoomScene(pair, sources.host, sources.guest, scene);
+      drawRoomSlotScene(pair, sources.host, sources.guest, scene, slot);
       session.placements.push({ ...defaultCrop, slotId: slot.id, photoId: slot.id });
     }
     await renderComposition(
